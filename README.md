@@ -1,6 +1,6 @@
-## Chào mừng đến với Ứng Dụng Hoc Tiếng K'Ho
+# Chào mừng đến với Ứng Dụng Hoc Tiếng K'Ho
 
-#I. Mục tiêu đề tài
+## I. Mục tiêu đề tài
 **Đề xuất phương án thực hiện “Ứng dụng học tiếng K'Ho” khả thi, để từ đó tiến hành xây dựng thành công ứng dụng học tiếng K'Ho, với nhiệm vụ chủ yếu:**
 ```
 - Tìm hiểu về mặt ngôn ngữ của tiếng K'Ho, tài liệu dạy tiếng K’Ho.
@@ -8,7 +8,7 @@
 - Tìm hiểu tổng quan về phương pháp được áp dụng trong xây dựng ứng dụng về học ngôn ngữ, từ đó đề xuất phương án thực hiện đề tài khả thi và hiệu quả.
 - Xây dựng hệ thống học tiếng K’Ho.
 ```
-#II. Nội dung đề tài
+## II. Nội dung đề tài
 **Để đạt được mục tiêu của đề tài, nhóm phải thực hiện các nội dung sau:**
 ```
 - Bước 1: Khảo sát hiện trạng về ngôn ngữ của tiếng K'Ho, tài liệu dạy tiếng K’Ho.
@@ -22,15 +22,15 @@
 - Bước 5: Kiểm thử ứng dụng.
 - Bước 6: Đánh giá ứng dụng nếu chưa đạt yêu cầu thì quay lại bước 3, ngược lại sẽ qua giai đoạn tối ưu hoá và viết báo cáo.
 ```
-#III. Phần mềm và công cụ sử dụng
+## III. Phần mềm và công cụ sử dụng
 ```
 Microsoft Visual Studio 2013, SQL Server, Devexpress.
 ```
-#VI. Dự kiến kết quả đạt được
+## VI. Dự kiến kết quả đạt được
 ```
 Xây dựng thành công “Ứng dụng học tiếng K’Ho”.
 ```
-#V. Thời gian dự kiến thực hiện đồ án
+## V. Thời gian dự kiến thực hiện đồ án
 ```
 - Từ ngày	Đến ngày	Nội dung	Ghi chú
  - 15/06/2017	30/06/2017	Làm đề cương chi tiết của đề tài.	
