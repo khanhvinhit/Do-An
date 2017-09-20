@@ -1,4 +1,4 @@
-# Chào mừng đến với Ứng Dụng Hoc Tiếng K'Ho
+# Đề tài: Ứng Dụng Hoc Tiếng K'Ho
 
 ## I. Mục tiêu đề tài
 **Đề xuất phương án thực hiện “Ứng dụng học tiếng K'Ho” khả thi, để từ đó tiến hành xây dựng thành công ứng dụng học tiếng K'Ho, với nhiệm vụ chủ yếu:**
