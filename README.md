@@ -31,15 +31,14 @@ Microsoft Visual Studio 2013, SQL Server, Devexpress.
 Xây dựng thành công “Ứng dụng học tiếng K’Ho”.
 ```
 ## V. Thời gian dự kiến thực hiện đồ án
-```
-- Từ ngày	Đến ngày	Nội dung	Ghi chú
- - 15/06/2017	30/06/2017	Làm đề cương chi tiết của đề tài.	
- - 01/07/2017	15/07/2017	Khảo sát hiện trạng các ứng dụng học ngôn ngữ hiện nay.	
- - 16/07/2017	30/07/2017	Tìm hiểu về tiếng dân tộc K’Ho.	
- - 01/08/2017	15/08/2017	Đề xuất phương pháp xây dựng ứng dụng, đề xuất giao diện của ứng dụng.	
- - 16/08/2017	31/08/2017	Xây dựng ứng dụng học tiếng K’Ho.	
- - 01/09/2017	30/09/2017	Hoàn thiện dần các chức năng của ứng dụng.	
- - 01/10/2017	30/10/2017	Hoàn thiện ứng dụng.	
- - 01/11/2017	15/11/2017	Kiểm thử để kiểm tra lỗi.	
- - 21/11/2017	30/11/2017	Tối ưu ứng dụng và viết báo cáo đồ án.	
-```
+| Từ ngày	| Đến ngày	| Nội dung |
+|--------|--------|-------------------------------------------------------------------|
+| 15/06/2017 |	30/06/2017	| Làm đề cương chi tiết của đề tài.	|
+| 01/07/2017	| 15/07/2017	| Khảo sát hiện trạng các ứng dụng học ngôn ngữ hiện nay.	|
+| 16/07/2017	| 30/07/2017	| Tìm hiểu về tiếng dân tộc K’Ho.	|
+| 01/08/2017	| 15/08/2017	| Đề xuất phương pháp xây dựng ứng dụng, đề xuất giao diện của ứng dụng.	|
+| 16/08/2017	| 31/08/2017	| Xây dựng ứng dụng học tiếng K’Ho.	|
+| 01/09/2017	| 30/09/2017	| Hoàn thiện dần các chức năng của ứng dụng.	|
+| 01/10/2017	| 30/10/2017	| Hoàn thiện ứng dụng.	|
+| 01/11/2017	| 15/11/2017	| Kiểm thử để kiểm tra lỗi.	|
+| 21/11/2017	| 30/11/2017	| Tối ưu ứng dụng và viết báo cáo đồ án. |
