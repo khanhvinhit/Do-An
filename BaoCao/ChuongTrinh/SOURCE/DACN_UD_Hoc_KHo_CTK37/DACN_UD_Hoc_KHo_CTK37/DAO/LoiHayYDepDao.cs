@@ -28,14 +28,5 @@ namespace DACN_UD_Hoc_KHo_CTK37.DAO
 			return list;
 		}
 
-		public bool KiemTraLH(int idBaiHoc)
-		{
-			var db = _db.LoiHayYDeps.Find(idBaiHoc);
-			if (db != null)
-			{
-				return true;
-			}
-			return false;
-		}
 	}
 }

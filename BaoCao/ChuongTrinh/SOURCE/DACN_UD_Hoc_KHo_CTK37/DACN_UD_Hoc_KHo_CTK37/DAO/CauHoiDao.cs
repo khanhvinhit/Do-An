@@ -28,14 +28,5 @@ namespace DACN_UD_Hoc_KHo_CTK37.DAO
 			return list;
 		}
 
-		public bool KiemTraCH(int idDanhMucCon)
-		{
-			var db = _db.CauHois.Find(idDanhMucCon);
-			if (db != null)
-			{
-				return true;
-			}
-			return false;
-		}
 	}
 }

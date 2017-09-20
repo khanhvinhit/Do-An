@@ -28,14 +28,5 @@ namespace DACN_UD_Hoc_KHo_CTK37.DAO
 			return list;
 		}
 
-		public bool KiemTraTV(int idDanhMucCon)
-		{
-			var db = _db.TuVungs.Find(idDanhMucCon);
-			if (db != null)
-			{
-				return true;
-			}
-			return false;
-		}
 	}
 }
