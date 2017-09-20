@@ -36,7 +36,7 @@ namespace DACN_UD_Hoc_KHo_CTK37.DAO
 
 		public List<BaiHoc> LoadNguPhap()
 		{
-			List<BaiHoc> list = _db.BaiHocs.Where(x => x.TenViet.Contains("NGỮ PHÁP")).ToList();
+			List<BaiHoc> list = _db.BaiHocs.Where(x => x.TenViet.Contains("NGỮ PHÁP") || x.TenViet.Contains("Ngữ Pháp")).ToList();
 			return list;
 		}
 

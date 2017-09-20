@@ -22,7 +22,7 @@ namespace DACN_UD_Hoc_KHo_CTK37
 			flpBaiHoc.Controls.Clear();
 			foreach (BaiHoc item in BaiHocDao.Instance.LoadBaiHoc())
 			{
-				if (item.TenViet != "Ngữ pháp")
+				if (item.TenViet != "Ngữ pháp"||item.TenViet != "NGỮ PHÁP")
 				{
 					SimpleButton btn = new SimpleButton() { Width = 200, Height = 60 };
 					if (item.TenKHo != null)
@@ -58,6 +58,7 @@ namespace DACN_UD_Hoc_KHo_CTK37
 
 				f.Text = f.Text + " số " + baiHoc.ID;
 				//f. = this;
+				f.Text = "Bài học";
 				f.ShowDialog();
 			}
 		}

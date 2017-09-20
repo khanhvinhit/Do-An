@@ -45,6 +45,7 @@ namespace DACN_UD_Hoc_KHo_CTK37
 				BaiHoc baiHoc = (simpleButton.Tag as BaiHoc);
 				FrmBaiHocChiTiet f = new FrmBaiHocChiTiet(baiHoc.ID);
 				//f.MdiParent = this;
+				f.Text = "Học ngữ pháp";
 				f.ShowDialog();
 			}
 		}
