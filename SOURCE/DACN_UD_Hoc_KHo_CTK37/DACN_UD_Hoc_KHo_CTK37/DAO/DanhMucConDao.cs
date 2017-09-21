@@ -32,17 +32,18 @@ namespace DACN_UD_Hoc_KHo_CTK37.DAO
 
 		public List<DanhMucCon> DanhMucConLoadByName(string name, int id)
 		{
-			List<DanhMucCon> list = _db.DanhMucCons.Where(x => x.Ten == name && x.ID == id).ToList();
+			List<DanhMucCon> list = _db.DanhMucCons.Where(x => x.ID == id && x.Ten == name).ToList();
 			return list;
 		}
 
 		public bool KTDanhMucCon(string name, int id)
 		{
-			var db = _db.DanhMucCons.SingleOrDefault(x => x.Ten == name && x.ID == id);
+			var db = _db.DanhMucCons.FirstOrDefault(x => x.ID == id && x.Ten == name);
 			if (db != null)
 			{
 				return true;
 			}
 			return false;
-		}}
+		}
+	}
 }

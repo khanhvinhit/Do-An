@@ -339,7 +339,7 @@ namespace DACN_UD_Hoc_KHo_CTK37
 			{
 				if (item.TenViet != null && item.TenKHo != null)
 				{
-					lbViet.Text = "(" + item.TenViet + "";
+					lbViet.Text = "(" + item.TenViet + ")";
 					lbTenBai.Text = "Bài " + iDBaiHoc + ": " + item.TenKHo;
 				}
 				else
@@ -594,8 +594,9 @@ namespace DACN_UD_Hoc_KHo_CTK37
 		private void lbcMucLuc_Click(object sender, EventArgs e)
 		{
 			string tukhoa = lbcMucLuc.SelectedItem.ToString();
-			string subStringItem = tukhoa.Substring(3);
 			int id = int.Parse(tukhoa.Substring(0, tukhoa.LastIndexOf('.')));
+			string str = id.ToString();
+			string subStringItem = tukhoa.Substring(str.Length + 2);
 			LoadDanhMucTheoTen(subStringItem, id);
 		}
 		private void btnRefresh_Click(object sender, EventArgs e)

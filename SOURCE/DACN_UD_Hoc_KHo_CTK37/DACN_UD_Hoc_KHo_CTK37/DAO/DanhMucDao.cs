@@ -30,7 +30,7 @@ namespace DACN_UD_Hoc_KHo_CTK37.DAO
 			return list;
 		}
 
-		public List<DanhMuc> DanhMucLoadByName(string name,int id)
+		public List<DanhMuc> DanhMucLoadByName(string name, int id)
 		{
 			List<DanhMuc> list = _db.DanhMucs.Where(x => x.TenKHo == name || x.TenViet == name && x.ID == id).ToList();
 			return list;
@@ -38,7 +38,7 @@ namespace DACN_UD_Hoc_KHo_CTK37.DAO
 
 		public bool KTDanhMuc(string name, int id)
 		{
-			var db = _db.DanhMucs.SingleOrDefault(x => x.TenKHo == name || x.TenViet == name && x.ID == id);
+			var db = _db.DanhMucs.FirstOrDefault(x => x.TenKHo == name && x.ID == id || x.TenViet == name && x.ID == id);
 			if (db != null)
 			{
 				return true;

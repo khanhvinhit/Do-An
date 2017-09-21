@@ -223,7 +223,7 @@ namespace DACN_UD_Hoc_KHo_CTK37
 			// 
 			this.lbLHViet.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
 			this.lbLHViet.Appearance.Font = new System.Drawing.Font("TNKeyUni-Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.lbLHViet.Location = new System.Drawing.Point(457, 410);
+			this.lbLHViet.Location = new System.Drawing.Point(106, 415);
 			this.lbLHViet.Name = "lbLHViet";
 			this.lbLHViet.Size = new System.Drawing.Size(30, 17);
 			this.lbLHViet.TabIndex = 4;
@@ -233,7 +233,7 @@ namespace DACN_UD_Hoc_KHo_CTK37
 			// 
 			this.lbKhoHay.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
 			this.lbKhoHay.Appearance.Font = new System.Drawing.Font("TNKeyUni-Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.lbKhoHay.Location = new System.Drawing.Point(457, 387);
+			this.lbKhoHay.Location = new System.Drawing.Point(106, 392);
 			this.lbKhoHay.Name = "lbKhoHay";
 			this.lbKhoHay.Size = new System.Drawing.Size(34, 17);
 			this.lbKhoHay.TabIndex = 4;
@@ -252,7 +252,7 @@ namespace DACN_UD_Hoc_KHo_CTK37
 			this.rkqBaiHoc.Options.Fields.UseCurrentCultureDateTimeFormat = false;
 			this.rkqBaiHoc.Options.MailMerge.KeepLastParagraph = false;
 			this.rkqBaiHoc.ReadOnly = true;
-			this.rkqBaiHoc.Size = new System.Drawing.Size(445, 371);
+			this.rkqBaiHoc.Size = new System.Drawing.Size(445, 330);
 			this.rkqBaiHoc.TabIndex = 0;
 			// 
 			// lbViet
