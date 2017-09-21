@@ -40,6 +40,8 @@ namespace DACN_UD_Hoc_KHo_CTK37
 			this.lbDanhMuc = new DevExpress.XtraEditors.LabelControl();
 			this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
 			this.pnBaiHoc = new DevExpress.XtraEditors.PanelControl();
+			this.picBox = new System.Windows.Forms.PictureBox();
+			this.btnRefresh = new DevExpress.XtraEditors.SimpleButton();
 			this.btnBack = new DevExpress.XtraEditors.SimpleButton();
 			this.btnClose = new DevExpress.XtraEditors.SimpleButton();
 			this.btnNext = new DevExpress.XtraEditors.SimpleButton();
@@ -49,8 +51,6 @@ namespace DACN_UD_Hoc_KHo_CTK37
 			this.lbViet = new DevExpress.XtraEditors.LabelControl();
 			this.lbTenBai = new DevExpress.XtraEditors.LabelControl();
 			this.splitterControl1 = new DevExpress.XtraEditors.SplitterControl();
-			this.btnRefresh = new DevExpress.XtraEditors.SimpleButton();
-			this.picBox = new System.Windows.Forms.PictureBox();
 			((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
 			this.panelControl1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).BeginInit();
@@ -69,7 +69,7 @@ namespace DACN_UD_Hoc_KHo_CTK37
 			this.panelControl1.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.panelControl1.Location = new System.Drawing.Point(0, 0);
 			this.panelControl1.Name = "panelControl1";
-			this.panelControl1.Size = new System.Drawing.Size(1242, 449);
+			this.panelControl1.Size = new System.Drawing.Size(1120, 449);
 			this.panelControl1.TabIndex = 0;
 			// 
 			// splitContainerControl1
@@ -85,7 +85,7 @@ namespace DACN_UD_Hoc_KHo_CTK37
 			this.splitContainerControl1.Panel2.Controls.Add(this.pnBaiHoc);
 			this.splitContainerControl1.Panel2.Controls.Add(this.splitterControl1);
 			this.splitContainerControl1.Panel2.Text = "Panel2";
-			this.splitContainerControl1.Size = new System.Drawing.Size(1232, 439);
+			this.splitContainerControl1.Size = new System.Drawing.Size(1110, 439);
 			this.splitContainerControl1.SplitterPosition = 291;
 			this.splitContainerControl1.TabIndex = 0;
 			this.splitContainerControl1.Text = "splitContainerControl1";
@@ -152,8 +152,33 @@ namespace DACN_UD_Hoc_KHo_CTK37
 			this.pnBaiHoc.Controls.Add(this.lbTenBai);
 			this.pnBaiHoc.Location = new System.Drawing.Point(11, 4);
 			this.pnBaiHoc.Name = "pnBaiHoc";
-			this.pnBaiHoc.Size = new System.Drawing.Size(922, 432);
+			this.pnBaiHoc.Size = new System.Drawing.Size(796, 432);
 			this.pnBaiHoc.TabIndex = 1;
+			// 
+			// picBox
+			// 
+			this.picBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+			this.picBox.BackColor = System.Drawing.Color.Transparent;
+			this.picBox.Cursor = System.Windows.Forms.Cursors.Default;
+			this.picBox.Location = new System.Drawing.Point(457, 56);
+			this.picBox.Name = "picBox";
+			this.picBox.Size = new System.Drawing.Size(334, 212);
+			this.picBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+			this.picBox.TabIndex = 5;
+			this.picBox.TabStop = false;
+			// 
+			// btnRefresh
+			// 
+			this.btnRefresh.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+			this.btnRefresh.Appearance.Font = new System.Drawing.Font("TNKeyUni-Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btnRefresh.Appearance.Options.UseFont = true;
+			this.btnRefresh.Image = ((System.Drawing.Image)(resources.GetObject("btnRefresh.Image")));
+			this.btnRefresh.Location = new System.Drawing.Point(403, 5);
+			this.btnRefresh.Name = "btnRefresh";
+			this.btnRefresh.Size = new System.Drawing.Size(103, 31);
+			this.btnRefresh.TabIndex = 1;
+			this.btnRefresh.Text = "Làm mới";
+			this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
 			// 
 			// btnBack
 			// 
@@ -161,7 +186,7 @@ namespace DACN_UD_Hoc_KHo_CTK37
 			this.btnBack.Appearance.Font = new System.Drawing.Font("TNKeyUni-Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.btnBack.Appearance.Options.UseFont = true;
 			this.btnBack.Image = ((System.Drawing.Image)(resources.GetObject("btnBack.Image")));
-			this.btnBack.Location = new System.Drawing.Point(638, 5);
+			this.btnBack.Location = new System.Drawing.Point(512, 5);
 			this.btnBack.Name = "btnBack";
 			this.btnBack.Size = new System.Drawing.Size(103, 31);
 			this.btnBack.TabIndex = 1;
@@ -174,7 +199,7 @@ namespace DACN_UD_Hoc_KHo_CTK37
 			this.btnClose.Appearance.Font = new System.Drawing.Font("TNKeyUni-Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.btnClose.Appearance.Options.UseFont = true;
 			this.btnClose.Image = ((System.Drawing.Image)(resources.GetObject("btnClose.Image")));
-			this.btnClose.Location = new System.Drawing.Point(842, 5);
+			this.btnClose.Location = new System.Drawing.Point(716, 5);
 			this.btnClose.Name = "btnClose";
 			this.btnClose.Size = new System.Drawing.Size(75, 31);
 			this.btnClose.TabIndex = 1;
@@ -187,7 +212,7 @@ namespace DACN_UD_Hoc_KHo_CTK37
 			this.btnNext.Appearance.Font = new System.Drawing.Font("TNKeyUni-Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.btnNext.Appearance.Options.UseFont = true;
 			this.btnNext.Image = ((System.Drawing.Image)(resources.GetObject("btnNext.Image")));
-			this.btnNext.Location = new System.Drawing.Point(747, 5);
+			this.btnNext.Location = new System.Drawing.Point(621, 5);
 			this.btnNext.Name = "btnNext";
 			this.btnNext.Size = new System.Drawing.Size(89, 31);
 			this.btnNext.TabIndex = 1;
@@ -198,7 +223,7 @@ namespace DACN_UD_Hoc_KHo_CTK37
 			// 
 			this.lbLHViet.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
 			this.lbLHViet.Appearance.Font = new System.Drawing.Font("TNKeyUni-Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.lbLHViet.Location = new System.Drawing.Point(583, 410);
+			this.lbLHViet.Location = new System.Drawing.Point(457, 410);
 			this.lbLHViet.Name = "lbLHViet";
 			this.lbLHViet.Size = new System.Drawing.Size(30, 17);
 			this.lbLHViet.TabIndex = 4;
@@ -208,7 +233,7 @@ namespace DACN_UD_Hoc_KHo_CTK37
 			// 
 			this.lbKhoHay.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
 			this.lbKhoHay.Appearance.Font = new System.Drawing.Font("TNKeyUni-Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.lbKhoHay.Location = new System.Drawing.Point(583, 387);
+			this.lbKhoHay.Location = new System.Drawing.Point(457, 387);
 			this.lbKhoHay.Name = "lbKhoHay";
 			this.lbKhoHay.Size = new System.Drawing.Size(34, 17);
 			this.lbKhoHay.TabIndex = 4;
@@ -227,7 +252,7 @@ namespace DACN_UD_Hoc_KHo_CTK37
 			this.rkqBaiHoc.Options.Fields.UseCurrentCultureDateTimeFormat = false;
 			this.rkqBaiHoc.Options.MailMerge.KeepLastParagraph = false;
 			this.rkqBaiHoc.ReadOnly = true;
-			this.rkqBaiHoc.Size = new System.Drawing.Size(571, 371);
+			this.rkqBaiHoc.Size = new System.Drawing.Size(445, 371);
 			this.rkqBaiHoc.TabIndex = 0;
 			// 
 			// lbViet
@@ -260,36 +285,11 @@ namespace DACN_UD_Hoc_KHo_CTK37
 			this.splitterControl1.TabIndex = 0;
 			this.splitterControl1.TabStop = false;
 			// 
-			// btnRefresh
-			// 
-			this.btnRefresh.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-			this.btnRefresh.Appearance.Font = new System.Drawing.Font("TNKeyUni-Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.btnRefresh.Appearance.Options.UseFont = true;
-			this.btnRefresh.Image = ((System.Drawing.Image)(resources.GetObject("btnRefresh.Image")));
-			this.btnRefresh.Location = new System.Drawing.Point(529, 5);
-			this.btnRefresh.Name = "btnRefresh";
-			this.btnRefresh.Size = new System.Drawing.Size(103, 31);
-			this.btnRefresh.TabIndex = 1;
-			this.btnRefresh.Text = "Làm mới";
-			this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
-			// 
-			// picBox
-			// 
-			this.picBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-			this.picBox.BackColor = System.Drawing.Color.Transparent;
-			this.picBox.Cursor = System.Windows.Forms.Cursors.Default;
-			this.picBox.Location = new System.Drawing.Point(583, 56);
-			this.picBox.Name = "picBox";
-			this.picBox.Size = new System.Drawing.Size(334, 212);
-			this.picBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-			this.picBox.TabIndex = 5;
-			this.picBox.TabStop = false;
-			// 
 			// FrmBaiHocChiTiet
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(1242, 449);
+			this.ClientSize = new System.Drawing.Size(1120, 449);
 			this.Controls.Add(this.panelControl1);
 			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
 			this.Name = "FrmBaiHocChiTiet";

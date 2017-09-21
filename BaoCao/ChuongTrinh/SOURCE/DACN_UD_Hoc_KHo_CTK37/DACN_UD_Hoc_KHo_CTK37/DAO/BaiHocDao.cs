@@ -14,7 +14,9 @@ namespace DACN_UD_Hoc_KHo_CTK37.DAO
 
 		public static BaiHocDao Instance
 		{
-			get { if(_instance == null) _instance = new BaiHocDao();
+			get
+			{
+				if (_instance == null) _instance = new BaiHocDao();
 				return _instance;
 			}
 			private set { BaiHocDao._instance = value; }
@@ -30,7 +32,7 @@ namespace DACN_UD_Hoc_KHo_CTK37.DAO
 
 		public List<BaiHoc> LoadBaiHoc()
 		{
-			List<BaiHoc> list = _db.BaiHocs.ToList();
+			List<BaiHoc> list = _db.BaiHocs.Where(x => x.TenKHo != "" && x.TenViet != "NGỮ PHÁP").ToList();
 			return list;
 		}
 

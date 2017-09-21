@@ -20,10 +20,12 @@ namespace DACN_UD_Hoc_KHo_CTK37
 		void LoadGrammar()
 		{
 			flpGrammar.Controls.Clear();
+			int i = 0;
 			foreach (BaiHoc item in BaiHocDao.Instance.LoadNguPhap())
 			{
+				i++;
 				SimpleButton btn = new SimpleButton() { Width = 200, Height = 60};
-                btn.Text = "Bài " + item.ID.ToString() + ": " + item.TenViet;
+                btn.Text = "Bài " + i + ": " + item.TenViet;
 				btn.Click += btn_Click;
 				btn.Tag = item;
 				btn.Font = new Font("TNKeyUni-Arial", 8F, FontStyle.Bold);
