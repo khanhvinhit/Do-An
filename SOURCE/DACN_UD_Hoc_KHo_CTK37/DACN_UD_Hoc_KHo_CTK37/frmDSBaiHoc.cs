@@ -30,7 +30,6 @@ namespace DACN_UD_Hoc_KHo_CTK37
 				btn.Tag = item;
 				btn.Font = new Font("TNKeyUni-Arial", 8F, FontStyle.Bold);
 				System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmDsBaiHoc));
-				btn.Image = ((System.Drawing.Image)(resources.GetObject("btnDictionary.Glyph")));
 				btn.ImageLocation = ImageLocation.MiddleLeft;
 				btn.Location = new Point(81, 61);
 				flpBaiHoc.Controls.Add(btn);

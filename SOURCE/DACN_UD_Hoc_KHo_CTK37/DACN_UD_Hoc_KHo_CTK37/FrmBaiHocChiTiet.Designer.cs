@@ -46,6 +46,7 @@ namespace DACN_UD_Hoc_KHo_CTK37
 			this.btnClose = new DevExpress.XtraEditors.SimpleButton();
 			this.btnNext = new DevExpress.XtraEditors.SimpleButton();
 			this.lbLHViet = new DevExpress.XtraEditors.LabelControl();
+			this.lbName = new DevExpress.XtraEditors.LabelControl();
 			this.lbKhoHay = new DevExpress.XtraEditors.LabelControl();
 			this.rkqBaiHoc = new DevExpress.XtraRichEdit.RichEditControl();
 			this.lbViet = new DevExpress.XtraEditors.LabelControl();
@@ -146,6 +147,7 @@ namespace DACN_UD_Hoc_KHo_CTK37
 			this.pnBaiHoc.Controls.Add(this.btnClose);
 			this.pnBaiHoc.Controls.Add(this.btnNext);
 			this.pnBaiHoc.Controls.Add(this.lbLHViet);
+			this.pnBaiHoc.Controls.Add(this.lbName);
 			this.pnBaiHoc.Controls.Add(this.lbKhoHay);
 			this.pnBaiHoc.Controls.Add(this.rkqBaiHoc);
 			this.pnBaiHoc.Controls.Add(this.lbViet);
@@ -157,12 +159,13 @@ namespace DACN_UD_Hoc_KHo_CTK37
 			// 
 			// picBox
 			// 
-			this.picBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+			this.picBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
 			this.picBox.BackColor = System.Drawing.Color.Transparent;
 			this.picBox.Cursor = System.Windows.Forms.Cursors.Default;
 			this.picBox.Location = new System.Drawing.Point(457, 56);
 			this.picBox.Name = "picBox";
-			this.picBox.Size = new System.Drawing.Size(334, 212);
+			this.picBox.Size = new System.Drawing.Size(334, 296);
 			this.picBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
 			this.picBox.TabIndex = 5;
 			this.picBox.TabStop = false;
@@ -228,6 +231,16 @@ namespace DACN_UD_Hoc_KHo_CTK37
 			this.lbLHViet.Size = new System.Drawing.Size(30, 17);
 			this.lbLHViet.TabIndex = 4;
 			this.lbLHViet.Text = "Viet";
+			// 
+			// lbName
+			// 
+			this.lbName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+			this.lbName.Appearance.Font = new System.Drawing.Font("TNKeyUni-Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.lbName.Location = new System.Drawing.Point(546, 358);
+			this.lbName.Name = "lbName";
+			this.lbName.Size = new System.Drawing.Size(31, 17);
+			this.lbName.TabIndex = 4;
+			this.lbName.Text = "Anh";
 			// 
 			// lbKhoHay
 			// 
@@ -334,5 +347,6 @@ namespace DACN_UD_Hoc_KHo_CTK37
 		private LabelControl lbKhoHay;
 		private SimpleButton btnRefresh;
 		private System.Windows.Forms.PictureBox picBox;
+		private LabelControl lbName;
 	}
 }

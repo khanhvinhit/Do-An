@@ -31,6 +31,7 @@ namespace DACN_UD_Hoc_KHo_CTK37
 
 		void LoadDanhMucTheoTen(string name, int id)
 		{
+			lbName.Text = "";
 			picBox.Image = null;
 			rkqBaiHoc.ResetText();
 			rkqBaiHoc.Font = new Font("TNKeyUni-Arial", 11F);
@@ -190,6 +191,7 @@ namespace DACN_UD_Hoc_KHo_CTK37
 									string _filepath = Application.StartupPath;
 									Image image = Image.FromFile(_filepath + _pictures);
 									picBox.Image = image;
+									lbName.Text = hi.TenHinh;
 								}
 							}
 						}
@@ -346,6 +348,7 @@ namespace DACN_UD_Hoc_KHo_CTK37
 									string _filepath = Application.StartupPath;
 									Image image = Image.FromFile(_filepath + _pictures);
 									picBox.Image = image;
+									lbName.Text = hi.TenHinh;
 								}
 							}
 						}
@@ -502,6 +505,7 @@ namespace DACN_UD_Hoc_KHo_CTK37
 							string _filepath = Application.StartupPath;
 							Image image = Image.FromFile(_filepath + _pictures);
 							picBox.Image = image;
+							lbName.Text = hi.TenHinh;
 						}
 					}
 				}
@@ -509,6 +513,8 @@ namespace DACN_UD_Hoc_KHo_CTK37
 		}
 		void LoadBaiHoc(int iDBaiHoc)
 		{
+			lbViet.Text = "";
+			lbName.Text = "";
 			lbKhoHay.Text = "";
 			lbLHViet.Text = "";
 			picBox.Image = null;
@@ -533,7 +539,11 @@ namespace DACN_UD_Hoc_KHo_CTK37
 					lbViet.Text = "(" + item.TenViet + ")";
 					lbTenBai.Text = "Bài " + iDBaiHoc + ": " + item.TenKHo;
 				}
-				else
+				else if (item.TenViet == null && item.TenKHo != null)
+				{
+					lbTenBai.Text = "Bài " + iDBaiHoc + ": " + item.TenKHo;
+				}
+				else if (item.TenViet != null && item.TenKHo == null)
 				{
 					lbTenBai.Text = "Bài " + iDBaiHoc + ": " + item.TenViet;
 				}
@@ -715,6 +725,7 @@ namespace DACN_UD_Hoc_KHo_CTK37
 								string _filepath = Application.StartupPath;
 								Image image = Image.FromFile(_filepath + _pictures);
 								picBox.Image = image;
+								lbName.Text = hi.TenHinh;
 							}
 						}
 					}
@@ -869,6 +880,7 @@ namespace DACN_UD_Hoc_KHo_CTK37
 								string _filepath = Application.StartupPath;
 								Image image = Image.FromFile(_filepath + _pictures);
 								picBox.Image = image;
+								lbName.Text = hi.TenHinh;
 							}
 						}
 					}

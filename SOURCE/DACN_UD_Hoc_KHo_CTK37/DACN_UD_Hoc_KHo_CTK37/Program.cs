@@ -14,7 +14,7 @@ namespace DACN_UD_Hoc_KHo_CTK37
 		{
 			Application.EnableVisualStyles();
 			Application.SetCompatibleTextRenderingDefault(false);
-			UserLookAndFeel.Default.SetSkinStyle("Visual Studio 2013 Light");//
+			UserLookAndFeel.Default.SetSkinStyle("DevExpress Style");//
 			Application.Run(new FrmUdHoc());
 		}
 	}

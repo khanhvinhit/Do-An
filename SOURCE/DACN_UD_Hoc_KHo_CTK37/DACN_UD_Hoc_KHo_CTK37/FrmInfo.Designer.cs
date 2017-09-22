@@ -78,7 +78,7 @@ namespace DACN_UD_Hoc_KHo_CTK37
 			// labelControl5
 			// 
 			this.labelControl5.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.labelControl5.Location = new System.Drawing.Point(187, 114);
+			this.labelControl5.Location = new System.Drawing.Point(230, 114);
 			this.labelControl5.Name = "labelControl5";
 			this.labelControl5.Size = new System.Drawing.Size(518, 19);
 			this.labelControl5.TabIndex = 0;
@@ -87,7 +87,7 @@ namespace DACN_UD_Hoc_KHo_CTK37
 			// labelControl4
 			// 
 			this.labelControl4.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.labelControl4.Location = new System.Drawing.Point(187, 89);
+			this.labelControl4.Location = new System.Drawing.Point(230, 89);
 			this.labelControl4.Name = "labelControl4";
 			this.labelControl4.Size = new System.Drawing.Size(435, 19);
 			this.labelControl4.TabIndex = 0;
