@@ -74,7 +74,7 @@ namespace DACN_UD_Hoc_KHo_CTK37
 								{
 									rkqBaiHoc.Text += "\t\t" + tv.KHo + " : \t" + tv.Viet + "\n";
 								}
-								
+
 							}
 							if (itemdmc.DamThoais.Count >= 1)
 							{
@@ -143,6 +143,14 @@ namespace DACN_UD_Hoc_KHo_CTK37
 										{
 											rkqBaiHoc.Text += "\t- " + lt.HoiKHo + "\t\t+ " + lt.TraLoiKHo + "\n";
 											rkqBaiHoc.Text += "\t- " + lt.HoiViet + "\t\t+ " + lt.TraLoiViet + "\n\n";
+										}
+										else if (lt.TraLoiKHo != null && lt.TraLoiViet == null)
+										{
+											rkqBaiHoc.Text += "\t- " + lt.HoiKHo + "\n\n";
+										}
+										else if (lt.TraLoiKHo == null && lt.TraLoiViet != null)
+										{
+											rkqBaiHoc.Text += "\t- " + lt.HoiViet + "\n\n";
 										}
 										else
 										{
@@ -288,8 +296,17 @@ namespace DACN_UD_Hoc_KHo_CTK37
 									{
 										if (lt.TraLoiKHo != null && lt.TraLoiViet != null)
 										{
+
 											rkqBaiHoc.Text += "\t- " + lt.HoiKHo + "\t\t+ " + lt.TraLoiKHo + "\n";
 											rkqBaiHoc.Text += "\t- " + lt.HoiViet + "\t\t+ " + lt.TraLoiViet + "\n\n";
+										}
+										else if (lt.TraLoiKHo != null && lt.TraLoiViet == null)
+										{
+											rkqBaiHoc.Text += "\t- " + lt.HoiKHo + "\n\n";
+										}
+										else if (lt.TraLoiKHo == null && lt.TraLoiViet != null)
+										{
+											rkqBaiHoc.Text += "\t- " + lt.HoiViet + "\n\n";
 										}
 										else
 										{
@@ -435,8 +452,17 @@ namespace DACN_UD_Hoc_KHo_CTK37
 							{
 								if (lt.TraLoiKHo != null && lt.TraLoiViet != null)
 								{
+
 									rkqBaiHoc.Text += "\t- " + lt.HoiKHo + "\t\t+ " + lt.TraLoiKHo + "\n";
 									rkqBaiHoc.Text += "\t- " + lt.HoiViet + "\t\t+ " + lt.TraLoiViet + "\n\n";
+								}
+								else if (lt.TraLoiKHo != null && lt.TraLoiViet == null)
+								{
+									rkqBaiHoc.Text += "\t- " + lt.HoiKHo + "\n\n";
+								}
+								else if (lt.TraLoiKHo == null && lt.TraLoiViet != null)
+								{
+									rkqBaiHoc.Text += "\t- " + lt.HoiViet + "\n\n";
 								}
 								else
 								{
@@ -466,7 +492,8 @@ namespace DACN_UD_Hoc_KHo_CTK37
 									rkqBaiHoc.Text += "\t- " + lt.HoiViet + "\n\n";
 								}
 							}
-						}}
+						}
+					}
 					if (itemdmc.IDHinh > 0)
 					{
 						foreach (Hinh hi in HinhDao.Instance.LoadHinhs((int)itemdmc.IDHinh))
@@ -638,8 +665,17 @@ namespace DACN_UD_Hoc_KHo_CTK37
 								{
 									if (lt.TraLoiKHo != null && lt.TraLoiViet != null)
 									{
+
 										rkqBaiHoc.Text += "\t- " + lt.HoiKHo + "\t\t+ " + lt.TraLoiKHo + "\n";
 										rkqBaiHoc.Text += "\t- " + lt.HoiViet + "\t\t+ " + lt.TraLoiViet + "\n\n";
+									}
+									else if (lt.TraLoiKHo != null && lt.TraLoiViet == null)
+									{
+										rkqBaiHoc.Text += "\t- " + lt.HoiKHo + "\n\n";
+									}
+									else if (lt.TraLoiKHo == null && lt.TraLoiViet != null)
+									{
+										rkqBaiHoc.Text += "\t- " + lt.HoiViet + "\n\n";
 									}
 									else
 									{
@@ -784,15 +820,23 @@ namespace DACN_UD_Hoc_KHo_CTK37
 								{
 									if (lt.TraLoiKHo != null && lt.TraLoiViet != null)
 									{
+
 										rkqBaiHoc.Text += "\t- " + lt.HoiKHo + "\t\t+ " + lt.TraLoiKHo + "\n";
 										rkqBaiHoc.Text += "\t- " + lt.HoiViet + "\t\t+ " + lt.TraLoiViet + "\n\n";
+									}
+									else if (lt.TraLoiKHo != null && lt.TraLoiViet == null)
+									{
+										rkqBaiHoc.Text += "\t- " + lt.HoiKHo + "\n\n";
+									}
+									else if (lt.TraLoiKHo == null && lt.TraLoiViet != null)
+									{
+										rkqBaiHoc.Text += "\t- " + lt.HoiViet + "\n\n";
 									}
 									else
 									{
 										rkqBaiHoc.Text += "\t- " + lt.HoiKHo + "\n";
 										rkqBaiHoc.Text += "\t- " + lt.HoiViet + "\n\n";
-									}
-								}
+									}}
 								else if (lt.HoiKHo != null && lt.HoiViet == null)
 								{
 									if (lt.TraLoiKHo != null)
@@ -815,7 +859,8 @@ namespace DACN_UD_Hoc_KHo_CTK37
 										rkqBaiHoc.Text += "\t- " + lt.HoiViet + "\n\n";
 									}
 								}
-							}}
+							}
+						}
 						if (itemdmc.IDHinh > 0)
 						{
 							foreach (Hinh hi in HinhDao.Instance.LoadHinhs((int)itemdmc.IDHinh))
