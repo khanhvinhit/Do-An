@@ -12,6 +12,7 @@
     <AssemblyName>DACN_UD_Hoc_KHo_CTK37</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -24,7 +25,6 @@
     <MapFileExtensions>true</MapFileExtensions>
     <ApplicationRevision>0</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
@@ -285,6 +285,37 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\HocKHo.mdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Data\HocKHo_log.ldf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <DependentUpon>HocKHo.mdf</DependentUpon>
+    </Content>
+    <Content Include="App_Data\Images\1.jpg" />
+    <Content Include="App_Data\Images\10.jpg" />
+    <Content Include="App_Data\Images\11.jpg" />
+    <Content Include="App_Data\Images\12.jpg" />
+    <Content Include="App_Data\Images\13.jpg" />
+    <Content Include="App_Data\Images\14.jpg" />
+    <Content Include="App_Data\Images\16.jpg" />
+    <Content Include="App_Data\Images\20.jpg" />
+    <Content Include="App_Data\Images\21.jpg" />
+    <Content Include="App_Data\Images\25.jpg" />
+    <Content Include="App_Data\Images\27.jpg" />
+    <Content Include="App_Data\Images\29.jpg" />
+    <Content Include="App_Data\Images\3.jpg" />
+    <Content Include="App_Data\Images\30.jpg" />
+    <Content Include="App_Data\Images\33.jpg" />
+    <Content Include="App_Data\Images\35.jpg" />
+    <Content Include="App_Data\Images\37.jpg" />
+    <Content Include="App_Data\Images\39.jpg" />
+    <Content Include="App_Data\Images\4.jpg" />
+    <Content Include="App_Data\Images\5.jpg" />
+    <Content Include="App_Data\Images\6.jpg" />
+    <Content Include="App_Data\Images\7.jpg" />
+    <Content Include="App_Data\Images\8.jpg" />
+    <Content Include="App_Data\Images\9.jpg" />
     <Content Include="DTO\DATADBContext.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>DATADBContext.edmx</DependentUpon>
