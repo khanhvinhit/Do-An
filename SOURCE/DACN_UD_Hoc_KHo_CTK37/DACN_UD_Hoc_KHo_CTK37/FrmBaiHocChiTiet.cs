@@ -45,19 +45,26 @@ namespace DACN_UD_Hoc_KHo_CTK37
 						rkqBaiHoc.Text += j + ". " + item.TenKHo + " - " + item.TenViet + "\n";
 						foreach (DanhMucCon itemdmc in DanhMucConDao.Instance.DanhMucConLoad(item.ID))
 						{
-							rkqBaiHoc.Text += "\t* " + itemdmc.Ten + "\n";
+							rkqBaiHoc.Text += "\t* " + itemdmc.Ten + "\n\n";
 							if (itemdmc.BaiKhoas.Count >= 1)
 							{
 								foreach (BaiKhoa bk in BaiKhoaDao.Instance.LoadBaiKhoas(itemdmc.ID))
 								{
 									if (bk.NoiDung == null)
 									{
-										rkqBaiHoc.Text += "\t\t- " + bk.HoiKHo + "\t\t+ " + bk.TraLoiKHo + "\n";
-										rkqBaiHoc.Text += "\t\t- " + bk.HoiViet + "\t\t+ " + bk.TraLoiViet + "\n\n";
+										if (bk.HoiViet != null)
+										{
+											rkqBaiHoc.Text += "\t- " + bk.HoiKHo + "\t\t+ " + bk.TraLoiKHo + "\n";
+											rkqBaiHoc.Text += "\t- " + bk.HoiViet + "\t\t+ " + bk.TraLoiViet + "\n\n";
+										}
+										else
+										{
+											rkqBaiHoc.Text += "\t- " + bk.HoiKHo + "\t\t+ " + bk.TraLoiKHo + "\n";
+										}
 									}
 									else
 									{
-										rkqBaiHoc.Text += "\t\t" + bk.NoiDung + "\n\n";
+										rkqBaiHoc.Text += "\t" + bk.NoiDung + "\n\n";
 									}
 								}
 							}
@@ -72,29 +79,57 @@ namespace DACN_UD_Hoc_KHo_CTK37
 							{
 								foreach (DamThoai dt in DamThoaiDao.Instance.LoadDamThoais(itemdmc.ID))
 								{
-									rkqBaiHoc.Text += "\t\t- " + dt.CauHoiKHo + "\t\t+ " + dt.TraLoiKHo + "\n";
-									rkqBaiHoc.Text += "\t\t- " + dt.CauHoiViet + "\t\t+ " + dt.TraLoiViet + "\n\n";
+									if (dt.CauHoiViet != null)
+									{
+										rkqBaiHoc.Text += "\t- " + dt.CauHoiKHo + "\t\t+ " + dt.TraLoiKHo + "\n";
+										rkqBaiHoc.Text += "\t- " + dt.CauHoiViet + "\t\t+ " + dt.TraLoiViet + "\n\n";
+									}
+									else
+									{
+										rkqBaiHoc.Text += "\t- " + dt.CauHoiKHo + "\t\t+ " + dt.TraLoiKHo + "\n";
+									}
 								}
 							}
 							if (itemdmc.DichKHoViets.Count >= 1)
 							{
 								foreach (DichKHoViet kh in DichKHoVietDao.Instance.LoadDichKHoViets(itemdmc.ID))
 								{
-									rkqBaiHoc.Text += "\t\t- " + kh.KHo + "\t\t+ " + kh.Viet + "\n\n";
+									if (kh.Viet != null)
+									{
+										rkqBaiHoc.Text += "\t- " + kh.KHo + "\t\t+ " + kh.Viet + "\n\n";
+									}
+									else
+									{
+										rkqBaiHoc.Text += "\t- " + kh.KHo + "\n\n";
+									}
 								}
 							}
 							if (itemdmc.DichVietKHoes.Count >= 1)
 							{
 								foreach (DichVietKHo v in DichVietKHoDao.Instance.LoadDichVietKHos(itemdmc.ID))
 								{
-									rkqBaiHoc.Text += "\t\t- " + v.Viet + "\t\t+ " + v.KHo + "\n\n";
+									if (v.KHo != null)
+									{
+										rkqBaiHoc.Text += "\t- " + v.Viet + "\t\t+ " + v.KHo + "\n\n";
+									}
+									else
+									{
+										rkqBaiHoc.Text += "\t- " + v.Viet + "\n\n";
+									}
 								}
 							}
 							if (itemdmc.CauHois.Count >= 1)
 							{
 								foreach (CauHoi ch in CauHoiDao.Instance.LoadCauHois(itemdmc.ID))
 								{
-									rkqBaiHoc.Text += "\t\t- " + ch.Hoi + "\t\t+ " + ch.TraLoi + "\n\n";
+									if (ch.TraLoi!=null)
+									{
+										rkqBaiHoc.Text += "\t- " + ch.Hoi + "\t\t+ " + ch.TraLoi + "\n\n";
+									}
+									else
+									{
+										rkqBaiHoc.Text += "\t- " + ch.Hoi  + "\n\n";
+									}
 								}
 							}
 							if (itemdmc.LuyenTaps.Count >= 1)
@@ -103,19 +138,19 @@ namespace DACN_UD_Hoc_KHo_CTK37
 								{
 									if (lt.TraLoiKHo != null)
 									{
-										rkqBaiHoc.Text += "\t\t- " + lt.HoiKHo + "\t\t+ " + lt.TraLoiKHo + "\n";
+										rkqBaiHoc.Text += "\t- " + lt.HoiKHo + "\t\t+ " + lt.TraLoiKHo + "\n";
 									}
 									else
 									{
-										rkqBaiHoc.Text += "\t\t- " + lt.HoiKHo + "\n";
+										rkqBaiHoc.Text += "\t- " + lt.HoiKHo + "\n";
 									}
 									if (lt.TraLoiViet != null)
 									{
-										rkqBaiHoc.Text += "\t\t- " + lt.HoiViet + "\t\t+ " + lt.TraLoiViet + "\n\n";
+										rkqBaiHoc.Text += "\t- " + lt.HoiViet + "\t\t+ " + lt.TraLoiViet + "\n\n";
 									}
 									else
 									{
-										rkqBaiHoc.Text += "\t\t- " + lt.HoiViet + "\n\n";
+										rkqBaiHoc.Text += "\t- " + lt.HoiViet + "\n\n";
 									}
 								}
 							}
@@ -144,12 +179,20 @@ namespace DACN_UD_Hoc_KHo_CTK37
 								{
 									if (bk.NoiDung == null)
 									{
-										rkqBaiHoc.Text += "\t\t- " + bk.HoiKHo + "\t\t+ " + bk.TraLoiKHo + "\n";
-										rkqBaiHoc.Text += "\t\t- " + bk.HoiViet + "\t\t+ " + bk.TraLoiViet + "\n\n";
+										if (bk.HoiViet !=null)
+										{
+											rkqBaiHoc.Text += "\t- " + bk.HoiKHo + "\t\t+ " + bk.TraLoiKHo + "\n";
+											rkqBaiHoc.Text += "\t- " + bk.HoiViet + "\t\t+ " + bk.TraLoiViet + "\n\n";
+										}
+										else
+										{
+											rkqBaiHoc.Text += "\t- " + bk.HoiKHo + "\t\t+ " + bk.TraLoiKHo + "\n";
+										}
+										//
 									}
 									else
 									{
-										rkqBaiHoc.Text += "\t\t" + bk.NoiDung + "\n\n";
+										rkqBaiHoc.Text += "\t" + bk.NoiDung + "\n\n";
 									}
 								}
 							}
@@ -157,36 +200,64 @@ namespace DACN_UD_Hoc_KHo_CTK37
 							{
 								foreach (TuVung tv in TuVungDao.Instance.LoadTuVungs(itemdmc.ID))
 								{
-									rkqBaiHoc.Text += "\t\t" + tv.KHo + " : \t" + tv.Viet + "\n";
+									rkqBaiHoc.Text += "\t" + tv.KHo + " : \t" + tv.Viet + "\n";
 								}
 							}
 							if (itemdmc.DamThoais.Count >= 1)
 							{
 								foreach (DamThoai dt in DamThoaiDao.Instance.LoadDamThoais(itemdmc.ID))
 								{
-									rkqBaiHoc.Text += "\t\t- " + dt.CauHoiKHo + "\t\t+ " + dt.TraLoiKHo + "\n";
-									rkqBaiHoc.Text += "\t\t- " + dt.CauHoiViet + "\t\t+ " + dt.TraLoiViet + "\n\n";
+									if (dt.CauHoiViet!=null)
+									{
+										rkqBaiHoc.Text += "\t- " + dt.CauHoiKHo + "\t\t+ " + dt.TraLoiKHo + "\n";
+										rkqBaiHoc.Text += "\t- " + dt.CauHoiViet + "\t\t+ " + dt.TraLoiViet + "\n\n";
+									}
+									else
+									{
+										rkqBaiHoc.Text += "\t- " + dt.CauHoiKHo + "\t\t+ " + dt.TraLoiKHo + "\n";
+									}
 								}
 							}
 							if (itemdmc.DichKHoViets.Count >= 1)
 							{
 								foreach (DichKHoViet kh in DichKHoVietDao.Instance.LoadDichKHoViets(itemdmc.ID))
 								{
-									rkqBaiHoc.Text += "\t\t- " + kh.KHo + "\t\t+ " + kh.Viet + "\n\n";
+									if (kh.Viet!=null)
+									{
+										rkqBaiHoc.Text += "\t- " + kh.KHo + "\t\t+ " + kh.Viet + "\n\n";
+									}
+									else
+									{
+										rkqBaiHoc.Text += "\t- " + kh.KHo  + "\n\n";
+									}
 								}
 							}
 							if (itemdmc.DichVietKHoes.Count >= 1)
 							{
 								foreach (DichVietKHo v in DichVietKHoDao.Instance.LoadDichVietKHos(itemdmc.ID))
 								{
-									rkqBaiHoc.Text += "\t\t- " + v.Viet + "\t\t+ " + v.KHo + "\n\n";
+									if (v.KHo!=null)
+									{
+										rkqBaiHoc.Text += "\t- " + v.Viet + "\t\t+ " + v.KHo + "\n\n";
+									}
+									else
+									{
+										rkqBaiHoc.Text += "\t- " + v.Viet +"\n\n";
+									}
 								}
 							}
 							if (itemdmc.CauHois.Count >= 1)
 							{
 								foreach (CauHoi ch in CauHoiDao.Instance.LoadCauHois(itemdmc.ID))
 								{
-									rkqBaiHoc.Text += "\t\t- " + ch.Hoi + "\t\t+ " + ch.TraLoi + "\n\n";
+									if (ch.TraLoi!=null)
+									{
+										rkqBaiHoc.Text += "\t- " + ch.Hoi + "\t\t+ " + ch.TraLoi + "\n\n";
+									}
+									else
+									{
+										rkqBaiHoc.Text += "\t- " + ch.Hoi + "\n\n";
+									}
 								}
 							}
 							if (itemdmc.LuyenTaps.Count >= 1)
@@ -195,19 +266,19 @@ namespace DACN_UD_Hoc_KHo_CTK37
 								{
 									if (lt.TraLoiKHo != null)
 									{
-										rkqBaiHoc.Text += "\t\t- " + lt.HoiKHo + "\t\t+ " + lt.TraLoiKHo + "\n";
+										rkqBaiHoc.Text += "\t- " + lt.HoiKHo + "\t\t+ " + lt.TraLoiKHo + "\n";
 									}
 									else
 									{
-										rkqBaiHoc.Text += "\t\t- " + lt.HoiKHo + "\n";
+										rkqBaiHoc.Text += "\t- " + lt.HoiKHo + "\n";
 									}
 									if (lt.TraLoiViet != null)
 									{
-										rkqBaiHoc.Text += "\t\t- " + lt.HoiViet + "\t\t+ " + lt.TraLoiViet + "\n\n";
+										rkqBaiHoc.Text += "\t- " + lt.HoiViet + "\t\t+ " + lt.TraLoiViet + "\n\n";
 									}
 									else
 									{
-										rkqBaiHoc.Text += "\t\t- " + lt.HoiViet + "\n\n";
+										rkqBaiHoc.Text += "\t- " + lt.HoiViet + "\n\n";
 									}
 								}
 							}
@@ -237,8 +308,15 @@ namespace DACN_UD_Hoc_KHo_CTK37
 						{
 							if (bk.NoiDung == null)
 							{
-								rkqBaiHoc.Text += "\t- " + bk.HoiKHo + "\t\t+ " + bk.TraLoiKHo + "\n";
-								rkqBaiHoc.Text += "\t- " + bk.HoiViet + "\t\t+ " + bk.TraLoiViet + "\n\n";
+								if (bk.HoiViet !=null)
+								{
+									rkqBaiHoc.Text += "\t- " + bk.HoiKHo + "\t\t+ " + bk.TraLoiKHo + "\n";
+									rkqBaiHoc.Text += "\t- " + bk.HoiViet + "\t\t+ " + bk.TraLoiViet + "\n\n";
+								}
+								else
+								{
+									rkqBaiHoc.Text += "\t- " + bk.HoiKHo + "\t\t+ " + bk.TraLoiKHo + "\n\n";
+								}
 							}
 							else
 							{
@@ -257,29 +335,57 @@ namespace DACN_UD_Hoc_KHo_CTK37
 					{
 						foreach (DamThoai dt in DamThoaiDao.Instance.LoadDamThoais(itemdmc.ID))
 						{
-							rkqBaiHoc.Text += "\t- " + dt.CauHoiKHo + "\t\t+ " + dt.TraLoiKHo + "\n";
-							rkqBaiHoc.Text += "\t- " + dt.CauHoiViet + "\t\t+ " + dt.TraLoiViet + "\n\n";
+							if (dt.CauHoiViet!=null)
+							{
+								rkqBaiHoc.Text += "\t- " + dt.CauHoiKHo + "\t\t+ " + dt.TraLoiKHo + "\n";
+								rkqBaiHoc.Text += "\t- " + dt.CauHoiViet + "\t\t+ " + dt.TraLoiViet + "\n\n";
+							}
+							else
+							{
+								rkqBaiHoc.Text += "\t- " + dt.CauHoiKHo + "\t\t+ " + dt.TraLoiKHo + "\n\n";
+							}
 						}
 					}
 					if (itemdmc.DichKHoViets.Count >= 1)
 					{
 						foreach (DichKHoViet kh in DichKHoVietDao.Instance.LoadDichKHoViets(itemdmc.ID))
 						{
-							rkqBaiHoc.Text += "\t- " + kh.KHo + "\t\t+ " + kh.Viet + "\n\n";
+							if (kh.Viet!=null)
+							{
+								rkqBaiHoc.Text += "\t- " + kh.KHo + "\t\t+ " + kh.Viet + "\n\n";
+							}
+							else
+							{
+								rkqBaiHoc.Text += "\t- " + kh.KHo + "\n\n";
+							}
 						}
 					}
 					if (itemdmc.DichVietKHoes.Count >= 1)
 					{
 						foreach (DichVietKHo v in DichVietKHoDao.Instance.LoadDichVietKHos(itemdmc.ID))
 						{
-							rkqBaiHoc.Text += "\t- " + v.Viet + "\t\t+ " + v.KHo + "\n\n";
+							if (v.KHo!=null)
+							{
+								rkqBaiHoc.Text += "\t- " + v.Viet + "\t\t+ " + v.KHo + "\n\n";
+							}
+							else
+							{
+								rkqBaiHoc.Text += "\t- " + v.Viet + "\n\n";
+							}
 						}
 					}
 					if (itemdmc.CauHois.Count >= 1)
 					{
 						foreach (CauHoi ch in CauHoiDao.Instance.LoadCauHois(itemdmc.ID))
 						{
-							rkqBaiHoc.Text += "\t\t- " + ch.Hoi + "\t\t+ " + ch.TraLoi + "\n\n";
+							if (ch.TraLoi!=null)
+							{
+								rkqBaiHoc.Text += "\t\t- " + ch.Hoi + "\t\t+ " + ch.TraLoi + "\n\n";
+							}
+							else
+							{
+								rkqBaiHoc.Text += "\t\t- " + ch.Hoi  + "\n\n";
+							}
 						}
 					}
 					if (itemdmc.LuyenTaps.Count >= 1)
@@ -385,12 +491,19 @@ namespace DACN_UD_Hoc_KHo_CTK37
 							{
 								if (bk.NoiDung == null)
 								{
-									rkqBaiHoc.Text += "\t\t- " + bk.HoiKHo + "\t\t+ " + bk.TraLoiKHo + "\n";
-									rkqBaiHoc.Text += "\t\t- " + bk.HoiViet + "\t\t+ " + bk.TraLoiViet + "\n\n";
+									if (bk.HoiViet!=null)
+									{
+										rkqBaiHoc.Text += "\t- " + bk.HoiKHo + "\t\t+ " + bk.TraLoiKHo + "\n";
+										rkqBaiHoc.Text += "\t- " + bk.HoiViet + "\t\t+ " + bk.TraLoiViet + "\n\n";
+									}
+									else
+									{
+										rkqBaiHoc.Text += "\t- " + bk.HoiKHo + "\t\t+ " + bk.TraLoiKHo + "\n\n";
+									}
 								}
 								else
 								{
-									rkqBaiHoc.Text += "\t\t" + bk.NoiDung + "\n\n";
+									rkqBaiHoc.Text += "\t" + bk.NoiDung + "\n\n";
 								}
 							}
 						}
@@ -398,22 +511,23 @@ namespace DACN_UD_Hoc_KHo_CTK37
 						{
 							foreach (TuVung tv in TuVungDao.Instance.LoadTuVungs(itemdmc.ID))
 							{
-								rkqBaiHoc.Text += "\t\t" + tv.KHo + " : \t" + tv.Viet + "\n";
+								rkqBaiHoc.Text += "\t" + tv.KHo + " : \t" + tv.Viet + "\n";
 							}
 						}
 						if (itemdmc.DamThoais.Count >= 1)
 						{
 							foreach (DamThoai dt in DamThoaiDao.Instance.LoadDamThoais(itemdmc.ID))
 							{
-								rkqBaiHoc.Text += "\t\t- " + dt.CauHoiKHo + "\t\t+ " + dt.TraLoiKHo + "\n";
-								rkqBaiHoc.Text += "\t\t- " + dt.CauHoiViet + "\t\t+ " + dt.TraLoiViet + "\n\n";
+								rkqBaiHoc.Text += "\t- " + dt.CauHoiKHo + "\t\t+ " + dt.TraLoiKHo + "\n";
+								rkqBaiHoc.Text += "\t- " + dt.CauHoiViet + "\t\t+ " + dt.TraLoiViet + "\n\n";
 							}
 						}
+						//Tới đây
 						if (itemdmc.DichKHoViets.Count >= 1)
 						{
 							foreach (DichKHoViet kh in DichKHoVietDao.Instance.LoadDichKHoViets(itemdmc.ID))
 							{
-								rkqBaiHoc.Text += "\t\t- " + kh.KHo + "\t\t+ " + kh.Viet + "\n\n";
+								rkqBaiHoc.Text += "\t- " + kh.KHo + "\t\t+ " + kh.Viet + "\n\n";
 							}
 						}
 						if (itemdmc.DichVietKHoes.Count >= 1)
