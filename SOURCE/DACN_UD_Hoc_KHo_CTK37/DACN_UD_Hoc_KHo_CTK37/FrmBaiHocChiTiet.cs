@@ -419,11 +419,11 @@ namespace DACN_UD_Hoc_KHo_CTK37
 						{
 							if (ch.TraLoi != null)
 							{
-								rkqBaiHoc.Text += "\t\t- " + ch.Hoi + "\t\t+ " + ch.TraLoi + "\n\n";
+								rkqBaiHoc.Text += "\t- " + ch.Hoi + "\t\t+ " + ch.TraLoi + "\n\n";
 							}
 							else
 							{
-								rkqBaiHoc.Text += "\t\t- " + ch.Hoi + "\n\n";
+								rkqBaiHoc.Text += "\t- " + ch.Hoi + "\n\n";
 							}
 						}
 					}
@@ -708,7 +708,7 @@ namespace DACN_UD_Hoc_KHo_CTK37
 								}
 								else
 								{
-									rkqBaiHoc.Text += "\t\t" + bk.NoiDung + "\n\n";
+									rkqBaiHoc.Text += "\t" + bk.NoiDung + "\n\n";
 								}
 							}
 						}
