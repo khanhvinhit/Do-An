@@ -36,6 +36,12 @@ namespace DACN_UD_Hoc_KHo_CTK37.DAO
 			return list;
 		}
 
+		public int BaiHocCounts()
+		{
+			int i = _db.BaiHocs.Count();
+			return i;
+		}
+
 		public List<BaiHoc> LoadNguPhap()
 		{
 			List<BaiHoc> list = _db.BaiHocs.Where(x => x.TenViet.Contains("NGỮ PHÁP") || x.TenViet.Contains("Ngữ Pháp")).ToList();

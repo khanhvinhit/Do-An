@@ -62,9 +62,9 @@ namespace DACN_UD_Hoc_KHo_CTK37
 			this.labelControl2.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.labelControl2.Location = new System.Drawing.Point(363, 39);
 			this.labelControl2.Name = "labelControl2";
-			this.labelControl2.Size = new System.Drawing.Size(324, 19);
+			this.labelControl2.Size = new System.Drawing.Size(231, 19);
 			this.labelControl2.TabIndex = 0;
-			this.labelControl2.Text = "XÂY DỰNG ỨNG DỤNG HỌC TIẾNG K\'HO";
+			this.labelControl2.Text = "ỨNG DỤNG HỌC TIẾNG K\'HO";
 			// 
 			// labelControl6
 			// 

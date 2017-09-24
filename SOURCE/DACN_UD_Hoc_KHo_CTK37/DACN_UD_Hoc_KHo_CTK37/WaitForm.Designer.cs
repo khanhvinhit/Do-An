@@ -42,14 +42,14 @@ namespace DACN_UD_Hoc_KHo_CTK37
 			// marqueeProgressBarControl1
 			// 
 			this.marqueeProgressBarControl1.EditValue = 0;
-			this.marqueeProgressBarControl1.Location = new System.Drawing.Point(23, 231);
+			this.marqueeProgressBarControl1.Location = new System.Drawing.Point(12, 231);
 			this.marqueeProgressBarControl1.Name = "marqueeProgressBarControl1";
-			this.marqueeProgressBarControl1.Size = new System.Drawing.Size(404, 12);
+			this.marqueeProgressBarControl1.Size = new System.Drawing.Size(426, 12);
 			this.marqueeProgressBarControl1.TabIndex = 5;
 			// 
 			// labelControl2
 			// 
-			this.labelControl2.Location = new System.Drawing.Point(23, 206);
+			this.labelControl2.Location = new System.Drawing.Point(12, 212);
 			this.labelControl2.Name = "labelControl2";
 			this.labelControl2.Size = new System.Drawing.Size(88, 13);
 			this.labelControl2.TabIndex = 7;

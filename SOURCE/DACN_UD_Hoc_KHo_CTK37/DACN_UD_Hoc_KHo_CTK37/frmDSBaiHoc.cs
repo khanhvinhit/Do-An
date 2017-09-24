@@ -25,7 +25,7 @@ namespace DACN_UD_Hoc_KHo_CTK37
 			{
 				i++;
 				SimpleButton btn = new SimpleButton() { Width = 200, Height = 60 };
-				btn.Text = "Bài " + i + ": " + item.TenKHo + "\n" + item.TenViet;
+				btn.Text = "Bài " + i + ": \n" + item.TenKHo + "\n" + item.TenViet;
 				btn.Click += btn_Click;
 				btn.Tag = item;
 				btn.Font = new Font("TNKeyUni-Arial", 8F, FontStyle.Bold);
