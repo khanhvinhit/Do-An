@@ -6,6 +6,7 @@ using DACN_UD_Hoc_KHo_CTK37.DAO;
 using DACN_UD_Hoc_KHo_CTK37.DTO;
 using DevExpress.XtraEditors;
 using System.IO;
+using System.Linq;
 
 namespace DACN_UD_Hoc_KHo_CTK37
 {
@@ -855,7 +856,8 @@ namespace DACN_UD_Hoc_KHo_CTK37
 									{
 										rkqBaiHoc.Text += "\t- " + lt.HoiKHo + "\n";
 										rkqBaiHoc.Text += "\t- " + lt.HoiViet + "\n";
-									}}
+									}
+								}
 								else if (lt.HoiKHo != null && lt.HoiViet == null)
 								{
 									if (lt.TraLoiKHo != null)
@@ -944,7 +946,22 @@ namespace DACN_UD_Hoc_KHo_CTK37
 		{
 			LoadBaiHoc(_iDBaiHoc);
 		}
+		private void btnDictionary_Click(object sender, EventArgs e)
+		{
+			frmDictionary f = Application.OpenForms.OfType<frmDictionary>().FirstOrDefault();
+			if (f != null)
+			{
+				MessageBox.Show("Bạn đã mở tử điển!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+			}
+			else
+			{
+				f = new frmDictionary();
+				f.Show();
+			}
+		}
 		#endregion
+
+
 
 
 	}

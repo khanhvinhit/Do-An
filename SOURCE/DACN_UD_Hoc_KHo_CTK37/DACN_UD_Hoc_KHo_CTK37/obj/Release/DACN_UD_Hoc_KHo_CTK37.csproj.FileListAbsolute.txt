@@ -94,3 +94,5 @@ D:\GITHUB\DoAn\SOURCE\DACN_UD_Hoc_KHo_CTK37\DACN_UD_Hoc_KHo_CTK37\bin\Release\es
 D:\GITHUB\DoAn\SOURCE\DACN_UD_Hoc_KHo_CTK37\DACN_UD_Hoc_KHo_CTK37\bin\Release\ja\DevExpress.XtraRichEdit.v14.1.resources.dll
 D:\GITHUB\DoAn\SOURCE\DACN_UD_Hoc_KHo_CTK37\DACN_UD_Hoc_KHo_CTK37\bin\Release\ru\DevExpress.XtraRichEdit.v14.1.resources.dll
 D:\GITHUB\DoAn\SOURCE\DACN_UD_Hoc_KHo_CTK37\DACN_UD_Hoc_KHo_CTK37\obj\Release\DACN_UD_Hoc_KHo_CTK37.csprojResolveAssemblyReference.cache
+D:\GITHUB\DoAn\SOURCE\DACN_UD_Hoc_KHo_CTK37\DACN_UD_Hoc_KHo_CTK37\obj\Release\DACN_UD_Hoc_KHo_CTK37.frmDictionary.resources
+D:\GITHUB\DoAn\SOURCE\DACN_UD_Hoc_KHo_CTK37\DACN_UD_Hoc_KHo_CTK37\obj\Release\DACN_UD_Hoc_KHo_CTK37.frmExercise.resources

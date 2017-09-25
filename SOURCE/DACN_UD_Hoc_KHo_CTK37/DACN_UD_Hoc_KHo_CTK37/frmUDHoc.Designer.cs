@@ -46,6 +46,7 @@ namespace DACN_UD_Hoc_KHo_CTK37
 			this.ribbonPage2 = new DevExpress.XtraBars.Ribbon.RibbonPage();
 			this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
 			this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+			this.btnDictionary = new DevExpress.XtraBars.BarButtonItem();
 			((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
 			this.SuspendLayout();
 			// 
@@ -59,10 +60,11 @@ namespace DACN_UD_Hoc_KHo_CTK37
             this.skinRibbonGalleryBarItem1,
             this.btnExit,
             this.btnInfo,
-            this.btnHelper});
+            this.btnHelper,
+            this.btnDictionary});
 			this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
 			this.ribbonControl1.Margin = new System.Windows.Forms.Padding(4);
-			this.ribbonControl1.MaxItemId = 4;
+			this.ribbonControl1.MaxItemId = 5;
 			this.ribbonControl1.Name = "ribbonControl1";
 			this.ribbonControl1.PageHeaderItemLinks.Add(this.skinRibbonGalleryBarItem1);
 			this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
@@ -134,6 +136,7 @@ namespace DACN_UD_Hoc_KHo_CTK37
 			// 
 			this.ribbonPageGroup1.ItemLinks.Add(this.btnLesson);
 			this.ribbonPageGroup1.ItemLinks.Add(this.btnGammar);
+			this.ribbonPageGroup1.ItemLinks.Add(this.btnDictionary);
 			this.ribbonPageGroup1.ItemLinks.Add(this.btnExit);
 			this.ribbonPageGroup1.Name = "ribbonPageGroup1";
 			this.ribbonPageGroup1.Text = "Chức năng chương trình";
@@ -158,6 +161,14 @@ namespace DACN_UD_Hoc_KHo_CTK37
 			this.ribbonPageGroup3.ItemLinks.Add(this.btnHelper);
 			this.ribbonPageGroup3.Name = "ribbonPageGroup3";
 			this.ribbonPageGroup3.Text = "Hướng dẫn";
+			// 
+			// btnDictionary
+			// 
+			this.btnDictionary.Caption = "Từ điển";
+			this.btnDictionary.Glyph = ((System.Drawing.Image)(resources.GetObject("btnDictionary.Glyph")));
+			this.btnDictionary.Id = 4;
+			this.btnDictionary.Name = "btnDictionary";
+			this.btnDictionary.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnDictionary_ItemClick);
 			// 
 			// FrmUdHoc
 			// 
@@ -199,5 +210,6 @@ namespace DACN_UD_Hoc_KHo_CTK37
 		private RibbonPage ribbonPage2;
 		private RibbonPageGroup ribbonPageGroup2;
 		private RibbonPageGroup ribbonPageGroup3;
+		private BarButtonItem btnDictionary;
 	}
 }

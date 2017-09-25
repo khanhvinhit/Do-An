@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Drawing;
+using System.Linq;
 using DACN_UD_Hoc_KHo_CTK37.DAO;
 using DACN_UD_Hoc_KHo_CTK37.DTO;
 using DevExpress.XtraEditors;
 using DevExpress.XtraEditors.Controls;
+using System.Windows.Forms;
 
 namespace DACN_UD_Hoc_KHo_CTK37
 {
@@ -38,6 +40,11 @@ namespace DACN_UD_Hoc_KHo_CTK37
 
 		void btn_Click(object sender, EventArgs e)
 		{
+			frmDictionary frm = Application.OpenForms.OfType<frmDictionary>().FirstOrDefault();
+			if (frm != null)
+			{
+				frm.Close();
+			}
 			SimpleButton simpleButton = sender as SimpleButton;
 			if (simpleButton != null)
 			{

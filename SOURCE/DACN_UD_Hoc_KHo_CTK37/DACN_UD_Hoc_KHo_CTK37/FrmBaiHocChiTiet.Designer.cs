@@ -52,6 +52,7 @@ namespace DACN_UD_Hoc_KHo_CTK37
 			this.lbViet = new DevExpress.XtraEditors.LabelControl();
 			this.lbTenBai = new DevExpress.XtraEditors.LabelControl();
 			this.splitterControl1 = new DevExpress.XtraEditors.SplitterControl();
+			this.btnDictionary = new DevExpress.XtraEditors.SimpleButton();
 			((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
 			this.panelControl1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).BeginInit();
@@ -142,6 +143,7 @@ namespace DACN_UD_Hoc_KHo_CTK37
 			this.pnBaiHoc.Appearance.BackColor = System.Drawing.Color.White;
 			this.pnBaiHoc.Appearance.Options.UseBackColor = true;
 			this.pnBaiHoc.Controls.Add(this.picBox);
+			this.pnBaiHoc.Controls.Add(this.btnDictionary);
 			this.pnBaiHoc.Controls.Add(this.btnRefresh);
 			this.pnBaiHoc.Controls.Add(this.btnBack);
 			this.pnBaiHoc.Controls.Add(this.btnClose);
@@ -299,6 +301,19 @@ namespace DACN_UD_Hoc_KHo_CTK37
 			this.splitterControl1.TabIndex = 0;
 			this.splitterControl1.TabStop = false;
 			// 
+			// btnDictionary
+			// 
+			this.btnDictionary.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+			this.btnDictionary.Appearance.Font = new System.Drawing.Font("TNKeyUni-Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btnDictionary.Appearance.Options.UseFont = true;
+			this.btnDictionary.Image = ((System.Drawing.Image)(resources.GetObject("btnDictionary.Image")));
+			this.btnDictionary.Location = new System.Drawing.Point(377, 5);
+			this.btnDictionary.Name = "btnDictionary";
+			this.btnDictionary.Size = new System.Drawing.Size(103, 31);
+			this.btnDictionary.TabIndex = 1;
+			this.btnDictionary.Text = "Từ điển";
+			this.btnDictionary.Click += new System.EventHandler(this.btnDictionary_Click);
+			// 
 			// FrmBaiHocChiTiet
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -349,5 +364,6 @@ namespace DACN_UD_Hoc_KHo_CTK37
 		private SimpleButton btnRefresh;
 		private System.Windows.Forms.PictureBox picBox;
 		private LabelControl lbName;
+		private SimpleButton btnDictionary;
 	}
 }

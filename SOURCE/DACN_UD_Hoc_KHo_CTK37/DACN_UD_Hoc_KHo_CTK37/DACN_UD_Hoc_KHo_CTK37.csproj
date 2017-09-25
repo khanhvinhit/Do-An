@@ -202,6 +202,12 @@
     <Compile Include="FrmBaiHocChiTiet.Designer.cs">
       <DependentUpon>FrmBaiHocChiTiet.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmDictionary.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDictionary.Designer.cs">
+      <DependentUpon>frmDictionary.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmDSBaiHoc.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -213,6 +219,12 @@
     </Compile>
     <Compile Include="FrmDsGrammar.Designer.cs">
       <DependentUpon>FrmDsGrammar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmExercise.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmExercise.Designer.cs">
+      <DependentUpon>frmExercise.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmHelper.cs">
       <SubType>Form</SubType>
@@ -249,11 +261,17 @@
     <EmbeddedResource Include="FrmBaiHocChiTiet.resx">
       <DependentUpon>FrmBaiHocChiTiet.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmDictionary.resx">
+      <DependentUpon>frmDictionary.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmDSBaiHoc.resx">
       <DependentUpon>frmDSBaiHoc.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmDsGrammar.resx">
       <DependentUpon>FrmDsGrammar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmExercise.resx">
+      <DependentUpon>frmExercise.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmHelper.resx">
       <DependentUpon>FrmHelper.cs</DependentUpon>

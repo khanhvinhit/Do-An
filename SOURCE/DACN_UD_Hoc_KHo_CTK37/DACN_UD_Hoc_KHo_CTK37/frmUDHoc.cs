@@ -1,4 +1,5 @@
-﻿using System.Windows.Forms;
+﻿using System.Linq;
+using System.Windows.Forms;
 using DevExpress.XtraBars;
 using DevExpress.XtraBars.Ribbon;
 
@@ -135,7 +136,23 @@ namespace DACN_UD_Hoc_KHo_CTK37
 				ActiveChildForm("FrmInfo");
 			}
 		}
+
+		private void btnDictionary_ItemClick(object sender, ItemClickEventArgs e)
+		{
+			frmDictionary f = Application.OpenForms.OfType<frmDictionary>().FirstOrDefault();
+			if (f != null)
+			{
+				MessageBox.Show("Bạn đã mở tử điển!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+			}
+			else
+			{
+				f = new frmDictionary();
+				f.Show();
+			}
+		}
 		#endregion
+
+		
 
 		
 
