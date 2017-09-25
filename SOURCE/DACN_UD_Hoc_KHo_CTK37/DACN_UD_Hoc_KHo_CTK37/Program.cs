@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
+using DevExpress.UserSkins;
+using DevExpress.Skins;
 using DevExpress.LookAndFeel;
 
 namespace DACN_UD_Hoc_KHo_CTK37
@@ -14,6 +16,9 @@ namespace DACN_UD_Hoc_KHo_CTK37
 		{
 			Application.EnableVisualStyles();
 			Application.SetCompatibleTextRenderingDefault(false);
+
+			BonusSkins.Register();
+			SkinManager.EnableFormSkins();
 			UserLookAndFeel.Default.SetSkinStyle("DevExpress Style");//
 			Application.Run(new FrmUdHoc());
 		}

@@ -41,6 +41,7 @@ namespace DACN_UD_Hoc_KHo_CTK37
 			this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
 			this.pnBaiHoc = new DevExpress.XtraEditors.PanelControl();
 			this.picBox = new System.Windows.Forms.PictureBox();
+			this.btnDictionary = new DevExpress.XtraEditors.SimpleButton();
 			this.btnRefresh = new DevExpress.XtraEditors.SimpleButton();
 			this.btnBack = new DevExpress.XtraEditors.SimpleButton();
 			this.btnClose = new DevExpress.XtraEditors.SimpleButton();
@@ -51,8 +52,6 @@ namespace DACN_UD_Hoc_KHo_CTK37
 			this.rkqBaiHoc = new DevExpress.XtraRichEdit.RichEditControl();
 			this.lbViet = new DevExpress.XtraEditors.LabelControl();
 			this.lbTenBai = new DevExpress.XtraEditors.LabelControl();
-			this.splitterControl1 = new DevExpress.XtraEditors.SplitterControl();
-			this.btnDictionary = new DevExpress.XtraEditors.SimpleButton();
 			((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
 			this.panelControl1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).BeginInit();
@@ -85,7 +84,6 @@ namespace DACN_UD_Hoc_KHo_CTK37
 			this.splitContainerControl1.Panel1.Text = "Panel1";
 			this.splitContainerControl1.Panel2.AutoScroll = true;
 			this.splitContainerControl1.Panel2.Controls.Add(this.pnBaiHoc);
-			this.splitContainerControl1.Panel2.Controls.Add(this.splitterControl1);
 			this.splitContainerControl1.Panel2.Text = "Panel2";
 			this.splitContainerControl1.Size = new System.Drawing.Size(1110, 439);
 			this.splitContainerControl1.SplitterPosition = 208;
@@ -154,9 +152,9 @@ namespace DACN_UD_Hoc_KHo_CTK37
 			this.pnBaiHoc.Controls.Add(this.rkqBaiHoc);
 			this.pnBaiHoc.Controls.Add(this.lbViet);
 			this.pnBaiHoc.Controls.Add(this.lbTenBai);
-			this.pnBaiHoc.Location = new System.Drawing.Point(11, 4);
+			this.pnBaiHoc.Location = new System.Drawing.Point(0, 4);
 			this.pnBaiHoc.Name = "pnBaiHoc";
-			this.pnBaiHoc.Size = new System.Drawing.Size(879, 432);
+			this.pnBaiHoc.Size = new System.Drawing.Size(890, 432);
 			this.pnBaiHoc.TabIndex = 1;
 			// 
 			// picBox
@@ -165,12 +163,25 @@ namespace DACN_UD_Hoc_KHo_CTK37
             | System.Windows.Forms.AnchorStyles.Right)));
 			this.picBox.BackColor = System.Drawing.Color.Transparent;
 			this.picBox.Cursor = System.Windows.Forms.Cursors.Default;
-			this.picBox.Location = new System.Drawing.Point(540, 56);
+			this.picBox.Location = new System.Drawing.Point(551, 56);
 			this.picBox.Name = "picBox";
 			this.picBox.Size = new System.Drawing.Size(334, 296);
 			this.picBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
 			this.picBox.TabIndex = 5;
 			this.picBox.TabStop = false;
+			// 
+			// btnDictionary
+			// 
+			this.btnDictionary.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+			this.btnDictionary.Appearance.Font = new System.Drawing.Font("TNKeyUni-Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btnDictionary.Appearance.Options.UseFont = true;
+			this.btnDictionary.Image = ((System.Drawing.Image)(resources.GetObject("btnDictionary.Image")));
+			this.btnDictionary.Location = new System.Drawing.Point(388, 5);
+			this.btnDictionary.Name = "btnDictionary";
+			this.btnDictionary.Size = new System.Drawing.Size(103, 31);
+			this.btnDictionary.TabIndex = 1;
+			this.btnDictionary.Text = "Từ điển";
+			this.btnDictionary.Click += new System.EventHandler(this.btnDictionary_Click);
 			// 
 			// btnRefresh
 			// 
@@ -178,7 +189,7 @@ namespace DACN_UD_Hoc_KHo_CTK37
 			this.btnRefresh.Appearance.Font = new System.Drawing.Font("TNKeyUni-Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.btnRefresh.Appearance.Options.UseFont = true;
 			this.btnRefresh.Image = ((System.Drawing.Image)(resources.GetObject("btnRefresh.Image")));
-			this.btnRefresh.Location = new System.Drawing.Point(486, 5);
+			this.btnRefresh.Location = new System.Drawing.Point(497, 5);
 			this.btnRefresh.Name = "btnRefresh";
 			this.btnRefresh.Size = new System.Drawing.Size(103, 31);
 			this.btnRefresh.TabIndex = 1;
@@ -191,7 +202,7 @@ namespace DACN_UD_Hoc_KHo_CTK37
 			this.btnBack.Appearance.Font = new System.Drawing.Font("TNKeyUni-Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.btnBack.Appearance.Options.UseFont = true;
 			this.btnBack.Image = ((System.Drawing.Image)(resources.GetObject("btnBack.Image")));
-			this.btnBack.Location = new System.Drawing.Point(595, 5);
+			this.btnBack.Location = new System.Drawing.Point(606, 5);
 			this.btnBack.Name = "btnBack";
 			this.btnBack.Size = new System.Drawing.Size(103, 31);
 			this.btnBack.TabIndex = 1;
@@ -204,7 +215,7 @@ namespace DACN_UD_Hoc_KHo_CTK37
 			this.btnClose.Appearance.Font = new System.Drawing.Font("TNKeyUni-Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.btnClose.Appearance.Options.UseFont = true;
 			this.btnClose.Image = ((System.Drawing.Image)(resources.GetObject("btnClose.Image")));
-			this.btnClose.Location = new System.Drawing.Point(799, 5);
+			this.btnClose.Location = new System.Drawing.Point(810, 5);
 			this.btnClose.Name = "btnClose";
 			this.btnClose.Size = new System.Drawing.Size(75, 31);
 			this.btnClose.TabIndex = 1;
@@ -217,7 +228,7 @@ namespace DACN_UD_Hoc_KHo_CTK37
 			this.btnNext.Appearance.Font = new System.Drawing.Font("TNKeyUni-Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.btnNext.Appearance.Options.UseFont = true;
 			this.btnNext.Image = ((System.Drawing.Image)(resources.GetObject("btnNext.Image")));
-			this.btnNext.Location = new System.Drawing.Point(704, 5);
+			this.btnNext.Location = new System.Drawing.Point(715, 5);
 			this.btnNext.Name = "btnNext";
 			this.btnNext.Size = new System.Drawing.Size(89, 31);
 			this.btnNext.TabIndex = 1;
@@ -238,7 +249,7 @@ namespace DACN_UD_Hoc_KHo_CTK37
 			// 
 			this.lbName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
 			this.lbName.Appearance.Font = new System.Drawing.Font("TNKeyUni-Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.lbName.Location = new System.Drawing.Point(629, 358);
+			this.lbName.Location = new System.Drawing.Point(640, 358);
 			this.lbName.Name = "lbName";
 			this.lbName.Size = new System.Drawing.Size(31, 17);
 			this.lbName.TabIndex = 4;
@@ -268,7 +279,7 @@ namespace DACN_UD_Hoc_KHo_CTK37
 			this.rkqBaiHoc.Options.Fields.UseCurrentCultureDateTimeFormat = false;
 			this.rkqBaiHoc.Options.MailMerge.KeepLastParagraph = false;
 			this.rkqBaiHoc.ReadOnly = true;
-			this.rkqBaiHoc.Size = new System.Drawing.Size(528, 319);
+			this.rkqBaiHoc.Size = new System.Drawing.Size(539, 319);
 			this.rkqBaiHoc.TabIndex = 0;
 			// 
 			// lbViet
@@ -292,27 +303,6 @@ namespace DACN_UD_Hoc_KHo_CTK37
 			this.lbTenBai.Size = new System.Drawing.Size(25, 17);
 			this.lbTenBai.TabIndex = 0;
 			this.lbTenBai.Text = "Bài";
-			// 
-			// splitterControl1
-			// 
-			this.splitterControl1.Location = new System.Drawing.Point(0, 0);
-			this.splitterControl1.Name = "splitterControl1";
-			this.splitterControl1.Size = new System.Drawing.Size(5, 439);
-			this.splitterControl1.TabIndex = 0;
-			this.splitterControl1.TabStop = false;
-			// 
-			// btnDictionary
-			// 
-			this.btnDictionary.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-			this.btnDictionary.Appearance.Font = new System.Drawing.Font("TNKeyUni-Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.btnDictionary.Appearance.Options.UseFont = true;
-			this.btnDictionary.Image = ((System.Drawing.Image)(resources.GetObject("btnDictionary.Image")));
-			this.btnDictionary.Location = new System.Drawing.Point(377, 5);
-			this.btnDictionary.Name = "btnDictionary";
-			this.btnDictionary.Size = new System.Drawing.Size(103, 31);
-			this.btnDictionary.TabIndex = 1;
-			this.btnDictionary.Text = "Từ điển";
-			this.btnDictionary.Click += new System.EventHandler(this.btnDictionary_Click);
 			// 
 			// FrmBaiHocChiTiet
 			// 
@@ -347,7 +337,6 @@ namespace DACN_UD_Hoc_KHo_CTK37
 
 		private PanelControl panelControl1;
 		private SplitContainerControl splitContainerControl1;
-		private SplitterControl splitterControl1;
 		private LabelControl labelControl1;
 		private LabelControl lbTenBai;
 		private LabelControl lbViet;

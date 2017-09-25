@@ -23,20 +23,20 @@ namespace DACN_UD_Hoc_KHo_CTK37
 		#region MEnthod
 		void DataForm()
 		{
-			lbTuVung.Items.Clear();
+			lbcTuVung.Items.Clear();
 			foreach (var item in TuVungDao.Instance.LoadTuVungDic())
 			{
-				lbTuVung.Items.Add(item.KHo);
+				lbcTuVung.Items.Add(item.KHo);
 			}
 		}
 		#endregion
 		#region action
-		private void lbTuVung_Click(object sender, EventArgs e)
+		private void lbcTuVung_Click(object sender, EventArgs e)
 		{
 			recNghia.ResetText();
 			recNghia.Font = new Font("TNKeyUni-Arial", 11F);
 			recNghia.Text = "";
-			string tukhoa = lbTuVung.SelectedItem.ToString();
+			string tukhoa = lbcTuVung.SelectedItem.ToString();
 			string name = tukhoa;
 			foreach (var item in TuVungDao.Instance.LoadTuVungByKHo(name))
 			{
@@ -50,7 +50,7 @@ namespace DACN_UD_Hoc_KHo_CTK37
 					{
 						recNghia.Text += item.KHo + ": " + item.Viet + "\n";
 					}
-					
+
 				}
 			}
 		}
@@ -86,6 +86,8 @@ namespace DACN_UD_Hoc_KHo_CTK37
 			}
 
 		}
+
+		
 		
 	}
 

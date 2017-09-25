@@ -37,16 +37,16 @@ namespace DACN_UD_Hoc_KHo_CTK37
 			this.ribbonControl1 = new DevExpress.XtraBars.Ribbon.RibbonControl();
 			this.btnLesson = new DevExpress.XtraBars.BarButtonItem();
 			this.btnGammar = new DevExpress.XtraBars.BarButtonItem();
-			this.skinRibbonGalleryBarItem1 = new DevExpress.XtraBars.SkinRibbonGalleryBarItem();
+			this.rbSkin = new DevExpress.XtraBars.SkinRibbonGalleryBarItem();
 			this.btnExit = new DevExpress.XtraBars.BarButtonItem();
 			this.btnInfo = new DevExpress.XtraBars.BarButtonItem();
 			this.btnHelper = new DevExpress.XtraBars.BarButtonItem();
+			this.btnDictionary = new DevExpress.XtraBars.BarButtonItem();
 			this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
 			this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
 			this.ribbonPage2 = new DevExpress.XtraBars.Ribbon.RibbonPage();
 			this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
 			this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-			this.btnDictionary = new DevExpress.XtraBars.BarButtonItem();
 			((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
 			this.SuspendLayout();
 			// 
@@ -57,16 +57,16 @@ namespace DACN_UD_Hoc_KHo_CTK37
             this.ribbonControl1.ExpandCollapseItem,
             this.btnLesson,
             this.btnGammar,
-            this.skinRibbonGalleryBarItem1,
+            this.rbSkin,
             this.btnExit,
             this.btnInfo,
             this.btnHelper,
             this.btnDictionary});
 			this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
 			this.ribbonControl1.Margin = new System.Windows.Forms.Padding(4);
-			this.ribbonControl1.MaxItemId = 5;
+			this.ribbonControl1.MaxItemId = 1;
 			this.ribbonControl1.Name = "ribbonControl1";
-			this.ribbonControl1.PageHeaderItemLinks.Add(this.skinRibbonGalleryBarItem1);
+			this.ribbonControl1.PageHeaderItemLinks.Add(this.rbSkin);
 			this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1,
             this.ribbonPage2});
@@ -91,11 +91,11 @@ namespace DACN_UD_Hoc_KHo_CTK37
 			this.btnGammar.Name = "btnGammar";
 			this.btnGammar.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnGammar_ItemClick);
 			// 
-			// skinRibbonGalleryBarItem1
+			// rbSkin
 			// 
-			this.skinRibbonGalleryBarItem1.Caption = "Giao diện";
-			this.skinRibbonGalleryBarItem1.Id = 5;
-			this.skinRibbonGalleryBarItem1.Name = "skinRibbonGalleryBarItem1";
+			this.rbSkin.Caption = "Giao diện";
+			this.rbSkin.Id = 5;
+			this.rbSkin.Name = "rbSkin";
 			// 
 			// btnExit
 			// 
@@ -123,6 +123,14 @@ namespace DACN_UD_Hoc_KHo_CTK37
 			this.btnHelper.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("btnHelper.LargeGlyph")));
 			this.btnHelper.Name = "btnHelper";
 			this.btnHelper.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnHelper_ItemClick);
+			// 
+			// btnDictionary
+			// 
+			this.btnDictionary.Caption = "Từ điển";
+			this.btnDictionary.Glyph = ((System.Drawing.Image)(resources.GetObject("btnDictionary.Glyph")));
+			this.btnDictionary.Id = 4;
+			this.btnDictionary.Name = "btnDictionary";
+			this.btnDictionary.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnDictionary_ItemClick);
 			// 
 			// ribbonPage1
 			// 
@@ -162,14 +170,6 @@ namespace DACN_UD_Hoc_KHo_CTK37
 			this.ribbonPageGroup3.Name = "ribbonPageGroup3";
 			this.ribbonPageGroup3.Text = "Hướng dẫn";
 			// 
-			// btnDictionary
-			// 
-			this.btnDictionary.Caption = "Từ điển";
-			this.btnDictionary.Glyph = ((System.Drawing.Image)(resources.GetObject("btnDictionary.Glyph")));
-			this.btnDictionary.Id = 4;
-			this.btnDictionary.Name = "btnDictionary";
-			this.btnDictionary.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnDictionary_ItemClick);
-			// 
 			// FrmUdHoc
 			// 
 			this.Appearance.Options.UseFont = true;
@@ -203,7 +203,7 @@ namespace DACN_UD_Hoc_KHo_CTK37
 		private RibbonPageGroup ribbonPageGroup1;
 		private BarButtonItem btnLesson;
 		private BarButtonItem btnGammar;
-		private SkinRibbonGalleryBarItem skinRibbonGalleryBarItem1;
+		private SkinRibbonGalleryBarItem rbSkin;
 		private BarButtonItem btnExit;
 		private BarButtonItem btnInfo;
 		private BarButtonItem btnHelper;

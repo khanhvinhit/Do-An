@@ -1,6 +1,7 @@
 ﻿using System.Linq;
 using System.Windows.Forms;
 using DevExpress.XtraBars;
+using DevExpress.XtraBars.Helpers;
 using DevExpress.XtraBars.Ribbon;
 
 namespace DACN_UD_Hoc_KHo_CTK37
@@ -10,11 +11,15 @@ namespace DACN_UD_Hoc_KHo_CTK37
 		public FrmUdHoc()
 		{
 			InitializeComponent();
+			InitSkinGallery();
 			LoadBaiHoc();
 		}
 
 		#region Method
-
+		private void InitSkinGallery()
+		{
+			SkinHelper.InitSkinGallery(rbSkin, true);
+		}
 		void LoadBaiHoc()
 		{
 

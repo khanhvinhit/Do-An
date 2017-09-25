@@ -33,8 +33,7 @@
 			this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
 			this.groupBox2 = new System.Windows.Forms.GroupBox();
 			this.splitContainerControl1 = new DevExpress.XtraEditors.SplitContainerControl();
-			this.lbTuVung = new System.Windows.Forms.ListBox();
-			this.splitterControl1 = new DevExpress.XtraEditors.SplitterControl();
+			this.lbcTuVung = new DevExpress.XtraEditors.ListBoxControl();
 			this.recNghia = new DevExpress.XtraRichEdit.RichEditControl();
 			this.groupBox1 = new System.Windows.Forms.GroupBox();
 			this.btnDic = new DevExpress.XtraEditors.SimpleButton();
@@ -45,6 +44,7 @@
 			this.groupBox2.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).BeginInit();
 			this.splitContainerControl1.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.lbcTuVung)).BeginInit();
 			this.groupBox1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.txtDic.Properties)).BeginInit();
 			this.SuspendLayout();
@@ -56,7 +56,7 @@
 			this.panelControl1.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.panelControl1.Location = new System.Drawing.Point(0, 0);
 			this.panelControl1.Name = "panelControl1";
-			this.panelControl1.Size = new System.Drawing.Size(563, 226);
+			this.panelControl1.Size = new System.Drawing.Size(563, 222);
 			this.panelControl1.TabIndex = 0;
 			// 
 			// groupBox2
@@ -73,9 +73,8 @@
 			// 
 			this.splitContainerControl1.Location = new System.Drawing.Point(7, 21);
 			this.splitContainerControl1.Name = "splitContainerControl1";
-			this.splitContainerControl1.Panel1.Controls.Add(this.lbTuVung);
+			this.splitContainerControl1.Panel1.Controls.Add(this.lbcTuVung);
 			this.splitContainerControl1.Panel1.Text = "Panel1";
-			this.splitContainerControl1.Panel2.Controls.Add(this.splitterControl1);
 			this.splitContainerControl1.Panel2.Controls.Add(this.recNghia);
 			this.splitContainerControl1.Panel2.Text = "Panel2";
 			this.splitContainerControl1.Size = new System.Drawing.Size(538, 132);
@@ -83,27 +82,18 @@
 			this.splitContainerControl1.TabIndex = 0;
 			this.splitContainerControl1.Text = "splitContainerControl1";
 			// 
-			// lbTuVung
+			// lbcTuVung
 			// 
-			this.lbTuVung.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+			this.lbcTuVung.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-			this.lbTuVung.Font = new System.Drawing.Font("TNKeyUni-Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.lbTuVung.FormattingEnabled = true;
-			this.lbTuVung.ItemHeight = 15;
-			this.lbTuVung.Location = new System.Drawing.Point(4, 4);
-			this.lbTuVung.Name = "lbTuVung";
-			this.lbTuVung.Size = new System.Drawing.Size(183, 124);
-			this.lbTuVung.TabIndex = 0;
-			this.lbTuVung.Click += new System.EventHandler(this.lbTuVung_Click);
-			// 
-			// splitterControl1
-			// 
-			this.splitterControl1.Location = new System.Drawing.Point(0, 0);
-			this.splitterControl1.Name = "splitterControl1";
-			this.splitterControl1.Size = new System.Drawing.Size(5, 132);
-			this.splitterControl1.TabIndex = 2;
-			this.splitterControl1.TabStop = false;
+			this.lbcTuVung.Appearance.Font = new System.Drawing.Font("TNKeyUni-Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.lbcTuVung.Appearance.Options.UseFont = true;
+			this.lbcTuVung.Location = new System.Drawing.Point(4, 4);
+			this.lbcTuVung.Name = "lbcTuVung";
+			this.lbcTuVung.Size = new System.Drawing.Size(183, 125);
+			this.lbcTuVung.TabIndex = 0;
+			this.lbcTuVung.Click += new System.EventHandler(this.lbcTuVung_Click);
 			// 
 			// recNghia
 			// 
@@ -112,12 +102,13 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
 			this.recNghia.EnableToolTips = true;
-			this.recNghia.Location = new System.Drawing.Point(12, 4);
+			this.recNghia.Location = new System.Drawing.Point(0, 4);
 			this.recNghia.Name = "recNghia";
 			this.recNghia.Options.CopyPaste.MaintainDocumentSectionSettings = false;
 			this.recNghia.Options.Fields.UseCurrentCultureDateTimeFormat = false;
 			this.recNghia.Options.MailMerge.KeepLastParagraph = false;
-			this.recNghia.Size = new System.Drawing.Size(330, 121);
+			this.recNghia.ReadOnly = true;
+			this.recNghia.Size = new System.Drawing.Size(342, 121);
 			this.recNghia.TabIndex = 1;
 			// 
 			// groupBox1
@@ -162,7 +153,7 @@
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(563, 226);
+			this.ClientSize = new System.Drawing.Size(563, 222);
 			this.Controls.Add(this.panelControl1);
 			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
 			this.MaximizeBox = false;
@@ -175,6 +166,7 @@
 			this.groupBox2.ResumeLayout(false);
 			((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).EndInit();
 			this.splitContainerControl1.ResumeLayout(false);
+			((System.ComponentModel.ISupportInitialize)(this.lbcTuVung)).EndInit();
 			this.groupBox1.ResumeLayout(false);
 			this.groupBox1.PerformLayout();
 			((System.ComponentModel.ISupportInitialize)(this.txtDic.Properties)).EndInit();
@@ -191,8 +183,7 @@
 		private DevExpress.XtraEditors.LabelControl labelControl1;
 		private DevExpress.XtraEditors.TextEdit txtDic;
 		private DevExpress.XtraEditors.SplitContainerControl splitContainerControl1;
-		private System.Windows.Forms.ListBox lbTuVung;
 		private DevExpress.XtraRichEdit.RichEditControl recNghia;
-		private DevExpress.XtraEditors.SplitterControl splitterControl1;
+		private DevExpress.XtraEditors.ListBoxControl lbcTuVung;
 	}
 }
