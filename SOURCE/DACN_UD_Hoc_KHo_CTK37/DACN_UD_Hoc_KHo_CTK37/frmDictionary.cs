@@ -86,15 +86,7 @@ namespace DACN_UD_Hoc_KHo_CTK37
 			}
 
 		}
-
-		private void frmDictionary_FormClosing(object sender, FormClosingEventArgs e)
-		{
-			if (MessageBox.Show("Bạn có muốn đóng từ điển không?", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) != DialogResult.OK)
-			{
-				e.Cancel = true;
-			}
-		}
-
+		
 	}
 
 

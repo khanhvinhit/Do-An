@@ -170,7 +170,6 @@
 			this.Name = "frmDictionary";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "Từ điển";
-			this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmDictionary_FormClosing);
 			((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
 			this.panelControl1.ResumeLayout(false);
 			this.groupBox2.ResumeLayout(false);
