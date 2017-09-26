@@ -20,6 +20,7 @@ namespace DACN_UD_Hoc_KHo_CTK37
 
 		void LoadGrammar()
 		{
+			flpGrammar.Enabled = false;
 			flpGrammar.Controls.Clear();
 			int i = 0;
 			foreach (BaiHoc item in BaiHocDao.Instance.LoadNguPhap())
@@ -32,11 +33,12 @@ namespace DACN_UD_Hoc_KHo_CTK37
 				btn.Font = new Font("TNKeyUni-Arial", 8F, FontStyle.Bold);
 				//btn.Image = ((Image)(resources.GetObject("SimpleButton1.Image")));
 				btn.ImageLocation = ImageLocation.MiddleLeft;
-				btn.Location = new Point(81, 61);
+				btn.Location = new Point(85, 61);
 
 				flpGrammar.Controls.Add(btn);
 			}
-
+			flpGrammar.Enabled = true;
+			animator.Show(flpGrammar);
 		}
 
 

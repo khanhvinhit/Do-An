@@ -34,12 +34,12 @@ namespace DACN_UD_Hoc_KHo_CTK37
 		{
 			this.components = new System.ComponentModel.Container();
 			DevExpress.XtraSplashScreen.SplashScreenManager splashScreenManager1 = new DevExpress.XtraSplashScreen.SplashScreenManager(this, typeof(global::DACN_UD_Hoc_KHo_CTK37.WaitForm), true, true);
-			AnimatorNS.Animation animation2 = new AnimatorNS.Animation();
+			AnimatorNS.Animation animation1 = new AnimatorNS.Animation();
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmDsBaiHoc));
 			this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
 			this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
 			this.flpBaiHoc = new System.Windows.Forms.FlowLayoutPanel();
-			this.animator1 = new AnimatorNS.Animator(this.components);
+			this.animator = new AnimatorNS.Animator(this.components);
 			((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
 			this.panelControl1.SuspendLayout();
 			this.SuspendLayout();
@@ -55,7 +55,7 @@ namespace DACN_UD_Hoc_KHo_CTK37
 			this.panelControl1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
 			this.panelControl1.Controls.Add(this.labelControl1);
 			this.panelControl1.Controls.Add(this.flpBaiHoc);
-			this.animator1.SetDecoration(this.panelControl1, AnimatorNS.DecorationType.None);
+			this.animator.SetDecoration(this.panelControl1, AnimatorNS.DecorationType.None);
 			this.panelControl1.Location = new System.Drawing.Point(0, 1);
 			this.panelControl1.LookAndFeel.SkinName = "Glass Oceans";
 			this.panelControl1.Name = "panelControl1";
@@ -65,7 +65,7 @@ namespace DACN_UD_Hoc_KHo_CTK37
 			// labelControl1
 			// 
 			this.labelControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.animator1.SetDecoration(this.labelControl1, AnimatorNS.DecorationType.BottomMirror);
+			this.animator.SetDecoration(this.labelControl1, AnimatorNS.DecorationType.BottomMirror);
 			this.labelControl1.Location = new System.Drawing.Point(595, 5);
 			this.labelControl1.Name = "labelControl1";
 			this.labelControl1.Size = new System.Drawing.Size(177, 19);
@@ -78,32 +78,32 @@ namespace DACN_UD_Hoc_KHo_CTK37
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
 			this.flpBaiHoc.AutoScroll = true;
-			this.animator1.SetDecoration(this.flpBaiHoc, AnimatorNS.DecorationType.None);
+			this.animator.SetDecoration(this.flpBaiHoc, AnimatorNS.DecorationType.None);
 			this.flpBaiHoc.Location = new System.Drawing.Point(48, 43);
 			this.flpBaiHoc.Name = "flpBaiHoc";
 			this.flpBaiHoc.Size = new System.Drawing.Size(848, 415);
 			this.flpBaiHoc.TabIndex = 0;
 			// 
-			// animator1
+			// animator
 			// 
-			this.animator1.AnimationType = AnimatorNS.AnimationType.VertSlide;
-			this.animator1.Cursor = null;
-			animation2.AnimateOnlyDifferences = true;
-			animation2.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.BlindCoeff")));
-			animation2.LeafCoeff = 0F;
-			animation2.MaxTime = 1F;
-			animation2.MinTime = 0F;
-			animation2.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.MosaicCoeff")));
-			animation2.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation2.MosaicShift")));
-			animation2.MosaicSize = 0;
-			animation2.Padding = new System.Windows.Forms.Padding(0);
-			animation2.RotateCoeff = 0F;
-			animation2.RotateLimit = 0F;
-			animation2.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.ScaleCoeff")));
-			animation2.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.SlideCoeff")));
-			animation2.TimeCoeff = 0F;
-			animation2.TransparencyCoeff = 0F;
-			this.animator1.DefaultAnimation = animation2;
+			this.animator.AnimationType = AnimatorNS.AnimationType.Transparent;
+			this.animator.Cursor = null;
+			animation1.AnimateOnlyDifferences = true;
+			animation1.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.BlindCoeff")));
+			animation1.LeafCoeff = 0F;
+			animation1.MaxTime = 1F;
+			animation1.MinTime = 0F;
+			animation1.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicCoeff")));
+			animation1.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicShift")));
+			animation1.MosaicSize = 0;
+			animation1.Padding = new System.Windows.Forms.Padding(0, 0, 0, 0);
+			animation1.RotateCoeff = 0F;
+			animation1.RotateLimit = 0F;
+			animation1.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.ScaleCoeff")));
+			animation1.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.SlideCoeff")));
+			animation1.TimeCoeff = 0F;
+			animation1.TransparencyCoeff = 1F;
+			this.animator.DefaultAnimation = animation1;
 			// 
 			// FrmDsBaiHoc
 			// 
@@ -112,7 +112,7 @@ namespace DACN_UD_Hoc_KHo_CTK37
 			this.ClientSize = new System.Drawing.Size(934, 469);
 			this.ControlBox = false;
 			this.Controls.Add(this.panelControl1);
-			this.animator1.SetDecoration(this, AnimatorNS.DecorationType.None);
+			this.animator.SetDecoration(this, AnimatorNS.DecorationType.None);
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
 			this.MaximizeBox = false;
 			this.MinimizeBox = false;
@@ -134,7 +134,7 @@ namespace DACN_UD_Hoc_KHo_CTK37
 		private PanelControl panelControl1;
 		private FlowLayoutPanel flpBaiHoc;
         private LabelControl labelControl1;
-		private AnimatorNS.Animator animator1;
+		private AnimatorNS.Animator animator;
 
 	}
 }
