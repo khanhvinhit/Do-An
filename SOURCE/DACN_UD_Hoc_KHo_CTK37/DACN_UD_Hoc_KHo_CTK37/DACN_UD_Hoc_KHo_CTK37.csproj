@@ -196,84 +196,93 @@
     <Compile Include="DTO\TuVung.cs">
       <DependentUpon>DATADBContext.tt</DependentUpon>
     </Compile>
-    <Compile Include="FrmBaiHocChiTiet.cs">
+    <Compile Include="FrmExercise.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmBaiHocChiTiet.Designer.cs">
+    <Compile Include="FrmExercise.Designer.cs">
+      <DependentUpon>FrmExercise.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\FrmBaiHocChiTiet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\FrmBaiHocChiTiet.Designer.cs">
       <DependentUpon>FrmBaiHocChiTiet.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmDictionary.cs">
+    <Compile Include="GUI\frmDictionary.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmDictionary.Designer.cs">
+    <Compile Include="GUI\frmDictionary.Designer.cs">
       <DependentUpon>frmDictionary.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmDSBaiHoc.cs">
+    <Compile Include="GUI\frmDSBaiHoc.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmDSBaiHoc.Designer.cs">
+    <Compile Include="GUI\frmDSBaiHoc.Designer.cs">
       <DependentUpon>frmDSBaiHoc.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmDsGrammar.cs">
+    <Compile Include="GUI\FrmDsGrammar.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmDsGrammar.Designer.cs">
+    <Compile Include="GUI\FrmDsGrammar.Designer.cs">
       <DependentUpon>FrmDsGrammar.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmHelper.cs">
+    <Compile Include="GUI\FrmHelper.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmHelper.Designer.cs">
+    <Compile Include="GUI\FrmHelper.Designer.cs">
       <DependentUpon>FrmHelper.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmInfo.cs">
+    <Compile Include="GUI\FrmInfo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmInfo.Designer.cs">
+    <Compile Include="GUI\FrmInfo.Designer.cs">
       <DependentUpon>FrmInfo.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmUDHoc.cs">
+    <Compile Include="GUI\frmUDHoc.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmUDHoc.Designer.cs">
+    <Compile Include="GUI\frmUDHoc.Designer.cs">
       <DependentUpon>frmUDHoc.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmWecome.cs">
+    <Compile Include="GUI\FrmWecome.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmWecome.Designer.cs">
+    <Compile Include="GUI\FrmWecome.Designer.cs">
       <DependentUpon>FrmWecome.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="WaitForm.cs">
+    <Compile Include="GUI\WaitForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="WaitForm.Designer.cs">
+    <Compile Include="GUI\WaitForm.Designer.cs">
       <DependentUpon>WaitForm.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="FrmBaiHocChiTiet.resx">
+    <EmbeddedResource Include="FrmExercise.resx">
+      <DependentUpon>FrmExercise.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\FrmBaiHocChiTiet.resx">
       <DependentUpon>FrmBaiHocChiTiet.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmDictionary.resx">
+    <EmbeddedResource Include="GUI\frmDictionary.resx">
       <DependentUpon>frmDictionary.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmDSBaiHoc.resx">
+    <EmbeddedResource Include="GUI\frmDSBaiHoc.resx">
       <DependentUpon>frmDSBaiHoc.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmDsGrammar.resx">
+    <EmbeddedResource Include="GUI\FrmDsGrammar.resx">
       <DependentUpon>FrmDsGrammar.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmHelper.resx">
+    <EmbeddedResource Include="GUI\FrmHelper.resx">
       <DependentUpon>FrmHelper.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmInfo.resx">
+    <EmbeddedResource Include="GUI\FrmInfo.resx">
       <DependentUpon>FrmInfo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmUDHoc.resx">
+    <EmbeddedResource Include="GUI\frmUDHoc.resx">
       <DependentUpon>frmUDHoc.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmWecome.resx">
+    <EmbeddedResource Include="GUI\FrmWecome.resx">
       <DependentUpon>FrmWecome.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
@@ -287,7 +296,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="WaitForm.resx">
+    <EmbeddedResource Include="GUI\WaitForm.resx">
       <DependentUpon>WaitForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="App.Config" />
