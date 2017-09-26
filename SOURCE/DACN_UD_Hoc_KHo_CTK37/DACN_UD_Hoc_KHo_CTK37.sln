@@ -5,6 +5,8 @@ VisualStudioVersion = 12.0.40629.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DACN_UD_Hoc_KHo_CTK37", "DACN_UD_Hoc_KHo_CTK37\DACN_UD_Hoc_KHo_CTK37.csproj", "{CAB5EDB9-9B9B-489C-B720-A0D0111E511D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Animator", "Animator\Animator.csproj", "{97FE1093-38D3-4EEC-A602-340F792C9D25}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{CAB5EDB9-9B9B-489C-B720-A0D0111E511D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CAB5EDB9-9B9B-489C-B720-A0D0111E511D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CAB5EDB9-9B9B-489C-B720-A0D0111E511D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{97FE1093-38D3-4EEC-A602-340F792C9D25}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{97FE1093-38D3-4EEC-A602-340F792C9D25}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{97FE1093-38D3-4EEC-A602-340F792C9D25}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{97FE1093-38D3-4EEC-A602-340F792C9D25}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
