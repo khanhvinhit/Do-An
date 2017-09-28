@@ -20,25 +20,34 @@ namespace DACN_UD_Hoc_KHo_CTK37
 
 		void LoadGrammar()
 		{
-			flpGrammar.Enabled = false;
-			flpGrammar.Controls.Clear();
-			int i = 0;
-			foreach (BaiHoc item in BaiHocDao.Instance.LoadNguPhap())
+			try
 			{
-				i++;
-				SimpleButton btn = new SimpleButton() { Width = 200, Height = 60};
-                btn.Text = "Bài: " + i + "\n" + item.TenViet;
-				btn.Click += btn_Click;
-				btn.Tag = item;
-				btn.Font = new Font("TNKeyUni-Arial", 8F, FontStyle.Bold);
-				//btn.Image = ((Image)(resources.GetObject("SimpleButton1.Image")));
-				btn.ImageLocation = ImageLocation.MiddleLeft;
-				btn.Location = new Point(85, 61);
+				flpGrammar.Enabled = false;
+				flpGrammar.Controls.Clear();
+				int i = 0;
+				foreach (BaiHoc item in BaiHocDao.Instance.LoadNguPhap())
+				{
+					i++;
+					SimpleButton btn = new SimpleButton() { Width = 200, Height = 60 };
+					btn.Text = "Bài: " + i + "\n" + item.TenViet;
+					btn.Click += btn_Click;
+					btn.Tag = item;
+					btn.Font = new Font("TNKeyUni-Arial", 8F, FontStyle.Bold);
+					System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmDsBaiHoc));
+					btn.Image = ((Image)(resources.GetObject("btn.Glyph")));
+					btn.ImageLocation = ImageLocation.MiddleLeft;
+					btn.Location = new Point(85, 61);
 
-				flpGrammar.Controls.Add(btn);
+					flpGrammar.Controls.Add(btn);
+				}
+				flpGrammar.Enabled = true;
+				animator.Show(flpGrammar);
 			}
-			flpGrammar.Enabled = true;
-			animator.Show(flpGrammar);
+			catch (Exception)
+			{
+				MessageBox.Show("Không thể kết nối dữ liệu.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+			}
+
 		}
 
 

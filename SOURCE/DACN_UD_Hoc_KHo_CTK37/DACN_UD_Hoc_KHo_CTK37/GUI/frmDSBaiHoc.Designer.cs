@@ -79,9 +79,9 @@ namespace DACN_UD_Hoc_KHo_CTK37
             | System.Windows.Forms.AnchorStyles.Right)));
 			this.flpBaiHoc.AutoScroll = true;
 			this.animator.SetDecoration(this.flpBaiHoc, AnimatorNS.DecorationType.None);
-			this.flpBaiHoc.Location = new System.Drawing.Point(48, 43);
+			this.flpBaiHoc.Location = new System.Drawing.Point(48, 46);
 			this.flpBaiHoc.Name = "flpBaiHoc";
-			this.flpBaiHoc.Size = new System.Drawing.Size(848, 415);
+			this.flpBaiHoc.Size = new System.Drawing.Size(848, 412);
 			this.flpBaiHoc.TabIndex = 0;
 			// 
 			// animator
@@ -96,7 +96,7 @@ namespace DACN_UD_Hoc_KHo_CTK37
 			animation1.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicCoeff")));
 			animation1.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicShift")));
 			animation1.MosaicSize = 0;
-			animation1.Padding = new System.Windows.Forms.Padding(0, 0, 0, 0);
+			animation1.Padding = new System.Windows.Forms.Padding(0);
 			animation1.RotateCoeff = 0F;
 			animation1.RotateLimit = 0F;
 			animation1.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.ScaleCoeff")));
