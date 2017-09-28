@@ -1056,13 +1056,21 @@ namespace DACN_UD_Hoc_KHo_CTK37
 			string subStringItem = tukhoa.Substring(str.Length + 2);
 			foreach (var dm in DanhMucDao.Instance.DanhMucLoad(_iDBaiHoc))
 			{
-				foreach (var dmc in DanhMucConDao.Instance.DanhMucConLoad(dm.ID))
+				if (dm.TenKHo != null && dm.TenKHo == subStringItem)
 				{
-					if (dmc.Ten == subStringItem)
+					id = dm.ID;
+				}
+				else
+				{
+					foreach (var dmc in DanhMucConDao.Instance.DanhMucConLoad(dm.ID))
 					{
-						id = dmc.ID;
+						if (dmc.Ten == subStringItem)
+						{
+							id = dmc.ID;
+						}
 					}
 				}
+
 			}
 			LoadDanhMucTheoTen(subStringItem, id);
 		}
