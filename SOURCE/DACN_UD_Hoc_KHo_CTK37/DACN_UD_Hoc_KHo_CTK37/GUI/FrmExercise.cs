@@ -45,7 +45,7 @@ namespace DACN_UD_Hoc_KHo_CTK37
 				else
 				{
 					txtCauHoi.Text = "Câu " + stt + ": " + ch.Hoi;
-					txtTraLoi.Text = "";
+					txtTraLoi.Text = "Cập nhập";
 				}
 			}
 			if (stt == 1)
@@ -144,11 +144,19 @@ namespace DACN_UD_Hoc_KHo_CTK37
 
 		private void btnSave_Click(object sender, EventArgs e)
 		{
-			string cauTL = txtTraLoi.Text;
-			CauHoiDao.Instance.UpdateCauHoi(idBT, cauTL);
-			Close();
+			try
+			{
+				string cauTL = txtTraLoi.Text;
+				CauHoiDao.Instance.UpdateCauHoi(idBT, cauTL);
+				Close();
+			}
+			catch (Exception)
+			{
+				Close();
+			}
+
 		}
 		#endregion
-		
+
 	}
 }
