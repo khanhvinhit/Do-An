@@ -1011,7 +1011,7 @@ namespace DACN_UD_Hoc_KHo_CTK37
 
 		private void FrmBaiHocChiTiet_FormClosing(object sender, FormClosingEventArgs e)
 		{
-			if (MessageBox.Show("Bạn có muốn đóng bài học không?", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) != DialogResult.OK)
+			if (XtraMessageBox.Show("Bạn có muốn đóng bài học không?", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) != DialogResult.OK)
 			{
 				e.Cancel = true;
 			}
@@ -1088,7 +1088,7 @@ namespace DACN_UD_Hoc_KHo_CTK37
 			frmDictionary f = Application.OpenForms.OfType<frmDictionary>().FirstOrDefault();
 			if (f != null)
 			{
-				MessageBox.Show("Bạn đã mở tử điển!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+				XtraMessageBox.Show("Bạn đã mở tử điển!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 			}
 			else
 			{
@@ -1101,7 +1101,7 @@ namespace DACN_UD_Hoc_KHo_CTK37
 			FrmExercise f = Application.OpenForms.OfType<FrmExercise>().FirstOrDefault();
 			if (f != null)
 			{
-				MessageBox.Show("Bạn đã mở bài tập!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+				XtraMessageBox.Show("Bạn đã mở bài tập!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 			}
 			else
 			{
