@@ -285,6 +285,11 @@ namespace DACN_UD_Hoc_KHo_CTK37
 			this.rkqBaiHoc.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+			this.rkqBaiHoc.Appearance.Text.BackColor = System.Drawing.Color.Transparent;
+			this.rkqBaiHoc.Appearance.Text.BackColor2 = System.Drawing.Color.Transparent;
+			this.rkqBaiHoc.Appearance.Text.BorderColor = System.Drawing.Color.Transparent;
+			this.rkqBaiHoc.Appearance.Text.Options.UseBackColor = true;
+			this.rkqBaiHoc.Appearance.Text.Options.UseBorderColor = true;
 			this.rkqBaiHoc.EnableToolTips = true;
 			this.rkqBaiHoc.Location = new System.Drawing.Point(6, 56);
 			this.rkqBaiHoc.Name = "rkqBaiHoc";
