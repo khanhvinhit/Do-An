@@ -161,8 +161,7 @@ namespace DACN_UD_Hoc_KHo_CTK37
 			// 
 			// picBox
 			// 
-			this.picBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+			this.picBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
 			this.picBox.BackColor = System.Drawing.Color.Transparent;
 			this.picBox.Cursor = System.Windows.Forms.Cursors.Default;
 			this.picBox.Location = new System.Drawing.Point(532, 56);
@@ -262,7 +261,7 @@ namespace DACN_UD_Hoc_KHo_CTK37
 			// 
 			// lbName
 			// 
-			this.lbName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+			this.lbName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
 			this.lbName.Appearance.Font = new System.Drawing.Font("TNKeyUni-Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.lbName.Location = new System.Drawing.Point(532, 358);
 			this.lbName.Name = "lbName";
