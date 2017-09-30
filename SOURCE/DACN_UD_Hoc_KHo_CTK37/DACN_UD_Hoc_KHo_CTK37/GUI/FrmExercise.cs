@@ -46,7 +46,7 @@ namespace DACN_UD_Hoc_KHo_CTK37
 				{
 					txtCauHoi.Text = "Câu " + stt + ": " + ch.Hoi;
 					txtTraLoi.ForeColor = Color.LightGray;
-					txtTraLoi.Text = "Nhập câu trả lời!";
+					//txtTraLoi.Text = "Nhập câu trả lời!";
 					this.txtTraLoi.Leave += new System.EventHandler(this.txtTraLoi_Leave);
 					this.txtTraLoi.Enter += new System.EventHandler(this.txtTraLoi_Enter);
 				}
@@ -132,7 +132,10 @@ namespace DACN_UD_Hoc_KHo_CTK37
 		private void btnNext_Click(object sender, EventArgs e)
 		{
 			string cauTL = txtTraLoi.Text;
-			CauHoiDao.Instance.UpdateCauHoi(idBT, cauTL);
+			if (cauTL != "Nhập câu trả lời!" && cauTL != "")
+			{
+				CauHoiDao.Instance.UpdateCauHoi(idBT, cauTL);
+			}
 			if (stt < soBT)
 			{
 				stt++;
@@ -166,7 +169,10 @@ namespace DACN_UD_Hoc_KHo_CTK37
 			try
 			{
 				string cauTL = txtTraLoi.Text;
-				CauHoiDao.Instance.UpdateCauHoi(idBT, cauTL);
+				if (cauTL != "Nhập câu trả lời!" && cauTL != "")
+				{
+					CauHoiDao.Instance.UpdateCauHoi(idBT, cauTL);
+				}
 				Close();
 			}
 			catch (Exception)

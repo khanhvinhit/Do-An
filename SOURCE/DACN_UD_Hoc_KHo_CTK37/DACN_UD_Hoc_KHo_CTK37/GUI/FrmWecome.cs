@@ -12,7 +12,7 @@ namespace DACN_UD_Hoc_KHo_CTK37
 			InitializeComponent();
 			picE.Image = null;
 			animator.Hide(picE);
-			Load();
+			LoadBT();
 		}
 
 		private void ShowImg()
@@ -25,7 +25,7 @@ namespace DACN_UD_Hoc_KHo_CTK37
 			//picE.Enabled = true;
 		}
 
-		private void Load()
+		private void LoadBT()
 		{
 			ShowImg();
 			picE.Enabled = true;

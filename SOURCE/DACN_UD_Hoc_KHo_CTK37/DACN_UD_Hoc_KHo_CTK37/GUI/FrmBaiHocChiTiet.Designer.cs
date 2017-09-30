@@ -262,9 +262,9 @@ namespace DACN_UD_Hoc_KHo_CTK37
 			// 
 			// lbName
 			// 
-			this.lbName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+			this.lbName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
 			this.lbName.Appearance.Font = new System.Drawing.Font("TNKeyUni-Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.lbName.Location = new System.Drawing.Point(621, 358);
+			this.lbName.Location = new System.Drawing.Point(532, 358);
 			this.lbName.Name = "lbName";
 			this.lbName.Size = new System.Drawing.Size(31, 17);
 			this.lbName.TabIndex = 4;
