@@ -288,7 +288,6 @@ namespace DACN_UD_Hoc_KHo_CTK37
             | System.Windows.Forms.AnchorStyles.Right)));
 			this.rkqBaiHoc.EnableToolTips = true;
 			this.rkqBaiHoc.Location = new System.Drawing.Point(6, 56);
-			this.rkqBaiHoc.LookAndFeel.SkinMaskColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
 			this.rkqBaiHoc.Name = "rkqBaiHoc";
 			this.rkqBaiHoc.Options.CopyPaste.MaintainDocumentSectionSettings = false;
 			this.rkqBaiHoc.Options.Fields.UseCurrentCultureDateTimeFormat = false;
