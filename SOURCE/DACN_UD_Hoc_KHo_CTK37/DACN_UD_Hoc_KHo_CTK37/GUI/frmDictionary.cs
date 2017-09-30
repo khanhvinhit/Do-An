@@ -23,6 +23,8 @@ namespace DACN_UD_Hoc_KHo_CTK37
 		#region MEnthod
 		void DataForm()
 		{
+			this.txtDic.Leave += new System.EventHandler(this.txtDic_Leave);
+			this.txtDic.Enter += new System.EventHandler(this.txtDic_Enter);
 			lbcTuVung.Items.Clear();
 			foreach (var item in TuVungDao.Instance.LoadTuVungDic())
 			{
@@ -58,33 +60,59 @@ namespace DACN_UD_Hoc_KHo_CTK37
 
 		private void btnDic_Click(object sender, EventArgs e)
 		{
-			recNghia.ResetText();
-			recNghia.Font = new Font("TNKeyUni-Arial", 11F);
-			recNghia.Text = "";
-			string name = txtDic.Text;
-			if (TuVungDao.Instance.LoadTuVungByKHo(name).Count <= 0)
+			if (txtDic.Text == "Nhập từ cần tra!" || txtDic.Text=="")
 			{
-				recNghia.Text += "Không tin thấy từ này!";
+				XtraMessageBox.Show("Vui lòng nhập từ cần tra!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 			}
 			else
 			{
-				foreach (var item in TuVungDao.Instance.LoadTuVungByKHo(name))
+				recNghia.ResetText();
+				recNghia.Font = new Font("TNKeyUni-Arial", 11F);
+				recNghia.Text = "";
+				string name = txtDic.Text;
+				if (TuVungDao.Instance.LoadTuVungByKHo(name).Count <= 0)
 				{
-					if (item.KHo != null)
+					recNghia.Text += "Không tin thấy từ này!";
+				}
+				else
+				{
+					foreach (var item in TuVungDao.Instance.LoadTuVungByKHo(name))
 					{
-						if (item.Viet == null)
+						if (item.KHo != null)
 						{
-							recNghia.Text += item.KHo + ": Đang cập nhật\n";
-						}
-						else
-						{
-							recNghia.Text += item.KHo + ": " + item.Viet + "\n";
-						}
+							if (item.Viet == null)
+							{
+								recNghia.Text += item.KHo + ": Đang cập nhật\n";
+							}
+							else
+							{
+								recNghia.Text += item.KHo + ": " + item.Viet + "\n";
+							}
 
+						}
 					}
 				}
 			}
+			
 
+		}
+
+		private void txtDic_Enter(object sender, EventArgs e)
+		{
+			if (txtDic.Text == "Nhập từ cần tra!")
+			{
+				txtDic.Text = "";
+				txtDic.ForeColor = Color.Black;
+			}
+		}
+
+		private void txtDic_Leave(object sender, EventArgs e)
+		{
+			if (txtDic.Text == "")
+			{
+				txtDic.Text = "Nhập từ cần tra!";
+				txtDic.ForeColor = Color.Gray;
+			}
 		}
 
 		
