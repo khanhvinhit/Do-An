@@ -121,6 +121,8 @@
 			this.txtTraLoi.Properties.Appearance.Options.UseFont = true;
 			this.txtTraLoi.Size = new System.Drawing.Size(511, 24);
 			this.txtTraLoi.TabIndex = 3;
+			this.txtTraLoi.Enter += new System.EventHandler(this.txtTraLoi_Leave);
+			this.txtTraLoi.Leave += new System.EventHandler(this.txtTraLoi_Enter);
 			// 
 			// labelControl2
 			// 
