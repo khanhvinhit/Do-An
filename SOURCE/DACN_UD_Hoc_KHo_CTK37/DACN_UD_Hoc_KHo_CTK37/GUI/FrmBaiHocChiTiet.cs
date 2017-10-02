@@ -623,9 +623,10 @@ namespace DACN_UD_Hoc_KHo_CTK37
 				{
 					foreach (DanhMucCon itemdmc in DanhMucConDao.Instance.DanhMucConLoad(item.ID))
 					{
-						i++;
+
 						if (itemdmc.CauHois.Count() < 1)
 						{
+							i++;
 							lbcMucLuc.Items.Add(i + ". " + itemdmc.Ten);
 						}
 
@@ -825,9 +826,10 @@ namespace DACN_UD_Hoc_KHo_CTK37
 					j = j - 1;
 					foreach (DanhMucCon itemdmc in DanhMucConDao.Instance.DanhMucConLoad(item.ID))
 					{
-						j++;
+						
 						if (itemdmc.CauHois.Count() < 1)
 						{
+							j++;
 							rkqBaiHoc.Text += j + ". " + itemdmc.Ten + ".\n";
 						}
 						if (itemdmc.BaiKhoas.Count >= 1)
