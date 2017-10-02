@@ -20,8 +20,7 @@ namespace DACN_UD_Hoc_KHo_CTK37
 			Application.SetCompatibleTextRenderingDefault(false);
 
 			BonusSkins.Register();
-			SkinManager.EnableFormSkins();
-			UserLookAndFeel.Default.SetSkinStyle("DevExpress Style");//
+			SkinManager.EnableFormSkins();//
 			Localizer.Active = new TuyChinhDevExpress("&Hủy bỏ", "&Hủy", "&Chấp nhận", "&Xác nhận", "&Được", "&Thử lại", "&Được");
 			Application.Run(new FrmUdHoc());
 		}

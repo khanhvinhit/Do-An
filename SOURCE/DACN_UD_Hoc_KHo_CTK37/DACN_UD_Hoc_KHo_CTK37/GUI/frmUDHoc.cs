@@ -1,18 +1,22 @@
 ﻿using System;
 using System.Linq;
 using System.Windows.Forms;
+using DACN_UD_Hoc_KHo_CTK37.Properties;
+using DevExpress.LookAndFeel;
 using DevExpress.XtraBars;
 using DevExpress.XtraBars.Helpers;
 using DevExpress.XtraBars.Ribbon;
 using DevExpress.XtraEditors;
+using DACN_UD_Hoc_KHo_CTK37.Properties;
 
 namespace DACN_UD_Hoc_KHo_CTK37
 {
-	public partial class FrmUdHoc : RibbonForm
+	public partial class FrmUdHoc : DevExpress.XtraBars.Ribbon.RibbonForm
 	{
 		public FrmUdHoc()
 		{
 			InitializeComponent();
+			UserLookAndFeel.Default.SkinName = Settings.Default["ApplicationSkinName"].ToString();
 			InitSkinGallery();
 			LoadBaiHoc();
 		}
@@ -99,7 +103,10 @@ namespace DACN_UD_Hoc_KHo_CTK37
 			if (XtraMessageBox.Show("Bạn có muốn thoát khỏi ứng dụng không?", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) != DialogResult.OK)
 			{
 				e.Cancel = true;
+
 			}
+			Settings.Default["ApplicationSkinName"] = UserLookAndFeel.Default.SkinName;
+			Settings.Default.Save();
 		}
 
 		private void btnExit_ItemClick(object sender, ItemClickEventArgs e)
