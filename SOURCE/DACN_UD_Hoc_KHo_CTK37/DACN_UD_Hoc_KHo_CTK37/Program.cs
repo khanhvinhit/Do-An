@@ -21,7 +21,7 @@ namespace DACN_UD_Hoc_KHo_CTK37
 
 			BonusSkins.Register();
 			SkinManager.EnableFormSkins();//
-			Localizer.Active = new TuyChinhDevExpress("&Hủy bỏ", "&Hủy", "&Chấp nhận", "&Xác nhận", "&Được", "&Thử lại", "&Được");
+			Localizer.Active = new TuyChinhDevExpress("&Hủy bỏ", "&Hủy", "&Chấp nhận", "&Xác nhận", "&Đóng", "&Thử lại", "&Có");
 			Application.Run(new FrmUdHoc());
 		}
 	}

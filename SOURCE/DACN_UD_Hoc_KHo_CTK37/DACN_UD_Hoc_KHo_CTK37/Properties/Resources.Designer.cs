@@ -59,5 +59,15 @@ namespace DACN_UD_Hoc_KHo_CTK37.Properties {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap btnGoiY_ImageAn {
+            get {
+                object obj = ResourceManager.GetObject("btnGoiY.ImageAn", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }

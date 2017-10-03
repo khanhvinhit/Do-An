@@ -29,6 +29,12 @@ namespace DACN_UD_Hoc_KHo_CTK37
 		{
 			InitializeComponent();
 			IdBaiHoc = iDBaiHoc;
+			lbGoiy.Text = "";
+			txtTraLoi.Text = "Nhập câu trả lời!";
+			txtTraLoi.ForeColor = Color.LightGray;
+			//txtTraLoi.Text = "Nhập câu trả lời!";
+			this.txtTraLoi.Leave += new System.EventHandler(this.txtTraLoi_Leave);
+			this.txtTraLoi.Enter += new System.EventHandler(this.txtTraLoi_Enter);
 		}
 
 		#region Method
@@ -37,7 +43,7 @@ namespace DACN_UD_Hoc_KHo_CTK37
 		{
 			foreach (CauHoi ch in CauHoiDao.Instance.LoadCauHoiByID(idCauHoi))
 			{
-				if (ch.TraLoi != null)
+				if (ch.TraLoi != null || ch.TraLoi == "")
 				{
 					txtCauHoi.Text = "Câu " + stt + ": " + ch.Hoi;
 					txtTraLoi.Text = ch.TraLoi;
@@ -114,10 +120,14 @@ namespace DACN_UD_Hoc_KHo_CTK37
 		#region event
 		private void txtTraLoi_Leave(object sender, EventArgs e)
 		{
-			if (txtTraLoi.Text == "")
+			if (txtTraLoi.Text == "" || String.IsNullOrEmpty(txtTraLoi.Text))
 			{
 				txtTraLoi.Text = "Nhập câu trả lời!";
 				txtTraLoi.ForeColor = Color.Gray;
+			}
+			else
+			{
+				txtTraLoi.ForeColor = Color.Black;
 			}
 		}
 
@@ -169,7 +179,7 @@ namespace DACN_UD_Hoc_KHo_CTK37
 			try
 			{
 				string cauTL = txtTraLoi.Text;
-				if (cauTL != "Nhập câu trả lời!" && cauTL != "")
+				if (cauTL != "Nhập câu trả lời!")
 				{
 					CauHoiDao.Instance.UpdateCauHoi(idBT, cauTL);
 				}
@@ -182,6 +192,80 @@ namespace DACN_UD_Hoc_KHo_CTK37
 
 		}
 		#endregion
+
+		private void btnGoiY_Click(object sender, EventArgs e)
+		{
+			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmExercise));
+			if (btnGoiY.Text == "Gợi ý")
+			{
+				btnGoiY.Text = "Ẩn";
+				btnGoiY.Image = DACN_UD_Hoc_KHo_CTK37.Properties.Resources.btnGoiY_ImageAn;
+				lbGoiy.Text = "Ahihi";
+			}
+			else
+			{
+				btnGoiY.Text = "Gợi ý";
+				btnGoiY.Image = ((System.Drawing.Image)(resources.GetObject("btnGoiY.Image")));
+				lbGoiy.Text = "";
+
+			}
+		}
+
+		private void btnRef_Click(object sender, EventArgs e)
+		{
+			if (XtraMessageBox.Show("Bạn có muốn làm mới tất cả câu trả lời không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+			{
+				foreach (DanhMuc item in DanhMucDao.Instance.DanhMucLoad(_iDBaiHoc))
+				{
+					if (item.TenKHo != null)
+					{
+						foreach (DanhMucCon itemdmc in DanhMucConDao.Instance.DanhMucConLoad(item.ID))
+						{
+							if (itemdmc.CauHois.Count >= 1)
+							{
+								foreach (CauHoi itemcauhoi in CauHoiDao.Instance.LoadCauHois(itemdmc.ID))
+								{
+									CauHoiDao.Instance.Referst(itemcauhoi.ID);
+								}
+								XtraMessageBox.Show("Đã làm mới tất cả câu trả lời?", "Thông báo", MessageBoxButtons.OK,
+											MessageBoxIcon.Information);
+								txtTraLoi.Text = "";
+								txtTraLoi.ForeColor = Color.LightGray;
+								//txtTraLoi.Text = "Nhập câu trả lời!";
+								this.txtTraLoi.Leave += new System.EventHandler(this.txtTraLoi_Leave);
+								this.txtTraLoi.Enter += new System.EventHandler(this.txtTraLoi_Enter);
+								LoadBaiTap(_iDBaiHoc);
+							}
+						}
+					}
+					else
+					{
+						foreach (DanhMucCon itemdmc in DanhMucConDao.Instance.DanhMucConLoad(item.ID))
+						{
+							if (itemdmc.CauHois.Count >= 1)
+							{
+								foreach (CauHoi itemcauhoi in CauHoiDao.Instance.LoadCauHois(itemdmc.ID))
+								{
+									CauHoiDao.Instance.Referst(itemcauhoi.ID);
+								}
+								XtraMessageBox.Show("Đã làm mới tất cả câu trả lời?", "Thông báo", MessageBoxButtons.OK,
+											MessageBoxIcon.Information);
+								txtTraLoi.Text = "";
+								txtTraLoi.ForeColor = Color.LightGray;
+								//txtTraLoi.Text = "Nhập câu trả lời!";
+								this.txtTraLoi.Leave += new System.EventHandler(this.txtTraLoi_Leave);
+								this.txtTraLoi.Enter += new System.EventHandler(this.txtTraLoi_Enter);
+								LoadBaiTap(_iDBaiHoc);
+							}
+
+						}
+
+					}
+
+				}
+			}
+
+		}
 
 
 	}

@@ -7,11 +7,10 @@ using DevExpress.XtraBars;
 using DevExpress.XtraBars.Helpers;
 using DevExpress.XtraBars.Ribbon;
 using DevExpress.XtraEditors;
-using DACN_UD_Hoc_KHo_CTK37.Properties;
 
 namespace DACN_UD_Hoc_KHo_CTK37
 {
-	public partial class FrmUdHoc : DevExpress.XtraBars.Ribbon.RibbonForm
+	public partial class FrmUdHoc : RibbonForm
 	{
 		public FrmUdHoc()
 		{

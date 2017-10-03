@@ -31,6 +31,8 @@
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmExercise));
 			this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
 			this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+			this.btnGoiY = new DevExpress.XtraEditors.SimpleButton();
+			this.btnRef = new DevExpress.XtraEditors.SimpleButton();
 			this.btnPr = new DevExpress.XtraEditors.SimpleButton();
 			this.btnNext = new DevExpress.XtraEditors.SimpleButton();
 			this.btnSave = new DevExpress.XtraEditors.SimpleButton();
@@ -39,6 +41,7 @@
 			this.txtCauHoi = new DevExpress.XtraEditors.LabelControl();
 			this.txtCount = new DevExpress.XtraEditors.LabelControl();
 			this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
+			this.lbGoiy = new DevExpress.XtraEditors.LabelControl();
 			((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
 			this.panelControl1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
@@ -52,11 +55,14 @@
 			this.panelControl1.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.panelControl1.Location = new System.Drawing.Point(0, 0);
 			this.panelControl1.Name = "panelControl1";
-			this.panelControl1.Size = new System.Drawing.Size(626, 173);
+			this.panelControl1.Size = new System.Drawing.Size(631, 215);
 			this.panelControl1.TabIndex = 0;
 			// 
 			// groupControl1
 			// 
+			this.groupControl1.Controls.Add(this.lbGoiy);
+			this.groupControl1.Controls.Add(this.btnGoiY);
+			this.groupControl1.Controls.Add(this.btnRef);
 			this.groupControl1.Controls.Add(this.btnPr);
 			this.groupControl1.Controls.Add(this.btnNext);
 			this.groupControl1.Controls.Add(this.btnSave);
@@ -68,9 +74,35 @@
 			this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.groupControl1.Location = new System.Drawing.Point(2, 2);
 			this.groupControl1.Name = "groupControl1";
-			this.groupControl1.Size = new System.Drawing.Size(622, 169);
+			this.groupControl1.Size = new System.Drawing.Size(627, 211);
 			this.groupControl1.TabIndex = 0;
 			this.groupControl1.Text = "Câu hỏi";
+			// 
+			// btnGoiY
+			// 
+			this.btnGoiY.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+			this.btnGoiY.Appearance.Font = new System.Drawing.Font("TNKeyUni-Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btnGoiY.Appearance.Options.UseFont = true;
+			this.btnGoiY.Image = ((System.Drawing.Image)(resources.GetObject("btnGoiY.Image")));
+			this.btnGoiY.Location = new System.Drawing.Point(134, 167);
+			this.btnGoiY.Name = "btnGoiY";
+			this.btnGoiY.Size = new System.Drawing.Size(116, 32);
+			this.btnGoiY.TabIndex = 4;
+			this.btnGoiY.Text = "Gợi ý";
+			this.btnGoiY.Click += new System.EventHandler(this.btnGoiY_Click);
+			// 
+			// btnRef
+			// 
+			this.btnRef.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+			this.btnRef.Appearance.Font = new System.Drawing.Font("TNKeyUni-Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btnRef.Appearance.Options.UseFont = true;
+			this.btnRef.Image = ((System.Drawing.Image)(resources.GetObject("btnRef.Image")));
+			this.btnRef.Location = new System.Drawing.Point(12, 167);
+			this.btnRef.Name = "btnRef";
+			this.btnRef.Size = new System.Drawing.Size(116, 32);
+			this.btnRef.TabIndex = 4;
+			this.btnRef.Text = "Làm lại";
+			this.btnRef.Click += new System.EventHandler(this.btnRef_Click);
 			// 
 			// btnPr
 			// 
@@ -78,11 +110,11 @@
 			this.btnPr.Appearance.Font = new System.Drawing.Font("TNKeyUni-Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.btnPr.Appearance.Options.UseFont = true;
 			this.btnPr.Image = ((System.Drawing.Image)(resources.GetObject("btnPr.Image")));
-			this.btnPr.Location = new System.Drawing.Point(252, 127);
+			this.btnPr.Location = new System.Drawing.Point(256, 167);
 			this.btnPr.Name = "btnPr";
 			this.btnPr.Size = new System.Drawing.Size(116, 32);
 			this.btnPr.TabIndex = 4;
-			this.btnPr.Text = "Quay lại";
+			this.btnPr.Text = "Câu trước";
 			this.btnPr.Click += new System.EventHandler(this.btnPr_Click);
 			// 
 			// btnNext
@@ -91,11 +123,11 @@
 			this.btnNext.Appearance.Font = new System.Drawing.Font("TNKeyUni-Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.btnNext.Appearance.Options.UseFont = true;
 			this.btnNext.Image = ((System.Drawing.Image)(resources.GetObject("btnNext.Image")));
-			this.btnNext.Location = new System.Drawing.Point(374, 127);
+			this.btnNext.Location = new System.Drawing.Point(378, 167);
 			this.btnNext.Name = "btnNext";
 			this.btnNext.Size = new System.Drawing.Size(116, 32);
 			this.btnNext.TabIndex = 4;
-			this.btnNext.Text = "Tiếp theo";
+			this.btnNext.Text = "Câu sau";
 			this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
 			// 
 			// btnSave
@@ -104,22 +136,22 @@
 			this.btnSave.Appearance.Font = new System.Drawing.Font("TNKeyUni-Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.btnSave.Appearance.Options.UseFont = true;
 			this.btnSave.Image = ((System.Drawing.Image)(resources.GetObject("btnSave.Image")));
-			this.btnSave.Location = new System.Drawing.Point(496, 127);
+			this.btnSave.Location = new System.Drawing.Point(500, 167);
 			this.btnSave.Name = "btnSave";
 			this.btnSave.Size = new System.Drawing.Size(116, 32);
 			this.btnSave.TabIndex = 4;
-			this.btnSave.Text = "Lưu";
+			this.btnSave.Text = "Thoát";
 			this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
 			// 
 			// txtTraLoi
 			// 
 			this.txtTraLoi.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-			this.txtTraLoi.Location = new System.Drawing.Point(100, 95);
+			this.txtTraLoi.Location = new System.Drawing.Point(101, 137);
 			this.txtTraLoi.Name = "txtTraLoi";
 			this.txtTraLoi.Properties.Appearance.Font = new System.Drawing.Font("TNKeyUni-Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.txtTraLoi.Properties.Appearance.Options.UseFont = true;
-			this.txtTraLoi.Size = new System.Drawing.Size(511, 24);
+			this.txtTraLoi.Size = new System.Drawing.Size(516, 24);
 			this.txtTraLoi.TabIndex = 3;
 			this.txtTraLoi.Enter += new System.EventHandler(this.txtTraLoi_Leave);
 			this.txtTraLoi.Leave += new System.EventHandler(this.txtTraLoi_Enter);
@@ -127,7 +159,7 @@
 			// labelControl2
 			// 
 			this.labelControl2.Appearance.Font = new System.Drawing.Font("TNKeyUni-Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.labelControl2.Location = new System.Drawing.Point(10, 98);
+			this.labelControl2.Location = new System.Drawing.Point(11, 140);
 			this.labelControl2.Name = "labelControl2";
 			this.labelControl2.Size = new System.Drawing.Size(84, 17);
 			this.labelControl2.TabIndex = 2;
@@ -145,7 +177,7 @@
 			// txtCount
 			// 
 			this.txtCount.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-			this.txtCount.Location = new System.Drawing.Point(545, 24);
+			this.txtCount.Location = new System.Drawing.Point(550, 24);
 			this.txtCount.Name = "txtCount";
 			this.txtCount.Size = new System.Drawing.Size(6, 13);
 			this.txtCount.TabIndex = 1;
@@ -154,17 +186,26 @@
 			// labelControl1
 			// 
 			this.labelControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-			this.labelControl1.Location = new System.Drawing.Point(511, 24);
+			this.labelControl1.Location = new System.Drawing.Point(516, 24);
 			this.labelControl1.Name = "labelControl1";
 			this.labelControl1.Size = new System.Drawing.Size(28, 13);
 			this.labelControl1.TabIndex = 0;
 			this.labelControl1.Text = "Tổng:";
 			// 
+			// lbGoiy
+			// 
+			this.lbGoiy.Appearance.Font = new System.Drawing.Font("TNKeyUni-Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.lbGoiy.Location = new System.Drawing.Point(12, 98);
+			this.lbGoiy.Name = "lbGoiy";
+			this.lbGoiy.Size = new System.Drawing.Size(27, 15);
+			this.lbGoiy.TabIndex = 5;
+			this.lbGoiy.Text = "Goiy";
+			// 
 			// FrmExercise
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(626, 173);
+			this.ClientSize = new System.Drawing.Size(631, 215);
 			this.Controls.Add(this.panelControl1);
 			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
 			this.MaximizeBox = false;
@@ -194,5 +235,8 @@
 		private DevExpress.XtraEditors.SimpleButton btnSave;
 		private DevExpress.XtraEditors.TextEdit txtTraLoi;
 		private DevExpress.XtraEditors.LabelControl labelControl2;
+		private DevExpress.XtraEditors.SimpleButton btnGoiY;
+		private DevExpress.XtraEditors.SimpleButton btnRef;
+		private DevExpress.XtraEditors.LabelControl lbGoiy;
 	}
 }
