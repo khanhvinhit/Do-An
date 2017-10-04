@@ -48,7 +48,6 @@ namespace DACN_UD_Hoc_KHo_CTK37
 			this.btnClose = new DevExpress.XtraEditors.SimpleButton();
 			this.btnNext = new DevExpress.XtraEditors.SimpleButton();
 			this.lbLHViet = new DevExpress.XtraEditors.LabelControl();
-			this.lbName = new DevExpress.XtraEditors.LabelControl();
 			this.lbKhoHay = new DevExpress.XtraEditors.LabelControl();
 			this.rkqBaiHoc = new DevExpress.XtraRichEdit.RichEditControl();
 			this.lbViet = new DevExpress.XtraEditors.LabelControl();
@@ -149,7 +148,6 @@ namespace DACN_UD_Hoc_KHo_CTK37
 			this.pnBaiHoc.Controls.Add(this.btnClose);
 			this.pnBaiHoc.Controls.Add(this.btnNext);
 			this.pnBaiHoc.Controls.Add(this.lbLHViet);
-			this.pnBaiHoc.Controls.Add(this.lbName);
 			this.pnBaiHoc.Controls.Add(this.lbKhoHay);
 			this.pnBaiHoc.Controls.Add(this.rkqBaiHoc);
 			this.pnBaiHoc.Controls.Add(this.lbViet);
@@ -164,6 +162,7 @@ namespace DACN_UD_Hoc_KHo_CTK37
 			this.btnAudio.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
 			this.btnAudio.Appearance.Font = new System.Drawing.Font("TNKeyUni-Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.btnAudio.Appearance.Options.UseFont = true;
+			this.btnAudio.Enabled = false;
 			this.btnAudio.Image = ((System.Drawing.Image)(resources.GetObject("btnAudio.Image")));
 			this.btnAudio.Location = new System.Drawing.Point(558, 116);
 			this.btnAudio.Name = "btnAudio";
@@ -257,16 +256,6 @@ namespace DACN_UD_Hoc_KHo_CTK37
 			this.lbLHViet.Size = new System.Drawing.Size(30, 17);
 			this.lbLHViet.TabIndex = 4;
 			this.lbLHViet.Text = "Viet";
-			// 
-			// lbName
-			// 
-			this.lbName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-			this.lbName.Appearance.Font = new System.Drawing.Font("TNKeyUni-Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.lbName.Location = new System.Drawing.Point(568, 424);
-			this.lbName.Name = "lbName";
-			this.lbName.Size = new System.Drawing.Size(31, 17);
-			this.lbName.TabIndex = 4;
-			this.lbName.Text = "Anh";
 			// 
 			// lbKhoHay
 			// 
@@ -367,7 +356,6 @@ namespace DACN_UD_Hoc_KHo_CTK37
 		private LabelControl lbKhoHay;
 		private SimpleButton btnRefresh;
 		private System.Windows.Forms.PictureBox picBox;
-		private LabelControl lbName;
 		private SimpleButton btnAudio;
 		private SimpleButton btnDictionary;
 	}

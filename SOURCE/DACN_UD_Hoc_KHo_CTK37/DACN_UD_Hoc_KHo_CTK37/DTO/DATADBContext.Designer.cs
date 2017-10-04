@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'D:\Study\DoAn\ChuongTrinh\SOURCE\Moi 16h15\DACN_UD_Hoc_KHo_CTK37\DACN_UD_Hoc_KHo_CTK37\DTO\DATADBContext.edmx'. 
+﻿// T4 code generation is enabled for model 'D:\GITHUB\Do-An\SOURCE\DACN_UD_Hoc_KHo_CTK37\DACN_UD_Hoc_KHo_CTK37\DTO\DATADBContext.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.

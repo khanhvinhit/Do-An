@@ -23,13 +23,14 @@ namespace DACN_UD_Hoc_KHo_CTK37.DTO
             this.DichKHoViets = new HashSet<DichKHoViet>();
             this.DichVietKHoes = new HashSet<DichVietKHo>();
             this.LuyenTaps = new HashSet<LuyenTap>();
+            this.NguPhaps = new HashSet<NguPhap>();
             this.TuVungs = new HashSet<TuVung>();
         }
     
         public int ID { get; set; }
         public string Ten { get; set; }
         public Nullable<int> IDDanhMuc { get; set; }
-        public Nullable<int> IDHinh { get; set; }
+        public Nullable<int> IDAmThanh { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<BaiKhoa> BaiKhoas { get; set; }
@@ -44,6 +45,8 @@ namespace DACN_UD_Hoc_KHo_CTK37.DTO
         public virtual ICollection<DichVietKHo> DichVietKHoes { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<LuyenTap> LuyenTaps { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<NguPhap> NguPhaps { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<TuVung> TuVungs { get; set; }
     }

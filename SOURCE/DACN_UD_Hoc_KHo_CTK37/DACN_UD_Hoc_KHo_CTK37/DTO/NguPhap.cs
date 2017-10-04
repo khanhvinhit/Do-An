@@ -12,9 +12,12 @@ namespace DACN_UD_Hoc_KHo_CTK37.DTO
     using System;
     using System.Collections.Generic;
     
-    public partial class Hinh
+    public partial class NguPhap
     {
         public int ID { get; set; }
-        public string DuongDan { get; set; }
+        public string NoiDung { get; set; }
+        public Nullable<int> IDDanhMucCon { get; set; }
+    
+        public virtual DanhMucCon DanhMucCon { get; set; }
     }
 }

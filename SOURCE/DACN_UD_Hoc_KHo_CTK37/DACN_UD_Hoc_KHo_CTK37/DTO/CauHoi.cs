@@ -16,6 +16,7 @@ namespace DACN_UD_Hoc_KHo_CTK37.DTO
     {
         public int ID { get; set; }
         public string Hoi { get; set; }
+        public string GoiY { get; set; }
         public string TraLoi { get; set; }
         public Nullable<int> IDDanhMucCon { get; set; }
     

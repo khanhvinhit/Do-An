@@ -25,6 +25,7 @@ namespace DACN_UD_Hoc_KHo_CTK37.DTO
             throw new UnintentionalCodeFirstException();
         }
     
+        public virtual DbSet<AmThanh> AmThanhs { get; set; }
         public virtual DbSet<BaiHoc> BaiHocs { get; set; }
         public virtual DbSet<BaiKhoa> BaiKhoas { get; set; }
         public virtual DbSet<CauHoi> CauHois { get; set; }
@@ -36,6 +37,7 @@ namespace DACN_UD_Hoc_KHo_CTK37.DTO
         public virtual DbSet<Hinh> Hinhs { get; set; }
         public virtual DbSet<LoiHayYDep> LoiHayYDeps { get; set; }
         public virtual DbSet<LuyenTap> LuyenTaps { get; set; }
+        public virtual DbSet<NguPhap> NguPhaps { get; set; }
         public virtual DbSet<TuVung> TuVungs { get; set; }
     }
 }

@@ -45,5 +45,11 @@ namespace DACN_UD_Hoc_KHo_CTK37.DAO
 			}
 			return false;
 		}
+
+		public List<DanhMuc> LoadNguPhap()
+		{
+			List<DanhMuc> list = _db.DanhMucs.Where(x => x.TenViet == "Ngữ pháp").ToList();
+			return list;
+		}
 	}
 }

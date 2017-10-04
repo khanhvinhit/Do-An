@@ -20,6 +20,7 @@ namespace DACN_UD_Hoc_KHo_CTK37
 		private int soBT = 0;
 		private int idBT = 0;
 		int stt = 1;
+		private string gopy = "";
 		public int IdBaiHoc
 		{
 			get { return _iDBaiHoc; }
@@ -47,6 +48,7 @@ namespace DACN_UD_Hoc_KHo_CTK37
 				{
 					txtCauHoi.Text = "Câu " + stt + ": " + ch.Hoi;
 					txtTraLoi.Text = ch.TraLoi;
+					gopy = ch.GoiY;
 				}
 				else
 				{
@@ -55,6 +57,7 @@ namespace DACN_UD_Hoc_KHo_CTK37
 					//txtTraLoi.Text = "Nhập câu trả lời!";
 					this.txtTraLoi.Leave += new System.EventHandler(this.txtTraLoi_Leave);
 					this.txtTraLoi.Enter += new System.EventHandler(this.txtTraLoi_Enter);
+					gopy = ch.GoiY;
 				}
 			}
 			if (stt == 1)
@@ -200,7 +203,7 @@ namespace DACN_UD_Hoc_KHo_CTK37
 			{
 				btnGoiY.Text = "Ẩn";
 				btnGoiY.Image = DACN_UD_Hoc_KHo_CTK37.Properties.Resources.btnGoiY_ImageAn;
-				lbGoiy.Text = "Ahihi";
+				lbGoiy.Text = gopy;
 			}
 			else
 			{

@@ -136,6 +136,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DAO\AmThanhDAO.cs" />
     <Compile Include="DAO\BaiHocDao.cs" />
     <Compile Include="DAO\BaiKhoaDao.cs" />
     <Compile Include="DAO\CauHoiDao.cs" />
@@ -147,8 +148,12 @@
     <Compile Include="DAO\HinhDao.cs" />
     <Compile Include="DAO\LoiHayYDepDao.cs" />
     <Compile Include="DAO\LuyenTapDao.cs" />
+    <Compile Include="DAO\NguPhapDAO.cs" />
     <Compile Include="DAO\TuVungDao.cs" />
     <Compile Include="DAO\TuyChinhDevExpress.cs" />
+    <Compile Include="DTO\AmThanh.cs">
+      <DependentUpon>DATADBContext.tt</DependentUpon>
+    </Compile>
     <Compile Include="DTO\BaiHoc.cs">
       <DependentUpon>DATADBContext.tt</DependentUpon>
     </Compile>
@@ -197,6 +202,9 @@
     <Compile Include="DTO\LuyenTap.cs">
       <DependentUpon>DATADBContext.tt</DependentUpon>
     </Compile>
+    <Compile Include="DTO\NguPhap.cs">
+      <DependentUpon>DATADBContext.tt</DependentUpon>
+    </Compile>
     <Compile Include="DTO\TuVung.cs">
       <DependentUpon>DATADBContext.tt</DependentUpon>
     </Compile>
@@ -230,6 +238,12 @@
     <Compile Include="GUI\FrmDsGrammar.Designer.cs">
       <DependentUpon>FrmDsGrammar.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\FrmGrammar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\FrmGrammar.Designer.cs">
+      <DependentUpon>FrmGrammar.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\FrmHelper.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -241,6 +255,12 @@
     </Compile>
     <Compile Include="GUI\FrmInfo.Designer.cs">
       <DependentUpon>FrmInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\FrmLuyenTap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\FrmLuyenTap.Designer.cs">
+      <DependentUpon>FrmLuyenTap.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\frmUDHoc.cs">
       <SubType>Form</SubType>
@@ -277,11 +297,17 @@
     <EmbeddedResource Include="GUI\FrmDsGrammar.resx">
       <DependentUpon>FrmDsGrammar.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\FrmGrammar.resx">
+      <DependentUpon>FrmGrammar.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\FrmHelper.resx">
       <DependentUpon>FrmHelper.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\FrmInfo.resx">
       <DependentUpon>FrmInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\FrmLuyenTap.resx">
+      <DependentUpon>FrmLuyenTap.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\frmUDHoc.resx">
       <DependentUpon>frmUDHoc.cs</DependentUpon>

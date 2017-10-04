@@ -32,7 +32,7 @@ namespace DACN_UD_Hoc_KHo_CTK37.DAO
 
 		public List<BaiHoc> LoadBaiHoc()
 		{
-			List<BaiHoc> list = _db.BaiHocs.Where(x => x.TenKHo != "" && x.TenViet != "NGỮ PHÁP").ToList();
+			List<BaiHoc> list = _db.BaiHocs.ToList();
 			return list;
 		}
 

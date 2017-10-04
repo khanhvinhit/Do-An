@@ -4,14 +4,22 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="HocKHoModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="HocKHoModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="AmThanh">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="Đuongan" Type="ntext" />
+        </EntityType>
         <EntityType Name="BaiHoc">
           <Key>
             <PropertyRef Name="ID" />
           </Key>
           <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="TenKHo" Type="nvarchar" MaxLength="250" />
-          <Property Name="TenViet" Type="nvarchar" MaxLength="250" />
+          <Property Name="TenViet" Type="ntext" />
+          <Property Name="IDHinh" Type="int" />
         </EntityType>
         <EntityType Name="BaiKhoa">
           <Key>
@@ -31,6 +39,7 @@
           </Key>
           <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Hoi" Type="nvarchar" MaxLength="250" />
+          <Property Name="GoiY" Type="ntext" />
           <Property Name="TraLoi" Type="ntext" />
           <Property Name="IDDanhMucCon" Type="int" />
         </EntityType>
@@ -61,7 +70,7 @@
           <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Ten" Type="nvarchar" MaxLength="250" />
           <Property Name="IDDanhMuc" Type="int" />
-          <Property Name="IDHinh" Type="int" />
+          <Property Name="IDAmThanh" Type="int" />
         </EntityType>
         <EntityType Name="DichKHoViet">
           <Key>
@@ -86,7 +95,6 @@
             <PropertyRef Name="ID" />
           </Key>
           <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="TenHinh" Type="nvarchar" MaxLength="250" />
           <Property Name="DuongDan" Type="ntext" />
         </EntityType>
         <EntityType Name="LoiHayYDep">
@@ -107,6 +115,14 @@
           <Property Name="HoiViet" Type="nvarchar" MaxLength="250" />
           <Property Name="TraLoiKHo" Type="ntext" />
           <Property Name="TraLoiViet" Type="ntext" />
+          <Property Name="IDDanhMucCon" Type="int" />
+        </EntityType>
+        <EntityType Name="NguPhap">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="NoiDung" Type="ntext" />
           <Property Name="IDDanhMucCon" Type="int" />
         </EntityType>
         <EntityType Name="TuVung">
@@ -226,6 +242,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_NguPhap_DanhMucCon">
+          <End Role="DanhMucCon" Type="Self.DanhMucCon" Multiplicity="0..1" />
+          <End Role="NguPhap" Type="Self.NguPhap" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DanhMucCon">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="NguPhap">
+              <PropertyRef Name="IDDanhMucCon" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_TuVung_DanhMucCon">
           <End Role="DanhMucCon" Type="Self.DanhMucCon" Multiplicity="0..1" />
           <End Role="TuVung" Type="Self.TuVung" Multiplicity="*" />
@@ -239,6 +267,7 @@
           </ReferentialConstraint>
         </Association>
         <EntityContainer Name="HocKHoModelStoreContainer">
+          <EntitySet Name="AmThanh" EntityType="Self.AmThanh" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="BaiHoc" EntityType="Self.BaiHoc" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="BaiKhoa" EntityType="Self.BaiKhoa" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="CauHoi" EntityType="Self.CauHoi" Schema="dbo" store:Type="Tables" />
@@ -250,6 +279,7 @@
           <EntitySet Name="Hinh" EntityType="Self.Hinh" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="LoiHayYDep" EntityType="Self.LoiHayYDep" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="LuyenTap" EntityType="Self.LuyenTap" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="NguPhap" EntityType="Self.NguPhap" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TuVung" EntityType="Self.TuVung" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK_BaiKhoa_DanhMucCon" Association="Self.FK_BaiKhoa_DanhMucCon">
             <End Role="DanhMucCon" EntitySet="DanhMucCon" />
@@ -287,25 +317,96 @@
             <End Role="DanhMucCon" EntitySet="DanhMucCon" />
             <End Role="LuyenTap" EntitySet="LuyenTap" />
           </AssociationSet>
+          <AssociationSet Name="FK_NguPhap_DanhMucCon" Association="Self.FK_NguPhap_DanhMucCon">
+            <End Role="DanhMucCon" EntitySet="DanhMucCon" />
+            <End Role="NguPhap" EntitySet="NguPhap" />
+          </AssociationSet>
           <AssociationSet Name="FK_TuVung_DanhMucCon" Association="Self.FK_TuVung_DanhMucCon">
             <End Role="DanhMucCon" EntitySet="DanhMucCon" />
             <End Role="TuVung" EntitySet="TuVung" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="HocKHoModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="HocKHoEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="AmThanhs" EntityType="HocKHoModel.AmThanh" />
+          <EntitySet Name="BaiHocs" EntityType="HocKHoModel.BaiHoc" />
+          <EntitySet Name="BaiKhoas" EntityType="HocKHoModel.BaiKhoa" />
+          <EntitySet Name="CauHois" EntityType="HocKHoModel.CauHoi" />
+          <EntitySet Name="DamThoais" EntityType="HocKHoModel.DamThoai" />
+          <EntitySet Name="DanhMucs" EntityType="HocKHoModel.DanhMuc" />
+          <EntitySet Name="DanhMucCons" EntityType="HocKHoModel.DanhMucCon" />
+          <EntitySet Name="DichKHoViets" EntityType="HocKHoModel.DichKHoViet" />
+          <EntitySet Name="DichVietKHoes" EntityType="HocKHoModel.DichVietKHo" />
+          <EntitySet Name="Hinhs" EntityType="HocKHoModel.Hinh" />
+          <EntitySet Name="LoiHayYDeps" EntityType="HocKHoModel.LoiHayYDep" />
+          <EntitySet Name="LuyenTaps" EntityType="HocKHoModel.LuyenTap" />
+          <EntitySet Name="NguPhaps" EntityType="HocKHoModel.NguPhap" />
+          <EntitySet Name="TuVungs" EntityType="HocKHoModel.TuVung" />
+          <AssociationSet Name="FK_DanhMuc_BaiHoc" Association="HocKHoModel.FK_DanhMuc_BaiHoc">
+            <End Role="BaiHoc" EntitySet="BaiHocs" />
+            <End Role="DanhMuc" EntitySet="DanhMucs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LoiHayYDep_BaiHoc" Association="HocKHoModel.FK_LoiHayYDep_BaiHoc">
+            <End Role="BaiHoc" EntitySet="BaiHocs" />
+            <End Role="LoiHayYDep" EntitySet="LoiHayYDeps" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BaiKhoa_DanhMucCon" Association="HocKHoModel.FK_BaiKhoa_DanhMucCon">
+            <End Role="DanhMucCon" EntitySet="DanhMucCons" />
+            <End Role="BaiKhoa" EntitySet="BaiKhoas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CauHoi_DanhMucCon" Association="HocKHoModel.FK_CauHoi_DanhMucCon">
+            <End Role="DanhMucCon" EntitySet="DanhMucCons" />
+            <End Role="CauHoi" EntitySet="CauHois" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DamThoai_DanhMucCon" Association="HocKHoModel.FK_DamThoai_DanhMucCon">
+            <End Role="DanhMucCon" EntitySet="DanhMucCons" />
+            <End Role="DamThoai" EntitySet="DamThoais" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DanhMucCon_DanhMuc" Association="HocKHoModel.FK_DanhMucCon_DanhMuc">
+            <End Role="DanhMuc" EntitySet="DanhMucs" />
+            <End Role="DanhMucCon" EntitySet="DanhMucCons" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DichKHoViet_DanhMucCon" Association="HocKHoModel.FK_DichKHoViet_DanhMucCon">
+            <End Role="DanhMucCon" EntitySet="DanhMucCons" />
+            <End Role="DichKHoViet" EntitySet="DichKHoViets" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DichVietKHo_DanhMucCon" Association="HocKHoModel.FK_DichVietKHo_DanhMucCon">
+            <End Role="DanhMucCon" EntitySet="DanhMucCons" />
+            <End Role="DichVietKHo" EntitySet="DichVietKHoes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LuyenTap_DanhMucCon" Association="HocKHoModel.FK_LuyenTap_DanhMucCon">
+            <End Role="DanhMucCon" EntitySet="DanhMucCons" />
+            <End Role="LuyenTap" EntitySet="LuyenTaps" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NguPhap_DanhMucCon" Association="HocKHoModel.FK_NguPhap_DanhMucCon">
+            <End Role="DanhMucCon" EntitySet="DanhMucCons" />
+            <End Role="NguPhap" EntitySet="NguPhaps" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TuVung_DanhMucCon" Association="HocKHoModel.FK_TuVung_DanhMucCon">
+            <End Role="DanhMucCon" EntitySet="DanhMucCons" />
+            <End Role="TuVung" EntitySet="TuVungs" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="AmThanh">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="Đuongan" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
         <EntityType Name="BaiHoc">
           <Key>
             <PropertyRef Name="ID" />
           </Key>
           <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="TenKHo" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
-          <Property Name="TenViet" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="DanhMucs" Relationship="Self.FK_DanhMuc_BaiHoc" FromRole="BaiHoc" ToRole="DanhMuc" />
-          <NavigationProperty Name="LoiHayYDeps" Relationship="Self.FK_LoiHayYDep_BaiHoc" FromRole="BaiHoc" ToRole="LoiHayYDep" />
+          <Property Name="TenViet" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="IDHinh" Type="Int32" />
+          <NavigationProperty Name="DanhMucs" Relationship="HocKHoModel.FK_DanhMuc_BaiHoc" FromRole="BaiHoc" ToRole="DanhMuc" />
+          <NavigationProperty Name="LoiHayYDeps" Relationship="HocKHoModel.FK_LoiHayYDep_BaiHoc" FromRole="BaiHoc" ToRole="LoiHayYDep" />
         </EntityType>
         <EntityType Name="BaiKhoa">
           <Key>
@@ -318,7 +419,7 @@
           <Property Name="TraLoiViet" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="NoiDung" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="IDDanhMucCon" Type="Int32" />
-          <NavigationProperty Name="DanhMucCon" Relationship="Self.FK_BaiKhoa_DanhMucCon" FromRole="BaiKhoa" ToRole="DanhMucCon" />
+          <NavigationProperty Name="DanhMucCon" Relationship="HocKHoModel.FK_BaiKhoa_DanhMucCon" FromRole="BaiKhoa" ToRole="DanhMucCon" />
         </EntityType>
         <EntityType Name="CauHoi">
           <Key>
@@ -326,9 +427,10 @@
           </Key>
           <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Hoi" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="GoiY" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="TraLoi" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="IDDanhMucCon" Type="Int32" />
-          <NavigationProperty Name="DanhMucCon" Relationship="Self.FK_CauHoi_DanhMucCon" FromRole="CauHoi" ToRole="DanhMucCon" />
+          <NavigationProperty Name="DanhMucCon" Relationship="HocKHoModel.FK_CauHoi_DanhMucCon" FromRole="CauHoi" ToRole="DanhMucCon" />
         </EntityType>
         <EntityType Name="DamThoai">
           <Key>
@@ -340,7 +442,7 @@
           <Property Name="CauHoiViet" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="TraLoiViet" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="IDDanhMucCon" Type="Int32" />
-          <NavigationProperty Name="DanhMucCon" Relationship="Self.FK_DamThoai_DanhMucCon" FromRole="DamThoai" ToRole="DanhMucCon" />
+          <NavigationProperty Name="DanhMucCon" Relationship="HocKHoModel.FK_DamThoai_DanhMucCon" FromRole="DamThoai" ToRole="DanhMucCon" />
         </EntityType>
         <EntityType Name="DanhMuc">
           <Key>
@@ -350,8 +452,8 @@
           <Property Name="TenKHo" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
           <Property Name="TenViet" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
           <Property Name="IDBaiHoc" Type="Int32" />
-          <NavigationProperty Name="BaiHoc" Relationship="Self.FK_DanhMuc_BaiHoc" FromRole="DanhMuc" ToRole="BaiHoc" />
-          <NavigationProperty Name="DanhMucCons" Relationship="Self.FK_DanhMucCon_DanhMuc" FromRole="DanhMuc" ToRole="DanhMucCon" />
+          <NavigationProperty Name="BaiHoc" Relationship="HocKHoModel.FK_DanhMuc_BaiHoc" FromRole="DanhMuc" ToRole="BaiHoc" />
+          <NavigationProperty Name="DanhMucCons" Relationship="HocKHoModel.FK_DanhMucCon_DanhMuc" FromRole="DanhMuc" ToRole="DanhMucCon" />
         </EntityType>
         <EntityType Name="DanhMucCon">
           <Key>
@@ -360,15 +462,16 @@
           <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Ten" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
           <Property Name="IDDanhMuc" Type="Int32" />
-          <Property Name="IDHinh" Type="Int32" />
-          <NavigationProperty Name="BaiKhoas" Relationship="Self.FK_BaiKhoa_DanhMucCon" FromRole="DanhMucCon" ToRole="BaiKhoa" />
-          <NavigationProperty Name="CauHois" Relationship="Self.FK_CauHoi_DanhMucCon" FromRole="DanhMucCon" ToRole="CauHoi" />
-          <NavigationProperty Name="DamThoais" Relationship="Self.FK_DamThoai_DanhMucCon" FromRole="DanhMucCon" ToRole="DamThoai" />
-          <NavigationProperty Name="DanhMuc" Relationship="Self.FK_DanhMucCon_DanhMuc" FromRole="DanhMucCon" ToRole="DanhMuc" />
-          <NavigationProperty Name="DichKHoViets" Relationship="Self.FK_DichKHoViet_DanhMucCon" FromRole="DanhMucCon" ToRole="DichKHoViet" />
-          <NavigationProperty Name="DichVietKHoes" Relationship="Self.FK_DichVietKHo_DanhMucCon" FromRole="DanhMucCon" ToRole="DichVietKHo" />
-          <NavigationProperty Name="LuyenTaps" Relationship="Self.FK_LuyenTap_DanhMucCon" FromRole="DanhMucCon" ToRole="LuyenTap" />
-          <NavigationProperty Name="TuVungs" Relationship="Self.FK_TuVung_DanhMucCon" FromRole="DanhMucCon" ToRole="TuVung" />
+          <Property Name="IDAmThanh" Type="Int32" />
+          <NavigationProperty Name="BaiKhoas" Relationship="HocKHoModel.FK_BaiKhoa_DanhMucCon" FromRole="DanhMucCon" ToRole="BaiKhoa" />
+          <NavigationProperty Name="CauHois" Relationship="HocKHoModel.FK_CauHoi_DanhMucCon" FromRole="DanhMucCon" ToRole="CauHoi" />
+          <NavigationProperty Name="DamThoais" Relationship="HocKHoModel.FK_DamThoai_DanhMucCon" FromRole="DanhMucCon" ToRole="DamThoai" />
+          <NavigationProperty Name="DanhMuc" Relationship="HocKHoModel.FK_DanhMucCon_DanhMuc" FromRole="DanhMucCon" ToRole="DanhMuc" />
+          <NavigationProperty Name="DichKHoViets" Relationship="HocKHoModel.FK_DichKHoViet_DanhMucCon" FromRole="DanhMucCon" ToRole="DichKHoViet" />
+          <NavigationProperty Name="DichVietKHoes" Relationship="HocKHoModel.FK_DichVietKHo_DanhMucCon" FromRole="DanhMucCon" ToRole="DichVietKHo" />
+          <NavigationProperty Name="LuyenTaps" Relationship="HocKHoModel.FK_LuyenTap_DanhMucCon" FromRole="DanhMucCon" ToRole="LuyenTap" />
+          <NavigationProperty Name="NguPhaps" Relationship="HocKHoModel.FK_NguPhap_DanhMucCon" FromRole="DanhMucCon" ToRole="NguPhap" />
+          <NavigationProperty Name="TuVungs" Relationship="HocKHoModel.FK_TuVung_DanhMucCon" FromRole="DanhMucCon" ToRole="TuVung" />
         </EntityType>
         <EntityType Name="DichKHoViet">
           <Key>
@@ -378,7 +481,7 @@
           <Property Name="KHo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="Viet" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="IDDanhMucCon" Type="Int32" />
-          <NavigationProperty Name="DanhMucCon" Relationship="Self.FK_DichKHoViet_DanhMucCon" FromRole="DichKHoViet" ToRole="DanhMucCon" />
+          <NavigationProperty Name="DanhMucCon" Relationship="HocKHoModel.FK_DichKHoViet_DanhMucCon" FromRole="DichKHoViet" ToRole="DanhMucCon" />
         </EntityType>
         <EntityType Name="DichVietKHo">
           <Key>
@@ -388,14 +491,13 @@
           <Property Name="Viet" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="KHo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="IDDanhMucCon" Type="Int32" />
-          <NavigationProperty Name="DanhMucCon" Relationship="Self.FK_DichVietKHo_DanhMucCon" FromRole="DichVietKHo" ToRole="DanhMucCon" />
+          <NavigationProperty Name="DanhMucCon" Relationship="HocKHoModel.FK_DichVietKHo_DanhMucCon" FromRole="DichVietKHo" ToRole="DanhMucCon" />
         </EntityType>
         <EntityType Name="Hinh">
           <Key>
             <PropertyRef Name="ID" />
           </Key>
           <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="TenHinh" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
           <Property Name="DuongDan" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="LoiHayYDep">
@@ -406,7 +508,7 @@
           <Property Name="CauKHo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="CauViet" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="IDBaiHoc" Type="Int32" />
-          <NavigationProperty Name="BaiHoc" Relationship="Self.FK_LoiHayYDep_BaiHoc" FromRole="LoiHayYDep" ToRole="BaiHoc" />
+          <NavigationProperty Name="BaiHoc" Relationship="HocKHoModel.FK_LoiHayYDep_BaiHoc" FromRole="LoiHayYDep" ToRole="BaiHoc" />
         </EntityType>
         <EntityType Name="LuyenTap">
           <Key>
@@ -418,7 +520,16 @@
           <Property Name="TraLoiKHo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="TraLoiViet" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="IDDanhMucCon" Type="Int32" />
-          <NavigationProperty Name="DanhMucCon" Relationship="Self.FK_LuyenTap_DanhMucCon" FromRole="LuyenTap" ToRole="DanhMucCon" />
+          <NavigationProperty Name="DanhMucCon" Relationship="HocKHoModel.FK_LuyenTap_DanhMucCon" FromRole="LuyenTap" ToRole="DanhMucCon" />
+        </EntityType>
+        <EntityType Name="NguPhap">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="NoiDung" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="IDDanhMucCon" Type="Int32" />
+          <NavigationProperty Name="DanhMucCon" Relationship="HocKHoModel.FK_NguPhap_DanhMucCon" FromRole="NguPhap" ToRole="DanhMucCon" />
         </EntityType>
         <EntityType Name="TuVung">
           <Key>
@@ -428,11 +539,11 @@
           <Property Name="KHo" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
           <Property Name="Viet" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
           <Property Name="IDDanhMucCon" Type="Int32" />
-          <NavigationProperty Name="DanhMucCon" Relationship="Self.FK_TuVung_DanhMucCon" FromRole="TuVung" ToRole="DanhMucCon" />
+          <NavigationProperty Name="DanhMucCon" Relationship="HocKHoModel.FK_TuVung_DanhMucCon" FromRole="TuVung" ToRole="DanhMucCon" />
         </EntityType>
         <Association Name="FK_DanhMuc_BaiHoc">
-          <End Role="BaiHoc" Type="Self.BaiHoc" Multiplicity="0..1" />
-          <End Role="DanhMuc" Type="Self.DanhMuc" Multiplicity="*" />
+          <End Type="HocKHoModel.BaiHoc" Role="BaiHoc" Multiplicity="0..1" />
+          <End Type="HocKHoModel.DanhMuc" Role="DanhMuc" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="BaiHoc">
               <PropertyRef Name="ID" />
@@ -443,8 +554,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_LoiHayYDep_BaiHoc">
-          <End Role="BaiHoc" Type="Self.BaiHoc" Multiplicity="0..1" />
-          <End Role="LoiHayYDep" Type="Self.LoiHayYDep" Multiplicity="*" />
+          <End Type="HocKHoModel.BaiHoc" Role="BaiHoc" Multiplicity="0..1" />
+          <End Type="HocKHoModel.LoiHayYDep" Role="LoiHayYDep" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="BaiHoc">
               <PropertyRef Name="ID" />
@@ -455,8 +566,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_BaiKhoa_DanhMucCon">
-          <End Role="DanhMucCon" Type="Self.DanhMucCon" Multiplicity="0..1" />
-          <End Role="BaiKhoa" Type="Self.BaiKhoa" Multiplicity="*" />
+          <End Type="HocKHoModel.DanhMucCon" Role="DanhMucCon" Multiplicity="0..1" />
+          <End Type="HocKHoModel.BaiKhoa" Role="BaiKhoa" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="DanhMucCon">
               <PropertyRef Name="ID" />
@@ -467,8 +578,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_CauHoi_DanhMucCon">
-          <End Role="DanhMucCon" Type="Self.DanhMucCon" Multiplicity="0..1" />
-          <End Role="CauHoi" Type="Self.CauHoi" Multiplicity="*" />
+          <End Type="HocKHoModel.DanhMucCon" Role="DanhMucCon" Multiplicity="0..1" />
+          <End Type="HocKHoModel.CauHoi" Role="CauHoi" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="DanhMucCon">
               <PropertyRef Name="ID" />
@@ -479,8 +590,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_DamThoai_DanhMucCon">
-          <End Role="DanhMucCon" Type="Self.DanhMucCon" Multiplicity="0..1" />
-          <End Role="DamThoai" Type="Self.DamThoai" Multiplicity="*" />
+          <End Type="HocKHoModel.DanhMucCon" Role="DanhMucCon" Multiplicity="0..1" />
+          <End Type="HocKHoModel.DamThoai" Role="DamThoai" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="DanhMucCon">
               <PropertyRef Name="ID" />
@@ -491,8 +602,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_DanhMucCon_DanhMuc">
-          <End Role="DanhMuc" Type="Self.DanhMuc" Multiplicity="0..1" />
-          <End Role="DanhMucCon" Type="Self.DanhMucCon" Multiplicity="*" />
+          <End Type="HocKHoModel.DanhMuc" Role="DanhMuc" Multiplicity="0..1" />
+          <End Type="HocKHoModel.DanhMucCon" Role="DanhMucCon" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="DanhMuc">
               <PropertyRef Name="ID" />
@@ -503,8 +614,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_DichKHoViet_DanhMucCon">
-          <End Role="DanhMucCon" Type="Self.DanhMucCon" Multiplicity="0..1" />
-          <End Role="DichKHoViet" Type="Self.DichKHoViet" Multiplicity="*" />
+          <End Type="HocKHoModel.DanhMucCon" Role="DanhMucCon" Multiplicity="0..1" />
+          <End Type="HocKHoModel.DichKHoViet" Role="DichKHoViet" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="DanhMucCon">
               <PropertyRef Name="ID" />
@@ -515,8 +626,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_DichVietKHo_DanhMucCon">
-          <End Role="DanhMucCon" Type="Self.DanhMucCon" Multiplicity="0..1" />
-          <End Role="DichVietKHo" Type="Self.DichVietKHo" Multiplicity="*" />
+          <End Type="HocKHoModel.DanhMucCon" Role="DanhMucCon" Multiplicity="0..1" />
+          <End Type="HocKHoModel.DichVietKHo" Role="DichVietKHo" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="DanhMucCon">
               <PropertyRef Name="ID" />
@@ -527,8 +638,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_LuyenTap_DanhMucCon">
-          <End Role="DanhMucCon" Type="Self.DanhMucCon" Multiplicity="0..1" />
-          <End Role="LuyenTap" Type="Self.LuyenTap" Multiplicity="*" />
+          <End Type="HocKHoModel.DanhMucCon" Role="DanhMucCon" Multiplicity="0..1" />
+          <End Type="HocKHoModel.LuyenTap" Role="LuyenTap" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="DanhMucCon">
               <PropertyRef Name="ID" />
@@ -538,9 +649,21 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_NguPhap_DanhMucCon">
+          <End Type="HocKHoModel.DanhMucCon" Role="DanhMucCon" Multiplicity="0..1" />
+          <End Type="HocKHoModel.NguPhap" Role="NguPhap" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DanhMucCon">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="NguPhap">
+              <PropertyRef Name="IDDanhMucCon" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_TuVung_DanhMucCon">
-          <End Role="DanhMucCon" Type="Self.DanhMucCon" Multiplicity="0..1" />
-          <End Role="TuVung" Type="Self.TuVung" Multiplicity="*" />
+          <End Type="HocKHoModel.DanhMucCon" Role="DanhMucCon" Multiplicity="0..1" />
+          <End Type="HocKHoModel.TuVung" Role="TuVung" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="DanhMucCon">
               <PropertyRef Name="ID" />
@@ -550,188 +673,152 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="HocKHoEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="BaiHocs" EntityType="Self.BaiHoc" />
-          <EntitySet Name="BaiKhoas" EntityType="Self.BaiKhoa" />
-          <EntitySet Name="CauHois" EntityType="Self.CauHoi" />
-          <EntitySet Name="DamThoais" EntityType="Self.DamThoai" />
-          <EntitySet Name="DanhMucs" EntityType="Self.DanhMuc" />
-          <EntitySet Name="DanhMucCons" EntityType="Self.DanhMucCon" />
-          <EntitySet Name="DichKHoViets" EntityType="Self.DichKHoViet" />
-          <EntitySet Name="DichVietKHoes" EntityType="Self.DichVietKHo" />
-          <EntitySet Name="Hinhs" EntityType="Self.Hinh" />
-          <EntitySet Name="LoiHayYDeps" EntityType="Self.LoiHayYDep" />
-          <EntitySet Name="LuyenTaps" EntityType="Self.LuyenTap" />
-          <EntitySet Name="TuVungs" EntityType="Self.TuVung" />
-          <AssociationSet Name="FK_DanhMuc_BaiHoc" Association="Self.FK_DanhMuc_BaiHoc">
-            <End Role="BaiHoc" EntitySet="BaiHocs" />
-            <End Role="DanhMuc" EntitySet="DanhMucs" />
-          </AssociationSet>
-          <AssociationSet Name="FK_LoiHayYDep_BaiHoc" Association="Self.FK_LoiHayYDep_BaiHoc">
-            <End Role="BaiHoc" EntitySet="BaiHocs" />
-            <End Role="LoiHayYDep" EntitySet="LoiHayYDeps" />
-          </AssociationSet>
-          <AssociationSet Name="FK_BaiKhoa_DanhMucCon" Association="Self.FK_BaiKhoa_DanhMucCon">
-            <End Role="DanhMucCon" EntitySet="DanhMucCons" />
-            <End Role="BaiKhoa" EntitySet="BaiKhoas" />
-          </AssociationSet>
-          <AssociationSet Name="FK_CauHoi_DanhMucCon" Association="Self.FK_CauHoi_DanhMucCon">
-            <End Role="DanhMucCon" EntitySet="DanhMucCons" />
-            <End Role="CauHoi" EntitySet="CauHois" />
-          </AssociationSet>
-          <AssociationSet Name="FK_DamThoai_DanhMucCon" Association="Self.FK_DamThoai_DanhMucCon">
-            <End Role="DanhMucCon" EntitySet="DanhMucCons" />
-            <End Role="DamThoai" EntitySet="DamThoais" />
-          </AssociationSet>
-          <AssociationSet Name="FK_DanhMucCon_DanhMuc" Association="Self.FK_DanhMucCon_DanhMuc">
-            <End Role="DanhMuc" EntitySet="DanhMucs" />
-            <End Role="DanhMucCon" EntitySet="DanhMucCons" />
-          </AssociationSet>
-          <AssociationSet Name="FK_DichKHoViet_DanhMucCon" Association="Self.FK_DichKHoViet_DanhMucCon">
-            <End Role="DanhMucCon" EntitySet="DanhMucCons" />
-            <End Role="DichKHoViet" EntitySet="DichKHoViets" />
-          </AssociationSet>
-          <AssociationSet Name="FK_DichVietKHo_DanhMucCon" Association="Self.FK_DichVietKHo_DanhMucCon">
-            <End Role="DanhMucCon" EntitySet="DanhMucCons" />
-            <End Role="DichVietKHo" EntitySet="DichVietKHoes" />
-          </AssociationSet>
-          <AssociationSet Name="FK_LuyenTap_DanhMucCon" Association="Self.FK_LuyenTap_DanhMucCon">
-            <End Role="DanhMucCon" EntitySet="DanhMucCons" />
-            <End Role="LuyenTap" EntitySet="LuyenTaps" />
-          </AssociationSet>
-          <AssociationSet Name="FK_TuVung_DanhMucCon" Association="Self.FK_TuVung_DanhMucCon">
-            <End Role="DanhMucCon" EntitySet="DanhMucCons" />
-            <End Role="TuVung" EntitySet="TuVungs" />
-          </AssociationSet>
-        </EntityContainer>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="HocKHoModelStoreContainer" CdmEntityContainer="HocKHoEntities">
+          <EntitySetMapping Name="AmThanhs">
+            <EntityTypeMapping TypeName="HocKHoModel.AmThanh">
+              <MappingFragment StoreEntitySet="AmThanh">
+                <ScalarProperty Name="Đuongan" ColumnName="Đuongan" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="BaiHocs">
             <EntityTypeMapping TypeName="HocKHoModel.BaiHoc">
               <MappingFragment StoreEntitySet="BaiHoc">
-                <ScalarProperty Name="ID" ColumnName="ID" />
-                <ScalarProperty Name="TenKHo" ColumnName="TenKHo" />
+                <ScalarProperty Name="IDHinh" ColumnName="IDHinh" />
                 <ScalarProperty Name="TenViet" ColumnName="TenViet" />
+                <ScalarProperty Name="TenKHo" ColumnName="TenKHo" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="BaiKhoas">
             <EntityTypeMapping TypeName="HocKHoModel.BaiKhoa">
               <MappingFragment StoreEntitySet="BaiKhoa">
-                <ScalarProperty Name="ID" ColumnName="ID" />
-                <ScalarProperty Name="HoiKHo" ColumnName="HoiKHo" />
-                <ScalarProperty Name="TraLoiKHo" ColumnName="TraLoiKHo" />
-                <ScalarProperty Name="HoiViet" ColumnName="HoiViet" />
-                <ScalarProperty Name="TraLoiViet" ColumnName="TraLoiViet" />
-                <ScalarProperty Name="NoiDung" ColumnName="NoiDung" />
                 <ScalarProperty Name="IDDanhMucCon" ColumnName="IDDanhMucCon" />
+                <ScalarProperty Name="NoiDung" ColumnName="NoiDung" />
+                <ScalarProperty Name="TraLoiViet" ColumnName="TraLoiViet" />
+                <ScalarProperty Name="HoiViet" ColumnName="HoiViet" />
+                <ScalarProperty Name="TraLoiKHo" ColumnName="TraLoiKHo" />
+                <ScalarProperty Name="HoiKHo" ColumnName="HoiKHo" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="CauHois">
             <EntityTypeMapping TypeName="HocKHoModel.CauHoi">
               <MappingFragment StoreEntitySet="CauHoi">
-                <ScalarProperty Name="ID" ColumnName="ID" />
-                <ScalarProperty Name="Hoi" ColumnName="Hoi" />
-                <ScalarProperty Name="TraLoi" ColumnName="TraLoi" />
                 <ScalarProperty Name="IDDanhMucCon" ColumnName="IDDanhMucCon" />
+                <ScalarProperty Name="TraLoi" ColumnName="TraLoi" />
+                <ScalarProperty Name="GoiY" ColumnName="GoiY" />
+                <ScalarProperty Name="Hoi" ColumnName="Hoi" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="DamThoais">
             <EntityTypeMapping TypeName="HocKHoModel.DamThoai">
               <MappingFragment StoreEntitySet="DamThoai">
-                <ScalarProperty Name="ID" ColumnName="ID" />
-                <ScalarProperty Name="CauHoiKHo" ColumnName="CauHoiKHo" />
-                <ScalarProperty Name="TraLoiKHo" ColumnName="TraLoiKHo" />
-                <ScalarProperty Name="CauHoiViet" ColumnName="CauHoiViet" />
-                <ScalarProperty Name="TraLoiViet" ColumnName="TraLoiViet" />
                 <ScalarProperty Name="IDDanhMucCon" ColumnName="IDDanhMucCon" />
+                <ScalarProperty Name="TraLoiViet" ColumnName="TraLoiViet" />
+                <ScalarProperty Name="CauHoiViet" ColumnName="CauHoiViet" />
+                <ScalarProperty Name="TraLoiKHo" ColumnName="TraLoiKHo" />
+                <ScalarProperty Name="CauHoiKHo" ColumnName="CauHoiKHo" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="DanhMucs">
             <EntityTypeMapping TypeName="HocKHoModel.DanhMuc">
               <MappingFragment StoreEntitySet="DanhMuc">
-                <ScalarProperty Name="ID" ColumnName="ID" />
-                <ScalarProperty Name="TenKHo" ColumnName="TenKHo" />
-                <ScalarProperty Name="TenViet" ColumnName="TenViet" />
                 <ScalarProperty Name="IDBaiHoc" ColumnName="IDBaiHoc" />
+                <ScalarProperty Name="TenViet" ColumnName="TenViet" />
+                <ScalarProperty Name="TenKHo" ColumnName="TenKHo" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="DanhMucCons">
             <EntityTypeMapping TypeName="HocKHoModel.DanhMucCon">
               <MappingFragment StoreEntitySet="DanhMucCon">
-                <ScalarProperty Name="ID" ColumnName="ID" />
-                <ScalarProperty Name="Ten" ColumnName="Ten" />
+                <ScalarProperty Name="IDAmThanh" ColumnName="IDAmThanh" />
                 <ScalarProperty Name="IDDanhMuc" ColumnName="IDDanhMuc" />
-                <ScalarProperty Name="IDHinh" ColumnName="IDHinh" />
+                <ScalarProperty Name="Ten" ColumnName="Ten" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="DichKHoViets">
             <EntityTypeMapping TypeName="HocKHoModel.DichKHoViet">
               <MappingFragment StoreEntitySet="DichKHoViet">
-                <ScalarProperty Name="ID" ColumnName="ID" />
-                <ScalarProperty Name="KHo" ColumnName="KHo" />
-                <ScalarProperty Name="Viet" ColumnName="Viet" />
                 <ScalarProperty Name="IDDanhMucCon" ColumnName="IDDanhMucCon" />
+                <ScalarProperty Name="Viet" ColumnName="Viet" />
+                <ScalarProperty Name="KHo" ColumnName="KHo" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="DichVietKHoes">
             <EntityTypeMapping TypeName="HocKHoModel.DichVietKHo">
               <MappingFragment StoreEntitySet="DichVietKHo">
-                <ScalarProperty Name="ID" ColumnName="ID" />
-                <ScalarProperty Name="Viet" ColumnName="Viet" />
-                <ScalarProperty Name="KHo" ColumnName="KHo" />
                 <ScalarProperty Name="IDDanhMucCon" ColumnName="IDDanhMucCon" />
+                <ScalarProperty Name="KHo" ColumnName="KHo" />
+                <ScalarProperty Name="Viet" ColumnName="Viet" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Hinhs">
             <EntityTypeMapping TypeName="HocKHoModel.Hinh">
               <MappingFragment StoreEntitySet="Hinh">
-                <ScalarProperty Name="ID" ColumnName="ID" />
-                <ScalarProperty Name="TenHinh" ColumnName="TenHinh" />
                 <ScalarProperty Name="DuongDan" ColumnName="DuongDan" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="LoiHayYDeps">
             <EntityTypeMapping TypeName="HocKHoModel.LoiHayYDep">
               <MappingFragment StoreEntitySet="LoiHayYDep">
-                <ScalarProperty Name="ID" ColumnName="ID" />
-                <ScalarProperty Name="CauKHo" ColumnName="CauKHo" />
-                <ScalarProperty Name="CauViet" ColumnName="CauViet" />
                 <ScalarProperty Name="IDBaiHoc" ColumnName="IDBaiHoc" />
+                <ScalarProperty Name="CauViet" ColumnName="CauViet" />
+                <ScalarProperty Name="CauKHo" ColumnName="CauKHo" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="LuyenTaps">
             <EntityTypeMapping TypeName="HocKHoModel.LuyenTap">
               <MappingFragment StoreEntitySet="LuyenTap">
-                <ScalarProperty Name="ID" ColumnName="ID" />
-                <ScalarProperty Name="HoiKHo" ColumnName="HoiKHo" />
-                <ScalarProperty Name="HoiViet" ColumnName="HoiViet" />
-                <ScalarProperty Name="TraLoiKHo" ColumnName="TraLoiKHo" />
-                <ScalarProperty Name="TraLoiViet" ColumnName="TraLoiViet" />
                 <ScalarProperty Name="IDDanhMucCon" ColumnName="IDDanhMucCon" />
+                <ScalarProperty Name="TraLoiViet" ColumnName="TraLoiViet" />
+                <ScalarProperty Name="TraLoiKHo" ColumnName="TraLoiKHo" />
+                <ScalarProperty Name="HoiViet" ColumnName="HoiViet" />
+                <ScalarProperty Name="HoiKHo" ColumnName="HoiKHo" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NguPhaps">
+            <EntityTypeMapping TypeName="HocKHoModel.NguPhap">
+              <MappingFragment StoreEntitySet="NguPhap">
+                <ScalarProperty Name="IDDanhMucCon" ColumnName="IDDanhMucCon" />
+                <ScalarProperty Name="NoiDung" ColumnName="NoiDung" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="TuVungs">
             <EntityTypeMapping TypeName="HocKHoModel.TuVung">
               <MappingFragment StoreEntitySet="TuVung">
-                <ScalarProperty Name="ID" ColumnName="ID" />
-                <ScalarProperty Name="KHo" ColumnName="KHo" />
-                <ScalarProperty Name="Viet" ColumnName="Viet" />
                 <ScalarProperty Name="IDDanhMucCon" ColumnName="IDDanhMucCon" />
+                <ScalarProperty Name="Viet" ColumnName="Viet" />
+                <ScalarProperty Name="KHo" ColumnName="KHo" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

@@ -24,6 +24,7 @@ namespace DACN_UD_Hoc_KHo_CTK37.DTO
         public int ID { get; set; }
         public string TenKHo { get; set; }
         public string TenViet { get; set; }
+        public Nullable<int> IDHinh { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<DanhMuc> DanhMucs { get; set; }
