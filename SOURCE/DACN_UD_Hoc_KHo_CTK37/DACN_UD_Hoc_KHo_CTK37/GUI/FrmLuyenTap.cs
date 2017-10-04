@@ -13,9 +13,27 @@ namespace DACN_UD_Hoc_KHo_CTK37.GUI
 {
 	public partial class FrmLuyenTap : DevExpress.XtraEditors.XtraForm
 	{
-		public FrmLuyenTap()
+		private int _iDBaiHoc;
+		private int soLT = 0;
+		private int idLT = 0;
+		int stt = 1;
+		public int IdBaiHoc
+		{
+			get { return _iDBaiHoc; }
+			set { _iDBaiHoc = value; LoadLuyenTap(_iDBaiHoc); }
+		}
+		public FrmLuyenTap(int iDBaiHoc)
 		{
 			InitializeComponent();
+			IdBaiHoc = iDBaiHoc;
 		}
+
+		#region method
+
+		private void LoadLuyenTap(int idBaiHoc)
+		{
+			
+		}
+		#endregion
 	}
 }
