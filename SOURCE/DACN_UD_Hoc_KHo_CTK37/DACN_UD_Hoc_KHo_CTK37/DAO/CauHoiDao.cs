@@ -1,6 +1,7 @@
 ﻿using DACN_UD_Hoc_KHo_CTK37.DTO;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -28,5 +29,41 @@ namespace DACN_UD_Hoc_KHo_CTK37.DAO
 			return list;
 		}
 
+		public CauHoi LoadCauHoiFirst(int idDanhMucCon)
+		{
+			CauHoi list = _db.CauHois.FirstOrDefault(x => x.IDDanhMucCon == idDanhMucCon);
+			return list;
+		}
+
+		public int CauHoiCounts(int dmc)
+		{
+			int i = _db.CauHois.Where(x=>x.IDDanhMucCon == dmc).Count();
+			return i;
+		}
+
+		public List<CauHoi> LoadCauHoiByID(int id)
+		{
+			List<CauHoi> list = _db.CauHois.Where(x => x.ID == id).ToList();
+			return list;
+		}
+
+		public void UpdateCauHoi(int id, string cauTL)
+		{
+			var cauhoi = _db.CauHois.Find(id);
+			cauhoi.TraLoi = cauTL;
+			_db.SaveChanges();
+		}
+
+		public bool Referst(int id)
+		{
+			var cauhoi = _db.CauHois.Find(id);
+			cauhoi.TraLoi = null;
+			_db.SaveChanges();
+			if (cauhoi.ID > 0)
+			{
+				return true;
+			}
+			return false;
+		}
 	}
 }

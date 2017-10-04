@@ -101,6 +101,9 @@
     <Reference Include="System.Core">
       <Private>True</Private>
     </Reference>
+    <Reference Include="System.Design">
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Runtime.Serialization">
       <Private>True</Private>
     </Reference>
@@ -145,6 +148,7 @@
     <Compile Include="DAO\LoiHayYDepDao.cs" />
     <Compile Include="DAO\LuyenTapDao.cs" />
     <Compile Include="DAO\TuVungDao.cs" />
+    <Compile Include="DAO\TuyChinhDevExpress.cs" />
     <Compile Include="DTO\BaiHoc.cs">
       <DependentUpon>DATADBContext.tt</DependentUpon>
     </Compile>
@@ -196,75 +200,93 @@
     <Compile Include="DTO\TuVung.cs">
       <DependentUpon>DATADBContext.tt</DependentUpon>
     </Compile>
-    <Compile Include="FrmBaiHocChiTiet.cs">
+    <Compile Include="GUI\FrmExercise.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmBaiHocChiTiet.Designer.cs">
+    <Compile Include="GUI\FrmExercise.Designer.cs">
+      <DependentUpon>FrmExercise.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\FrmBaiHocChiTiet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\FrmBaiHocChiTiet.Designer.cs">
       <DependentUpon>FrmBaiHocChiTiet.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmDSBaiHoc.cs">
+    <Compile Include="GUI\frmDictionary.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmDSBaiHoc.Designer.cs">
+    <Compile Include="GUI\frmDictionary.Designer.cs">
+      <DependentUpon>frmDictionary.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\frmDSBaiHoc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\frmDSBaiHoc.Designer.cs">
       <DependentUpon>frmDSBaiHoc.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmDsGrammar.cs">
+    <Compile Include="GUI\FrmDsGrammar.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmDsGrammar.Designer.cs">
+    <Compile Include="GUI\FrmDsGrammar.Designer.cs">
       <DependentUpon>FrmDsGrammar.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmHelper.cs">
+    <Compile Include="GUI\FrmHelper.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmHelper.Designer.cs">
+    <Compile Include="GUI\FrmHelper.Designer.cs">
       <DependentUpon>FrmHelper.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmInfo.cs">
+    <Compile Include="GUI\FrmInfo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmInfo.Designer.cs">
+    <Compile Include="GUI\FrmInfo.Designer.cs">
       <DependentUpon>FrmInfo.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmUDHoc.cs">
+    <Compile Include="GUI\frmUDHoc.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmUDHoc.Designer.cs">
+    <Compile Include="GUI\frmUDHoc.Designer.cs">
       <DependentUpon>frmUDHoc.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmWecome.cs">
+    <Compile Include="GUI\FrmWecome.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmWecome.Designer.cs">
+    <Compile Include="GUI\FrmWecome.Designer.cs">
       <DependentUpon>FrmWecome.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="WaitForm.cs">
+    <Compile Include="GUI\WaitForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="WaitForm.Designer.cs">
+    <Compile Include="GUI\WaitForm.Designer.cs">
       <DependentUpon>WaitForm.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="FrmBaiHocChiTiet.resx">
+    <EmbeddedResource Include="GUI\FrmExercise.resx">
+      <DependentUpon>FrmExercise.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\FrmBaiHocChiTiet.resx">
       <DependentUpon>FrmBaiHocChiTiet.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmDSBaiHoc.resx">
+    <EmbeddedResource Include="GUI\frmDictionary.resx">
+      <DependentUpon>frmDictionary.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\frmDSBaiHoc.resx">
       <DependentUpon>frmDSBaiHoc.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmDsGrammar.resx">
+    <EmbeddedResource Include="GUI\FrmDsGrammar.resx">
       <DependentUpon>FrmDsGrammar.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmHelper.resx">
+    <EmbeddedResource Include="GUI\FrmHelper.resx">
       <DependentUpon>FrmHelper.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmInfo.resx">
+    <EmbeddedResource Include="GUI\FrmInfo.resx">
       <DependentUpon>FrmInfo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmUDHoc.resx">
+    <EmbeddedResource Include="GUI\frmUDHoc.resx">
       <DependentUpon>frmUDHoc.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmWecome.resx">
+    <EmbeddedResource Include="GUI\FrmWecome.resx">
       <DependentUpon>FrmWecome.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
@@ -278,7 +300,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="WaitForm.resx">
+    <EmbeddedResource Include="GUI\WaitForm.resx">
       <DependentUpon>WaitForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="App.Config" />
@@ -301,37 +323,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Data\HocKHo.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="App_Data\HocKHo_log.ldf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      <DependentUpon>HocKHo.mdf</DependentUpon>
-    </Content>
-    <Content Include="App_Data\Images\1.jpg" />
-    <Content Include="App_Data\Images\10.jpg" />
-    <Content Include="App_Data\Images\11.jpg" />
-    <Content Include="App_Data\Images\12.jpg" />
-    <Content Include="App_Data\Images\13.jpg" />
-    <Content Include="App_Data\Images\14.jpg" />
-    <Content Include="App_Data\Images\16.jpg" />
-    <Content Include="App_Data\Images\20.jpg" />
-    <Content Include="App_Data\Images\21.jpg" />
-    <Content Include="App_Data\Images\25.jpg" />
-    <Content Include="App_Data\Images\27.jpg" />
-    <Content Include="App_Data\Images\29.jpg" />
-    <Content Include="App_Data\Images\3.jpg" />
-    <Content Include="App_Data\Images\30.jpg" />
-    <Content Include="App_Data\Images\33.jpg" />
-    <Content Include="App_Data\Images\35.jpg" />
-    <Content Include="App_Data\Images\37.jpg" />
-    <Content Include="App_Data\Images\39.jpg" />
-    <Content Include="App_Data\Images\4.jpg" />
-    <Content Include="App_Data\Images\5.jpg" />
-    <Content Include="App_Data\Images\6.jpg" />
-    <Content Include="App_Data\Images\7.jpg" />
-    <Content Include="App_Data\Images\8.jpg" />
-    <Content Include="App_Data\Images\9.jpg" />
     <Content Include="DTO\DATADBContext.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>DATADBContext.edmx</DependentUpon>
@@ -343,6 +334,7 @@
       <LastGenOutput>DATADBContext.cs</LastGenOutput>
     </Content>
     <Content Include="logo.ico" />
+    <None Include="Resources\hide.png" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
@@ -364,8 +356,12 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="Resources\" />
+    <ProjectReference Include="..\Animator\Animator.csproj">
+      <Project>{97fe1093-38d3-4eec-a602-340f792c9d25}</Project>
+      <Name>Animator</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
