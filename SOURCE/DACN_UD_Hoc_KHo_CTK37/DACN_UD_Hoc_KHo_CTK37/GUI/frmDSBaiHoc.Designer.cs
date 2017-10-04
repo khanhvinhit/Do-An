@@ -32,14 +32,10 @@ namespace DACN_UD_Hoc_KHo_CTK37
 		/// </summary>
 		private void InitializeComponent()
 		{
-			this.components = new System.ComponentModel.Container();
 			DevExpress.XtraSplashScreen.SplashScreenManager splashScreenManager1 = new DevExpress.XtraSplashScreen.SplashScreenManager(this, typeof(global::DACN_UD_Hoc_KHo_CTK37.WaitForm), true, true);
-			
-			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmDsBaiHoc));
 			this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
 			this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
 			this.flpBaiHoc = new System.Windows.Forms.FlowLayoutPanel();
-			
 			((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
 			this.panelControl1.SuspendLayout();
 			this.SuspendLayout();
@@ -52,7 +48,6 @@ namespace DACN_UD_Hoc_KHo_CTK37
 			this.panelControl1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
 			this.panelControl1.Controls.Add(this.labelControl1);
 			this.panelControl1.Controls.Add(this.flpBaiHoc);
-			
 			this.panelControl1.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.panelControl1.Location = new System.Drawing.Point(0, 0);
 			this.panelControl1.LookAndFeel.SkinName = "Glass Oceans";
@@ -63,7 +58,6 @@ namespace DACN_UD_Hoc_KHo_CTK37
 			// labelControl1
 			// 
 			this.labelControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			
 			this.labelControl1.Location = new System.Drawing.Point(595, 5);
 			this.labelControl1.Name = "labelControl1";
 			this.labelControl1.Size = new System.Drawing.Size(146, 19);
@@ -76,7 +70,6 @@ namespace DACN_UD_Hoc_KHo_CTK37
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
 			this.flpBaiHoc.AutoScroll = true;
-			
 			this.flpBaiHoc.Location = new System.Drawing.Point(48, 46);
 			this.flpBaiHoc.Name = "flpBaiHoc";
 			this.flpBaiHoc.Size = new System.Drawing.Size(1282, 704);
@@ -87,9 +80,7 @@ namespace DACN_UD_Hoc_KHo_CTK37
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(1366, 760);
-			this.ControlBox = false;
 			this.Controls.Add(this.panelControl1);
-			
 			this.DoubleBuffered = true;
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
 			this.MaximizeBox = false;

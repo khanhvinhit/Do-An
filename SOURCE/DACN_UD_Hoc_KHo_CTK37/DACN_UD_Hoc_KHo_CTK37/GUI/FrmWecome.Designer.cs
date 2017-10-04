@@ -31,12 +31,8 @@ namespace DACN_UD_Hoc_KHo_CTK37
 		/// </summary>
 		private void InitializeComponent()
 		{
-			this.components = new System.ComponentModel.Container();
 			DevExpress.XtraSplashScreen.SplashScreenManager splashScreenManager1 = new DevExpress.XtraSplashScreen.SplashScreenManager(this, typeof(global::DACN_UD_Hoc_KHo_CTK37.WaitForm), true, true);
-			
-			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmWecome));
 			this.picE = new DevExpress.XtraEditors.PictureEdit();
-			
 			((System.ComponentModel.ISupportInitialize)(this.picE.Properties)).BeginInit();
 			this.SuspendLayout();
 			// 
@@ -45,7 +41,6 @@ namespace DACN_UD_Hoc_KHo_CTK37
 			this.picE.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-			
 			this.picE.Enabled = false;
 			this.picE.Location = new System.Drawing.Point(0, 0);
 			this.picE.Name = "picE";
@@ -58,9 +53,7 @@ namespace DACN_UD_Hoc_KHo_CTK37
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(677, 328);
-			this.ControlBox = false;
 			this.Controls.Add(this.picE);
-			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
 			this.MaximizeBox = false;
 			this.MinimizeBox = false;
 			this.Name = "FrmWecome";

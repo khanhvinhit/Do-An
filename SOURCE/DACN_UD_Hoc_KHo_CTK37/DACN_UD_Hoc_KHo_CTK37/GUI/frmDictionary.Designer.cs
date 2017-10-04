@@ -1,6 +1,6 @@
 ﻿namespace DACN_UD_Hoc_KHo_CTK37
 {
-	partial class frmDictionary
+	partial class FrmDictionary
 	{
 		/// <summary>
 		/// Required designer variable.
@@ -29,7 +29,7 @@
 		private void InitializeComponent()
 		{
 			DevExpress.XtraSplashScreen.SplashScreenManager splashScreenManager1 = new DevExpress.XtraSplashScreen.SplashScreenManager(this, typeof(global::DACN_UD_Hoc_KHo_CTK37.WaitForm), true, true);
-			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDictionary));
+			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmDictionary));
 			this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
 			this.groupBox2 = new System.Windows.Forms.GroupBox();
 			this.splitContainerControl1 = new DevExpress.XtraEditors.SplitContainerControl();
@@ -151,7 +151,7 @@
 			this.txtDic.Enter += new System.EventHandler(this.txtDic_Enter);
 			this.txtDic.Leave += new System.EventHandler(this.txtDic_Leave);
 			// 
-			// frmDictionary
+			// FrmDictionary
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -160,7 +160,7 @@
 			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
 			this.MaximizeBox = false;
 			this.MinimizeBox = false;
-			this.Name = "frmDictionary";
+			this.Name = "FrmDictionary";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "Từ điển";
 			((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();

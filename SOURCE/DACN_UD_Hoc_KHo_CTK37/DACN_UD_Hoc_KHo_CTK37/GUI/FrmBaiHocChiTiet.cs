@@ -1017,6 +1017,7 @@ namespace DACN_UD_Hoc_KHo_CTK37
 			{
 				trangthaiam = false;
 				sound.controls.stop();
+				btnAudio.Text = "Nghe";
 			}
 			this.Close();
 		}
@@ -1033,6 +1034,7 @@ namespace DACN_UD_Hoc_KHo_CTK37
 			{
 				trangthaiam = false;
 				sound.controls.stop();
+				btnAudio.Text = "Nghe";
 			}
 			FrmExercise f = Application.OpenForms.OfType<FrmExercise>().FirstOrDefault();
 			if (f != null)
@@ -1055,6 +1057,7 @@ namespace DACN_UD_Hoc_KHo_CTK37
 			{
 				trangthaiam = false;
 				sound.controls.stop();
+				btnAudio.Text = "Nghe";
 			}
 			FrmExercise f = Application.OpenForms.OfType<FrmExercise>().FirstOrDefault();
 			if (f != null)
@@ -1073,6 +1076,7 @@ namespace DACN_UD_Hoc_KHo_CTK37
 			{
 				trangthaiam = false;
 				sound.controls.stop();
+				btnAudio.Text = "Nghe";
 			}
 			string tukhoa = lbcMucLuc.SelectedItem.ToString();
 			int id = 0;
@@ -1136,6 +1140,7 @@ namespace DACN_UD_Hoc_KHo_CTK37
 			{
 				trangthaiam = false;
 				sound.controls.stop();
+				btnAudio.Text = "Nghe";
 			}
 			FrmExercise f = Application.OpenForms.OfType<FrmExercise>().FirstOrDefault();
 			if (f != null)
@@ -1150,15 +1155,16 @@ namespace DACN_UD_Hoc_KHo_CTK37
 			{
 				trangthaiam = false;
 				sound.controls.stop();
+				btnAudio.Text = "Nghe";
 			}
-			frmDictionary f = Application.OpenForms.OfType<frmDictionary>().FirstOrDefault();
+			FrmDictionary f = Application.OpenForms.OfType<FrmDictionary>().FirstOrDefault();
 			if (f != null)
 			{
 				XtraMessageBox.Show("Bạn đã mở tử điển!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 			}
 			else
 			{
-				f = new frmDictionary();
+				f = new FrmDictionary();
 				f.Show();
 			}
 		}

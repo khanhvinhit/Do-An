@@ -51,7 +51,7 @@ namespace DACN_UD_Hoc_KHo_CTK37
 
 		void btn_Click(object sender, EventArgs e)
 		{
-			frmDictionary frm = Application.OpenForms.OfType<frmDictionary>().FirstOrDefault();
+			FrmDictionary frm = Application.OpenForms.OfType<FrmDictionary>().FirstOrDefault();
 			if (frm != null)
 			{
 				frm.Close();

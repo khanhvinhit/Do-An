@@ -12,9 +12,9 @@ using DevExpress.XtraEditors;
 
 namespace DACN_UD_Hoc_KHo_CTK37
 {
-	public partial class frmDictionary : DevExpress.XtraEditors.XtraForm
+	public partial class FrmDictionary : DevExpress.XtraEditors.XtraForm
 	{
-		public frmDictionary()
+		public FrmDictionary()
 		{
 			InitializeComponent();
 			DataForm();

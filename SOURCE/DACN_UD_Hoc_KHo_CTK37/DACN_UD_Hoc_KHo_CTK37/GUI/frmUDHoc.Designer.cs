@@ -34,7 +34,6 @@ namespace DACN_UD_Hoc_KHo_CTK37
 		{
 			this.components = new System.ComponentModel.Container();
 			DevExpress.XtraSplashScreen.SplashScreenManager splashScreenManager1 = new DevExpress.XtraSplashScreen.SplashScreenManager(this, typeof(global::DACN_UD_Hoc_KHo_CTK37.WaitForm), true, true);
-			
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmUdHoc));
 			this.ribbonControl1 = new DevExpress.XtraBars.Ribbon.RibbonControl();
 			this.btnLesson = new DevExpress.XtraBars.BarButtonItem();
@@ -49,13 +48,13 @@ namespace DACN_UD_Hoc_KHo_CTK37
 			this.ribbonPage2 = new DevExpress.XtraBars.Ribbon.RibbonPage();
 			this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
 			this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-			
+			this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
 			((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// ribbonControl1
 			// 
-			
 			this.ribbonControl1.ExpandCollapseItem.Id = 0;
 			this.ribbonControl1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
             this.ribbonControl1.ExpandCollapseItem,
@@ -174,6 +173,10 @@ namespace DACN_UD_Hoc_KHo_CTK37
 			this.ribbonPageGroup3.Name = "ribbonPageGroup3";
 			this.ribbonPageGroup3.Text = "Hướng dẫn";
 			// 
+			// xtraTabbedMdiManager1
+			// 
+			this.xtraTabbedMdiManager1.MdiParent = this;
+			// 
 			// FrmUdHoc
 			// 
 			this.Appearance.Options.UseFont = true;
@@ -195,6 +198,7 @@ namespace DACN_UD_Hoc_KHo_CTK37
 			this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
 			this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmUdHoc_FormClosing);
 			((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -214,5 +218,7 @@ namespace DACN_UD_Hoc_KHo_CTK37
 		private RibbonPage ribbonPage2;
 		private RibbonPageGroup ribbonPageGroup2;
 		private RibbonPageGroup ribbonPageGroup3;
-		private BarButtonItem btnDictionary;}
+		private BarButtonItem btnDictionary;
+		private DevExpress.XtraTabbedMdi.XtraTabbedMdiManager xtraTabbedMdiManager1;
+	}
 }

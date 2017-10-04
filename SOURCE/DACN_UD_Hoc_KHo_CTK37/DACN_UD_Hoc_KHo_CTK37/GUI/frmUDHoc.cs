@@ -36,9 +36,9 @@ namespace DACN_UD_Hoc_KHo_CTK37
 		private bool CheckExistForm(string name)
 		{
 			bool check = false;
-			foreach (Form frm in this.MdiChildren)
+			foreach (Form Frm in this.MdiChildren)
 			{
-				if (frm.Name == name)
+				if (Frm.Name == name)
 				{
 					check = true;
 					break;
@@ -49,11 +49,11 @@ namespace DACN_UD_Hoc_KHo_CTK37
 
 		private void ActiveChildForm(string name)
 		{
-			foreach (Form frm in this.MdiChildren)
+			foreach (Form Frm in this.MdiChildren)
 			{
-				if (frm.Name == name)
+				if (Frm.Name == name)
 				{
-					frm.Activate();
+					Frm.Activate();
 					break;
 				}
 			}
@@ -64,10 +64,10 @@ namespace DACN_UD_Hoc_KHo_CTK37
 		#region Event
 		private void btnHelper_ItemClick(object sender, ItemClickEventArgs e)
 		{
-			foreach (Form frm in this.MdiChildren)
-			{
-				frm.Close();
-			}
+			//foreach (Form Frm in this.MdiChildren)
+			//{
+			//	Frm.Close();
+			//}
 			if (!CheckExistForm("FrmHelper"))
 			{
 				FrmHelper f = new FrmHelper();
@@ -81,11 +81,11 @@ namespace DACN_UD_Hoc_KHo_CTK37
 		}
 		private void btnLesson_ItemClick(object sender, ItemClickEventArgs e)
 		{
-			foreach (Form frm in this.MdiChildren)
-			{
-				frm.Close();
-			}
-			if (!CheckExistForm("frmDSBaiHoc"))
+			//foreach (Form Frm in this.MdiChildren)
+			//{
+			//	Frm.Close();
+			//}
+			if (!CheckExistForm("FrmDsBaiHoc"))
 			{
 				FrmDsBaiHoc f = new FrmDsBaiHoc();
 				f.MdiParent = this;
@@ -93,7 +93,7 @@ namespace DACN_UD_Hoc_KHo_CTK37
 			}
 			else
 			{
-				ActiveChildForm("frmDSBaiHoc");
+				ActiveChildForm("FrmDsBaiHoc");
 			}
 		}
 
@@ -115,10 +115,10 @@ namespace DACN_UD_Hoc_KHo_CTK37
 
 		private void btnGammar_ItemClick(object sender, ItemClickEventArgs e)
 		{
-			foreach (Form frm in this.MdiChildren)
-			{
-				frm.Close();
-			}
+			//foreach (Form Frm in this.MdiChildren)
+			//{
+			//	Frm.Close();
+			//}
 			if (!CheckExistForm("FrmDsGrammar"))
 			{
 				FrmDsGrammar f = new FrmDsGrammar();
@@ -134,10 +134,10 @@ namespace DACN_UD_Hoc_KHo_CTK37
 
 		private void btnInfo_ItemClick(object sender, ItemClickEventArgs e)
 		{
-			foreach (Form frm in this.MdiChildren)
-			{
-				frm.Close();
-			}
+			//foreach (Form Frm in this.MdiChildren)
+			//{
+			//	Frm.Close();
+			//}
 			if (!CheckExistForm("FrmInfo"))
 			{
 				FrmInfo f = new FrmInfo();
@@ -155,14 +155,14 @@ namespace DACN_UD_Hoc_KHo_CTK37
 
 			try
 			{
-				frmDictionary f = Application.OpenForms.OfType<frmDictionary>().FirstOrDefault();
+				FrmDictionary f = Application.OpenForms.OfType<FrmDictionary>().FirstOrDefault();
 				if (f != null)
 				{
 					XtraMessageBox.Show("Bạn đã mở tử điển!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 				}
 				else
 				{
-					f = new frmDictionary();
+					f = new FrmDictionary();
 					f.Show();
 				}
 			}
