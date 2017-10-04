@@ -29,10 +29,7 @@
 		private void InitializeComponent()
 		{
 			DevExpress.XtraSplashScreen.SplashScreenManager splashScreenManager1 = new DevExpress.XtraSplashScreen.SplashScreenManager(this, typeof(global::DACN_UD_Hoc_KHo_CTK37.WaitForm), true, true);
-			AnimatorNS.Animation animation1 = new AnimatorNS.Animation();
-			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmHelper));
 			this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
-			this.tabControlEx1 = new AnimatorNS.TabControlEx();
 			this.tabPage2 = new System.Windows.Forms.TabPage();
 			this.labelControl21 = new DevExpress.XtraEditors.LabelControl();
 			this.labelControl22 = new DevExpress.XtraEditors.LabelControl();
@@ -59,50 +56,26 @@
 			this.labelControl48 = new DevExpress.XtraEditors.LabelControl();
 			this.labelControl49 = new DevExpress.XtraEditors.LabelControl();
 			this.labelControl50 = new DevExpress.XtraEditors.LabelControl();
+			this.tabControl1 = new System.Windows.Forms.TabControl();
+			this.tabPage4 = new System.Windows.Forms.TabPage();
+			this.tabPage5 = new System.Windows.Forms.TabPage();
+			this.tabPage6 = new System.Windows.Forms.TabPage();
 			((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
 			this.panelControl1.SuspendLayout();
-			this.tabControlEx1.SuspendLayout();
 			this.tabPage2.SuspendLayout();
 			this.tabPage3.SuspendLayout();
 			this.tabPage1.SuspendLayout();
+			this.tabControl1.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// panelControl1
 			// 
-			this.panelControl1.Controls.Add(this.tabControlEx1);
+			this.panelControl1.Controls.Add(this.tabControl1);
 			this.panelControl1.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.panelControl1.Location = new System.Drawing.Point(0, 0);
 			this.panelControl1.Name = "panelControl1";
-			this.panelControl1.Size = new System.Drawing.Size(956, 494);
+			this.panelControl1.Size = new System.Drawing.Size(1366, 760);
 			this.panelControl1.TabIndex = 0;
-			// 
-			// tabControlEx1
-			// 
-			animation1.AnimateOnlyDifferences = false;
-			animation1.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.BlindCoeff")));
-			animation1.LeafCoeff = 0F;
-			animation1.MaxTime = 1F;
-			animation1.MinTime = 0F;
-			animation1.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicCoeff")));
-			animation1.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicShift")));
-			animation1.MosaicSize = 0;
-			animation1.Padding = new System.Windows.Forms.Padding(0);
-			animation1.RotateCoeff = 0F;
-			animation1.RotateLimit = 0F;
-			animation1.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.ScaleCoeff")));
-			animation1.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.SlideCoeff")));
-			animation1.TimeCoeff = 1F;
-			animation1.TransparencyCoeff = 0F;
-			this.tabControlEx1.Animation = animation1;
-			this.tabControlEx1.Controls.Add(this.tabPage2);
-			this.tabControlEx1.Controls.Add(this.tabPage3);
-			this.tabControlEx1.Controls.Add(this.tabPage1);
-			this.tabControlEx1.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.tabControlEx1.Location = new System.Drawing.Point(2, 2);
-			this.tabControlEx1.Name = "tabControlEx1";
-			this.tabControlEx1.SelectedIndex = 0;
-			this.tabControlEx1.Size = new System.Drawing.Size(952, 490);
-			this.tabControlEx1.TabIndex = 1;
 			// 
 			// tabPage2
 			// 
@@ -369,11 +342,53 @@
 			this.labelControl50.TabIndex = 16;
 			this.labelControl50.Text = "Bước 1: Vào chương trình.";
 			// 
+			// tabControl1
+			// 
+			this.tabControl1.Controls.Add(this.tabPage4);
+			this.tabControl1.Controls.Add(this.tabPage5);
+			this.tabControl1.Controls.Add(this.tabPage6);
+			this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.tabControl1.Location = new System.Drawing.Point(2, 2);
+			this.tabControl1.Name = "tabControl1";
+			this.tabControl1.SelectedIndex = 0;
+			this.tabControl1.Size = new System.Drawing.Size(1362, 756);
+			this.tabControl1.TabIndex = 0;
+			// 
+			// tabPage4
+			// 
+			this.tabPage4.Location = new System.Drawing.Point(4, 22);
+			this.tabPage4.Name = "tabPage4";
+			this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
+			this.tabPage4.Size = new System.Drawing.Size(1354, 730);
+			this.tabPage4.TabIndex = 0;
+			this.tabPage4.Text = "Bài Học";
+			this.tabPage4.UseVisualStyleBackColor = true;
+			// 
+			// tabPage5
+			// 
+			this.tabPage5.Location = new System.Drawing.Point(4, 22);
+			this.tabPage5.Name = "tabPage5";
+			this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
+			this.tabPage5.Size = new System.Drawing.Size(1354, 730);
+			this.tabPage5.TabIndex = 1;
+			this.tabPage5.Text = "Ngữ pháp";
+			this.tabPage5.UseVisualStyleBackColor = true;
+			// 
+			// tabPage6
+			// 
+			this.tabPage6.Location = new System.Drawing.Point(4, 22);
+			this.tabPage6.Name = "tabPage6";
+			this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
+			this.tabPage6.Size = new System.Drawing.Size(1354, 730);
+			this.tabPage6.TabIndex = 2;
+			this.tabPage6.Text = "Từ điển";
+			this.tabPage6.UseVisualStyleBackColor = true;
+			// 
 			// FrmHelper
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(956, 494);
+			this.ClientSize = new System.Drawing.Size(1366, 760);
 			this.ControlBox = false;
 			this.Controls.Add(this.panelControl1);
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -387,13 +402,13 @@
 			this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
 			((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
 			this.panelControl1.ResumeLayout(false);
-			this.tabControlEx1.ResumeLayout(false);
 			this.tabPage2.ResumeLayout(false);
 			this.tabPage2.PerformLayout();
 			this.tabPage3.ResumeLayout(false);
 			this.tabPage3.PerformLayout();
 			this.tabPage1.ResumeLayout(false);
 			this.tabPage1.PerformLayout();
+			this.tabControl1.ResumeLayout(false);
 			this.ResumeLayout(false);
 
 		}
@@ -401,7 +416,7 @@
 		#endregion
 
 		private DevExpress.XtraEditors.PanelControl panelControl1;
-		private AnimatorNS.TabControlEx tabControlEx1;
+		//private AnimatorNS.TabControlEx tabControlEx1;
 		private System.Windows.Forms.TabPage tabPage2;
 		private System.Windows.Forms.TabPage tabPage3;
 		private DevExpress.XtraEditors.LabelControl labelControl31;
@@ -428,5 +443,9 @@
 		private DevExpress.XtraEditors.LabelControl labelControl48;
 		private DevExpress.XtraEditors.LabelControl labelControl49;
 		private DevExpress.XtraEditors.LabelControl labelControl50;
+		private System.Windows.Forms.TabControl tabControl1;
+		private System.Windows.Forms.TabPage tabPage4;
+		private System.Windows.Forms.TabPage tabPage5;
+		private System.Windows.Forms.TabPage tabPage6;
 	}
 }

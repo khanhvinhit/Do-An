@@ -30,7 +30,7 @@ namespace DACN_UD_Hoc_KHo_CTK37.DTO
         public int ID { get; set; }
         public string Ten { get; set; }
         public Nullable<int> IDDanhMuc { get; set; }
-        public Nullable<int> IDAmThanh { get; set; }
+        public int IDAmThanh { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<BaiKhoa> BaiKhoas { get; set; }

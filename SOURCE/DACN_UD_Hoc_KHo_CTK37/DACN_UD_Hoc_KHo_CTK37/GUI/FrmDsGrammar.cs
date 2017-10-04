@@ -5,6 +5,7 @@ using DACN_UD_Hoc_KHo_CTK37.DAO;
 using DACN_UD_Hoc_KHo_CTK37.DTO;
 using DevExpress.XtraEditors;
 using System.Windows.Forms;
+using DACN_UD_Hoc_KHo_CTK37.GUI;
 
 namespace DACN_UD_Hoc_KHo_CTK37
 {
@@ -28,19 +29,24 @@ namespace DACN_UD_Hoc_KHo_CTK37
 				foreach (DanhMuc item in DanhMucDao.Instance.LoadNguPhap())
 				{
 					i++;
-					SimpleButton btn = new SimpleButton() { Width = 200, Height = 60 };
-					btn.Text = "Bài: " + i + "\n" + item.TenViet;
-					btn.Click += btn_Click;
-					btn.Tag = item;
-					btn.Font = new Font("TNKeyUni-Arial", 8F, FontStyle.Bold);
-					System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmDsBaiHoc));
-					btn.ImageLocation = ImageLocation.MiddleLeft;
-					btn.Location = new Point(85, 61);
+					foreach (var itemnp in DanhMucConDao.Instance.DanhMucConLoad(item.ID))
+					{
+						SimpleButton btn = new SimpleButton() { Width = 245, Height = 60 };
+						btn.Text = "Bài: " + i + "\n" + itemnp.Ten;
+						btn.Click += btn_Click;
+						btn.Tag = itemnp;
+						btn.Font = new Font("TNKeyUni-Arial", 8F, FontStyle.Bold);
+						System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmDsBaiHoc));
+						btn.ImageLocation = ImageLocation.MiddleLeft;
+						btn.Location = new Point(85, 61);
 
-					flpGrammar.Controls.Add(btn);
+						flpGrammar.Controls.Add(btn);
+					}
+
+
 				}
 				flpGrammar.Enabled = true;
-				animator.Show(flpGrammar);
+				//animator.Show(flpGrammar);
 			}
 			catch (Exception)
 			{
@@ -60,8 +66,8 @@ namespace DACN_UD_Hoc_KHo_CTK37
 			SimpleButton simpleButton = sender as SimpleButton;
 			if (simpleButton != null)
 			{
-				DanhMuc nguphap = (simpleButton.Tag as DanhMuc);
-				FrmBaiHocChiTiet f = new FrmBaiHocChiTiet(nguphap.ID);
+				DanhMucCon nguphap = (simpleButton.Tag as DanhMucCon);
+				FrmGrammar f = new FrmGrammar(nguphap.ID);
 				f.Text = "Học ngữ pháp";
 				f.ShowDialog();
 			}

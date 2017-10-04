@@ -169,6 +169,7 @@ namespace DACN_UD_Hoc_KHo_CTK37
 			this.btnAudio.Size = new System.Drawing.Size(103, 54);
 			this.btnAudio.TabIndex = 6;
 			this.btnAudio.Text = "Nghe";
+			this.btnAudio.Click += new System.EventHandler(this.btnAudio_Click);
 			// 
 			// picBox
 			// 

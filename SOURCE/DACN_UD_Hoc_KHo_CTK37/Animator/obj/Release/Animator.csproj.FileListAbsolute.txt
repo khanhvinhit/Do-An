@@ -1,7 +1,0 @@
-D:\GITHUB\DoAn\SOURCE\DACN_UD_Hoc_KHo_CTK37\Animator\bin\Release\Animator.dll
-D:\GITHUB\DoAn\SOURCE\DACN_UD_Hoc_KHo_CTK37\Animator\bin\Release\Animator.pdb
-D:\GITHUB\DoAn\SOURCE\DACN_UD_Hoc_KHo_CTK37\Animator\obj\Release\Animator.csprojResolveAssemblyReference.cache
-D:\GITHUB\DoAn\SOURCE\DACN_UD_Hoc_KHo_CTK37\Animator\obj\Release\AnimatorNS.DoubleBitmapForm.resources
-D:\GITHUB\DoAn\SOURCE\DACN_UD_Hoc_KHo_CTK37\Animator\obj\Release\Animator.csproj.GenerateResource.Cache
-D:\GITHUB\DoAn\SOURCE\DACN_UD_Hoc_KHo_CTK37\Animator\obj\Release\Animator.dll
-D:\GITHUB\DoAn\SOURCE\DACN_UD_Hoc_KHo_CTK37\Animator\obj\Release\Animator.pdb

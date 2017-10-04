@@ -11,25 +11,21 @@ namespace DACN_UD_Hoc_KHo_CTK37
 		{
 			InitializeComponent();
 			picE.Image = null;
-			animator.Hide(picE);
 			LoadBT();
 		}
 
 		private void ShowImg()
 		{
-			//animator.WaitAllAnimations();
+			
 			string _filepath = Application.StartupPath;
 			Image image = Image.FromFile(_filepath + "\\App_Data\\Images\\bg.jpg");
 			picE.Image = image;
-			//animator.Show(picE);
-			//picE.Enabled = true;
 		}
 
 		private void LoadBT()
 		{
 			ShowImg();
 			picE.Enabled = true;
-			animator.Show(picE);
 		}
 
 	}

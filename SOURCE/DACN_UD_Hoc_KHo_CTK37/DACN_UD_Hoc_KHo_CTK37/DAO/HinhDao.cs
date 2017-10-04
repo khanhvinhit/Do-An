@@ -22,10 +22,9 @@ namespace DACN_UD_Hoc_KHo_CTK37.DAO
 
 		private HinhDao() { }
 
-		public List<Hinh> LoadHinhs(int idHinh)
+		public Hinh LoadHinhs(int idHinh)
 		{
-			List<Hinh> list = _db.Hinhs.Where(x => x.ID == idHinh).ToList();
-			return list;
+			return _db.Hinhs.Find(idHinh);
 		}
 	}
 }

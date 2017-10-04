@@ -33,10 +33,10 @@ namespace DACN_UD_Hoc_KHo_CTK37
 		{
 			this.components = new System.ComponentModel.Container();
 			DevExpress.XtraSplashScreen.SplashScreenManager splashScreenManager1 = new DevExpress.XtraSplashScreen.SplashScreenManager(this, typeof(global::DACN_UD_Hoc_KHo_CTK37.WaitForm), true, true);
-			AnimatorNS.Animation animation1 = new AnimatorNS.Animation();
+			
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmWecome));
 			this.picE = new DevExpress.XtraEditors.PictureEdit();
-			this.animator = new AnimatorNS.Animator(this.components);
+			
 			((System.ComponentModel.ISupportInitialize)(this.picE.Properties)).BeginInit();
 			this.SuspendLayout();
 			// 
@@ -45,34 +45,13 @@ namespace DACN_UD_Hoc_KHo_CTK37
 			this.picE.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-			this.animator.SetDecoration(this.picE, AnimatorNS.DecorationType.None);
+			
 			this.picE.Enabled = false;
 			this.picE.Location = new System.Drawing.Point(0, 0);
 			this.picE.Name = "picE";
 			this.picE.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Zoom;
 			this.picE.Size = new System.Drawing.Size(675, 328);
 			this.picE.TabIndex = 0;
-			// 
-			// animator
-			// 
-			this.animator.AnimationType = AnimatorNS.AnimationType.Leaf;
-			this.animator.Cursor = null;
-			animation1.AnimateOnlyDifferences = true;
-			animation1.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.BlindCoeff")));
-			animation1.LeafCoeff = 1F;
-			animation1.MaxTime = 1F;
-			animation1.MinTime = 0F;
-			animation1.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicCoeff")));
-			animation1.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicShift")));
-			animation1.MosaicSize = 0;
-			animation1.Padding = new System.Windows.Forms.Padding(0, 0, 0, 0);
-			animation1.RotateCoeff = 0F;
-			animation1.RotateLimit = 0F;
-			animation1.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.ScaleCoeff")));
-			animation1.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.SlideCoeff")));
-			animation1.TimeCoeff = 0F;
-			animation1.TransparencyCoeff = 0F;
-			this.animator.DefaultAnimation = animation1;
 			// 
 			// FrmWecome
 			// 
@@ -81,7 +60,6 @@ namespace DACN_UD_Hoc_KHo_CTK37
 			this.ClientSize = new System.Drawing.Size(677, 328);
 			this.ControlBox = false;
 			this.Controls.Add(this.picE);
-			this.animator.SetDecoration(this, AnimatorNS.DecorationType.None);
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
 			this.MaximizeBox = false;
 			this.MinimizeBox = false;
@@ -97,7 +75,5 @@ namespace DACN_UD_Hoc_KHo_CTK37
 
 		#endregion
 
-		private PictureEdit picE;
-		private AnimatorNS.Animator animator;
-	}
+		private PictureEdit picE;}
 }

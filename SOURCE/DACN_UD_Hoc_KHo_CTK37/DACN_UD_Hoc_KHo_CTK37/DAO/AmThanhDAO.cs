@@ -24,10 +24,9 @@ namespace DACN_UD_Hoc_KHo_CTK37.DAO
 
 		private AmThanhDAO() { }
 
-		public List<AmThanh> LoadAmThanhs(int idAT)
+		public AmThanh LoadAmThanhs(int idAT)
 		{
-			List<AmThanh> list = _db.AmThanhs.Where(x => x.ID == idAT).ToList();
-			return list;
+			return _db.AmThanhs.Find(idAT);
 		}
 	}
 }

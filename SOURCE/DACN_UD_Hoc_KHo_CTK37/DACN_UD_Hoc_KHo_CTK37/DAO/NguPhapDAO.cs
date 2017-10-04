@@ -23,5 +23,11 @@ namespace DACN_UD_Hoc_KHo_CTK37.DAO
 		}
 
 		private NguPhapDAO() { }
+
+		public List<NguPhap> LoadNguPhaps(int idDanhMucCon)
+		{
+			List<NguPhap> list = _db.NguPhaps.Where(x => x.IDDanhMucCon == idDanhMucCon).ToList();
+			return list;
+		}
 	}
 }

@@ -10,7 +10,7 @@
             <PropertyRef Name="ID" />
           </Key>
           <Property Name="ID" Type="int" Nullable="false" />
-          <Property Name="Đuongan" Type="ntext" />
+          <Property Name="DuongDan" Type="ntext" />
         </EntityType>
         <EntityType Name="BaiHoc">
           <Key>
@@ -395,7 +395,7 @@
             <PropertyRef Name="ID" />
           </Key>
           <Property Name="ID" Type="Int32" Nullable="false" />
-          <Property Name="Đuongan" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="DuongDan" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="BaiHoc">
           <Key>
@@ -673,7 +673,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-      </Schema>
+        </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
@@ -682,7 +682,7 @@
           <EntitySetMapping Name="AmThanhs">
             <EntityTypeMapping TypeName="HocKHoModel.AmThanh">
               <MappingFragment StoreEntitySet="AmThanh">
-                <ScalarProperty Name="Đuongan" ColumnName="Đuongan" />
+                <ScalarProperty Name="DuongDan" ColumnName="DuongDan" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
               </MappingFragment>
             </EntityTypeMapping>

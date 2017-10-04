@@ -34,7 +34,7 @@ namespace DACN_UD_Hoc_KHo_CTK37
 		{
 			this.components = new System.ComponentModel.Container();
 			DevExpress.XtraSplashScreen.SplashScreenManager splashScreenManager1 = new DevExpress.XtraSplashScreen.SplashScreenManager(this, typeof(global::DACN_UD_Hoc_KHo_CTK37.WaitForm), true, true);
-			AnimatorNS.Animation animation1 = new AnimatorNS.Animation();
+			
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmUdHoc));
 			this.ribbonControl1 = new DevExpress.XtraBars.Ribbon.RibbonControl();
 			this.btnLesson = new DevExpress.XtraBars.BarButtonItem();
@@ -49,13 +49,13 @@ namespace DACN_UD_Hoc_KHo_CTK37
 			this.ribbonPage2 = new DevExpress.XtraBars.Ribbon.RibbonPage();
 			this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
 			this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-			this.animator = new AnimatorNS.Animator(this.components);
+			
 			((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// ribbonControl1
 			// 
-			this.animator.SetDecoration(this.ribbonControl1, AnimatorNS.DecorationType.None);
+			
 			this.ribbonControl1.ExpandCollapseItem.Id = 0;
 			this.ribbonControl1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
             this.ribbonControl1.ExpandCollapseItem,
@@ -174,27 +174,6 @@ namespace DACN_UD_Hoc_KHo_CTK37
 			this.ribbonPageGroup3.Name = "ribbonPageGroup3";
 			this.ribbonPageGroup3.Text = "Hướng dẫn";
 			// 
-			// animator
-			// 
-			this.animator.AnimationType = AnimatorNS.AnimationType.Custom;
-			this.animator.Cursor = null;
-			animation1.AnimateOnlyDifferences = true;
-			animation1.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.BlindCoeff")));
-			animation1.LeafCoeff = 0F;
-			animation1.MaxTime = 1F;
-			animation1.MinTime = 0F;
-			animation1.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicCoeff")));
-			animation1.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicShift")));
-			animation1.MosaicSize = 0;
-			animation1.Padding = new System.Windows.Forms.Padding(0);
-			animation1.RotateCoeff = 0F;
-			animation1.RotateLimit = 0F;
-			animation1.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.ScaleCoeff")));
-			animation1.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.SlideCoeff")));
-			animation1.TimeCoeff = 0F;
-			animation1.TransparencyCoeff = 0F;
-			this.animator.DefaultAnimation = animation1;
-			// 
 			// FrmUdHoc
 			// 
 			this.Appearance.Options.UseFont = true;
@@ -203,7 +182,6 @@ namespace DACN_UD_Hoc_KHo_CTK37
 			this.AutoSize = true;
 			this.ClientSize = new System.Drawing.Size(972, 465);
 			this.Controls.Add(this.ribbonControl1);
-			this.animator.SetDecoration(this, AnimatorNS.DecorationType.None);
 			this.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
 			this.HelpButton = true;
@@ -236,7 +214,5 @@ namespace DACN_UD_Hoc_KHo_CTK37
 		private RibbonPage ribbonPage2;
 		private RibbonPageGroup ribbonPageGroup2;
 		private RibbonPageGroup ribbonPageGroup3;
-		private BarButtonItem btnDictionary;
-		private AnimatorNS.Animator animator;
-	}
+		private BarButtonItem btnDictionary;}
 }

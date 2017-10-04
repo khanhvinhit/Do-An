@@ -45,5 +45,10 @@ namespace DACN_UD_Hoc_KHo_CTK37.DAO
 			}
 			return false;
 		}
+
+		public DanhMucCon DanhMucConByID(int iD)
+		{
+			return _db.DanhMucCons.Find(iD);
+		}
 	}
 }
