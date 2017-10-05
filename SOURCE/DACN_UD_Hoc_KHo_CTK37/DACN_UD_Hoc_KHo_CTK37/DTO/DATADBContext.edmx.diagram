@@ -7,18 +7,18 @@
       <Diagram DiagramId="488532fdf2f3431586c5d4d3a7b09bf1" Name="Diagram1">
         <EntityTypeShape EntityType="HocKHoModel.AmThanh" Width="1.5" PointX="0.75" PointY="0.75" />
         <EntityTypeShape EntityType="HocKHoModel.BaiHoc" Width="1.5" PointX="0.75" PointY="13.625" />
-        <EntityTypeShape EntityType="HocKHoModel.BaiKhoa" Width="1.5" PointX="7.5" PointY="11" />
-        <EntityTypeShape EntityType="HocKHoModel.CauHoi" Width="1.5" PointX="7.5" PointY="17.125" />
-        <EntityTypeShape EntityType="HocKHoModel.DamThoai" Width="1.5" PointX="7.5" PointY="7.875" />
+        <EntityTypeShape EntityType="HocKHoModel.BaiKhoa" Width="1.5" PointX="7.5" PointY="18.875" />
+        <EntityTypeShape EntityType="HocKHoModel.CauHoi" Width="1.5" PointX="7.5" PointY="5.25" />
+        <EntityTypeShape EntityType="HocKHoModel.DamThoai" Width="1.5" PointX="7.5" PointY="22.125" />
         <EntityTypeShape EntityType="HocKHoModel.DanhMuc" Width="1.5" PointX="3" PointY="12.25" />
         <EntityTypeShape EntityType="HocKHoModel.DanhMucCon" Width="1.5" PointX="5.25" PointY="11.5" />
-        <EntityTypeShape EntityType="HocKHoModel.DichKHoViet" Width="1.5" PointX="7.5" PointY="22.5" />
-        <EntityTypeShape EntityType="HocKHoModel.DichVietKHo" Width="1.5" PointX="7.5" PointY="14.375" />
+        <EntityTypeShape EntityType="HocKHoModel.DichKHoViet" Width="1.5" PointX="7.5" PointY="13.625" />
+        <EntityTypeShape EntityType="HocKHoModel.DichVietKHo" Width="1.5" PointX="7.5" PointY="10.875" />
         <EntityTypeShape EntityType="HocKHoModel.Hinh" Width="1.5" PointX="2.75" PointY="0.75" />
         <EntityTypeShape EntityType="HocKHoModel.LoiHayYDep" Width="1.5" PointX="3" PointY="25.25" />
         <EntityTypeShape EntityType="HocKHoModel.LuyenTap" Width="1.5" PointX="7.5" PointY="2.125" />
-        <EntityTypeShape EntityType="HocKHoModel.NguPhap" Width="1.5" PointX="7.5" PointY="20" />
-        <EntityTypeShape EntityType="HocKHoModel.TuVung" Width="1.5" PointX="7.5" PointY="5.25" />
+        <EntityTypeShape EntityType="HocKHoModel.NguPhap" Width="1.5" PointX="7.5" PointY="16.25" />
+        <EntityTypeShape EntityType="HocKHoModel.TuVung" Width="1.5" PointX="7.5" PointY="8.125" />
         <AssociationConnector Association="HocKHoModel.FK_DanhMuc_BaiHoc" />
         <AssociationConnector Association="HocKHoModel.FK_LoiHayYDep_BaiHoc" />
         <AssociationConnector Association="HocKHoModel.FK_BaiKhoa_DanhMucCon" />

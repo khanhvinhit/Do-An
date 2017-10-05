@@ -33,6 +33,7 @@ namespace DACN_UD_Hoc_KHo_CTK37
         #region method
         void LoadDanhMucTheoTen(string name, int id)
         {
+            btnAudio.Enabled = false;
             rkqBaiHoc.ResetText();
             rkqBaiHoc.Font = new Font("TNKeyUni-Arial", 11F);
             int j = 0;

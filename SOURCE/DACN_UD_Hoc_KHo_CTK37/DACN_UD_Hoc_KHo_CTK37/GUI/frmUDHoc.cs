@@ -102,7 +102,6 @@ namespace DACN_UD_Hoc_KHo_CTK37
 			if (XtraMessageBox.Show("Bạn có muốn thoát khỏi ứng dụng không?", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) != DialogResult.OK)
 			{
 				e.Cancel = true;
-
 			}
 			Settings.Default["ApplicationSkinName"] = UserLookAndFeel.Default.SkinName;
 			Settings.Default.Save();

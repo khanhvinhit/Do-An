@@ -9,7 +9,7 @@
           <Key>
             <PropertyRef Name="ID" />
           </Key>
-          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="DuongDan" Type="ntext" />
         </EntityType>
         <EntityType Name="BaiHoc">
@@ -70,7 +70,7 @@
           <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Ten" Type="nvarchar" MaxLength="250" />
           <Property Name="IDDanhMuc" Type="int" />
-          <Property Name="IDAmThanh" Type="int" />
+          <Property Name="IDAmThanh" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="DichKHoViet">
           <Key>
@@ -394,7 +394,7 @@
           <Key>
             <PropertyRef Name="ID" />
           </Key>
-          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="DuongDan" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="BaiHoc">
@@ -462,7 +462,7 @@
           <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Ten" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
           <Property Name="IDDanhMuc" Type="Int32" />
-          <Property Name="IDAmThanh" Type="Int32" />
+          <Property Name="IDAmThanh" Type="Int32" Nullable="false" />
           <NavigationProperty Name="BaiKhoas" Relationship="HocKHoModel.FK_BaiKhoa_DanhMucCon" FromRole="DanhMucCon" ToRole="BaiKhoa" />
           <NavigationProperty Name="CauHois" Relationship="HocKHoModel.FK_CauHoi_DanhMucCon" FromRole="DanhMucCon" ToRole="CauHoi" />
           <NavigationProperty Name="DamThoais" Relationship="HocKHoModel.FK_DamThoai_DanhMucCon" FromRole="DanhMucCon" ToRole="DamThoai" />

@@ -173,7 +173,8 @@ namespace DACN_UD_Hoc_KHo_CTK37
             // 
             // picBox
             // 
-            this.picBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.picBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.picBox.BackColor = System.Drawing.Color.Transparent;
             this.picBox.Cursor = System.Windows.Forms.Cursors.Default;
             this.picBox.Location = new System.Drawing.Point(558, 176);
