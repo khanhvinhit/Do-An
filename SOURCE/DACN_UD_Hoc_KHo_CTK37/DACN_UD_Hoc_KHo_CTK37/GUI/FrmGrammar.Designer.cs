@@ -28,6 +28,7 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
+            DevExpress.XtraSplashScreen.SplashScreenManager splashScreenManager1 = new DevExpress.XtraSplashScreen.SplashScreenManager(this, typeof(global::DACN_UD_Hoc_KHo_CTK37.WaitForm), true, true);
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmGrammar));
             this.recNguPhap = new DevExpress.XtraRichEdit.RichEditControl();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
@@ -43,6 +44,7 @@
             this.recNguPhap.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.recNguPhap.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.recNguPhap.EnableToolTips = true;
             this.recNguPhap.Location = new System.Drawing.Point(5, 43);
             this.recNguPhap.Name = "recNguPhap";
@@ -85,6 +87,7 @@
             this.btnClose.Size = new System.Drawing.Size(86, 31);
             this.btnClose.TabIndex = 1;
             this.btnClose.Text = "Thoát";
+            this.btnClose.ToolTip = "Nhấn để thoát khỏi ngữ pháp";
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // FrmGrammar

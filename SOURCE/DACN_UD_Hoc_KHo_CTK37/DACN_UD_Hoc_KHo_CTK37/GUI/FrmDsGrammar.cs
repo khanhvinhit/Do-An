@@ -23,7 +23,6 @@ namespace DACN_UD_Hoc_KHo_CTK37
 		{
 			try
 			{
-				flpGrammar.Enabled = false;
 				flpGrammar.Controls.Clear();
 				int i = 0;
 				foreach (DanhMuc item in DanhMucDao.Instance.LoadNguPhap())
@@ -31,22 +30,15 @@ namespace DACN_UD_Hoc_KHo_CTK37
 					i++;
 					foreach (var itemnp in DanhMucConDao.Instance.DanhMucConLoad(item.ID))
 					{
-						SimpleButton btn = new SimpleButton() { Width = 245, Height = 60 };
+						SimpleButton btn = new SimpleButton() { Width = 244, Height = 60 };
 						btn.Text = "Bài: " + i + "\n" + itemnp.Ten;
 						btn.Click += btn_Click;
 						btn.Tag = itemnp;
 						btn.Font = new Font("TNKeyUni-Arial", 8F, FontStyle.Bold);
-						System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmDsBaiHoc));
-						btn.ImageLocation = ImageLocation.MiddleLeft;
-						btn.Location = new Point(85, 61);
-
 						flpGrammar.Controls.Add(btn);
-					}
-
-
+                        btn.ToolTip = "Nhấp để xem chi tiết ngữ pháp số: " + i;
+                    }
 				}
-				flpGrammar.Enabled = true;
-				//animator.Show(flpGrammar);
 			}
 			catch (Exception)
 			{

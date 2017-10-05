@@ -31,6 +31,7 @@ namespace DACN_UD_Hoc_KHo_CTK37
 		/// </summary>
 		private void InitializeComponent()
 		{
+            this.components = new System.ComponentModel.Container();
             DevExpress.XtraSplashScreen.SplashScreenManager splashScreenManager1 = new DevExpress.XtraSplashScreen.SplashScreenManager(this, typeof(global::DACN_UD_Hoc_KHo_CTK37.WaitForm), true, true);
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmBaiHocChiTiet));
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
@@ -110,10 +111,12 @@ namespace DACN_UD_Hoc_KHo_CTK37
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lbcMucLuc.Appearance.Font = new System.Drawing.Font("TNKeyUni-Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbcMucLuc.Appearance.Options.UseFont = true;
+            this.lbcMucLuc.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.lbcMucLuc.Location = new System.Drawing.Point(5, 56);
             this.lbcMucLuc.Name = "lbcMucLuc";
             this.lbcMucLuc.Size = new System.Drawing.Size(200, 448);
             this.lbcMucLuc.TabIndex = 2;
+            this.lbcMucLuc.ToolTip = "Nhấp vào để xem";
             this.lbcMucLuc.Click += new System.EventHandler(this.lbcMucLuc_Click);
             // 
             // lbDanhMuc
@@ -169,6 +172,7 @@ namespace DACN_UD_Hoc_KHo_CTK37
             this.btnAudio.Size = new System.Drawing.Size(103, 54);
             this.btnAudio.TabIndex = 6;
             this.btnAudio.Text = "Nghe";
+            this.btnAudio.ToolTip = "Nhấn để nghe";
             this.btnAudio.Click += new System.EventHandler(this.btnAudio_Click);
             // 
             // picBox
@@ -195,6 +199,7 @@ namespace DACN_UD_Hoc_KHo_CTK37
             this.btnDictionary.Size = new System.Drawing.Size(103, 54);
             this.btnDictionary.TabIndex = 1;
             this.btnDictionary.Text = "Từ điển";
+            this.btnDictionary.ToolTip = "Nhấn để tra từ điển";
             this.btnDictionary.Click += new System.EventHandler(this.btnDictionary_Click);
             // 
             // btnRefresh
@@ -202,12 +207,14 @@ namespace DACN_UD_Hoc_KHo_CTK37
             this.btnRefresh.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnRefresh.Appearance.Font = new System.Drawing.Font("TNKeyUni-Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRefresh.Appearance.Options.UseFont = true;
+            this.btnRefresh.Enabled = false;
             this.btnRefresh.Image = ((System.Drawing.Image)(resources.GetObject("btnRefresh.Image")));
             this.btnRefresh.Location = new System.Drawing.Point(558, 56);
             this.btnRefresh.Name = "btnRefresh";
             this.btnRefresh.Size = new System.Drawing.Size(103, 54);
             this.btnRefresh.TabIndex = 1;
             this.btnRefresh.Text = "Quay về";
+            this.btnRefresh.ToolTip = "Nhấn để load lại bài học";
             this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
             // btnBack
@@ -221,6 +228,7 @@ namespace DACN_UD_Hoc_KHo_CTK37
             this.btnBack.Size = new System.Drawing.Size(103, 54);
             this.btnBack.TabIndex = 1;
             this.btnBack.Text = "Bài trước";
+            this.btnBack.ToolTip = "Nhấn để quay về bài trước";
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // btnClose
@@ -234,6 +242,7 @@ namespace DACN_UD_Hoc_KHo_CTK37
             this.btnClose.Size = new System.Drawing.Size(103, 54);
             this.btnClose.TabIndex = 1;
             this.btnClose.Text = "Đóng";
+            this.btnClose.ToolTip = "Nhấn để đóng bài học";
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // btnNext
@@ -247,6 +256,7 @@ namespace DACN_UD_Hoc_KHo_CTK37
             this.btnNext.Size = new System.Drawing.Size(103, 54);
             this.btnNext.TabIndex = 1;
             this.btnNext.Text = "Bài tiếp";
+            this.btnNext.ToolTip = "Nhấn để sang bài tiếp theo";
             this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
             // 
             // lbLHViet
@@ -280,6 +290,7 @@ namespace DACN_UD_Hoc_KHo_CTK37
             this.rkqBaiHoc.Appearance.Text.BorderColor = System.Drawing.Color.Transparent;
             this.rkqBaiHoc.Appearance.Text.Options.UseBackColor = true;
             this.rkqBaiHoc.Appearance.Text.Options.UseBorderColor = true;
+            this.rkqBaiHoc.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.rkqBaiHoc.EnableToolTips = true;
             this.rkqBaiHoc.Location = new System.Drawing.Point(6, 56);
             this.rkqBaiHoc.Name = "rkqBaiHoc";
@@ -361,5 +372,5 @@ namespace DACN_UD_Hoc_KHo_CTK37
 		private System.Windows.Forms.PictureBox picBox;
 		private SimpleButton btnAudio;
 		private SimpleButton btnDictionary;
-	}
+    }
 }

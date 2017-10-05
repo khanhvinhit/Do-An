@@ -89,6 +89,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lbcTuVung.Appearance.Font = new System.Drawing.Font("TNKeyUni-Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbcTuVung.Appearance.Options.UseFont = true;
+            this.lbcTuVung.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.lbcTuVung.Location = new System.Drawing.Point(4, 4);
             this.lbcTuVung.Name = "lbcTuVung";
             this.lbcTuVung.Size = new System.Drawing.Size(183, 125);
@@ -101,6 +102,7 @@
             this.recNghia.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.recNghia.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.recNghia.EnableToolTips = true;
             this.recNghia.Location = new System.Drawing.Point(0, 4);
             this.recNghia.Name = "recNghia";
@@ -130,6 +132,7 @@
             this.btnDic.Size = new System.Drawing.Size(75, 23);
             this.btnDic.TabIndex = 2;
             this.btnDic.Text = "Tra từ";
+            this.btnDic.ToolTip = "Nhấn để tra từ";
             this.btnDic.Click += new System.EventHandler(this.btnDic_Click);
             // 
             // labelControl1
@@ -148,6 +151,7 @@
             this.txtDic.Properties.Appearance.Options.UseFont = true;
             this.txtDic.Size = new System.Drawing.Size(408, 22);
             this.txtDic.TabIndex = 0;
+            this.txtDic.ToolTip = "Nhập từ cần tra";
             this.txtDic.Enter += new System.EventHandler(this.txtDic_Enter);
             this.txtDic.Leave += new System.EventHandler(this.txtDic_Leave);
             // 

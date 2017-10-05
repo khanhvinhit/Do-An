@@ -899,6 +899,7 @@ namespace DACN_UD_Hoc_KHo_CTK37
         }
         private void lbcMucLuc_Click(object sender, EventArgs e)
         {
+            btnRefresh.Enabled = true;
             if (trangthaiam)
             {
                 trangthaiam = false;
@@ -974,6 +975,7 @@ namespace DACN_UD_Hoc_KHo_CTK37
             {
                 f.Close();
             }
+            btnRefresh.Enabled = false;
             LoadBaiHoc(_iDBaiHoc);
         }
         private void btnDictionary_Click(object sender, EventArgs e)

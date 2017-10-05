@@ -28,9 +28,11 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
+            DevExpress.XtraSplashScreen.SplashScreenManager splashScreenManager1 = new DevExpress.XtraSplashScreen.SplashScreenManager(this, typeof(global::DACN_UD_Hoc_KHo_CTK37.WaitForm), true, true);
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmLuyenTap));
             this.lbCauHoi = new DevExpress.XtraEditors.LabelControl();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
+            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.lbSo = new DevExpress.XtraEditors.LabelControl();
             this.btnPrev = new DevExpress.XtraEditors.SimpleButton();
             this.btnNext = new DevExpress.XtraEditors.SimpleButton();
@@ -39,7 +41,6 @@
             this.recTraLoi = new DevExpress.XtraRichEdit.RichEditControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.lbCauh = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             this.SuspendLayout();
@@ -73,13 +74,22 @@
             this.panelControl1.Size = new System.Drawing.Size(739, 252);
             this.panelControl1.TabIndex = 1;
             // 
+            // labelControl2
+            // 
+            this.labelControl2.Location = new System.Drawing.Point(674, 5);
+            this.labelControl2.Name = "labelControl2";
+            this.labelControl2.Size = new System.Drawing.Size(28, 13);
+            this.labelControl2.TabIndex = 7;
+            this.labelControl2.Text = "Tổng:";
+            // 
             // lbSo
             // 
-            this.lbSo.Location = new System.Drawing.Point(712, 5);
+            this.lbSo.Location = new System.Drawing.Point(708, 5);
             this.lbSo.Name = "lbSo";
             this.lbSo.Size = new System.Drawing.Size(22, 13);
             this.lbSo.TabIndex = 6;
             this.lbSo.Text = "0 / 0";
+            this.lbSo.ToolTip = "Số câu hỏi hiện tại / Tổng số câu hỏi";
             // 
             // btnPrev
             // 
@@ -92,6 +102,7 @@
             this.btnPrev.Size = new System.Drawing.Size(99, 28);
             this.btnPrev.TabIndex = 5;
             this.btnPrev.Text = "Câu trước";
+            this.btnPrev.ToolTip = "Nhấn để quay lại câu trước";
             this.btnPrev.Click += new System.EventHandler(this.btnPrev_Click);
             // 
             // btnNext
@@ -105,6 +116,7 @@
             this.btnNext.Size = new System.Drawing.Size(99, 28);
             this.btnNext.TabIndex = 5;
             this.btnNext.Text = "Câu sau";
+            this.btnNext.ToolTip = "Nhấn để sang câu tiếp theo";
             this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
             // 
             // btnRefresh
@@ -118,6 +130,7 @@
             this.btnRefresh.Size = new System.Drawing.Size(99, 28);
             this.btnRefresh.TabIndex = 5;
             this.btnRefresh.Text = "Làm lại";
+            this.btnRefresh.ToolTip = "Nhấn để xóa tất cả câu trả lời có trong luyện tập";
             this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
             // btnThoat
@@ -131,6 +144,7 @@
             this.btnThoat.Size = new System.Drawing.Size(99, 28);
             this.btnThoat.TabIndex = 5;
             this.btnThoat.Text = "Thoát";
+            this.btnThoat.ToolTip = "Thoát khỏi luyện tập";
             this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
             // 
             // recTraLoi
@@ -166,14 +180,6 @@
             this.lbCauh.Size = new System.Drawing.Size(58, 17);
             this.lbCauh.TabIndex = 0;
             this.lbCauh.Text = "Câu hỏi:";
-            // 
-            // labelControl2
-            // 
-            this.labelControl2.Location = new System.Drawing.Point(678, 5);
-            this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(28, 13);
-            this.labelControl2.TabIndex = 7;
-            this.labelControl2.Text = "Tổng:";
             // 
             // FrmLuyenTap
             // 
