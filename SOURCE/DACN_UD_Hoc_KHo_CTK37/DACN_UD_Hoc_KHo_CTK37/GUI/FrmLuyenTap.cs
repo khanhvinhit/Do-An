@@ -47,8 +47,8 @@ namespace DACN_UD_Hoc_KHo_CTK37.GUI
                             soLT = LuyenTapDao.Instance.LTCounts(itemdmc.ID);
                             lbCauHoi.Text = "Câu " + stt + ":";
                             var lt = LuyenTapDao.Instance.LoadLTFirst(itemdmc.ID);
-                            LoadCauHoi(lt.ID);
-
+                            LoadCauHoiLT(lt.ID);
+                            idLT = lt.ID;
                         }
                     }
                 }
@@ -62,8 +62,8 @@ namespace DACN_UD_Hoc_KHo_CTK37.GUI
                             lbSo.Text = stt + "/" + soLT;
                             lbCauHoi.Text = "Câu " + stt + ":";
                             var lt = LuyenTapDao.Instance.LoadLTFirst(itemdmc.ID);
-                            LoadCauHoi(lt.ID);
-
+                            LoadCauHoiLT(lt.ID);
+                            idLT = lt.ID;
                         }
 
                     }
@@ -73,8 +73,9 @@ namespace DACN_UD_Hoc_KHo_CTK37.GUI
             }
         }
 
-        private void LoadCauHoi(int idLT)
+        private void LoadCauHoiLT(int idLT)
         {
+            recTraLoi.ResetText();
             foreach (var lt in LuyenTapDao.Instance.LoadLTByID(idLT))
             {
                 lbCauh.Text = lt.HoiKHo + "\n";
@@ -85,6 +86,10 @@ namespace DACN_UD_Hoc_KHo_CTK37.GUI
                 if (lt.TraLoiViet != null)
                 {
                     lbCauh.Text = lt.HoiKHo + "\n" + lt.HoiViet + "\n + " + lt.TraLoiViet + "\n";
+                }
+                if (lt.TraLoiKHo!=null)
+                {
+                    recTraLoi.Text += lt.TraLoiKHo;
                 }
             }
             if (stt == 1)
@@ -175,7 +180,7 @@ namespace DACN_UD_Hoc_KHo_CTK37.GUI
                 idLT = idLT - 1;
                 lbSo.Text = stt + " / " + soLT;
                 lbCauHoi.Text = "Câu " + stt + ":";
-                LoadCauHoi(idLT);
+                LoadCauHoiLT(idLT);
             }
             else if (stt == 1)
             {
@@ -188,7 +193,7 @@ namespace DACN_UD_Hoc_KHo_CTK37.GUI
             string cauTL = recTraLoi.Text;
             if (cauTL != "")
             {
-                CauHoiDao.Instance.UpdateCauHoi(idLT, cauTL);
+                LuyenTapDao.Instance.UpdateLT(idLT, cauTL);
             }
             if (stt < soLT)
             {
@@ -196,7 +201,7 @@ namespace DACN_UD_Hoc_KHo_CTK37.GUI
                 idLT = idLT + 1;
                 lbSo.Text = stt + " / " + soLT;
                 lbCauHoi.Text = "Câu " + stt + ":";
-                LoadCauHoi(idLT);
+                LoadCauHoiLT(idLT);
             }
             else
             {

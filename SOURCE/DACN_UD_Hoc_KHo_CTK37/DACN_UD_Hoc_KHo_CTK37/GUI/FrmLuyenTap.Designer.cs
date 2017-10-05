@@ -31,14 +31,15 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmLuyenTap));
             this.lbCauHoi = new DevExpress.XtraEditors.LabelControl();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
+            this.lbSo = new DevExpress.XtraEditors.LabelControl();
+            this.btnPrev = new DevExpress.XtraEditors.SimpleButton();
+            this.btnNext = new DevExpress.XtraEditors.SimpleButton();
             this.btnRefresh = new DevExpress.XtraEditors.SimpleButton();
             this.btnThoat = new DevExpress.XtraEditors.SimpleButton();
             this.recTraLoi = new DevExpress.XtraRichEdit.RichEditControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.lbCauh = new DevExpress.XtraEditors.LabelControl();
-            this.btnNext = new DevExpress.XtraEditors.SimpleButton();
-            this.btnPrev = new DevExpress.XtraEditors.SimpleButton();
-            this.lbSo = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             this.SuspendLayout();
@@ -57,6 +58,7 @@
             this.panelControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.panelControl1.Controls.Add(this.labelControl2);
             this.panelControl1.Controls.Add(this.lbSo);
             this.panelControl1.Controls.Add(this.btnPrev);
             this.panelControl1.Controls.Add(this.btnNext);
@@ -70,6 +72,40 @@
             this.panelControl1.Name = "panelControl1";
             this.panelControl1.Size = new System.Drawing.Size(739, 252);
             this.panelControl1.TabIndex = 1;
+            // 
+            // lbSo
+            // 
+            this.lbSo.Location = new System.Drawing.Point(712, 5);
+            this.lbSo.Name = "lbSo";
+            this.lbSo.Size = new System.Drawing.Size(22, 13);
+            this.lbSo.TabIndex = 6;
+            this.lbSo.Text = "0 / 0";
+            // 
+            // btnPrev
+            // 
+            this.btnPrev.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnPrev.Appearance.Font = new System.Drawing.Font("TNKeyUni-Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPrev.Appearance.Options.UseFont = true;
+            this.btnPrev.Image = ((System.Drawing.Image)(resources.GetObject("btnPrev.Image")));
+            this.btnPrev.Location = new System.Drawing.Point(425, 219);
+            this.btnPrev.Name = "btnPrev";
+            this.btnPrev.Size = new System.Drawing.Size(99, 28);
+            this.btnPrev.TabIndex = 5;
+            this.btnPrev.Text = "Câu trước";
+            this.btnPrev.Click += new System.EventHandler(this.btnPrev_Click);
+            // 
+            // btnNext
+            // 
+            this.btnNext.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnNext.Appearance.Font = new System.Drawing.Font("TNKeyUni-Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNext.Appearance.Options.UseFont = true;
+            this.btnNext.Image = ((System.Drawing.Image)(resources.GetObject("btnNext.Image")));
+            this.btnNext.Location = new System.Drawing.Point(530, 219);
+            this.btnNext.Name = "btnNext";
+            this.btnNext.Size = new System.Drawing.Size(99, 28);
+            this.btnNext.TabIndex = 5;
+            this.btnNext.Text = "Câu sau";
+            this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
             // 
             // btnRefresh
             // 
@@ -131,39 +167,13 @@
             this.lbCauh.TabIndex = 0;
             this.lbCauh.Text = "Câu hỏi:";
             // 
-            // btnNext
+            // labelControl2
             // 
-            this.btnNext.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnNext.Appearance.Font = new System.Drawing.Font("TNKeyUni-Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNext.Appearance.Options.UseFont = true;
-            this.btnNext.Image = ((System.Drawing.Image)(resources.GetObject("btnNext.Image")));
-            this.btnNext.Location = new System.Drawing.Point(530, 219);
-            this.btnNext.Name = "btnNext";
-            this.btnNext.Size = new System.Drawing.Size(99, 28);
-            this.btnNext.TabIndex = 5;
-            this.btnNext.Text = "Câu sau";
-            this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
-            // 
-            // btnPrev
-            // 
-            this.btnPrev.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnPrev.Appearance.Font = new System.Drawing.Font("TNKeyUni-Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPrev.Appearance.Options.UseFont = true;
-            this.btnPrev.Image = ((System.Drawing.Image)(resources.GetObject("btnPrev.Image")));
-            this.btnPrev.Location = new System.Drawing.Point(425, 219);
-            this.btnPrev.Name = "btnPrev";
-            this.btnPrev.Size = new System.Drawing.Size(99, 28);
-            this.btnPrev.TabIndex = 5;
-            this.btnPrev.Text = "Câu trước";
-            this.btnPrev.Click += new System.EventHandler(this.btnPrev_Click);
-            // 
-            // lbSo
-            // 
-            this.lbSo.Location = new System.Drawing.Point(712, 5);
-            this.lbSo.Name = "lbSo";
-            this.lbSo.Size = new System.Drawing.Size(22, 13);
-            this.lbSo.TabIndex = 6;
-            this.lbSo.Text = "0 / 0";
+            this.labelControl2.Location = new System.Drawing.Point(678, 5);
+            this.labelControl2.Name = "labelControl2";
+            this.labelControl2.Size = new System.Drawing.Size(28, 13);
+            this.labelControl2.TabIndex = 7;
+            this.labelControl2.Text = "Tổng:";
             // 
             // FrmLuyenTap
             // 
@@ -199,5 +209,6 @@
         private DevExpress.XtraEditors.SimpleButton btnPrev;
         private DevExpress.XtraEditors.SimpleButton btnNext;
         private DevExpress.XtraEditors.LabelControl lbSo;
+        private DevExpress.XtraEditors.LabelControl labelControl2;
     }
 }
