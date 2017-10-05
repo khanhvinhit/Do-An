@@ -303,7 +303,7 @@ namespace DACN_UD_Hoc_KHo_CTK37
             this.lbTenBai.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lbTenBai.Appearance.Font = new System.Drawing.Font("TNKeyUni-Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbTenBai.ImageAlignToText = DevExpress.XtraEditors.ImageAlignToText.TopCenter;
-            this.lbTenBai.Location = new System.Drawing.Point(399, 5);
+            this.lbTenBai.Location = new System.Drawing.Point(300, 5);
             this.lbTenBai.Name = "lbTenBai";
             this.lbTenBai.Size = new System.Drawing.Size(25, 17);
             this.lbTenBai.TabIndex = 0;

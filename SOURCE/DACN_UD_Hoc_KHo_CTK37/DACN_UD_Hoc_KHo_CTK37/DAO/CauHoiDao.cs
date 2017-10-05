@@ -54,16 +54,11 @@ namespace DACN_UD_Hoc_KHo_CTK37.DAO
 			_db.SaveChanges();
 		}
 
-		public bool Referst(int id)
+		public void Referst(int id)
 		{
 			var cauhoi = _db.CauHois.Find(id);
 			cauhoi.TraLoi = null;
 			_db.SaveChanges();
-			if (cauhoi.ID > 0)
-			{
-				return true;
-			}
-			return false;
 		}
 	}
 }

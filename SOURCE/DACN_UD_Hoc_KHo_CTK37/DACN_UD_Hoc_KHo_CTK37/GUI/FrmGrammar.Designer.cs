@@ -80,9 +80,9 @@
             this.btnClose.Appearance.Font = new System.Drawing.Font("TNKeyUni-Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClose.Appearance.Options.UseFont = true;
             this.btnClose.Image = ((System.Drawing.Image)(resources.GetObject("btnClose.Image")));
-            this.btnClose.Location = new System.Drawing.Point(929, 14);
+            this.btnClose.Location = new System.Drawing.Point(929, 6);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(86, 23);
+            this.btnClose.Size = new System.Drawing.Size(86, 31);
             this.btnClose.TabIndex = 1;
             this.btnClose.Text = "Thoát";
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
