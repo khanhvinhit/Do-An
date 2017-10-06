@@ -47,19 +47,17 @@ namespace DACN_UD_Hoc_KHo_CTK37
 			// panelControl1
 			// 
 			this.panelControl1.AllowTouchScroll = true;
-			this.panelControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
 			this.panelControl1.Appearance.BackColor = System.Drawing.Color.Transparent;
 			this.panelControl1.Appearance.Options.UseBackColor = true;
 			this.panelControl1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
 			this.panelControl1.Controls.Add(this.labelControl1);
 			this.panelControl1.Controls.Add(this.flpBaiHoc);
 			this.animator.SetDecoration(this.panelControl1, AnimatorNS.DecorationType.None);
-			this.panelControl1.Location = new System.Drawing.Point(0, 1);
+			this.panelControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.panelControl1.Location = new System.Drawing.Point(0, 0);
 			this.panelControl1.LookAndFeel.SkinName = "Glass Oceans";
 			this.panelControl1.Name = "panelControl1";
-			this.panelControl1.Size = new System.Drawing.Size(932, 468);
+			this.panelControl1.Size = new System.Drawing.Size(934, 469);
 			this.panelControl1.TabIndex = 0;
 			// 
 			// labelControl1
@@ -81,7 +79,7 @@ namespace DACN_UD_Hoc_KHo_CTK37
 			this.animator.SetDecoration(this.flpBaiHoc, AnimatorNS.DecorationType.None);
 			this.flpBaiHoc.Location = new System.Drawing.Point(48, 46);
 			this.flpBaiHoc.Name = "flpBaiHoc";
-			this.flpBaiHoc.Size = new System.Drawing.Size(848, 412);
+			this.flpBaiHoc.Size = new System.Drawing.Size(850, 413);
 			this.flpBaiHoc.TabIndex = 0;
 			// 
 			// animator
@@ -113,6 +111,7 @@ namespace DACN_UD_Hoc_KHo_CTK37
 			this.ControlBox = false;
 			this.Controls.Add(this.panelControl1);
 			this.animator.SetDecoration(this, AnimatorNS.DecorationType.None);
+			this.DoubleBuffered = true;
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
 			this.MaximizeBox = false;
 			this.MinimizeBox = false;

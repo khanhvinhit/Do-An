@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Windows.Forms;
+using DACN_UD_Hoc_KHo_CTK37.DAO;
 using DevExpress.UserSkins;
 using DevExpress.Skins;
 using DevExpress.LookAndFeel;
+using DevExpress.XtraEditors.Controls;
 
 namespace DACN_UD_Hoc_KHo_CTK37
 {
@@ -18,8 +20,8 @@ namespace DACN_UD_Hoc_KHo_CTK37
 			Application.SetCompatibleTextRenderingDefault(false);
 
 			BonusSkins.Register();
-			SkinManager.EnableFormSkins();
-			UserLookAndFeel.Default.SetSkinStyle("DevExpress Style");//
+			SkinManager.EnableFormSkins();//
+			Localizer.Active = new TuyChinhDevExpress("&Hủy bỏ", "&Hủy", "&Chấp nhận", "&Xác nhận", "&Đóng", "&Thử lại", "&Có");
 			Application.Run(new FrmUdHoc());
 		}
 	}

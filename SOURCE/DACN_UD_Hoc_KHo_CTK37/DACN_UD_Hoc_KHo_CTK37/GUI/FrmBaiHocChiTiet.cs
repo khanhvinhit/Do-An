@@ -98,7 +98,7 @@ namespace DACN_UD_Hoc_KHo_CTK37
 							{
 								foreach (TuVung tv in TuVungDao.Instance.LoadTuVungs(itemdmc.ID))
 								{
-									rkqBaiHoc.Text += "\t\t" + tv.KHo + " : \t" + tv.Viet + "\n";
+									rkqBaiHoc.Text += "\t\t" + tv.KHo + ": " + tv.Viet + "\n";
 								}
 
 							}
@@ -272,7 +272,7 @@ namespace DACN_UD_Hoc_KHo_CTK37
 							{
 								foreach (TuVung tv in TuVungDao.Instance.LoadTuVungs(itemdmc.ID))
 								{
-									rkqBaiHoc.Text += "\t" + tv.KHo + " : \t" + tv.Viet + "\n";
+									rkqBaiHoc.Text += "\t" + tv.KHo + ": " + tv.Viet + "\n";
 								}
 							}
 							if (itemdmc.DamThoais.Count >= 1)
@@ -445,7 +445,7 @@ namespace DACN_UD_Hoc_KHo_CTK37
 					{
 						foreach (TuVung tv in TuVungDao.Instance.LoadTuVungs(itemdmc.ID))
 						{
-							rkqBaiHoc.Text += "\t" + tv.KHo + " : \t" + tv.Viet + "\n";
+							rkqBaiHoc.Text += "\t" + tv.KHo + ": " + tv.Viet + "\n";
 						}
 					}
 					if (itemdmc.DamThoais.Count >= 1)
@@ -564,7 +564,6 @@ namespace DACN_UD_Hoc_KHo_CTK37
 		}
 		void LoadBaiHoc(int iDBaiHoc)
 		{
-			btnExe.Enabled = false;
 			lbViet.Text = "";
 			lbName.Text = "";
 			lbKhoHay.Text = "";
@@ -623,11 +622,9 @@ namespace DACN_UD_Hoc_KHo_CTK37
 				{
 					foreach (DanhMucCon itemdmc in DanhMucConDao.Instance.DanhMucConLoad(item.ID))
 					{
+
 						i++;
-						if (itemdmc.CauHois.Count() < 1)
-						{
-							lbcMucLuc.Items.Add(i + ". " + itemdmc.Ten);
-						}
+						lbcMucLuc.Items.Add(i + ". " + itemdmc.Ten);
 
 					}
 				}
@@ -645,11 +642,7 @@ namespace DACN_UD_Hoc_KHo_CTK37
 					rkqBaiHoc.Text += j + ". " + item.TenKHo + " - " + item.TenViet + "\n";
 					foreach (DanhMucCon itemdmc in DanhMucConDao.Instance.DanhMucConLoad(item.ID))
 					{
-						if (itemdmc.CauHois.Count() < 1)
-						{
-							rkqBaiHoc.Text += "\t* " + itemdmc.Ten + ".\n";
-						}
-
+						rkqBaiHoc.Text += "\t* " + itemdmc.Ten + ".\n";
 						if (itemdmc.BaiKhoas.Count >= 1)
 						{
 							foreach (BaiKhoa bk in BaiKhoaDao.Instance.LoadBaiKhoas(itemdmc.ID))
@@ -699,7 +692,7 @@ namespace DACN_UD_Hoc_KHo_CTK37
 						{
 							foreach (TuVung tv in TuVungDao.Instance.LoadTuVungs(itemdmc.ID))
 							{
-								rkqBaiHoc.Text += "\t\t" + tv.KHo + " : \t" + tv.Viet + "\n";
+								rkqBaiHoc.Text += "\t\t" + tv.KHo + ": " + tv.Viet + "\n";
 							}
 						}
 						if (itemdmc.DamThoais.Count >= 1)
@@ -748,7 +741,17 @@ namespace DACN_UD_Hoc_KHo_CTK37
 						}
 						if (itemdmc.CauHois.Count >= 1)
 						{
-							btnExe.Enabled = true;
+							foreach (CauHoi ch in CauHoiDao.Instance.LoadCauHois(itemdmc.ID))
+							{
+								if (ch.TraLoi != null)
+								{
+									rkqBaiHoc.Text += "\t- " + ch.Hoi + "\t\t+ " + ch.TraLoi + "\n";
+								}
+								else
+								{
+									rkqBaiHoc.Text += "\t- " + ch.Hoi + "\n";
+								}
+							}
 						}
 						if (itemdmc.LuyenTaps.Count >= 1)
 						{
@@ -825,11 +828,9 @@ namespace DACN_UD_Hoc_KHo_CTK37
 					j = j - 1;
 					foreach (DanhMucCon itemdmc in DanhMucConDao.Instance.DanhMucConLoad(item.ID))
 					{
+
 						j++;
-						if (itemdmc.CauHois.Count() < 1)
-						{
-							rkqBaiHoc.Text += j + ". " + itemdmc.Ten + ".\n";
-						}
+						rkqBaiHoc.Text += j + ". " + itemdmc.Ten + ".\n";
 						if (itemdmc.BaiKhoas.Count >= 1)
 						{
 							foreach (BaiKhoa bk in BaiKhoaDao.Instance.LoadBaiKhoas(itemdmc.ID))
@@ -879,7 +880,7 @@ namespace DACN_UD_Hoc_KHo_CTK37
 						{
 							foreach (TuVung tv in TuVungDao.Instance.LoadTuVungs(itemdmc.ID))
 							{
-								rkqBaiHoc.Text += "\t" + tv.KHo + " : \t" + tv.Viet + "\n";
+								rkqBaiHoc.Text += "\t" + tv.KHo + ": " + tv.Viet + "\n";
 							}
 						}
 						if (itemdmc.DamThoais.Count >= 1)
@@ -927,7 +928,17 @@ namespace DACN_UD_Hoc_KHo_CTK37
 						}
 						if (itemdmc.CauHois.Count >= 1)
 						{
-							btnExe.Enabled = true;
+							foreach (CauHoi ch in CauHoiDao.Instance.LoadCauHois(itemdmc.ID))
+							{
+								if (ch.TraLoi != null)
+								{
+									rkqBaiHoc.Text += "\t- " + ch.Hoi + "\t\t+ " + ch.TraLoi + "\n";
+								}
+								else
+								{
+									rkqBaiHoc.Text += "\t- " + ch.Hoi + "\n";
+								}
+							}
 						}
 						if (itemdmc.LuyenTaps.Count >= 1)
 						{
@@ -1011,7 +1022,7 @@ namespace DACN_UD_Hoc_KHo_CTK37
 
 		private void FrmBaiHocChiTiet_FormClosing(object sender, FormClosingEventArgs e)
 		{
-			if (MessageBox.Show("Bạn có muốn đóng bài học không?", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) != DialogResult.OK)
+			if (XtraMessageBox.Show("Bạn có muốn đóng bài học không?", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) != DialogResult.OK)
 			{
 				e.Cancel = true;
 			}
@@ -1072,7 +1083,25 @@ namespace DACN_UD_Hoc_KHo_CTK37
 				}
 
 			}
-			LoadDanhMucTheoTen(subStringItem, id);
+			if (subStringItem == "Câu hỏi")
+			{
+				FrmExercise f = Application.OpenForms.OfType<FrmExercise>().FirstOrDefault();
+				if (f != null)
+				{
+					XtraMessageBox.Show("Bạn đã mở bài tập!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+				}
+				else
+				{
+					f = new FrmExercise(_iDBaiHoc);
+					f.Text = "Bài tập của bài học số " + _iDBaiHoc;
+					f.Show();
+				}
+			}
+			else
+			{
+				LoadDanhMucTheoTen(subStringItem, id);
+			}
+
 		}
 		private void btnRefresh_Click(object sender, EventArgs e)
 		{
@@ -1088,25 +1117,11 @@ namespace DACN_UD_Hoc_KHo_CTK37
 			frmDictionary f = Application.OpenForms.OfType<frmDictionary>().FirstOrDefault();
 			if (f != null)
 			{
-				MessageBox.Show("Bạn đã mở tử điển!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+				XtraMessageBox.Show("Bạn đã mở tử điển!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 			}
 			else
 			{
 				f = new frmDictionary();
-				f.Show();
-			}
-		}
-		private void btnExe_Click(object sender, EventArgs e)
-		{
-			FrmExercise f = Application.OpenForms.OfType<FrmExercise>().FirstOrDefault();
-			if (f != null)
-			{
-				MessageBox.Show("Bạn đã mở bài tập!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-			}
-			else
-			{
-				f = new FrmExercise(_iDBaiHoc);
-				f.Text = "Bài tập của bài học số " + _iDBaiHoc;
 				f.Show();
 			}
 		}

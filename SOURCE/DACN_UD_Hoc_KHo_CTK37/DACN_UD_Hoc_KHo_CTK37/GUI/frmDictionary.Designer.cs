@@ -148,6 +148,8 @@
 			this.txtDic.Properties.Appearance.Options.UseFont = true;
 			this.txtDic.Size = new System.Drawing.Size(408, 22);
 			this.txtDic.TabIndex = 0;
+			this.txtDic.Enter += new System.EventHandler(this.txtDic_Enter);
+			this.txtDic.Leave += new System.EventHandler(this.txtDic_Leave);
 			// 
 			// frmDictionary
 			// 

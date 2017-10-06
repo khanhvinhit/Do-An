@@ -101,6 +101,9 @@
     <Reference Include="System.Core">
       <Private>True</Private>
     </Reference>
+    <Reference Include="System.Design">
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Runtime.Serialization">
       <Private>True</Private>
     </Reference>
@@ -145,6 +148,7 @@
     <Compile Include="DAO\LoiHayYDepDao.cs" />
     <Compile Include="DAO\LuyenTapDao.cs" />
     <Compile Include="DAO\TuVungDao.cs" />
+    <Compile Include="DAO\TuyChinhDevExpress.cs" />
     <Compile Include="DTO\BaiHoc.cs">
       <DependentUpon>DATADBContext.tt</DependentUpon>
     </Compile>
@@ -319,37 +323,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Data\HocKHo.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="App_Data\HocKHo_log.ldf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      <DependentUpon>HocKHo.mdf</DependentUpon>
-    </Content>
-    <Content Include="App_Data\Images\1.jpg" />
-    <Content Include="App_Data\Images\10.jpg" />
-    <Content Include="App_Data\Images\11.jpg" />
-    <Content Include="App_Data\Images\12.jpg" />
-    <Content Include="App_Data\Images\13.jpg" />
-    <Content Include="App_Data\Images\14.jpg" />
-    <Content Include="App_Data\Images\16.jpg" />
-    <Content Include="App_Data\Images\20.jpg" />
-    <Content Include="App_Data\Images\21.jpg" />
-    <Content Include="App_Data\Images\25.jpg" />
-    <Content Include="App_Data\Images\27.jpg" />
-    <Content Include="App_Data\Images\29.jpg" />
-    <Content Include="App_Data\Images\3.jpg" />
-    <Content Include="App_Data\Images\30.jpg" />
-    <Content Include="App_Data\Images\33.jpg" />
-    <Content Include="App_Data\Images\35.jpg" />
-    <Content Include="App_Data\Images\37.jpg" />
-    <Content Include="App_Data\Images\39.jpg" />
-    <Content Include="App_Data\Images\4.jpg" />
-    <Content Include="App_Data\Images\5.jpg" />
-    <Content Include="App_Data\Images\6.jpg" />
-    <Content Include="App_Data\Images\7.jpg" />
-    <Content Include="App_Data\Images\8.jpg" />
-    <Content Include="App_Data\Images\9.jpg" />
     <Content Include="DTO\DATADBContext.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>DATADBContext.edmx</DependentUpon>
@@ -361,6 +334,7 @@
       <LastGenOutput>DATADBContext.cs</LastGenOutput>
     </Content>
     <Content Include="logo.ico" />
+    <None Include="Resources\hide.png" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
@@ -382,9 +356,7 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Resources\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\Animator\Animator.csproj">
       <Project>{97fe1093-38d3-4eec-a602-340f792c9d25}</Project>
