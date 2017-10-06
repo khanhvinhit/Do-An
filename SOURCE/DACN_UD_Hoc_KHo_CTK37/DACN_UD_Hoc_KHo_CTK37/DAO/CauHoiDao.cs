@@ -50,6 +50,7 @@ namespace DACN_UD_Hoc_KHo_CTK37.DAO
 		public void UpdateCauHoi(int id, string cauTL)
 		{
 			var cauhoi = _db.CauHois.Find(id);
+			cauTL = cauTL == "" ? null : cauTL;
 			cauhoi.TraLoi = cauTL;
 			_db.SaveChanges();
 		}

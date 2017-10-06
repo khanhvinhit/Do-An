@@ -30,12 +30,6 @@ namespace DACN_UD_Hoc_KHo_CTK37
 		{
 			InitializeComponent();
 			IdBaiHoc = iDBaiHoc;
-			lbGoiy.Text = "";
-			txtTraLoi.Text = "Nhập câu trả lời!";
-			txtTraLoi.ForeColor = Color.LightGray;
-			//txtTraLoi.Text = "Nhập câu trả lời!";
-			this.txtTraLoi.Leave += new System.EventHandler(this.txtTraLoi_Leave);
-			this.txtTraLoi.Enter += new System.EventHandler(this.txtTraLoi_Enter);
 		}
 
 		#region Method
@@ -44,20 +38,23 @@ namespace DACN_UD_Hoc_KHo_CTK37
 		{
 			foreach (CauHoi ch in CauHoiDao.Instance.LoadCauHoiByID(idCauHoi))
 			{
-				if (ch.TraLoi != null || ch.TraLoi == "")
+				if (ch.TraLoi != null)
 				{
 					txtCauHoi.Text = "Câu " + stt + ": " + ch.Hoi;
 					txtTraLoi.Text = ch.TraLoi;
 					gopy = ch.GoiY;
+					lbGoiy.Text = "";
+					txtTraLoi.ForeColor = Color.Black;
 				}
 				else
 				{
 					txtCauHoi.Text = "Câu " + stt + ": " + ch.Hoi;
+					gopy = ch.GoiY;
+					lbGoiy.Text = "";
+					txtTraLoi.Text = "Nhập câu trả lời!";
 					txtTraLoi.ForeColor = Color.LightGray;
-					//txtTraLoi.Text = "Nhập câu trả lời!";
 					this.txtTraLoi.Leave += new System.EventHandler(this.txtTraLoi_Leave);
 					this.txtTraLoi.Enter += new System.EventHandler(this.txtTraLoi_Enter);
-					gopy = ch.GoiY;
 				}
 			}
 			if (stt == 1)
@@ -76,10 +73,11 @@ namespace DACN_UD_Hoc_KHo_CTK37
 		}
 		void LoadBaiTap(int iDBaiHoc)
 		{
-			btnPr.Enabled = false;
-			btnNext.Enabled = true;
 			txtCauHoi.Text = "";
 			txtCount.Text = "";
+			lbGoiy.Text = "";
+			btnPr.Enabled = false;
+			btnNext.Enabled = true;
 			foreach (DanhMuc item in DanhMucDao.Instance.DanhMucLoad(iDBaiHoc))
 			{
 				if (item.TenKHo != null)
@@ -119,7 +117,7 @@ namespace DACN_UD_Hoc_KHo_CTK37
 		#region event
 		private void txtTraLoi_Leave(object sender, EventArgs e)
 		{
-			if (txtTraLoi.Text == "" || String.IsNullOrEmpty(txtTraLoi.Text))
+			if (txtTraLoi.Text == "")
 			{
 				txtTraLoi.Text = "Nhập câu trả lời!";
 				txtTraLoi.ForeColor = Color.Gray;
@@ -141,7 +139,7 @@ namespace DACN_UD_Hoc_KHo_CTK37
 		private void btnNext_Click(object sender, EventArgs e)
 		{
 			string cauTL = txtTraLoi.Text;
-			if (cauTL != "Nhập câu trả lời!" && cauTL != "")
+			if (cauTL != "Nhập câu trả lời!")
 			{
 				CauHoiDao.Instance.UpdateCauHoi(idBT, cauTL);
 			}
@@ -227,11 +225,6 @@ namespace DACN_UD_Hoc_KHo_CTK37
                                 }
                                 XtraMessageBox.Show("Đã làm mới tất cả câu trả lời?", "Thông báo", MessageBoxButtons.OK,
                                             MessageBoxIcon.Information);
-                                txtTraLoi.Text = "";
-                                txtTraLoi.ForeColor = Color.LightGray;
-                                //txtTraLoi.Text = "Nhập câu trả lời!";
-                                this.txtTraLoi.Leave += new System.EventHandler(this.txtTraLoi_Leave);
-                                this.txtTraLoi.Enter += new System.EventHandler(this.txtTraLoi_Enter);
                                 LoadBaiTap(_iDBaiHoc);
                             }
                         }
@@ -248,11 +241,6 @@ namespace DACN_UD_Hoc_KHo_CTK37
                                 }
                                 XtraMessageBox.Show("Đã làm mới tất cả câu trả lời?", "Thông báo", MessageBoxButtons.OK,
                                             MessageBoxIcon.Information);
-                                txtTraLoi.Text = "";
-                                txtTraLoi.ForeColor = Color.LightGray;
-                                //txtTraLoi.Text = "Nhập câu trả lời!";
-                                this.txtTraLoi.Leave += new System.EventHandler(this.txtTraLoi_Leave);
-                                this.txtTraLoi.Enter += new System.EventHandler(this.txtTraLoi_Enter);
                                 LoadBaiTap(_iDBaiHoc);
                             }
 
@@ -265,8 +253,5 @@ namespace DACN_UD_Hoc_KHo_CTK37
 
         }
         #endregion
-
-
-
     }
 }

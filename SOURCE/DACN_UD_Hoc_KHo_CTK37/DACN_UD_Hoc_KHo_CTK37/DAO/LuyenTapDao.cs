@@ -53,6 +53,7 @@ namespace DACN_UD_Hoc_KHo_CTK37.DAO
         public void UpdateLT(int id, string cauTL)
         {
             var lt = _db.LuyenTaps.Find(id);
+			cauTL = cauTL == "" ? null : cauTL;
             lt.TraLoiKHo = cauTL;
             _db.SaveChanges();
         }
