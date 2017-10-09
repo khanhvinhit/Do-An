@@ -474,6 +474,8 @@ namespace DACN_UD_Hoc_KHo_CTK37
             lbKhoHay.Text = "";
             lbLHViet.Text = "";
             picBox.Image = null;
+			btnRefresh.Enabled = false;
+			btnAudio.Enabled = false;
             lbcMucLuc.Items.Clear();//moi
             rkqBaiHoc.ResetText();
             rkqBaiHoc.Font = new Font("TNKeyUni-Arial", 11F);
@@ -1000,7 +1002,7 @@ namespace DACN_UD_Hoc_KHo_CTK37
                 trangthaiam = false;
                 sound.controls.stop();
                 btnAudio.Text = "Nghe";
-            }
+			}
             this.Close();
         }
         private void FrmBaiHocChiTiet_FormClosing(object sender, FormClosingEventArgs e)
@@ -1031,7 +1033,6 @@ namespace DACN_UD_Hoc_KHo_CTK37
             _iDBaiHoc = _last;
             this.Text = "Bài học số " + _last;
             LoadBaiHoc(_last);
-
         }
         private void btnNext_Click(object sender, EventArgs e)
         {
