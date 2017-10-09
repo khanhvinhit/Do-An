@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Windows.Forms;
 using DACN_UD_Hoc_KHo_CTK37.DAO;
-using DevExpress.UserSkins;
+using DACN_UD_Hoc_KHo_CTK37.GUI;
 using DevExpress.Skins;
-using DevExpress.LookAndFeel;
+using DevExpress.UserSkins;
 using DevExpress.XtraEditors.Controls;
 
 namespace DACN_UD_Hoc_KHo_CTK37

@@ -1,11 +1,16 @@
-﻿namespace DACN_UD_Hoc_KHo_CTK37
+﻿using System.ComponentModel;
+using System.Windows.Forms;
+using DevExpress.XtraEditors;
+using DevExpress.XtraTab;
+
+namespace DACN_UD_Hoc_KHo_CTK37.GUI
 {
 	partial class FrmHelper
 	{
 		/// <summary>
 		/// Required designer variable.
 		/// </summary>
-		private System.ComponentModel.IContainer components = null;
+		private IContainer components = null;
 
 		/// <summary>
 		/// Clean up any resources being used.
@@ -28,7 +33,7 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-            DevExpress.XtraSplashScreen.SplashScreenManager splashScreenManager1 = new DevExpress.XtraSplashScreen.SplashScreenManager(this, typeof(global::DACN_UD_Hoc_KHo_CTK37.WaitForm), true, true);
+            DevExpress.XtraSplashScreen.SplashScreenManager splashScreenManager1 = new DevExpress.XtraSplashScreen.SplashScreenManager(this, typeof(global::DACN_UD_Hoc_KHo_CTK37.GUI.WaitForm), true, true);
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmHelper));
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.xtraTabControl1 = new DevExpress.XtraTab.XtraTabControl();
@@ -659,58 +664,58 @@
 
 		#endregion
 
-		private DevExpress.XtraEditors.PanelControl panelControl1;
+		private PanelControl panelControl1;
 		//private AnimatorNS.TabControlEx tabControlEx1;
-		private System.Windows.Forms.TabPage tabPage2;
-		private System.Windows.Forms.TabPage tabPage3;
-		private DevExpress.XtraEditors.LabelControl labelControl31;
-		private DevExpress.XtraEditors.LabelControl labelControl32;
-		private DevExpress.XtraEditors.LabelControl labelControl33;
-		private DevExpress.XtraEditors.LabelControl labelControl34;
-		private DevExpress.XtraEditors.LabelControl labelControl35;
-		private DevExpress.XtraEditors.LabelControl labelControl36;
-		private DevExpress.XtraEditors.LabelControl labelControl37;
-		private DevExpress.XtraEditors.LabelControl labelControl38;
-		private DevExpress.XtraEditors.LabelControl labelControl39;
-		private DevExpress.XtraEditors.LabelControl labelControl40;
-		private System.Windows.Forms.TabPage tabPage1;
-		private DevExpress.XtraEditors.LabelControl labelControl21;
-		private DevExpress.XtraEditors.LabelControl labelControl22;
-		private DevExpress.XtraEditors.LabelControl labelControl23;
-		private DevExpress.XtraEditors.LabelControl labelControl24;
-		private DevExpress.XtraEditors.LabelControl labelControl25;
-		private DevExpress.XtraEditors.LabelControl labelControl26;
-		private DevExpress.XtraEditors.LabelControl labelControl27;
-		private DevExpress.XtraEditors.LabelControl labelControl28;
-		private DevExpress.XtraEditors.LabelControl labelControl29;
-		private DevExpress.XtraEditors.LabelControl labelControl30;
-		private DevExpress.XtraEditors.LabelControl labelControl48;
-		private DevExpress.XtraEditors.LabelControl labelControl49;
-		private DevExpress.XtraEditors.LabelControl labelControl50;
-        private DevExpress.XtraTab.XtraTabControl xtraTabControl1;
-        private DevExpress.XtraTab.XtraTabPage xtraTabPage1;
-        private DevExpress.XtraTab.XtraTabPage xtraTabPage2;
-        private DevExpress.XtraTab.XtraTabPage xtraTabPage3;
-        private DevExpress.XtraEditors.LabelControl labelControl1;
-        private DevExpress.XtraEditors.LabelControl labelControl2;
-        private DevExpress.XtraEditors.LabelControl labelControl3;
-        private DevExpress.XtraEditors.LabelControl labelControl4;
-        private DevExpress.XtraEditors.PictureEdit pictureEdit2;
-        private DevExpress.XtraEditors.PictureEdit pictureEdit1;
-        private DevExpress.XtraEditors.PictureEdit pictureEdit3;
-        private DevExpress.XtraEditors.PictureEdit pictureEdit4;
-        private DevExpress.XtraEditors.PictureEdit pictureEdit5;
-        private DevExpress.XtraEditors.PictureEdit pictureEdit6;
-        private DevExpress.XtraEditors.LabelControl labelControl5;
-        private DevExpress.XtraEditors.LabelControl labelControl6;
-        private DevExpress.XtraEditors.LabelControl labelControl7;
-        private DevExpress.XtraEditors.LabelControl labelControl8;
-        private DevExpress.XtraEditors.PictureEdit pictureEdit7;
-        private DevExpress.XtraEditors.PictureEdit pictureEdit8;
-        private DevExpress.XtraEditors.PictureEdit pictureEdit9;
-        private DevExpress.XtraEditors.LabelControl labelControl9;
-        private DevExpress.XtraEditors.LabelControl labelControl10;
-        private DevExpress.XtraEditors.LabelControl labelControl11;
-        private DevExpress.XtraEditors.LabelControl labelControl12;
+		private TabPage tabPage2;
+		private TabPage tabPage3;
+		private LabelControl labelControl31;
+		private LabelControl labelControl32;
+		private LabelControl labelControl33;
+		private LabelControl labelControl34;
+		private LabelControl labelControl35;
+		private LabelControl labelControl36;
+		private LabelControl labelControl37;
+		private LabelControl labelControl38;
+		private LabelControl labelControl39;
+		private LabelControl labelControl40;
+		private TabPage tabPage1;
+		private LabelControl labelControl21;
+		private LabelControl labelControl22;
+		private LabelControl labelControl23;
+		private LabelControl labelControl24;
+		private LabelControl labelControl25;
+		private LabelControl labelControl26;
+		private LabelControl labelControl27;
+		private LabelControl labelControl28;
+		private LabelControl labelControl29;
+		private LabelControl labelControl30;
+		private LabelControl labelControl48;
+		private LabelControl labelControl49;
+		private LabelControl labelControl50;
+        private XtraTabControl xtraTabControl1;
+        private XtraTabPage xtraTabPage1;
+        private XtraTabPage xtraTabPage2;
+        private XtraTabPage xtraTabPage3;
+        private LabelControl labelControl1;
+        private LabelControl labelControl2;
+        private LabelControl labelControl3;
+        private LabelControl labelControl4;
+        private PictureEdit pictureEdit2;
+        private PictureEdit pictureEdit1;
+        private PictureEdit pictureEdit3;
+        private PictureEdit pictureEdit4;
+        private PictureEdit pictureEdit5;
+        private PictureEdit pictureEdit6;
+        private LabelControl labelControl5;
+        private LabelControl labelControl6;
+        private LabelControl labelControl7;
+        private LabelControl labelControl8;
+        private PictureEdit pictureEdit7;
+        private PictureEdit pictureEdit8;
+        private PictureEdit pictureEdit9;
+        private LabelControl labelControl9;
+        private LabelControl labelControl10;
+        private LabelControl labelControl11;
+        private LabelControl labelControl12;
     }
 }

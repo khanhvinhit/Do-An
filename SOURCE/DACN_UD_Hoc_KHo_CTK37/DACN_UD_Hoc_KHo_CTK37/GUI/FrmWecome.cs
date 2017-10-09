@@ -1,9 +1,8 @@
-﻿using DevExpress.XtraEditors;
-using System;
-using System.Drawing;
+﻿using System.Drawing;
 using System.Windows.Forms;
+using DevExpress.XtraEditors;
 
-namespace DACN_UD_Hoc_KHo_CTK37
+namespace DACN_UD_Hoc_KHo_CTK37.GUI
 {
 	public partial class FrmWecome : XtraForm
 	{
@@ -11,18 +10,18 @@ namespace DACN_UD_Hoc_KHo_CTK37
 		{
 			InitializeComponent();
 			picE.Image = null;
-			LoadBT();
+			LoadBt();
 		}
 
 		private void ShowImg()
 		{
 			
-			string _filepath = Application.StartupPath;
-			Image image = Image.FromFile(_filepath + "\\App_Data\\Images\\bg.jpg");
+			string filepath = Application.StartupPath;
+			Image image = Image.FromFile(filepath + "\\App_Data\\Images\\bg.jpg");
 			picE.Image = image;
 		}
 
-		private void LoadBT()
+		private void LoadBt()
 		{
 			ShowImg();
 			picE.Enabled = true;

@@ -7,13 +7,12 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+using System.Data.Entity;
+using System.Data.Entity.Infrastructure;
+
 namespace DACN_UD_Hoc_KHo_CTK37.DTO
 {
-    using System;
-    using System.Data.Entity;
-    using System.Data.Entity.Infrastructure;
-    
-    public partial class HocKHoEntities : DbContext
+	public partial class HocKHoEntities : DbContext
     {
         public HocKHoEntities()
             : base("name=HocKHoEntities")

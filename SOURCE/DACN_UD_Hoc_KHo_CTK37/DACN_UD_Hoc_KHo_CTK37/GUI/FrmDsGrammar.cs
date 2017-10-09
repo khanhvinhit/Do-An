@@ -1,13 +1,13 @@
 ﻿using System;
 using System.Drawing;
 using System.Linq;
+using System.Windows.Forms;
 using DACN_UD_Hoc_KHo_CTK37.DAO;
 using DACN_UD_Hoc_KHo_CTK37.DTO;
+using DACN_UD_Hoc_KHo_CTK37.Properties;
 using DevExpress.XtraEditors;
-using System.Windows.Forms;
-using DACN_UD_Hoc_KHo_CTK37.GUI;
 
-namespace DACN_UD_Hoc_KHo_CTK37
+namespace DACN_UD_Hoc_KHo_CTK37.GUI
 {
 	public partial class FrmDsGrammar : XtraForm
 	{
@@ -36,13 +36,13 @@ namespace DACN_UD_Hoc_KHo_CTK37
 						btn.Tag = itemnp;
 						btn.Font = new Font("TNKeyUni-Arial", 8F, FontStyle.Bold);
 						flpGrammar.Controls.Add(btn);
-                        btn.ToolTip = "Nhấp để xem chi tiết ngữ pháp số: " + i;
+                        btn.ToolTip = Resources.nha_de_xem_ngu_phap + i;
                     }
 				}
 			}
 			catch (Exception)
 			{
-				MessageBox.Show("Không thể kết nối dữ liệu.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+				MessageBox.Show(Resources.error_connectionstring, Resources.thong_bao, MessageBoxButtons.OK, MessageBoxIcon.Error);
 			}
 
 		}
@@ -51,10 +51,7 @@ namespace DACN_UD_Hoc_KHo_CTK37
 		void btn_Click(object sender, EventArgs e)
 		{
 			FrmDictionary frm = Application.OpenForms.OfType<FrmDictionary>().FirstOrDefault();
-			if (frm != null)
-			{
-				frm.Close();
-			}
+			if (frm != null)frm.Close();
 			SimpleButton simpleButton = sender as SimpleButton;
 			if (simpleButton != null)
 			{

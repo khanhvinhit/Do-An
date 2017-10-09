@@ -1,9 +1,6 @@
-﻿using DACN_UD_Hoc_KHo_CTK37.DTO;
-using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using DACN_UD_Hoc_KHo_CTK37.DTO;
 
 namespace DACN_UD_Hoc_KHo_CTK37.DAO
 {
@@ -17,7 +14,7 @@ namespace DACN_UD_Hoc_KHo_CTK37.DAO
 			get { if(_instance == null) _instance = new LoiHayYDepDao();
 				return _instance;
 			}
-			private set { LoiHayYDepDao._instance = value; }
+			private set { _instance = value; }
 		}
 
 		private LoiHayYDepDao() { }

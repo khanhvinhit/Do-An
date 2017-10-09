@@ -8,7 +8,7 @@ using DevExpress.XtraBars.Helpers;
 using DevExpress.XtraBars.Ribbon;
 using DevExpress.XtraEditors;
 
-namespace DACN_UD_Hoc_KHo_CTK37
+namespace DACN_UD_Hoc_KHo_CTK37.GUI
 {
 	public partial class FrmUdHoc : RibbonForm
 	{
@@ -36,9 +36,9 @@ namespace DACN_UD_Hoc_KHo_CTK37
 		private bool CheckExistForm(string name)
 		{
 			bool check = false;
-			foreach (Form Frm in this.MdiChildren)
+			foreach (Form frm in MdiChildren)
 			{
-				if (Frm.Name == name)
+				if (frm.Name == name)
 				{
 					check = true;
 					break;
@@ -49,11 +49,11 @@ namespace DACN_UD_Hoc_KHo_CTK37
 
 		private void ActiveChildForm(string name)
 		{
-			foreach (Form Frm in this.MdiChildren)
+			foreach (Form frm in MdiChildren)
 			{
-				if (Frm.Name == name)
+				if (frm.Name == name)
 				{
-					Frm.Activate();
+					frm.Activate();
 					break;
 				}
 			}
@@ -99,7 +99,7 @@ namespace DACN_UD_Hoc_KHo_CTK37
 
 		private void FrmUdHoc_FormClosing(object sender, FormClosingEventArgs e)
 		{
-			if (XtraMessageBox.Show("Bạn có muốn thoát khỏi ứng dụng không?", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) != DialogResult.OK)
+			if (XtraMessageBox.Show("Bạn có muốn thoát khỏi ứng dụng không?", Resources.thong_bao, MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) != DialogResult.OK)
 			{
 				e.Cancel = true;
 			}
@@ -109,7 +109,7 @@ namespace DACN_UD_Hoc_KHo_CTK37
 
 		private void btnExit_ItemClick(object sender, ItemClickEventArgs e)
 		{
-			this.Close();
+			Close();
 		}
 
 		private void btnGammar_ItemClick(object sender, ItemClickEventArgs e)
@@ -157,7 +157,7 @@ namespace DACN_UD_Hoc_KHo_CTK37
 				FrmDictionary f = Application.OpenForms.OfType<FrmDictionary>().FirstOrDefault();
 				if (f != null)
 				{
-					XtraMessageBox.Show("Bạn đã mở tử điển!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+					XtraMessageBox.Show("Bạn đã mở tử điển!", Resources.thong_bao, MessageBoxButtons.OK, MessageBoxIcon.Warning);
 				}
 				else
 				{
@@ -167,7 +167,7 @@ namespace DACN_UD_Hoc_KHo_CTK37
 			}
 			catch (Exception)
 			{
-				XtraMessageBox.Show("Không thể kết nối dữ liệu.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+				XtraMessageBox.Show(Resources.error_connectionstring, Resources.thong_bao, MessageBoxButtons.OK, MessageBoxIcon.Error);
 			}
 		}
 		#endregion

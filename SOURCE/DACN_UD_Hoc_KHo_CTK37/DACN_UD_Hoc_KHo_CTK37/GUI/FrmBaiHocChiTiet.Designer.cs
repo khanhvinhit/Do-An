@@ -1,7 +1,9 @@
 ﻿using System.ComponentModel;
+using System.Windows.Forms;
 using DevExpress.XtraEditors;
+using DevExpress.XtraRichEdit;
 
-namespace DACN_UD_Hoc_KHo_CTK37
+namespace DACN_UD_Hoc_KHo_CTK37.GUI
 {
 	partial class FrmBaiHocChiTiet
 	{
@@ -32,7 +34,7 @@ namespace DACN_UD_Hoc_KHo_CTK37
 		private void InitializeComponent()
 		{
             this.components = new System.ComponentModel.Container();
-            DevExpress.XtraSplashScreen.SplashScreenManager splashScreenManager1 = new DevExpress.XtraSplashScreen.SplashScreenManager(this, typeof(global::DACN_UD_Hoc_KHo_CTK37.WaitForm), true, true);
+            DevExpress.XtraSplashScreen.SplashScreenManager splashScreenManager1 = new DevExpress.XtraSplashScreen.SplashScreenManager(this, typeof(global::DACN_UD_Hoc_KHo_CTK37.GUI.WaitForm), true, true);
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmBaiHocChiTiet));
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.splitContainerControl1 = new DevExpress.XtraEditors.SplitContainerControl();
@@ -365,11 +367,11 @@ namespace DACN_UD_Hoc_KHo_CTK37
 		private SimpleButton btnNext;
 		private LabelControl lbDanhMuc;
 		private ListBoxControl lbcMucLuc;
-		public DevExpress.XtraRichEdit.RichEditControl rkqBaiHoc;
+		public RichEditControl rkqBaiHoc;
 		private LabelControl lbLHViet;
 		private LabelControl lbKhoHay;
 		private SimpleButton btnRefresh;
-		private System.Windows.Forms.PictureBox picBox;
+		private PictureBox picBox;
 		private SimpleButton btnAudio;
 		private SimpleButton btnDictionary;
     }

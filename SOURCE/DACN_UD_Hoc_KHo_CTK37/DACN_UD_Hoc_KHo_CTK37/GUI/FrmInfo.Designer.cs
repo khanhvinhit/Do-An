@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel;
 using DevExpress.XtraEditors;
 
-namespace DACN_UD_Hoc_KHo_CTK37
+namespace DACN_UD_Hoc_KHo_CTK37.GUI
 {
 	partial class FrmInfo
 	{
@@ -31,7 +31,7 @@ namespace DACN_UD_Hoc_KHo_CTK37
 		/// </summary>
 		private void InitializeComponent()
 		{
-			DevExpress.XtraSplashScreen.SplashScreenManager splashScreenManager1 = new DevExpress.XtraSplashScreen.SplashScreenManager(this, typeof(global::DACN_UD_Hoc_KHo_CTK37.WaitForm), true, true);
+			DevExpress.XtraSplashScreen.SplashScreenManager splashScreenManager1 = new DevExpress.XtraSplashScreen.SplashScreenManager(this, typeof(global::DACN_UD_Hoc_KHo_CTK37.GUI.WaitForm), true, true);
 			this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
 			this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
 			this.labelControl6 = new DevExpress.XtraEditors.LabelControl();

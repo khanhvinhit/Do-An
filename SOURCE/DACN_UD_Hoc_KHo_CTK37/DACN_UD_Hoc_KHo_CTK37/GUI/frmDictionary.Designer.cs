@@ -1,11 +1,16 @@
-﻿namespace DACN_UD_Hoc_KHo_CTK37
+﻿using System.ComponentModel;
+using System.Windows.Forms;
+using DevExpress.XtraEditors;
+using DevExpress.XtraRichEdit;
+
+namespace DACN_UD_Hoc_KHo_CTK37.GUI
 {
 	partial class FrmDictionary
 	{
 		/// <summary>
 		/// Required designer variable.
 		/// </summary>
-		private System.ComponentModel.IContainer components = null;
+		private IContainer components = null;
 
 		/// <summary>
 		/// Clean up any resources being used.
@@ -28,7 +33,7 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-            DevExpress.XtraSplashScreen.SplashScreenManager splashScreenManager1 = new DevExpress.XtraSplashScreen.SplashScreenManager(this, typeof(global::DACN_UD_Hoc_KHo_CTK37.WaitForm), true, true);
+            DevExpress.XtraSplashScreen.SplashScreenManager splashScreenManager1 = new DevExpress.XtraSplashScreen.SplashScreenManager(this, typeof(global::DACN_UD_Hoc_KHo_CTK37.GUI.WaitForm), true, true);
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmDictionary));
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -183,14 +188,14 @@
 
 		#endregion
 
-		private DevExpress.XtraEditors.PanelControl panelControl1;
-		private System.Windows.Forms.GroupBox groupBox2;
-		private System.Windows.Forms.GroupBox groupBox1;
-		private DevExpress.XtraEditors.SimpleButton btnDic;
-		private DevExpress.XtraEditors.LabelControl labelControl1;
-		private DevExpress.XtraEditors.TextEdit txtDic;
-		private DevExpress.XtraEditors.SplitContainerControl splitContainerControl1;
-		private DevExpress.XtraRichEdit.RichEditControl recNghia;
-		private DevExpress.XtraEditors.ListBoxControl lbcTuVung;
+		private PanelControl panelControl1;
+		private GroupBox groupBox2;
+		private GroupBox groupBox1;
+		private SimpleButton btnDic;
+		private LabelControl labelControl1;
+		private TextEdit txtDic;
+		private SplitContainerControl splitContainerControl1;
+		private RichEditControl recNghia;
+		private ListBoxControl lbcTuVung;
 	}
 }

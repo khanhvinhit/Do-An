@@ -7,12 +7,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+using System;
+
 namespace DACN_UD_Hoc_KHo_CTK37.DTO
 {
-    using System;
-    using System.Collections.Generic;
-    
-    public partial class DamThoai
+	public partial class DamThoai
     {
         public int ID { get; set; }
         public string CauHoiKHo { get; set; }

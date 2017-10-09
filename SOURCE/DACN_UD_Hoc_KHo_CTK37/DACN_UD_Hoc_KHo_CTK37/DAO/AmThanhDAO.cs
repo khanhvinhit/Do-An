@@ -1,32 +1,27 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using DACN_UD_Hoc_KHo_CTK37.DTO;
+﻿using DACN_UD_Hoc_KHo_CTK37.DTO;
 
 namespace DACN_UD_Hoc_KHo_CTK37.DAO
 {
-	public class AmThanhDAO
+	public class AmThanhDao
 	{
 		private readonly HocKHoEntities _db = new HocKHoEntities();
-		private static AmThanhDAO _instance;
+		private static AmThanhDao _instance;
 
-		public static AmThanhDAO Instance
+		public static AmThanhDao Instance
 		{
 			get
 			{
-				if (_instance == null) _instance = new AmThanhDAO();
+				if (_instance == null) _instance = new AmThanhDao();
 				return _instance;
 			}
-			private set { AmThanhDAO._instance = value; }
+			private set { _instance = value; }
 		}
 
-		private AmThanhDAO() { }
+		private AmThanhDao() { }
 
-		public AmThanh LoadAmThanhs(int idAT)
+		public AmThanh LoadAmThanhs(int idAt)
 		{
-			return _db.AmThanhs.Find(idAT);
+			return _db.AmThanhs.Find(idAt);
 		}
 	}
 }

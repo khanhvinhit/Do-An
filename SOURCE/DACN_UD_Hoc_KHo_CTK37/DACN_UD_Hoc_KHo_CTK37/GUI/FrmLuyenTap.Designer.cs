@@ -1,11 +1,15 @@
-﻿namespace DACN_UD_Hoc_KHo_CTK37.GUI
+﻿using System.ComponentModel;
+using DevExpress.XtraEditors;
+using DevExpress.XtraRichEdit;
+
+namespace DACN_UD_Hoc_KHo_CTK37.GUI
 {
 	partial class FrmLuyenTap
 	{
 		/// <summary>
 		/// Required designer variable.
 		/// </summary>
-		private System.ComponentModel.IContainer components = null;
+		private IContainer components = null;
 
 		/// <summary>
 		/// Clean up any resources being used.
@@ -28,7 +32,7 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-			DevExpress.XtraSplashScreen.SplashScreenManager splashScreenManager1 = new DevExpress.XtraSplashScreen.SplashScreenManager(this, typeof(global::DACN_UD_Hoc_KHo_CTK37.WaitForm), true, true);
+			DevExpress.XtraSplashScreen.SplashScreenManager splashScreenManager1 = new DevExpress.XtraSplashScreen.SplashScreenManager(this, typeof(global::DACN_UD_Hoc_KHo_CTK37.GUI.WaitForm), true, true);
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmLuyenTap));
 			this.lbCauHoi = new DevExpress.XtraEditors.LabelControl();
 			this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
@@ -207,16 +211,16 @@
 
 		#endregion
 
-		private DevExpress.XtraEditors.LabelControl lbCauHoi;
-		private DevExpress.XtraEditors.PanelControl panelControl1;
-		private DevExpress.XtraEditors.LabelControl labelControl1;
-		private DevExpress.XtraRichEdit.RichEditControl recTraLoi;
-		private DevExpress.XtraEditors.SimpleButton btnThoat;
-		private DevExpress.XtraEditors.SimpleButton btnRefresh;
-        private DevExpress.XtraEditors.LabelControl lbCauh;
-        private DevExpress.XtraEditors.SimpleButton btnPrev;
-        private DevExpress.XtraEditors.SimpleButton btnNext;
-        private DevExpress.XtraEditors.LabelControl lbSo;
-        private DevExpress.XtraEditors.LabelControl labelControl2;
+		private LabelControl lbCauHoi;
+		private PanelControl panelControl1;
+		private LabelControl labelControl1;
+		private RichEditControl recTraLoi;
+		private SimpleButton btnThoat;
+		private SimpleButton btnRefresh;
+        private LabelControl lbCauh;
+        private SimpleButton btnPrev;
+        private SimpleButton btnNext;
+        private LabelControl lbSo;
+        private LabelControl labelControl2;
     }
 }

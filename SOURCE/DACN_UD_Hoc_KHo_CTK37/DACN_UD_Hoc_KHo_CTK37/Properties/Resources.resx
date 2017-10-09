@@ -139,4 +139,69 @@
         gg==
 </value>
   </data>
+  <data name="nhap_tu_can_tra" xml:space="preserve">
+    <value>Nhập từ cần tra!</value>
+  </data>
+  <data name="khong_tim_thay" xml:space="preserve">
+    <value>Không tin thấy từ này!</value>
+  </data>
+  <data name="nhan_de_xem_chi_tiet_bai_so" xml:space="preserve">
+    <value>Nhấp để xem chi tiết bài số: </value>
+  </data>
+  <data name="error_connectionstring" xml:space="preserve">
+    <value>Không thể kết nối dữ liệu.</value>
+  </data>
+  <data name="thong_bao" xml:space="preserve">
+    <value>Thông báo</value>
+  </data>
+  <data name="nha_de_xem_ngu_phap" xml:space="preserve">
+    <value>Nhấp để xem chi tiết ngữ pháp số: </value>
+  </data>
+  <data name="nhap_cau_trl" xml:space="preserve">
+    <value>Nhập câu trả lời!</value>
+  </data>
+  <data name="het_cau_hoi" xml:space="preserve">
+    <value>Đã hết câu hỏi của bài: </value>
+  </data>
+  <data name="goi_y" xml:space="preserve">
+    <value>Gợi ý</value>
+  </data>
+  <data name="cau_so" xml:space="preserve">
+    <value>Câu </value>
+  </data>
+  <data name="dau_2_cham" xml:space="preserve">
+    <value>:</value>
+  </data>
+  <data name="dau_cheo" xml:space="preserve">
+    <value>/</value>
+    <comment>dấu chéo</comment>
+  </data>
+  <data name="tab" xml:space="preserve">
+    <value>	</value>
+    <comment>thẻ tag</comment>
+  </data>
+  <data name="dau_cham" xml:space="preserve">
+    <value>.</value>
+  </data>
+  <data name="tab_daungang" xml:space="preserve">
+    <value>	- </value>
+  </data>
+  <data name="dau_cong" xml:space="preserve">
+    <value>+</value>
+  </data>
+  <data name="dau2chamvacach" xml:space="preserve">
+    <value>: </value>
+  </data>
+  <data name="nghe" xml:space="preserve">
+    <value>Nghe</value>
+  </data>
+  <data name="bai" xml:space="preserve">
+    <value>Bài </value>
+  </data>
+  <data name="bai_so" xml:space="preserve">
+    <value>Bài học số </value>
+  </data>
+  <data name="stop" xml:space="preserve">
+    <value>Dừng</value>
+  </data>
 </root>

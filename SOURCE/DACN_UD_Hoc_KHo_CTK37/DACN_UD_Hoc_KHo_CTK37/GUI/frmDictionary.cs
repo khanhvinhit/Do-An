@@ -1,18 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Text;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using DACN_UD_Hoc_KHo_CTK37.DAO;
+using DACN_UD_Hoc_KHo_CTK37.Properties;
 using DevExpress.XtraEditors;
 
-namespace DACN_UD_Hoc_KHo_CTK37
+namespace DACN_UD_Hoc_KHo_CTK37.GUI
 {
-	public partial class FrmDictionary : DevExpress.XtraEditors.XtraForm
+	public partial class FrmDictionary : XtraForm
 	{
 		public FrmDictionary()
 		{
@@ -20,11 +15,11 @@ namespace DACN_UD_Hoc_KHo_CTK37
 			DataForm();
 		}
 
-		#region MEnthod
+		#region Method
 		void DataForm()
 		{
-			this.txtDic.Leave += new System.EventHandler(this.txtDic_Leave);
-			this.txtDic.Enter += new System.EventHandler(this.txtDic_Enter);
+			txtDic.Leave += txtDic_Leave;
+			txtDic.Enter += txtDic_Enter;
 			lbcTuVung.Items.Clear();
 			foreach (var item in TuVungDao.Instance.LoadTuVungDic())
 			{
@@ -41,29 +36,15 @@ namespace DACN_UD_Hoc_KHo_CTK37
 			string tukhoa = lbcTuVung.SelectedItem.ToString();
 			string name = tukhoa;
 			foreach (var item in TuVungDao.Instance.LoadTuVungByKHo(name))
-			{
 				if (item.KHo != null)
-				{
-					if (item.Viet == null)
-					{
-						recNghia.Text += item.KHo + ": Đang cập nhật\n";
-					}
-					else
-					{
-						recNghia.Text += item.KHo + ": " + item.Viet + "\n";
-					}
-
-				}
-			}
+					recNghia.Text += item.Viet == null ? item.KHo + ": Đang cập nhật\n" : item.KHo + ": " + item.Viet + "\n";
 		}
 		#endregion
 
 		private void btnDic_Click(object sender, EventArgs e)
 		{
-			if (txtDic.Text == "Nhập từ cần tra!" || txtDic.Text=="")
-			{
-				XtraMessageBox.Show("Vui lòng nhập từ cần tra!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-			}
+			if (txtDic.Text == Resources.nhap_tu_can_tra || txtDic.Text== "")
+				XtraMessageBox.Show("Vui lòng nhập từ cần tra!", Resources.thong_bao, MessageBoxButtons.OK, MessageBoxIcon.Warning);
 			else
 			{
 				recNghia.ResetText();
@@ -71,35 +52,17 @@ namespace DACN_UD_Hoc_KHo_CTK37
 				recNghia.Text = "";
 				string name = txtDic.Text;
 				if (TuVungDao.Instance.LoadTuVungByKHo(name).Count <= 0)
-				{
-					recNghia.Text += "Không tin thấy từ này!";
-				}
+					recNghia.Text += Resources.khong_tim_thay;
 				else
-				{
 					foreach (var item in TuVungDao.Instance.LoadTuVungByKHo(name))
-					{
 						if (item.KHo != null)
-						{
-							if (item.Viet == null)
-							{
-								recNghia.Text += item.KHo + ": Đang cập nhật\n";
-							}
-							else
-							{
-								recNghia.Text += item.KHo + ": " + item.Viet + "\n";
-							}
-
-						}
-					}
-				}
+							recNghia.Text += item.Viet == null ? item.KHo + ": Đang cập nhật\n" : item.KHo + ": " + item.Viet + "\n";
 			}
-			
-
 		}
 
 		private void txtDic_Enter(object sender, EventArgs e)
 		{
-			if (txtDic.Text == "Nhập từ cần tra!")
+			if (txtDic.Text == Resources.nhap_tu_can_tra)
 			{
 				txtDic.Text = "";
 				txtDic.ForeColor = Color.Black;
@@ -110,14 +73,9 @@ namespace DACN_UD_Hoc_KHo_CTK37
 		{
 			if (txtDic.Text == "")
 			{
-				txtDic.Text = "Nhập từ cần tra!";
+				txtDic.Text = Resources.nhap_tu_can_tra;
 				txtDic.ForeColor = Color.Gray;
 			}
 		}
-
-		
-		
 	}
-
-
 }

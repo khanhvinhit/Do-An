@@ -1,11 +1,14 @@
-﻿namespace DACN_UD_Hoc_KHo_CTK37
+﻿using System.ComponentModel;
+using DevExpress.XtraEditors;
+
+namespace DACN_UD_Hoc_KHo_CTK37.GUI
 {
 	partial class FrmExercise
 	{
 		/// <summary>
 		/// Required designer variable.
 		/// </summary>
-		private System.ComponentModel.IContainer components = null;
+		private IContainer components = null;
 
 		/// <summary>
 		/// Clean up any resources being used.
@@ -28,7 +31,7 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-			DevExpress.XtraSplashScreen.SplashScreenManager splashScreenManager1 = new DevExpress.XtraSplashScreen.SplashScreenManager(this, typeof(global::DACN_UD_Hoc_KHo_CTK37.WaitForm), true, true);
+			DevExpress.XtraSplashScreen.SplashScreenManager splashScreenManager1 = new DevExpress.XtraSplashScreen.SplashScreenManager(this, typeof(global::DACN_UD_Hoc_KHo_CTK37.GUI.WaitForm), true, true);
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmExercise));
 			this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
 			this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
@@ -226,18 +229,18 @@
 
 		#endregion
 
-		private DevExpress.XtraEditors.PanelControl panelControl1;
-        private DevExpress.XtraEditors.LabelControl lbGoiy;
-        private DevExpress.XtraEditors.SimpleButton btnGoiY;
-        private DevExpress.XtraEditors.SimpleButton btnPr;
-        private DevExpress.XtraEditors.SimpleButton btnRef;
-        private DevExpress.XtraEditors.LabelControl labelControl1;
-        private DevExpress.XtraEditors.LabelControl txtCount;
-        private DevExpress.XtraEditors.SimpleButton btnNext;
-        private DevExpress.XtraEditors.LabelControl txtCauHoi;
-        private DevExpress.XtraEditors.SimpleButton btnSave;
-        private DevExpress.XtraEditors.LabelControl labelControl2;
-        private DevExpress.XtraEditors.TextEdit txtTraLoi;
-		private DevExpress.XtraEditors.PanelControl panelControl2;
+		private PanelControl panelControl1;
+        private LabelControl lbGoiy;
+        private SimpleButton btnGoiY;
+        private SimpleButton btnPr;
+        private SimpleButton btnRef;
+        private LabelControl labelControl1;
+        private LabelControl txtCount;
+        private SimpleButton btnNext;
+        private LabelControl txtCauHoi;
+        private SimpleButton btnSave;
+        private LabelControl labelControl2;
+        private TextEdit txtTraLoi;
+		private PanelControl panelControl2;
     }
 }

@@ -1,7 +1,7 @@
 ﻿using System;
 using DevExpress.XtraSplashScreen;
 
-namespace DACN_UD_Hoc_KHo_CTK37
+namespace DACN_UD_Hoc_KHo_CTK37.GUI
 {
 	public partial class WaitForm : SplashScreen
 	{

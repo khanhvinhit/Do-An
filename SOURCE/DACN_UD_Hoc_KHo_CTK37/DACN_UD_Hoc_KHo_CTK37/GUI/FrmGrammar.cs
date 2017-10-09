@@ -1,19 +1,14 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Text;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using DACN_UD_Hoc_KHo_CTK37.DAO;
 using DACN_UD_Hoc_KHo_CTK37.DTO;
+using DACN_UD_Hoc_KHo_CTK37.Properties;
 using DevExpress.XtraEditors;
 
 namespace DACN_UD_Hoc_KHo_CTK37.GUI
 {
-	public partial class FrmGrammar : DevExpress.XtraEditors.XtraForm
+	public partial class FrmGrammar : XtraForm
 	{
 		private int _iDNguPhap;
 
@@ -45,12 +40,12 @@ namespace DACN_UD_Hoc_KHo_CTK37.GUI
 
 		private void btnClose_Click(object sender, EventArgs e)
 		{
-			this.Close();
+			Close();
 		}
 
 		private void FrmGrammar_FormClosing(object sender, FormClosingEventArgs e)
 		{
-			if (XtraMessageBox.Show("Bạn có muốn đóng ngữ pháp không?", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) != DialogResult.OK)
+			if (XtraMessageBox.Show("Bạn có muốn đóng ngữ pháp không?", Resources.thong_bao, MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) != DialogResult.OK)
 			{
 				e.Cancel = true;
 			}

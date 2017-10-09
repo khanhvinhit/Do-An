@@ -1,8 +1,10 @@
 ﻿using System.ComponentModel;
+using DevExpress.Utils;
 using DevExpress.XtraBars;
 using DevExpress.XtraBars.Ribbon;
+using DevExpress.XtraTabbedMdi;
 
-namespace DACN_UD_Hoc_KHo_CTK37
+namespace DACN_UD_Hoc_KHo_CTK37.GUI
 {
 	partial class FrmUdHoc
 	{
@@ -33,7 +35,7 @@ namespace DACN_UD_Hoc_KHo_CTK37
 		private void InitializeComponent()
 		{
             this.components = new System.ComponentModel.Container();
-            DevExpress.XtraSplashScreen.SplashScreenManager splashScreenManager1 = new DevExpress.XtraSplashScreen.SplashScreenManager(this, typeof(global::DACN_UD_Hoc_KHo_CTK37.WaitForm), true, true);
+            DevExpress.XtraSplashScreen.SplashScreenManager splashScreenManager1 = new DevExpress.XtraSplashScreen.SplashScreenManager(this, typeof(global::DACN_UD_Hoc_KHo_CTK37.GUI.WaitForm), true, true);
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmUdHoc));
             this.ribbonControl1 = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.btnLesson = new DevExpress.XtraBars.BarButtonItem();
@@ -221,7 +223,7 @@ namespace DACN_UD_Hoc_KHo_CTK37
 		private RibbonPageGroup ribbonPageGroup2;
 		private RibbonPageGroup ribbonPageGroup3;
 		private BarButtonItem btnDictionary;
-		private DevExpress.XtraTabbedMdi.XtraTabbedMdiManager xtraTabbedMdiManager1;
-        private DevExpress.Utils.ToolTipController toolTipController1;
+		private XtraTabbedMdiManager xtraTabbedMdiManager1;
+        private ToolTipController toolTipController1;
     }
 }

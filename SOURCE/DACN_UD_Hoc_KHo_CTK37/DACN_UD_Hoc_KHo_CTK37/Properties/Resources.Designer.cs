@@ -22,7 +22,7 @@ namespace DACN_UD_Hoc_KHo_CTK37.Properties {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class Resources {
+    public class Resources {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
@@ -36,7 +36,7 @@ namespace DACN_UD_Hoc_KHo_CTK37.Properties {
         ///   Returns the cached ResourceManager instance used by this class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Resources.ResourceManager ResourceManager {
+        public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
                     global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("DACN_UD_Hoc_KHo_CTK37.Properties.Resources", typeof(Resources).Assembly);
@@ -51,7 +51,7 @@ namespace DACN_UD_Hoc_KHo_CTK37.Properties {
         ///   resource lookups using this strongly typed resource class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Globalization.CultureInfo Culture {
+        public static global::System.Globalization.CultureInfo Culture {
             get {
                 return resourceCulture;
             }
@@ -61,12 +61,201 @@ namespace DACN_UD_Hoc_KHo_CTK37.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Bài .
+        /// </summary>
+        public static string bai {
+            get {
+                return ResourceManager.GetString("bai", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Bài học số .
+        /// </summary>
+        public static string bai_so {
+            get {
+                return ResourceManager.GetString("bai_so", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap btnGoiY_ImageAn {
+        public static System.Drawing.Bitmap btnGoiY_ImageAn {
             get {
                 object obj = ResourceManager.GetObject("btnGoiY.ImageAn", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Câu .
+        /// </summary>
+        public static string cau_so {
+            get {
+                return ResourceManager.GetString("cau_so", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to :.
+        /// </summary>
+        public static string dau_2_cham {
+            get {
+                return ResourceManager.GetString("dau_2_cham", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ..
+        /// </summary>
+        public static string dau_cham {
+            get {
+                return ResourceManager.GetString("dau_cham", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to /.
+        /// </summary>
+        public static string dau_cheo {
+            get {
+                return ResourceManager.GetString("dau_cheo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to +.
+        /// </summary>
+        public static string dau_cong {
+            get {
+                return ResourceManager.GetString("dau_cong", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to : .
+        /// </summary>
+        public static string dau2chamvacach {
+            get {
+                return ResourceManager.GetString("dau2chamvacach", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Không thể kết nối dữ liệu..
+        /// </summary>
+        public static string error_connectionstring {
+            get {
+                return ResourceManager.GetString("error_connectionstring", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Gợi ý.
+        /// </summary>
+        public static string goi_y {
+            get {
+                return ResourceManager.GetString("goi_y", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Đã hết câu hỏi của bài: .
+        /// </summary>
+        public static string het_cau_hoi {
+            get {
+                return ResourceManager.GetString("het_cau_hoi", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Không tin thấy từ này!.
+        /// </summary>
+        public static string khong_tim_thay {
+            get {
+                return ResourceManager.GetString("khong_tim_thay", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Nghe.
+        /// </summary>
+        public static string nghe {
+            get {
+                return ResourceManager.GetString("nghe", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Nhấp để xem chi tiết ngữ pháp số: .
+        /// </summary>
+        public static string nha_de_xem_ngu_phap {
+            get {
+                return ResourceManager.GetString("nha_de_xem_ngu_phap", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Nhấp để xem chi tiết bài số: .
+        /// </summary>
+        public static string nhan_de_xem_chi_tiet_bai_so {
+            get {
+                return ResourceManager.GetString("nhan_de_xem_chi_tiet_bai_so", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Nhập câu trả lời!.
+        /// </summary>
+        public static string nhap_cau_trl {
+            get {
+                return ResourceManager.GetString("nhap_cau_trl", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Nhập từ cần tra!.
+        /// </summary>
+        public static string nhap_tu_can_tra {
+            get {
+                return ResourceManager.GetString("nhap_tu_can_tra", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Dừng.
+        /// </summary>
+        public static string stop {
+            get {
+                return ResourceManager.GetString("stop", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 	.
+        /// </summary>
+        public static string tab {
+            get {
+                return ResourceManager.GetString("tab", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 	- .
+        /// </summary>
+        public static string tab_daungang {
+            get {
+                return ResourceManager.GetString("tab_daungang", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Thông báo.
+        /// </summary>
+        public static string thong_bao {
+            get {
+                return ResourceManager.GetString("thong_bao", resourceCulture);
             }
         }
     }

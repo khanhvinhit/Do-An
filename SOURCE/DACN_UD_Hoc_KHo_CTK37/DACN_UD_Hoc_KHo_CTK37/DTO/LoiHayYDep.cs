@@ -7,12 +7,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+using System;
+
 namespace DACN_UD_Hoc_KHo_CTK37.DTO
 {
-    using System;
-    using System.Collections.Generic;
-    
-    public partial class LoiHayYDep
+	public partial class LoiHayYDep
     {
         public int ID { get; set; }
         public string CauKHo { get; set; }
