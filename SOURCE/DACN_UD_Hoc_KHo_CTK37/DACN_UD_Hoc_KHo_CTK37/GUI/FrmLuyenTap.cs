@@ -72,17 +72,11 @@ namespace DACN_UD_Hoc_KHo_CTK37.GUI
             {
                 lbCauh.Text = lt.HoiKHo + "\n";
                 if (lt.HoiViet != null)
-                {
-                    lbCauh.Text = lt.HoiKHo + "\n" + lt.HoiViet + "\n";
-                }
+					lbCauh.Text = lt.HoiKHo + "\n" + lt.HoiViet + "\n";
                 if (lt.TraLoiViet != null)
-                {
-                    lbCauh.Text = lt.HoiKHo + "\n" + lt.HoiViet + "\n + " + lt.TraLoiViet + "\n";
-                }
+					lbCauh.Text = lt.HoiKHo + "\n" + lt.HoiViet + "\n + " + lt.TraLoiViet + "\n";
                 if (lt.TraLoiKHo!=null)
-                {
-                    recTraLoi.Text += lt.TraLoiKHo;
-                }
+					recTraLoi.Text += lt.TraLoiKHo;
                 else
                 {
 					recTraLoi.ForeColor = Color.LightGray;
@@ -92,13 +86,9 @@ namespace DACN_UD_Hoc_KHo_CTK37.GUI
                 }
             }
             if (_stt == 1)
-            {
-                btnPrev.Enabled = false;
-            }
+				btnPrev.Enabled = false;
             else if (_stt == _soLt)
-            {
-                btnNext.Enabled = false;
-            }
+				btnNext.Enabled = false;
             else if (_stt < _soLt || _stt > 1)
             {
                 btnPrev.Enabled = true;
@@ -115,9 +105,7 @@ namespace DACN_UD_Hoc_KHo_CTK37.GUI
 				recTraLoi.Text = Resources.nhap_cau_trl;
 			}
 			else
-			{
 				recTraLoi.ForeColor = Color.Black;
-			}
 		}
 
 		private void recTraLoi_Enter(object sender, EventArgs e)
@@ -141,9 +129,7 @@ namespace DACN_UD_Hoc_KHo_CTK37.GUI
 							if (itemdmc.LuyenTaps.Count >= 1)
 							{
 								foreach (LuyenTap lt in LuyenTapDao.Instance.LoadLuyenTaps(itemdmc.ID))
-								{
 									LuyenTapDao.Instance.Referst(lt.ID);
-								}
 								XtraMessageBox.Show("Đã làm mới tất cả câu trả lời?", Resources.thong_bao, MessageBoxButtons.OK,
 											MessageBoxIcon.Information);
 								recTraLoi.ResetText();
@@ -158,9 +144,7 @@ namespace DACN_UD_Hoc_KHo_CTK37.GUI
 							if (itemdmc.LuyenTaps.Count >= 1)
 							{
 								foreach (LuyenTap lt in LuyenTapDao.Instance.LoadLuyenTaps(itemdmc.ID))
-								{
 									LuyenTapDao.Instance.Referst(lt.ID);
-								}
 								XtraMessageBox.Show("Đã làm mới tất cả câu trả lời?", Resources.thong_bao, MessageBoxButtons.OK,
 											MessageBoxIcon.Information);
 								recTraLoi.ResetText();
@@ -178,9 +162,7 @@ namespace DACN_UD_Hoc_KHo_CTK37.GUI
 			{
 				string cauTl = recTraLoi.Text;
 				if (cauTl != Resources.nhap_cau_trl)
-				{
 					LuyenTapDao.Instance.UpdateLT(_idLt, cauTl);
-				}
 				Close();
 			}
 			catch (Exception)
@@ -200,18 +182,14 @@ namespace DACN_UD_Hoc_KHo_CTK37.GUI
 				LoadCauHoiLt(_idLt);
 			}
 			else if (_stt == 1)
-			{
 				XtraMessageBox.Show(Resources.het_cau_hoi + _iDBaiHoc, Resources.thong_bao, MessageBoxButtons.OK, MessageBoxIcon.Warning);
-			}
 		}
 
 		private void btnNext_Click(object sender, EventArgs e)
 		{
 			string cauTl = recTraLoi.Text;
 			if (cauTl != "")
-			{
 				LuyenTapDao.Instance.UpdateLT(_idLt, cauTl);
-			}
 			if (_stt < _soLt)
 			{
 				_stt++;
@@ -221,9 +199,7 @@ namespace DACN_UD_Hoc_KHo_CTK37.GUI
 				LoadCauHoiLt(_idLt);
 			}
 			else
-			{
 				XtraMessageBox.Show(Resources.het_cau_hoi + _iDBaiHoc, Resources.thong_bao, MessageBoxButtons.OK, MessageBoxIcon.Warning);
-			}
 		}
 		#endregion
 		

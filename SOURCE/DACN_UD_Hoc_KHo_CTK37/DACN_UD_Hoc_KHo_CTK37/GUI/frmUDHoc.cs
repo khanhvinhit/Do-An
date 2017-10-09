@@ -27,7 +27,6 @@ namespace DACN_UD_Hoc_KHo_CTK37.GUI
 		}
 		void LoadBaiHoc()
 		{
-
 			FrmWecome f = new FrmWecome();
 			f.MdiParent = this;
 			f.Show();
@@ -64,10 +63,6 @@ namespace DACN_UD_Hoc_KHo_CTK37.GUI
 		#region Event
 		private void btnHelper_ItemClick(object sender, ItemClickEventArgs e)
 		{
-			//foreach (Form Frm in this.MdiChildren)
-			//{
-			//	Frm.Close();
-			//}
 			if (!CheckExistForm("FrmHelper"))
 			{
 				FrmHelper f = new FrmHelper();
@@ -75,16 +70,10 @@ namespace DACN_UD_Hoc_KHo_CTK37.GUI
 				f.Show();
 			}
 			else
-			{
 				ActiveChildForm("FrmHelper");
-			}
 		}
 		private void btnLesson_ItemClick(object sender, ItemClickEventArgs e)
 		{
-			//foreach (Form Frm in this.MdiChildren)
-			//{
-			//	Frm.Close();
-			//}
 			if (!CheckExistForm("FrmDsBaiHoc"))
 			{
 				FrmDsBaiHoc f = new FrmDsBaiHoc();
@@ -92,17 +81,13 @@ namespace DACN_UD_Hoc_KHo_CTK37.GUI
 				f.Show();
 			}
 			else
-			{
 				ActiveChildForm("FrmDsBaiHoc");
-			}
 		}
 
 		private void FrmUdHoc_FormClosing(object sender, FormClosingEventArgs e)
 		{
 			if (XtraMessageBox.Show("Bạn có muốn thoát khỏi ứng dụng không?", Resources.thong_bao, MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) != DialogResult.OK)
-			{
 				e.Cancel = true;
-			}
 			Settings.Default["ApplicationSkinName"] = UserLookAndFeel.Default.SkinName;
 			Settings.Default.Save();
 		}
@@ -114,10 +99,6 @@ namespace DACN_UD_Hoc_KHo_CTK37.GUI
 
 		private void btnGammar_ItemClick(object sender, ItemClickEventArgs e)
 		{
-			//foreach (Form Frm in this.MdiChildren)
-			//{
-			//	Frm.Close();
-			//}
 			if (!CheckExistForm("FrmDsGrammar"))
 			{
 				FrmDsGrammar f = new FrmDsGrammar();
@@ -125,18 +106,12 @@ namespace DACN_UD_Hoc_KHo_CTK37.GUI
 				f.Show();
 			}
 			else
-			{
 				ActiveChildForm("FrmDsGrammar");
-			}
 
 		}
 
 		private void btnInfo_ItemClick(object sender, ItemClickEventArgs e)
 		{
-			//foreach (Form Frm in this.MdiChildren)
-			//{
-			//	Frm.Close();
-			//}
 			if (!CheckExistForm("FrmInfo"))
 			{
 				FrmInfo f = new FrmInfo();
@@ -144,9 +119,7 @@ namespace DACN_UD_Hoc_KHo_CTK37.GUI
 				f.Show();
 			}
 			else
-			{
 				ActiveChildForm("FrmInfo");
-			}
 		}
 
 		private void btnDictionary_ItemClick(object sender, ItemClickEventArgs e)
@@ -156,9 +129,7 @@ namespace DACN_UD_Hoc_KHo_CTK37.GUI
 			{
 				FrmDictionary f = Application.OpenForms.OfType<FrmDictionary>().FirstOrDefault();
 				if (f != null)
-				{
 					XtraMessageBox.Show("Bạn đã mở tử điển!", Resources.thong_bao, MessageBoxButtons.OK, MessageBoxIcon.Warning);
-				}
 				else
 				{
 					f = new FrmDictionary();

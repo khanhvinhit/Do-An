@@ -22,9 +22,7 @@ namespace DACN_UD_Hoc_KHo_CTK37.GUI
 			txtDic.Enter += txtDic_Enter;
 			lbcTuVung.Items.Clear();
 			foreach (var item in TuVungDao.Instance.LoadTuVungDic())
-			{
 				lbcTuVung.Items.Add(item.KHo);
-			}
 		}
 		#endregion
 		#region action
