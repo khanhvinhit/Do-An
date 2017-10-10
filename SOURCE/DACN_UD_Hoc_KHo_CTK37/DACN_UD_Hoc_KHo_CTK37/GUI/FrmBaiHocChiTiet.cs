@@ -44,7 +44,7 @@ namespace DACN_UD_Hoc_KHo_CTK37.GUI
 					j++;
 					if (item.TenKHo != null)
 					{
-						rkqBaiHoc.Text += j + ". " + item.TenKHo + " - " + item.TenViet + xuong_dong;
+						rkqBaiHoc.Text += j+Resources.dau_cham + Resources.dau_cach + item.TenKHo + " - " + item.TenViet + xuong_dong;
 						foreach (DanhMucCon itemdmc in DanhMucConDao.Instance.DanhMucConLoad(item.ID))
 						{
 							rkqBaiHoc.Text += "\t* " + itemdmc.Ten + Resources.dau_cham + xuong_dong;
@@ -66,7 +66,9 @@ namespace DACN_UD_Hoc_KHo_CTK37.GUI
 											rkqBaiHoc.Text += bk.TraLoiViet != null ? Resources.tab_daungang + bk.HoiViet + Resources.tab+ Resources.tab+Resources.dau_cong + bk.TraLoiViet + xuong_dong : rkqBaiHoc.Text += Resources.tab_daungang + bk.HoiViet + xuong_dong;
 										}
 										else
-											rkqBaiHoc.Text += bk.TraLoiKHo != null ? Resources.tab_daungang + bk.HoiKHo + Resources.tab+ Resources.tab+Resources.dau_cong + bk.TraLoiKHo + xuong_dong : rkqBaiHoc.Text += Resources.tab_daungang + bk.HoiKHo + xuong_dong;
+											rkqBaiHoc.Text += bk.TraLoiKHo != null 
+												? Resources.tab_daungang + bk.HoiKHo + Resources.tab+ Resources.tab+Resources.dau_cong + bk.TraLoiKHo + xuong_dong 
+												: rkqBaiHoc.Text += Resources.tab_daungang + bk.HoiKHo + xuong_dong;
 									}
 									else
 										rkqBaiHoc.Text += Resources.tab + bk.NoiDung + xuong_dong;
@@ -139,7 +141,7 @@ namespace DACN_UD_Hoc_KHo_CTK37.GUI
 						foreach (DanhMucCon itemdmc in DanhMucConDao.Instance.DanhMucConLoad(item.ID))
 						{
 							j++;
-							rkqBaiHoc.Text += j + ". " + itemdmc.Ten + "." + xuong_dong;
+							rkqBaiHoc.Text += j + Resources.dau_cham + Resources.dau_cach + itemdmc.Ten + Resources.dau_cham + xuong_dong;
 							if (itemdmc.IDAmThanh > 0)
 							{
 								btnAudio.Enabled = true;
@@ -221,7 +223,7 @@ namespace DACN_UD_Hoc_KHo_CTK37.GUI
 				foreach (DanhMucCon itemdmc in DanhMucConDao.Instance.DanhMucConLoadByName(name, id))
 				{
 					j++;
-					rkqBaiHoc.Text += j + ". " + itemdmc.Ten + "." + xuong_dong;
+					rkqBaiHoc.Text += j+Resources.dau_cham + Resources.dau_cach + itemdmc.Ten + Resources.dau_cham + xuong_dong;
 					if (itemdmc.IDAmThanh > 0)
 					{
 						btnAudio.Enabled = true;
@@ -364,13 +366,13 @@ namespace DACN_UD_Hoc_KHo_CTK37.GUI
 					foreach (DanhMucCon itemdmc in DanhMucConDao.Instance.DanhMucConLoad(item.ID))
 					{
 						i++;
-						lbcMucLuc.Items.Add(i + ". " + itemdmc.Ten);
+						lbcMucLuc.Items.Add(i+Resources.dau_cham + Resources.dau_cach + itemdmc.Ten);
 					}
 				}
 				else
 				{
 					i++;
-					lbcMucLuc.Items.Add(i + ". " + item.TenKHo);
+					lbcMucLuc.Items.Add(i+Resources.dau_cham + Resources.dau_cach + item.TenKHo);
 				}
 			}
 			foreach (DanhMuc item in DanhMucDao.Instance.DanhMucLoad(iDBaiHoc))
@@ -378,10 +380,10 @@ namespace DACN_UD_Hoc_KHo_CTK37.GUI
 				j++;
 				if (item.TenKHo != null)
 				{
-					rkqBaiHoc.Text += j + ". " + item.TenKHo + " - " + item.TenViet + xuong_dong;
+					rkqBaiHoc.Text += j+Resources.dau_cham + Resources.dau_cach + item.TenKHo + " - " + item.TenViet + xuong_dong;
 					foreach (DanhMucCon itemdmc in DanhMucConDao.Instance.DanhMucConLoad(item.ID))
 					{
-						rkqBaiHoc.Text += "\t* " + itemdmc.Ten + "." + xuong_dong;
+						rkqBaiHoc.Text += "\t* " + itemdmc.Ten + Resources.dau_cham + xuong_dong;
 						if (itemdmc.BaiKhoas.Count >= 1)
 						{
 							foreach (BaiKhoa bk in BaiKhoaDao.Instance.LoadBaiKhoas(itemdmc.ID))
@@ -488,7 +490,7 @@ namespace DACN_UD_Hoc_KHo_CTK37.GUI
 					foreach (DanhMucCon itemdmc in DanhMucConDao.Instance.DanhMucConLoad(item.ID))
 					{
 						j++;
-						rkqBaiHoc.Text += j + ". " + itemdmc.Ten + "." + xuong_dong;
+						rkqBaiHoc.Text += j+Resources.dau_cham + Resources.dau_cach + itemdmc.Ten + Resources.dau_cham + xuong_dong;
 						if (itemdmc.BaiKhoas.Count >= 1)
 						{
 							foreach (BaiKhoa bk in BaiKhoaDao.Instance.LoadBaiKhoas(itemdmc.ID))

@@ -204,4 +204,7 @@
   <data name="stop" xml:space="preserve">
     <value>Dừng</value>
   </data>
+	<data name="dau_cach" xml:space="preserve">
+    <value> </value>
+  </data>
 </root>
