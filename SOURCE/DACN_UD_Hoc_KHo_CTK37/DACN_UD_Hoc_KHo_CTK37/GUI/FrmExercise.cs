@@ -31,20 +31,29 @@ namespace DACN_UD_Hoc_KHo_CTK37.GUI
 
 		private void LoadCauHoi(int idCauHoi)
 		{
+			btnGoiY.Enabled = false;
 			foreach (CauHoi ch in CauHoiDao.Instance.LoadCauHoiByID(idCauHoi))
 			{
 				if (ch.TraLoi != null)
 				{
 					txtCauHoi.Text = Resources.cau_so + _stt + ": " + ch.Hoi;
 					txtTraLoi.Text = ch.TraLoi;
-					_gopy = ch.GoiY;
+					if (ch.GoiY != null)
+					{
+						_gopy = ch.GoiY;
+						btnGoiY.Enabled = true;
+					}
 					lbGoiy.Text = "";
 					txtTraLoi.ForeColor = Color.Black;
 				}
 				else
 				{
 					txtCauHoi.Text = Resources.cau_so + _stt + ": " + ch.Hoi;
-					_gopy = ch.GoiY;
+					if (ch.GoiY != null)
+					{
+						_gopy = ch.GoiY;
+						btnGoiY.Enabled = true;
+					}
 					lbGoiy.Text = "";
 					txtTraLoi.Text = Resources.nhap_cau_trl;
 					txtTraLoi.ForeColor = Color.LightGray;

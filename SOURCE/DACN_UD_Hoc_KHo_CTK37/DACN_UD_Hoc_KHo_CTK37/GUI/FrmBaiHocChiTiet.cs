@@ -51,8 +51,7 @@ namespace DACN_UD_Hoc_KHo_CTK37.GUI
 							if (itemdmc.IDAmThanh > 0)
 							{
 								btnAudio.Enabled = true;
-								if (itemdmc.IDAmThanh > 0)
-									btnAudio.Enabled = true;
+								btnAudio.Tag = itemdmc;
 							}
 							if (itemdmc.BaiKhoas.Count >= 1)
 							{
