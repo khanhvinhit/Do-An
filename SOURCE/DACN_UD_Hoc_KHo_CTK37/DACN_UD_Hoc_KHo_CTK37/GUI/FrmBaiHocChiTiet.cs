@@ -672,7 +672,7 @@ namespace DACN_UD_Hoc_KHo_CTK37.GUI
 			{
 				FrmExercise f = Application.OpenForms.OfType<FrmExercise>().FirstOrDefault();
 				if (f != null)
-					XtraMessageBox.Show("Bạn đã mở câu hỏi!", Resources.dau2chamvacach, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+					XtraMessageBox.Show("Bạn đã mở câu hỏi!", Resources.thong_bao, MessageBoxButtons.OK, MessageBoxIcon.Warning);
 				else
 				{
 					f = new FrmExercise(_iDBaiHoc);
@@ -684,7 +684,7 @@ namespace DACN_UD_Hoc_KHo_CTK37.GUI
 			{
 				FrmLuyenTap f = Application.OpenForms.OfType<FrmLuyenTap>().FirstOrDefault();
 				if (f != null)
-					XtraMessageBox.Show("Bạn đã mở luyện tập!", Resources.dau2chamvacach, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+					XtraMessageBox.Show("Bạn đã mở luyện tập!", Resources.thong_bao, MessageBoxButtons.OK, MessageBoxIcon.Warning);
 				else
 				{
 					f = new FrmLuyenTap(_iDBaiHoc);
@@ -712,7 +712,7 @@ namespace DACN_UD_Hoc_KHo_CTK37.GUI
 			}
 			FrmDictionary f = Application.OpenForms.OfType<FrmDictionary>().FirstOrDefault();
 			if (f != null)
-				XtraMessageBox.Show("Bạn đã mở tử điển!", Resources.dau2chamvacach, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+				XtraMessageBox.Show("Bạn đã mở tử điển!", Resources.thong_bao, MessageBoxButtons.OK, MessageBoxIcon.Warning);
 			else
 			{
 				f = new FrmDictionary();
