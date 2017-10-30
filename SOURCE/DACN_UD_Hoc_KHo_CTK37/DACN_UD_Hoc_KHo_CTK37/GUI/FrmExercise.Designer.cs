@@ -94,6 +94,7 @@ namespace DACN_UD_Hoc_KHo_CTK37.GUI
 			this.btnGoiY.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
 			this.btnGoiY.Appearance.Font = new System.Drawing.Font("TNKeyUni-Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.btnGoiY.Appearance.Options.UseFont = true;
+			this.btnGoiY.Enabled = false;
 			this.btnGoiY.Image = ((System.Drawing.Image)(resources.GetObject("btnGoiY.Image")));
 			this.btnGoiY.Location = new System.Drawing.Point(216, 83);
 			this.btnGoiY.Name = "btnGoiY";
