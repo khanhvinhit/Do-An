@@ -18,11 +18,22 @@ namespace DACN_UD_Hoc_KHo_CTK37.GUI
 		#region Method
 		void DataForm()
 		{
-			txtDic.Leave += txtDic_Leave;
-			txtDic.Enter += txtDic_Enter;
+			txtDicti.Enter += txtDicti_Enter;
 			lbcTuVung.Items.Clear();
 			foreach (var item in TuVungDao.Instance.LoadTuVungDic())
 				lbcTuVung.Items.Add(item.KHo);
+
+			txtDicti.AutoCompleteMode = AutoCompleteMode.Suggest;
+			txtDicti.AutoCompleteSource = AutoCompleteSource.CustomSource;
+			AutoCompleteStringCollection DataCollection = new AutoCompleteStringCollection();
+			getData(DataCollection);
+			txtDicti.AutoCompleteCustomSource = DataCollection;
+		}
+
+		private void getData(AutoCompleteStringCollection dataCollection)
+		{
+			foreach (var item in TuVungDao.Instance.LoadTuVungDic())
+				dataCollection.Add(item.KHo);
 		}
 		#endregion
 		#region action
@@ -30,49 +41,83 @@ namespace DACN_UD_Hoc_KHo_CTK37.GUI
 		{
 			recNghia.ResetText();
 			recNghia.Font = new Font("TNKeyUni-Arial", 11F);
-			recNghia.Text = "";
 			string tukhoa = lbcTuVung.SelectedItem.ToString();
 			string name = tukhoa;
 			foreach (var item in TuVungDao.Instance.LoadTuVungByKHo(name))
 				if (item.KHo != null)
+				{
 					recNghia.Text += item.Viet == null ? item.KHo + ": Đang cập nhật\n" : item.KHo + ": " + item.Viet + "\n";
+					txtDicti.Text = item.KHo;
+				}
 		}
 		#endregion
 
 		private void btnDic_Click(object sender, EventArgs e)
 		{
-			if (txtDic.Text == Resources.nhap_tu_can_tra || txtDic.Text== "")
+			if (txtDicti.Text == Resources.nhap_tu_can_tra || txtDicti.Text== "")
 				XtraMessageBox.Show("Vui lòng nhập từ cần tra!", Resources.thong_bao, MessageBoxButtons.OK, MessageBoxIcon.Warning);
 			else
 			{
 				recNghia.ResetText();
 				recNghia.Font = new Font("TNKeyUni-Arial", 11F);
-				recNghia.Text = "";
-				string name = txtDic.Text;
+				string name = txtDicti.Text;
 				if (TuVungDao.Instance.LoadTuVungByKHo(name).Count <= 0)
 					recNghia.Text += Resources.khong_tim_thay;
 				else
 					foreach (var item in TuVungDao.Instance.LoadTuVungByKHo(name))
 						if (item.KHo != null)
+						{
+							lbcTuVung.SelectedValue = item.KHo;
 							recNghia.Text += item.Viet == null ? item.KHo + ": Đang cập nhật\n" : item.KHo + ": " + item.Viet + "\n";
+						}
+							
 			}
 		}
 
-		private void txtDic_Enter(object sender, EventArgs e)
+		
+
+
+		private void txtDic_KeyDown(object sender, KeyEventArgs e)
 		{
-			if (txtDic.Text == Resources.nhap_tu_can_tra)
+			if (e.KeyCode == Keys.Enter)
 			{
-				txtDic.Text = "";
-				txtDic.ForeColor = Color.Black;
+				btnDic.PerformClick();
 			}
 		}
 
-		private void txtDic_Leave(object sender, EventArgs e)
+
+		private void txtDicti_Enter(object sender, EventArgs e)
 		{
-			if (txtDic.Text == "")
+			if (txtDicti.Text == Resources.nhap_tu_can_tra)
 			{
-				txtDic.Text = Resources.nhap_tu_can_tra;
-				txtDic.ForeColor = Color.Gray;
+				txtDicti.Text = "";
+				txtDicti.ForeColor = Color.Black;
+			}
+		}
+
+		private void txtDicti_KeyDown(object sender, KeyEventArgs e)
+		{
+			if (e.KeyCode == Keys.Enter)
+			{
+				btnDic.PerformClick();
+			}
+		}
+
+		private void txtDicti_TextChanged(object sender, EventArgs e)
+		{
+			try
+			{
+				for (int i = 0; i <= lbcTuVung.Items.Count - 1; i++)
+				{
+					if (txtDicti.Text.Trim().ToUpper() == lbcTuVung.Items[i].ToString().ToUpper().Substring(0, txtDicti.Text.Length))
+					{
+						lbcTuVung.SelectedIndex = i;
+						break;
+					}
+				}
+			}
+			catch (Exception ex)
+			{
 			}
 		}
 	}
