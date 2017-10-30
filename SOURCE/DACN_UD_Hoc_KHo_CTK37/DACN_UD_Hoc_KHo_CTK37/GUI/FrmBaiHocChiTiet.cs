@@ -365,8 +365,7 @@ namespace DACN_UD_Hoc_KHo_CTK37.GUI
 				{
 					foreach (DanhMucCon itemdmc in DanhMucConDao.Instance.DanhMucConLoad(item.ID))
 					{
-						i++;
-						lbcMucLuc.Items.Add(i+Resources.dau_cham + Resources.dau_cach + itemdmc.Ten);
+						i++;lbcMucLuc.Items.Add(i+Resources.dau_cham + Resources.dau_cach + itemdmc.Ten);
 					}
 				}
 				else
