@@ -41,9 +41,9 @@ namespace DACN_UD_Hoc_KHo_CTK37.GUI
 			this.lbcTuVung = new DevExpress.XtraEditors.ListBoxControl();
 			this.recNghia = new DevExpress.XtraRichEdit.RichEditControl();
 			this.groupBox1 = new System.Windows.Forms.GroupBox();
+			this.txtDicti = new System.Windows.Forms.TextBox();
 			this.btnDic = new DevExpress.XtraEditors.SimpleButton();
 			this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-			this.txtDicti = new System.Windows.Forms.TextBox();
 			((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
 			this.panelControl1.SuspendLayout();
 			this.groupBox2.SuspendLayout();
@@ -60,28 +60,28 @@ namespace DACN_UD_Hoc_KHo_CTK37.GUI
 			this.panelControl1.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.panelControl1.Location = new System.Drawing.Point(0, 0);
 			this.panelControl1.Name = "panelControl1";
-			this.panelControl1.Size = new System.Drawing.Size(563, 222);
+			this.panelControl1.Size = new System.Drawing.Size(563, 205);
 			this.panelControl1.TabIndex = 0;
 			// 
 			// groupBox2
 			// 
 			this.groupBox2.Controls.Add(this.splitContainerControl1);
-			this.groupBox2.Location = new System.Drawing.Point(6, 62);
+			this.groupBox2.Location = new System.Drawing.Point(6, 57);
 			this.groupBox2.Name = "groupBox2";
-			this.groupBox2.Size = new System.Drawing.Size(552, 159);
+			this.groupBox2.Size = new System.Drawing.Size(552, 147);
 			this.groupBox2.TabIndex = 1;
 			this.groupBox2.TabStop = false;
 			this.groupBox2.Text = "Từ điển";
 			// 
 			// splitContainerControl1
 			// 
-			this.splitContainerControl1.Location = new System.Drawing.Point(7, 21);
+			this.splitContainerControl1.Location = new System.Drawing.Point(7, 19);
 			this.splitContainerControl1.Name = "splitContainerControl1";
 			this.splitContainerControl1.Panel1.Controls.Add(this.lbcTuVung);
 			this.splitContainerControl1.Panel1.Text = "Panel1";
 			this.splitContainerControl1.Panel2.Controls.Add(this.recNghia);
 			this.splitContainerControl1.Panel2.Text = "Panel2";
-			this.splitContainerControl1.Size = new System.Drawing.Size(538, 132);
+			this.splitContainerControl1.Size = new System.Drawing.Size(538, 122);
 			this.splitContainerControl1.SplitterPosition = 188;
 			this.splitContainerControl1.TabIndex = 0;
 			this.splitContainerControl1.Text = "splitContainerControl1";
@@ -96,7 +96,7 @@ namespace DACN_UD_Hoc_KHo_CTK37.GUI
 			this.lbcTuVung.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
 			this.lbcTuVung.Location = new System.Drawing.Point(4, 4);
 			this.lbcTuVung.Name = "lbcTuVung";
-			this.lbcTuVung.Size = new System.Drawing.Size(183, 125);
+			this.lbcTuVung.Size = new System.Drawing.Size(183, 115);
 			this.lbcTuVung.TabIndex = 0;
 			this.lbcTuVung.Click += new System.EventHandler(this.lbcTuVung_Click);
 			// 
@@ -114,7 +114,7 @@ namespace DACN_UD_Hoc_KHo_CTK37.GUI
 			this.recNghia.Options.Fields.UseCurrentCultureDateTimeFormat = false;
 			this.recNghia.Options.MailMerge.KeepLastParagraph = false;
 			this.recNghia.ReadOnly = true;
-			this.recNghia.Size = new System.Drawing.Size(342, 121);
+			this.recNghia.Size = new System.Drawing.Size(342, 112);
 			this.recNghia.TabIndex = 1;
 			// 
 			// groupBox1
@@ -124,33 +124,15 @@ namespace DACN_UD_Hoc_KHo_CTK37.GUI
 			this.groupBox1.Controls.Add(this.labelControl1);
 			this.groupBox1.Location = new System.Drawing.Point(6, 6);
 			this.groupBox1.Name = "groupBox1";
-			this.groupBox1.Size = new System.Drawing.Size(552, 49);
+			this.groupBox1.Size = new System.Drawing.Size(552, 45);
 			this.groupBox1.TabIndex = 0;
 			this.groupBox1.TabStop = false;
 			this.groupBox1.Text = "Tra từ";
 			// 
-			// btnDic
-			// 
-			this.btnDic.Location = new System.Drawing.Point(470, 16);
-			this.btnDic.Name = "btnDic";
-			this.btnDic.Size = new System.Drawing.Size(75, 23);
-			this.btnDic.TabIndex = 2;
-			this.btnDic.Text = "Tra từ";
-			this.btnDic.ToolTip = "Nhấn để tra từ";
-			this.btnDic.Click += new System.EventHandler(this.btnDic_Click);
-			// 
-			// labelControl1
-			// 
-			this.labelControl1.Location = new System.Drawing.Point(7, 21);
-			this.labelControl1.Name = "labelControl1";
-			this.labelControl1.Size = new System.Drawing.Size(43, 13);
-			this.labelControl1.TabIndex = 1;
-			this.labelControl1.Text = "Nhập từ:";
-			// 
 			// txtDicti
 			// 
-			this.txtDicti.Font = new System.Drawing.Font("TNKeyUni-Arial", 9.75F);
-			this.txtDicti.Location = new System.Drawing.Point(56, 17);
+			this.txtDicti.Font = new System.Drawing.Font("TNKeyUni-Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.txtDicti.Location = new System.Drawing.Point(56, 16);
 			this.txtDicti.Name = "txtDicti";
 			this.txtDicti.Size = new System.Drawing.Size(408, 22);
 			this.txtDicti.TabIndex = 3;
@@ -158,12 +140,32 @@ namespace DACN_UD_Hoc_KHo_CTK37.GUI
 			this.txtDicti.Enter += new System.EventHandler(this.txtDicti_Enter);
 			this.txtDicti.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtDicti_KeyDown);
 			// 
+			// btnDic
+			// 
+			this.btnDic.Location = new System.Drawing.Point(470, 15);
+			this.btnDic.Name = "btnDic";
+			this.btnDic.Size = new System.Drawing.Size(75, 21);
+			this.btnDic.TabIndex = 2;
+			this.btnDic.Text = "Tra từ";
+			this.btnDic.ToolTip = "Nhấn để tra từ";
+			this.btnDic.Click += new System.EventHandler(this.btnDic_Click);
+			// 
+			// labelControl1
+			// 
+			this.labelControl1.Location = new System.Drawing.Point(7, 19);
+			this.labelControl1.Name = "labelControl1";
+			this.labelControl1.Size = new System.Drawing.Size(43, 13);
+			this.labelControl1.TabIndex = 1;
+			this.labelControl1.Text = "Nhập từ:";
+			// 
 			// FrmDictionary
 			// 
-			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+			this.Appearance.Options.UseFont = true;
+			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(563, 222);
+			this.ClientSize = new System.Drawing.Size(563, 205);
 			this.Controls.Add(this.panelControl1);
+			this.Font = new System.Drawing.Font("TNKeyUni-Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
 			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
 			this.MaximizeBox = false;

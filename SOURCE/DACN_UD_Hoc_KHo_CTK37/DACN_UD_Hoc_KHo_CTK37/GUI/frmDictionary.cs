@@ -22,12 +22,13 @@ namespace DACN_UD_Hoc_KHo_CTK37.GUI
 			lbcTuVung.Items.Clear();
 			foreach (var item in TuVungDao.Instance.LoadTuVungDic())
 				lbcTuVung.Items.Add(item.KHo);
-
+			txtDicti.Font = new Font("TNKeyUni-Arial", 10F);
 			txtDicti.AutoCompleteMode = AutoCompleteMode.Suggest;
 			txtDicti.AutoCompleteSource = AutoCompleteSource.CustomSource;
-			AutoCompleteStringCollection DataCollection = new AutoCompleteStringCollection();
-			getData(DataCollection);
-			txtDicti.AutoCompleteCustomSource = DataCollection;
+			AutoCompleteStringCollection dataCollection = new AutoCompleteStringCollection();
+			getData(dataCollection);
+			txtDicti.AutoCompleteCustomSource = dataCollection;
+
 		}
 
 		private void getData(AutoCompleteStringCollection dataCollection)
@@ -54,7 +55,7 @@ namespace DACN_UD_Hoc_KHo_CTK37.GUI
 
 		private void btnDic_Click(object sender, EventArgs e)
 		{
-			if (txtDicti.Text == Resources.nhap_tu_can_tra || txtDicti.Text== "")
+			if (txtDicti.Text == Resources.nhap_tu_can_tra || txtDicti.Text == "")
 				XtraMessageBox.Show("Vui lòng nhập từ cần tra!", Resources.thong_bao, MessageBoxButtons.OK, MessageBoxIcon.Warning);
 			else
 			{
@@ -70,11 +71,11 @@ namespace DACN_UD_Hoc_KHo_CTK37.GUI
 							lbcTuVung.SelectedValue = item.KHo;
 							recNghia.Text += item.Viet == null ? item.KHo + ": Đang cập nhật\n" : item.KHo + ": " + item.Viet + "\n";
 						}
-							
+
 			}
 		}
 
-		
+
 
 
 		private void txtDic_KeyDown(object sender, KeyEventArgs e)

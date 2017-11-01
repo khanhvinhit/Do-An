@@ -308,8 +308,9 @@ namespace DACN_UD_Hoc_KHo_CTK37.GUI
 			this.lbViet.Appearance.Font = new System.Drawing.Font("TNKeyUni-Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.lbViet.Location = new System.Drawing.Point(399, 34);
 			this.lbViet.Name = "lbViet";
-			this.lbViet.Size = new System.Drawing.Size(0, 15);
+			this.lbViet.Size = new System.Drawing.Size(7, 15);
 			this.lbViet.TabIndex = 0;
+			this.lbViet.Text = "0";
 			// 
 			// lbTenBai
 			// 
