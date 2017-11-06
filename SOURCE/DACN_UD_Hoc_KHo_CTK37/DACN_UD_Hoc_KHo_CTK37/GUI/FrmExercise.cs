@@ -155,6 +155,8 @@ namespace DACN_UD_Hoc_KHo_CTK37.GUI
 			string cauTl = txtTraLoi.Text;
 			if (cauTl != Resources.nhap_cau_trl)
 				CauHoiDao.Instance.UpdateCauHoi(_idBt, cauTl);
+			else
+				CauHoiDao.Instance.UpdateCauHoi(_idBt, "");
 			if (_stt < _soBt)
 			{
 				_stt++;
@@ -187,9 +189,9 @@ namespace DACN_UD_Hoc_KHo_CTK37.GUI
 			{
 				string cauTl = txtTraLoi.Text;
 				if (cauTl != Resources.nhap_cau_trl)
-				{
 					CauHoiDao.Instance.UpdateCauHoi(_idBt, cauTl);
-				}
+				else
+					CauHoiDao.Instance.UpdateCauHoi(_idBt, "");
 				Close();
 			}
 			catch (Exception)
