@@ -170,6 +170,15 @@ namespace DACN_UD_Hoc_KHo_CTK37.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Ẩn.
+        /// </summary>
+        public static string goi_y_an {
+            get {
+                return ResourceManager.GetString("goi_y_an", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Đã hết câu hỏi của bài: .
         /// </summary>
         public static string het_cau_hoi {

@@ -59,7 +59,7 @@ namespace DACN_UD_Hoc_KHo_CTK37.GUI
 			this.panelControl1.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.panelControl1.Location = new System.Drawing.Point(0, 0);
 			this.panelControl1.Name = "panelControl1";
-			this.panelControl1.Size = new System.Drawing.Size(725, 145);
+			this.panelControl1.Size = new System.Drawing.Size(640, 181);
 			this.panelControl1.TabIndex = 0;
 			// 
 			// panelControl2
@@ -77,13 +77,13 @@ namespace DACN_UD_Hoc_KHo_CTK37.GUI
 			this.panelControl2.Controls.Add(this.labelControl1);
 			this.panelControl2.Location = new System.Drawing.Point(12, 12);
 			this.panelControl2.Name = "panelControl2";
-			this.panelControl2.Size = new System.Drawing.Size(703, 120);
+			this.panelControl2.Size = new System.Drawing.Size(614, 157);
 			this.panelControl2.TabIndex = 6;
 			// 
 			// labelControl2
 			// 
 			this.labelControl2.Appearance.Font = new System.Drawing.Font("TNKeyUni-Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.labelControl2.Location = new System.Drawing.Point(7, 53);
+			this.labelControl2.Location = new System.Drawing.Point(6, 93);
 			this.labelControl2.Name = "labelControl2";
 			this.labelControl2.Size = new System.Drawing.Size(84, 17);
 			this.labelControl2.TabIndex = 2;
@@ -96,7 +96,7 @@ namespace DACN_UD_Hoc_KHo_CTK37.GUI
 			this.btnGoiY.Appearance.Options.UseFont = true;
 			this.btnGoiY.Enabled = false;
 			this.btnGoiY.Image = ((System.Drawing.Image)(resources.GetObject("btnGoiY.Image")));
-			this.btnGoiY.Location = new System.Drawing.Point(216, 83);
+			this.btnGoiY.Location = new System.Drawing.Point(127, 120);
 			this.btnGoiY.Name = "btnGoiY";
 			this.btnGoiY.Size = new System.Drawing.Size(116, 32);
 			this.btnGoiY.TabIndex = 4;
@@ -105,10 +105,10 @@ namespace DACN_UD_Hoc_KHo_CTK37.GUI
 			// 
 			// lbGoiy
 			// 
-			this.lbGoiy.Appearance.Font = new System.Drawing.Font("TNKeyUni-Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.lbGoiy.Location = new System.Drawing.Point(97, 29);
+			this.lbGoiy.Appearance.Font = new System.Drawing.Font("TNKeyUni-Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.lbGoiy.Location = new System.Drawing.Point(6, 49);
 			this.lbGoiy.Name = "lbGoiy";
-			this.lbGoiy.Size = new System.Drawing.Size(32, 17);
+			this.lbGoiy.Size = new System.Drawing.Size(24, 14);
 			this.lbGoiy.TabIndex = 5;
 			this.lbGoiy.Text = "Goiy";
 			// 
@@ -118,7 +118,7 @@ namespace DACN_UD_Hoc_KHo_CTK37.GUI
 			this.btnPr.Appearance.Font = new System.Drawing.Font("TNKeyUni-Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.btnPr.Appearance.Options.UseFont = true;
 			this.btnPr.Image = ((System.Drawing.Image)(resources.GetObject("btnPr.Image")));
-			this.btnPr.Location = new System.Drawing.Point(338, 83);
+			this.btnPr.Location = new System.Drawing.Point(249, 120);
 			this.btnPr.Name = "btnPr";
 			this.btnPr.Size = new System.Drawing.Size(116, 32);
 			this.btnPr.TabIndex = 4;
@@ -129,11 +129,11 @@ namespace DACN_UD_Hoc_KHo_CTK37.GUI
 			// 
 			this.txtTraLoi.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-			this.txtTraLoi.Location = new System.Drawing.Point(97, 50);
+			this.txtTraLoi.Location = new System.Drawing.Point(97, 90);
 			this.txtTraLoi.Name = "txtTraLoi";
 			this.txtTraLoi.Properties.Appearance.Font = new System.Drawing.Font("TNKeyUni-Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.txtTraLoi.Properties.Appearance.Options.UseFont = true;
-			this.txtTraLoi.Size = new System.Drawing.Size(601, 24);
+			this.txtTraLoi.Size = new System.Drawing.Size(512, 24);
 			this.txtTraLoi.TabIndex = 3;
 			// 
 			// btnRef
@@ -142,7 +142,7 @@ namespace DACN_UD_Hoc_KHo_CTK37.GUI
 			this.btnRef.Appearance.Font = new System.Drawing.Font("TNKeyUni-Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.btnRef.Appearance.Options.UseFont = true;
 			this.btnRef.Image = ((System.Drawing.Image)(resources.GetObject("btnRef.Image")));
-			this.btnRef.Location = new System.Drawing.Point(94, 83);
+			this.btnRef.Location = new System.Drawing.Point(5, 120);
 			this.btnRef.Name = "btnRef";
 			this.btnRef.Size = new System.Drawing.Size(116, 32);
 			this.btnRef.TabIndex = 4;
@@ -164,7 +164,7 @@ namespace DACN_UD_Hoc_KHo_CTK37.GUI
 			this.btnNext.Appearance.Font = new System.Drawing.Font("TNKeyUni-Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.btnNext.Appearance.Options.UseFont = true;
 			this.btnNext.Image = ((System.Drawing.Image)(resources.GetObject("btnNext.Image")));
-			this.btnNext.Location = new System.Drawing.Point(460, 83);
+			this.btnNext.Location = new System.Drawing.Point(371, 120);
 			this.btnNext.Name = "btnNext";
 			this.btnNext.Size = new System.Drawing.Size(116, 32);
 			this.btnNext.TabIndex = 4;
@@ -177,7 +177,7 @@ namespace DACN_UD_Hoc_KHo_CTK37.GUI
 			this.btnSave.Appearance.Font = new System.Drawing.Font("TNKeyUni-Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.btnSave.Appearance.Options.UseFont = true;
 			this.btnSave.Image = ((System.Drawing.Image)(resources.GetObject("btnSave.Image")));
-			this.btnSave.Location = new System.Drawing.Point(582, 83);
+			this.btnSave.Location = new System.Drawing.Point(493, 120);
 			this.btnSave.Name = "btnSave";
 			this.btnSave.Size = new System.Drawing.Size(116, 32);
 			this.btnSave.TabIndex = 4;
@@ -187,7 +187,7 @@ namespace DACN_UD_Hoc_KHo_CTK37.GUI
 			// txtCount
 			// 
 			this.txtCount.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-			this.txtCount.Location = new System.Drawing.Point(674, 5);
+			this.txtCount.Location = new System.Drawing.Point(585, 5);
 			this.txtCount.Name = "txtCount";
 			this.txtCount.Size = new System.Drawing.Size(6, 13);
 			this.txtCount.TabIndex = 1;
@@ -197,7 +197,7 @@ namespace DACN_UD_Hoc_KHo_CTK37.GUI
 			// labelControl1
 			// 
 			this.labelControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-			this.labelControl1.Location = new System.Drawing.Point(640, 5);
+			this.labelControl1.Location = new System.Drawing.Point(551, 5);
 			this.labelControl1.Name = "labelControl1";
 			this.labelControl1.Size = new System.Drawing.Size(28, 13);
 			this.labelControl1.TabIndex = 0;
@@ -208,7 +208,7 @@ namespace DACN_UD_Hoc_KHo_CTK37.GUI
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.AutoValidate = System.Windows.Forms.AutoValidate.EnablePreventFocusChange;
-			this.ClientSize = new System.Drawing.Size(725, 145);
+			this.ClientSize = new System.Drawing.Size(640, 181);
 			this.Controls.Add(this.panelControl1);
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
 			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));

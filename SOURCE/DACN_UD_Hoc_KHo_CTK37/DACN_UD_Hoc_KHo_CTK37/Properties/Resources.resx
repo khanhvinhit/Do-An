@@ -207,4 +207,7 @@
 	<data name="dau_cach" xml:space="preserve">
     <value> </value>
   </data>
+	<data name="goi_y_an" xml:space="preserve">
+    <value>Ẩn</value>
+  </data>
 </root>

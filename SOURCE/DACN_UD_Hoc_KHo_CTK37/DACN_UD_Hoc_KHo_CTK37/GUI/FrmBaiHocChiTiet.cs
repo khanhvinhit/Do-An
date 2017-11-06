@@ -609,6 +609,7 @@ namespace DACN_UD_Hoc_KHo_CTK37.GUI
 				_trangthaiam = true;
 				_sound.controls.play();
 			}
+			
 		}
 		#endregion
 		#region event
@@ -744,5 +745,6 @@ namespace DACN_UD_Hoc_KHo_CTK37.GUI
 			}
 		}
 		#endregion
+
 	}
 }
