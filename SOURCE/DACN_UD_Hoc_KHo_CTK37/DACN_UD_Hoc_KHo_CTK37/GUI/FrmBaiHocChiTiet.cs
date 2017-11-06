@@ -363,10 +363,15 @@ namespace DACN_UD_Hoc_KHo_CTK37.GUI
 				if (item.TenKHo == null)
 				{
 					foreach (DanhMucCon itemdmc in DanhMucConDao.Instance.DanhMucConLoad(item.ID))
+<<<<<<< HEAD
+					{i++;
+						lbcMucLuc.Items.Add(i + Resources.dau_cham + Resources.dau_cach + itemdmc.Ten);}
+=======
 					{
 						i++;
 						lbcMucLuc.Items.Add(i + Resources.dau_cham + Resources.dau_cach + itemdmc.Ten);
 					}
+>>>>>>> 4268f422eaee6548f6430efc3ce5cc49a290541c
 				}
 				else
 				{
