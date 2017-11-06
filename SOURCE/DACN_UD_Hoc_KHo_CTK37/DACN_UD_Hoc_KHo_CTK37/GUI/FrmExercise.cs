@@ -36,21 +36,11 @@ namespace DACN_UD_Hoc_KHo_CTK37.GUI
 			{
 				btnGoiY.Text = Resources.goi_y;
 				btnGoiY.Image = ((Image)(resources.GetObject("btnGoiY.Image")));
-				lbGoiy.Text = "";
+				lbGoiYcb.Text = "";
 			} btnGoiY.Enabled = false;
 			foreach (CauHoi ch in CauHoiDao.Instance.LoadCauHoiByID(idCauHoi))
 			{
-				int chieudai = ch.Hoi.Length;
-				if (chieudai >= 50)
-				{
-					string a = ch.Hoi.Substring(0, 49);
-					string b = ch.Hoi.Substring(49);
-					txtCauHoi.Text = Resources.cau_so + _stt + ": " + a + "\n" + b;
-				}
-				else
-				{
-					txtCauHoi.Text = Resources.cau_so + _stt + ": " + ch.Hoi;
-				}
+				txtCauHoi.Text = Resources.cau_so + _stt + ": " + ch.Hoi;
 				if (ch.TraLoi != null)
 				{
 
@@ -60,7 +50,7 @@ namespace DACN_UD_Hoc_KHo_CTK37.GUI
 						_gopy = ch.GoiY;
 						btnGoiY.Enabled = true;
 					}
-					lbGoiy.Text = "";
+					lbGoiYcb.Text = "";
 					txtTraLoi.ForeColor = Color.Black;
 				}
 				else
@@ -70,7 +60,7 @@ namespace DACN_UD_Hoc_KHo_CTK37.GUI
 						_gopy = ch.GoiY;
 						btnGoiY.Enabled = true;
 					}
-					lbGoiy.Text = "";
+					lbGoiYcb.Text = "";
 					txtTraLoi.Text = Resources.nhap_cau_trl;
 					txtTraLoi.ForeColor = Color.LightGray;
 					txtTraLoi.Leave += txtTraLoi_Leave;
@@ -91,7 +81,7 @@ namespace DACN_UD_Hoc_KHo_CTK37.GUI
 		{
 			txtCauHoi.Text = "";
 			txtCount.Text = "";
-			lbGoiy.Text = "";
+			lbGoiYcb.Text = "";
 			btnPr.Enabled = false;
 			btnNext.Enabled = true;
 			foreach (DanhMuc item in DanhMucDao.Instance.DanhMucLoad(iDBaiHoc))
@@ -208,25 +198,27 @@ namespace DACN_UD_Hoc_KHo_CTK37.GUI
 			{
 				btnGoiY.Text = Resources.goi_y_an;
 				btnGoiY.Image = Resources.btnGoiY_ImageAn;
-				int chieudai = _gopy.Length;
-				if (chieudai >= 50)
-				{
-					int chieua = chieudai / 2;
-					string a = _gopy.Substring(0, chieua);
-					string b = _gopy.Substring(chieua);
-					lbGoiy.Text = a + "\n" + b;
-				}
-				else
-				{
-					lbGoiy.Text = _gopy;
-				}
+				//int chieudai = _gopy.Length;
+				//if (chieudai >= 50)
+				//{
+				//	int chieua = chieudai / 2;
+				//	string a = _gopy.Substring(0, chieua);
+				//	string b = _gopy.Substring(chieua);
+				//	lbGoiYcb.Text = a + "\n" + b;
+				//}
+				//else
+				//{
+				//	lbGoiYcb.Text = _gopy;
+				//}
+				lbGoiYcb.Text = _gopy;
+
 
 			}
 			else
 			{
 				btnGoiY.Text = Resources.goi_y;
 				btnGoiY.Image = ((Image)(resources.GetObject("btnGoiY.Image")));
-				lbGoiy.Text = "";
+				lbGoiYcb.Text = "";
 
 			}
 		}

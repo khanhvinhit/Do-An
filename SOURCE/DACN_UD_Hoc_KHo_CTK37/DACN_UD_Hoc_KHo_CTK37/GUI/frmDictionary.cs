@@ -22,20 +22,8 @@ namespace DACN_UD_Hoc_KHo_CTK37.GUI
 			lbcTuVung.Items.Clear();
 			foreach (var item in TuVungDao.Instance.LoadTuVungDic())
 				lbcTuVung.Items.Add(item.KHo);
-			txtDicti.Font = new Font("TNKeyUni-Arial", 10F);
-			txtDicti.AutoCompleteMode = AutoCompleteMode.Suggest;
-			txtDicti.AutoCompleteSource = AutoCompleteSource.CustomSource;
-			AutoCompleteStringCollection dataCollection = new AutoCompleteStringCollection();
-			getData(dataCollection);
-			txtDicti.AutoCompleteCustomSource = dataCollection;
-
 		}
 
-		private void getData(AutoCompleteStringCollection dataCollection)
-		{
-			foreach (var item in TuVungDao.Instance.LoadTuVungDic())
-				dataCollection.Add(item.KHo);
-		}
 		#endregion
 		#region action
 		private void lbcTuVung_Click(object sender, EventArgs e)

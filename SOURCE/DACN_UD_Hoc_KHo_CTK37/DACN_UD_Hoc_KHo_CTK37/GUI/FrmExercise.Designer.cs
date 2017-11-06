@@ -37,15 +37,15 @@ namespace DACN_UD_Hoc_KHo_CTK37.GUI
 			this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
 			this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
 			this.btnGoiY = new DevExpress.XtraEditors.SimpleButton();
-			this.lbGoiy = new DevExpress.XtraEditors.LabelControl();
 			this.btnPr = new DevExpress.XtraEditors.SimpleButton();
 			this.txtTraLoi = new DevExpress.XtraEditors.TextEdit();
 			this.btnRef = new DevExpress.XtraEditors.SimpleButton();
-			this.txtCauHoi = new DevExpress.XtraEditors.LabelControl();
 			this.btnNext = new DevExpress.XtraEditors.SimpleButton();
 			this.btnSave = new DevExpress.XtraEditors.SimpleButton();
 			this.txtCount = new DevExpress.XtraEditors.LabelControl();
 			this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
+			this.lbGoiYcb = new System.Windows.Forms.Label();
+			this.txtCauHoi = new System.Windows.Forms.Label();
 			((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
 			this.panelControl1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
@@ -64,13 +64,13 @@ namespace DACN_UD_Hoc_KHo_CTK37.GUI
 			// 
 			// panelControl2
 			// 
+			this.panelControl2.Controls.Add(this.txtCauHoi);
+			this.panelControl2.Controls.Add(this.lbGoiYcb);
 			this.panelControl2.Controls.Add(this.labelControl2);
 			this.panelControl2.Controls.Add(this.btnGoiY);
-			this.panelControl2.Controls.Add(this.lbGoiy);
 			this.panelControl2.Controls.Add(this.btnPr);
 			this.panelControl2.Controls.Add(this.txtTraLoi);
 			this.panelControl2.Controls.Add(this.btnRef);
-			this.panelControl2.Controls.Add(this.txtCauHoi);
 			this.panelControl2.Controls.Add(this.btnNext);
 			this.panelControl2.Controls.Add(this.btnSave);
 			this.panelControl2.Controls.Add(this.txtCount);
@@ -102,15 +102,6 @@ namespace DACN_UD_Hoc_KHo_CTK37.GUI
 			this.btnGoiY.TabIndex = 4;
 			this.btnGoiY.Text = "Gợi ý";
 			this.btnGoiY.Click += new System.EventHandler(this.btnGoiY_Click);
-			// 
-			// lbGoiy
-			// 
-			this.lbGoiy.Appearance.Font = new System.Drawing.Font("TNKeyUni-Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.lbGoiy.Location = new System.Drawing.Point(6, 49);
-			this.lbGoiy.Name = "lbGoiy";
-			this.lbGoiy.Size = new System.Drawing.Size(24, 14);
-			this.lbGoiy.TabIndex = 5;
-			this.lbGoiy.Text = "Goiy";
 			// 
 			// btnPr
 			// 
@@ -148,15 +139,6 @@ namespace DACN_UD_Hoc_KHo_CTK37.GUI
 			this.btnRef.TabIndex = 4;
 			this.btnRef.Text = "Làm lại";
 			this.btnRef.Click += new System.EventHandler(this.btnRef_Click);
-			// 
-			// txtCauHoi
-			// 
-			this.txtCauHoi.Appearance.Font = new System.Drawing.Font("TNKeyUni-Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.txtCauHoi.Location = new System.Drawing.Point(6, 5);
-			this.txtCauHoi.Name = "txtCauHoi";
-			this.txtCauHoi.Size = new System.Drawing.Size(59, 17);
-			this.txtCauHoi.TabIndex = 2;
-			this.txtCauHoi.Text = "Cau hoi";
 			// 
 			// btnNext
 			// 
@@ -203,6 +185,24 @@ namespace DACN_UD_Hoc_KHo_CTK37.GUI
 			this.labelControl1.TabIndex = 0;
 			this.labelControl1.Text = "Tổng:";
 			// 
+			// lbGoiYcb
+			// 
+			this.lbGoiYcb.Font = new System.Drawing.Font("TNKeyUni-Arial", 9F);
+			this.lbGoiYcb.Location = new System.Drawing.Point(97, 45);
+			this.lbGoiYcb.Name = "lbGoiYcb";
+			this.lbGoiYcb.Size = new System.Drawing.Size(512, 42);
+			this.lbGoiYcb.TabIndex = 6;
+			this.lbGoiYcb.Text = "goi y";
+			// 
+			// txtCauHoi
+			// 
+			this.txtCauHoi.Font = new System.Drawing.Font("TNKeyUni-Arial", 12F, System.Drawing.FontStyle.Bold);
+			this.txtCauHoi.Location = new System.Drawing.Point(5, 5);
+			this.txtCauHoi.Name = "txtCauHoi";
+			this.txtCauHoi.Size = new System.Drawing.Size(540, 40);
+			this.txtCauHoi.TabIndex = 7;
+			this.txtCauHoi.Text = "CauHoi";
+			// 
 			// FrmExercise
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -231,17 +231,17 @@ namespace DACN_UD_Hoc_KHo_CTK37.GUI
 		#endregion
 
 		private PanelControl panelControl1;
-        private LabelControl lbGoiy;
         private SimpleButton btnGoiY;
         private SimpleButton btnPr;
         private SimpleButton btnRef;
         private LabelControl labelControl1;
         private LabelControl txtCount;
-        private SimpleButton btnNext;
-        private LabelControl txtCauHoi;
+		private SimpleButton btnNext;
         private SimpleButton btnSave;
         private LabelControl labelControl2;
         private TextEdit txtTraLoi;
 		private PanelControl panelControl2;
+		private System.Windows.Forms.Label lbGoiYcb;
+		private System.Windows.Forms.Label txtCauHoi;
     }
 }
