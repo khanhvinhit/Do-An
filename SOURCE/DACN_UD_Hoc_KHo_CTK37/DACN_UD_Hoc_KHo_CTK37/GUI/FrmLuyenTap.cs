@@ -63,7 +63,7 @@ namespace DACN_UD_Hoc_KHo_CTK37.GUI
                     }
                 }
             }
-        }
+		}
 
         private void LoadCauHoiLt(int idLt)
         {
@@ -85,15 +85,8 @@ namespace DACN_UD_Hoc_KHo_CTK37.GUI
 					recTraLoi.Enter += recTraLoi_Enter;
                 }
             }
-            if (_stt == 1)
-				btnPrev.Enabled = false;
-            else if (_stt == _soLt)
-				btnNext.Enabled = false;
-            else if (_stt < _soLt || _stt > 1)
-            {
-                btnPrev.Enabled = true;
-                btnNext.Enabled = true;
-            }
+			btnPrev.Enabled = _stt > 1 ? true : false;
+			btnNext.Enabled = _stt < _soLt ? true : false;
         }
         #endregion
 		#region event

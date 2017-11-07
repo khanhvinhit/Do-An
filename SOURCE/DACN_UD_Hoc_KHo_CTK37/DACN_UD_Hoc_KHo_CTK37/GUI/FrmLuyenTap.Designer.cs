@@ -80,7 +80,7 @@ namespace DACN_UD_Hoc_KHo_CTK37.GUI
 			// 
 			// labelControl2
 			// 
-			this.labelControl2.Location = new System.Drawing.Point(674, 5);
+			this.labelControl2.Location = new System.Drawing.Point(665, 5);
 			this.labelControl2.Name = "labelControl2";
 			this.labelControl2.Size = new System.Drawing.Size(28, 13);
 			this.labelControl2.TabIndex = 7;
@@ -88,7 +88,7 @@ namespace DACN_UD_Hoc_KHo_CTK37.GUI
 			// 
 			// lbSo
 			// 
-			this.lbSo.Location = new System.Drawing.Point(708, 5);
+			this.lbSo.Location = new System.Drawing.Point(699, 5);
 			this.lbSo.Name = "lbSo";
 			this.lbSo.Size = new System.Drawing.Size(22, 13);
 			this.lbSo.TabIndex = 6;
@@ -100,6 +100,7 @@ namespace DACN_UD_Hoc_KHo_CTK37.GUI
 			this.btnPrev.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
 			this.btnPrev.Appearance.Font = new System.Drawing.Font("TNKeyUni-Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.btnPrev.Appearance.Options.UseFont = true;
+			this.btnPrev.Enabled = false;
 			this.btnPrev.Image = ((System.Drawing.Image)(resources.GetObject("btnPrev.Image")));
 			this.btnPrev.Location = new System.Drawing.Point(425, 219);
 			this.btnPrev.Name = "btnPrev";
@@ -114,6 +115,7 @@ namespace DACN_UD_Hoc_KHo_CTK37.GUI
 			this.btnNext.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
 			this.btnNext.Appearance.Font = new System.Drawing.Font("TNKeyUni-Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.btnNext.Appearance.Options.UseFont = true;
+			this.btnNext.Enabled = false;
 			this.btnNext.Image = ((System.Drawing.Image)(resources.GetObject("btnNext.Image")));
 			this.btnNext.Location = new System.Drawing.Point(530, 219);
 			this.btnNext.Name = "btnNext";
@@ -159,12 +161,12 @@ namespace DACN_UD_Hoc_KHo_CTK37.GUI
             | System.Windows.Forms.AnchorStyles.Right)));
 			this.recTraLoi.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
 			this.recTraLoi.EnableToolTips = true;
-			this.recTraLoi.Location = new System.Drawing.Point(70, 115);
+			this.recTraLoi.Location = new System.Drawing.Point(5, 115);
 			this.recTraLoi.Name = "recTraLoi";
 			this.recTraLoi.Options.CopyPaste.MaintainDocumentSectionSettings = false;
 			this.recTraLoi.Options.Fields.UseCurrentCultureDateTimeFormat = false;
 			this.recTraLoi.Options.MailMerge.KeepLastParagraph = false;
-			this.recTraLoi.Size = new System.Drawing.Size(664, 98);
+			this.recTraLoi.Size = new System.Drawing.Size(729, 98);
 			this.recTraLoi.TabIndex = 4;
 			this.recTraLoi.Enter += new System.EventHandler(this.recTraLoi_Enter);
 			this.recTraLoi.Leave += new System.EventHandler(this.recTraLoi_Leave);
@@ -172,7 +174,7 @@ namespace DACN_UD_Hoc_KHo_CTK37.GUI
 			// labelControl1
 			// 
 			this.labelControl1.Appearance.Font = new System.Drawing.Font("TNKeyUni-Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.labelControl1.Location = new System.Drawing.Point(5, 115);
+			this.labelControl1.Location = new System.Drawing.Point(5, 92);
 			this.labelControl1.Name = "labelControl1";
 			this.labelControl1.Size = new System.Drawing.Size(49, 17);
 			this.labelControl1.TabIndex = 3;
@@ -183,9 +185,9 @@ namespace DACN_UD_Hoc_KHo_CTK37.GUI
 			this.lbCauh.Appearance.Font = new System.Drawing.Font("TNKeyUni-Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.lbCauh.Location = new System.Drawing.Point(69, 28);
 			this.lbCauh.Name = "lbCauh";
-			this.lbCauh.Size = new System.Drawing.Size(58, 17);
+			this.lbCauh.Size = new System.Drawing.Size(9, 17);
 			this.lbCauh.TabIndex = 0;
-			this.lbCauh.Text = "Câu hỏi:";
+			this.lbCauh.Text = "0";
 			// 
 			// FrmLuyenTap
 			// 
