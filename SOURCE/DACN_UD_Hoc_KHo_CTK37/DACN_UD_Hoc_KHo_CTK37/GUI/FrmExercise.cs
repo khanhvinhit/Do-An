@@ -239,7 +239,7 @@ namespace DACN_UD_Hoc_KHo_CTK37.GUI
 								{
 									CauHoiDao.Instance.Referst(itemcauhoi.ID);
 								}
-								XtraMessageBox.Show("Đã làm mới tất cả câu trả lời?", Resources.thong_bao, MessageBoxButtons.OK,
+								XtraMessageBox.Show("Đã làm mới tất cả câu trả lời!", Resources.thong_bao, MessageBoxButtons.OK,
 											MessageBoxIcon.Information);
 								LoadBaiTap(_iDBaiHoc);
 							}
@@ -255,7 +255,7 @@ namespace DACN_UD_Hoc_KHo_CTK37.GUI
 								{
 									CauHoiDao.Instance.Referst(itemcauhoi.ID);
 								}
-								XtraMessageBox.Show("Đã làm mới tất cả câu trả lời?", Resources.thong_bao, MessageBoxButtons.OK,
+								XtraMessageBox.Show("Đã làm mới tất cả câu trả lời!", Resources.thong_bao, MessageBoxButtons.OK,
 											MessageBoxIcon.Information);
 								LoadBaiTap(_iDBaiHoc);
 							}

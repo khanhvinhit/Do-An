@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Drawing;
 using System.Linq;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 using DACN_UD_Hoc_KHo_CTK37.DAO;
 using DACN_UD_Hoc_KHo_CTK37.DTO;
@@ -13,26 +14,34 @@ namespace DACN_UD_Hoc_KHo_CTK37.GUI
 	public partial class FrmBaiHocChiTiet : XtraForm
 	{
 		private int _iDBaiHoc;
-		string _pictures = "";
+		private string _pictures = "";
 		private string xuong_dong = "\n";
 		private int _next;
 		private int _last;
 		private WindowsMediaPlayer _sound;
 		private bool _trangthaiam;
+
 		public int IdBaiHoc
 		{
 			get { return _iDBaiHoc; }
-			set { _iDBaiHoc = value; LoadBaiHoc(_iDBaiHoc); }
+			set
+			{
+				_iDBaiHoc = value;
+				LoadBaiHoc(_iDBaiHoc);
+			}
 		}
+
 		public FrmBaiHocChiTiet(int iDBaiHoc)
 		{
 			InitializeComponent();
 			IdBaiHoc = iDBaiHoc;
 		}
+
 		#region method
 
 		private void LoadDanhMucTheoTen(string name, int id)
 		{
+			picBox.Visible = true;
 			btnAudio.Enabled = false;
 			rkqBaiHoc.ResetText();
 			rkqBaiHoc.Font = new Font("TNKeyUni-Arial", 11F);
@@ -44,7 +53,7 @@ namespace DACN_UD_Hoc_KHo_CTK37.GUI
 					j++;
 					if (item.TenKHo != null)
 					{
-						rkqBaiHoc.Text += j + Resources.dau_cham + Resources.dau_cach + item.TenKHo + " - " + item.TenViet + xuong_dong;
+						lbMucLuc.Text = Resources.dau_cach + item.TenKHo + " - " + item.TenViet;
 						foreach (DanhMucCon itemdmc in DanhMucConDao.Instance.DanhMucConLoad(item.ID))
 						{
 							rkqBaiHoc.Text += "\t* " + itemdmc.Ten + Resources.dau_cham + xuong_dong;
@@ -61,107 +70,20 @@ namespace DACN_UD_Hoc_KHo_CTK37.GUI
 									{
 										if (bk.HoiViet != null)
 										{
-											rkqBaiHoc.Text += bk.TraLoiKHo != null ? Resources.tab_daungang + bk.HoiKHo + Resources.tab + Resources.tab + Resources.dau_cong + bk.TraLoiKHo + xuong_dong : rkqBaiHoc.Text += Resources.tab_daungang + bk.HoiKHo + xuong_dong;
-											rkqBaiHoc.Text += bk.TraLoiViet != null ? Resources.tab_daungang + bk.HoiViet + Resources.tab + Resources.tab + Resources.dau_cong + bk.TraLoiViet + xuong_dong : rkqBaiHoc.Text += Resources.tab_daungang + bk.HoiViet + xuong_dong;
+											rkqBaiHoc.Text += bk.TraLoiKHo != null
+												? "- " + bk.HoiKHo + Resources.tab + Resources.tab + Resources.dau_cong + bk.TraLoiKHo + xuong_dong
+												: rkqBaiHoc.Text += "- " + bk.HoiKHo + xuong_dong;
+											rkqBaiHoc.Text += bk.TraLoiViet != null
+												? "- " + bk.HoiViet + Resources.tab + Resources.tab + Resources.dau_cong + bk.TraLoiViet + xuong_dong
+												: rkqBaiHoc.Text += "- " + bk.HoiViet + xuong_dong;
 										}
 										else
 											rkqBaiHoc.Text += bk.TraLoiKHo != null
-												? Resources.tab_daungang + bk.HoiKHo + Resources.tab + Resources.tab + Resources.dau_cong + bk.TraLoiKHo + xuong_dong
-												: rkqBaiHoc.Text += Resources.tab_daungang + bk.HoiKHo + xuong_dong;
+												? "- " + bk.HoiKHo + Resources.tab + Resources.tab + Resources.dau_cong + bk.TraLoiKHo + xuong_dong
+												: rkqBaiHoc.Text += "- " + bk.HoiKHo + xuong_dong;
 									}
 									else
-										rkqBaiHoc.Text += Resources.tab + bk.NoiDung + xuong_dong;
-								}
-							}
-							if (itemdmc.TuVungs.Count >= 1)
-								foreach (TuVung tv in TuVungDao.Instance.LoadTuVungs(itemdmc.ID))
-									rkqBaiHoc.Text += Resources.tab + Resources.tab + tv.KHo + Resources.dau2chamvacach + tv.Viet + xuong_dong;
-							if (itemdmc.DamThoais.Count >= 1)
-							{
-								foreach (DamThoai dt in DamThoaiDao.Instance.LoadDamThoais(itemdmc.ID))
-								{
-									if (dt.CauHoiViet != null)
-									{
-										if (dt.TraLoiKHo != null)
-										{
-											if (dt.TraLoiViet != null)
-											{
-												rkqBaiHoc.Text += Resources.tab_daungang + dt.CauHoiKHo + Resources.tab + Resources.tab + Resources.dau_cong + dt.TraLoiKHo + xuong_dong;
-												rkqBaiHoc.Text += Resources.tab_daungang + dt.CauHoiViet + Resources.tab + Resources.tab + Resources.dau_cong + dt.TraLoiViet + xuong_dong;
-											}
-											else
-											{
-												rkqBaiHoc.Text += Resources.tab_daungang + dt.CauHoiKHo + Resources.tab + Resources.tab + Resources.dau_cong + dt.TraLoiKHo + xuong_dong;
-												rkqBaiHoc.Text += Resources.tab_daungang + dt.CauHoiViet + xuong_dong;
-											}
-										}
-										else
-										{
-											if (dt.TraLoiViet != null)
-											{
-												rkqBaiHoc.Text += Resources.tab_daungang + dt.CauHoiKHo + xuong_dong;
-												rkqBaiHoc.Text += Resources.tab_daungang + dt.CauHoiViet + Resources.tab + Resources.tab + Resources.dau_cong + dt.TraLoiViet + xuong_dong;
-											}
-											else
-											{
-												rkqBaiHoc.Text += Resources.tab_daungang + dt.CauHoiKHo + xuong_dong;
-												rkqBaiHoc.Text += Resources.tab_daungang + dt.CauHoiViet + xuong_dong;
-											}
-										}
-									}
-									else
-									{
-										rkqBaiHoc.Text += dt.TraLoiKHo != null
-											? Resources.tab_daungang + dt.CauHoiKHo + Resources.tab + Resources.tab + Resources.dau_cong + dt.TraLoiKHo + xuong_dong
-											: Resources.tab_daungang + dt.CauHoiKHo + xuong_dong;
-									}
-								}
-							}
-							if (itemdmc.DichKHoViets.Count >= 1)
-							{
-								foreach (DichKHoViet kh in DichKHoVietDao.Instance.LoadDichKHoViets(itemdmc.ID))
-								{
-									rkqBaiHoc.Text += kh.Viet != null
-										? Resources.tab_daungang + kh.KHo + Resources.tab + Resources.tab + Resources.dau_cong + kh.Viet + xuong_dong
-										: Resources.tab_daungang + kh.KHo + xuong_dong;
-								}
-							}
-							if (itemdmc.DichVietKHoes.Count >= 1)
-								foreach (DichVietKHo v in DichVietKHoDao.Instance.LoadDichVietKHos(itemdmc.ID))
-									rkqBaiHoc.Text += v.KHo != null ? Resources.tab_daungang + v.Viet + Resources.tab + Resources.tab + Resources.dau_cong + v.KHo + xuong_dong : Resources.tab_daungang + v.Viet + xuong_dong;
-							if (itemdmc.NguPhaps.Count >= 1)
-								foreach (NguPhap tv in NguPhapDAO.Instance.LoadNguPhaps(itemdmc.ID))
-									rkqBaiHoc.Text += Resources.tab + Resources.tab + tv.NoiDung + xuong_dong;
-						}
-					}
-					else
-					{
-						j = j - 1;
-						foreach (DanhMucCon itemdmc in DanhMucConDao.Instance.DanhMucConLoad(item.ID))
-						{
-							j++;
-							rkqBaiHoc.Text += j + Resources.dau_cham + Resources.dau_cach + itemdmc.Ten + Resources.dau_cham + xuong_dong;
-							if (itemdmc.IDAmThanh > 0)
-							{
-								btnAudio.Enabled = true;
-								btnAudio.Tag = itemdmc;
-							}
-							if (itemdmc.BaiKhoas.Count >= 1)
-							{
-								foreach (BaiKhoa bk in BaiKhoaDao.Instance.LoadBaiKhoas(itemdmc.ID))
-								{
-									if (bk.NoiDung == null)
-									{
-										if (bk.HoiViet != null)
-										{
-											rkqBaiHoc.Text += bk.TraLoiKHo != null ? Resources.tab_daungang + bk.HoiKHo + Resources.tab + Resources.tab + Resources.dau_cong + bk.TraLoiKHo + xuong_dong : Resources.tab_daungang + bk.HoiKHo + xuong_dong;
-											rkqBaiHoc.Text += bk.TraLoiViet != null ? Resources.tab_daungang + bk.HoiViet + Resources.tab + Resources.tab + Resources.dau_cong + bk.TraLoiViet + xuong_dong : Resources.tab_daungang + bk.HoiViet + xuong_dong;
-										}
-										else
-											rkqBaiHoc.Text += bk.TraLoiKHo != null ? Resources.tab_daungang + bk.HoiKHo + Resources.tab + Resources.tab + Resources.dau_cong + bk.TraLoiKHo + xuong_dong : Resources.tab_daungang + bk.HoiKHo + xuong_dong;
-									}
-									else
-										rkqBaiHoc.Text += Resources.tab + bk.NoiDung + xuong_dong;
+										rkqBaiHoc.Text += bk.NoiDung + xuong_dong;
 								}
 							}
 							if (itemdmc.TuVungs.Count >= 1)
@@ -177,42 +99,156 @@ namespace DACN_UD_Hoc_KHo_CTK37.GUI
 										{
 											if (dt.TraLoiViet != null)
 											{
-												rkqBaiHoc.Text += Resources.tab_daungang + dt.CauHoiKHo + Resources.tab + Resources.tab + Resources.dau_cong + dt.TraLoiKHo + xuong_dong;
-												rkqBaiHoc.Text += Resources.tab_daungang + dt.CauHoiViet + Resources.tab + Resources.tab + Resources.dau_cong + dt.TraLoiViet + xuong_dong;
+												rkqBaiHoc.Text += "- " + dt.CauHoiKHo + Resources.tab + Resources.tab + Resources.dau_cong + dt.TraLoiKHo +
+																  xuong_dong;
+												rkqBaiHoc.Text += "- " + dt.CauHoiViet + Resources.tab + Resources.tab + Resources.dau_cong + dt.TraLoiViet +
+																  xuong_dong;
 											}
 											else
 											{
-												rkqBaiHoc.Text += Resources.tab_daungang + dt.CauHoiKHo + Resources.tab + Resources.tab + Resources.dau_cong + dt.TraLoiKHo + xuong_dong;
-												rkqBaiHoc.Text += Resources.tab_daungang + dt.CauHoiViet + xuong_dong;
+												rkqBaiHoc.Text += "- " + dt.CauHoiKHo + Resources.tab + Resources.tab + Resources.dau_cong + dt.TraLoiKHo +
+																  xuong_dong;
+												rkqBaiHoc.Text += "- " + dt.CauHoiViet + xuong_dong;
 											}
 										}
 										else
 										{
 											if (dt.TraLoiViet != null)
 											{
-												rkqBaiHoc.Text += Resources.tab_daungang + dt.CauHoiKHo + xuong_dong;
-												rkqBaiHoc.Text += Resources.tab_daungang + dt.CauHoiViet + Resources.tab + Resources.tab + Resources.dau_cong + dt.TraLoiViet + xuong_dong;
+												rkqBaiHoc.Text += "- " + dt.CauHoiKHo + xuong_dong;
+												rkqBaiHoc.Text += "- " + dt.CauHoiViet + Resources.tab + Resources.tab + Resources.dau_cong + dt.TraLoiViet +
+																  xuong_dong;
 											}
 											else
 											{
-												rkqBaiHoc.Text += Resources.tab_daungang + dt.CauHoiKHo + xuong_dong;
-												rkqBaiHoc.Text += Resources.tab_daungang + dt.CauHoiViet + xuong_dong;
+												rkqBaiHoc.Text += "- " + dt.CauHoiKHo + xuong_dong;
+												rkqBaiHoc.Text += "- " + dt.CauHoiViet + xuong_dong;
 											}
 										}
 									}
 									else
-										rkqBaiHoc.Text += dt.TraLoiKHo != null ? Resources.tab_daungang + dt.CauHoiKHo + Resources.tab + Resources.tab + Resources.dau_cong + dt.TraLoiKHo + xuong_dong : Resources.tab_daungang + dt.CauHoiKHo + xuong_dong;
+									{
+										rkqBaiHoc.Text += dt.TraLoiKHo != null
+											? "- " + dt.CauHoiKHo + Resources.tab + Resources.tab + Resources.dau_cong + dt.TraLoiKHo + xuong_dong
+											: "- " + dt.CauHoiKHo + xuong_dong;
+									}
+								}
+							}
+							if (itemdmc.DichKHoViets.Count >= 1)
+							{
+								foreach (DichKHoViet kh in DichKHoVietDao.Instance.LoadDichKHoViets(itemdmc.ID))
+								{
+									rkqBaiHoc.Text += kh.Viet != null
+										? "- " + kh.KHo + Resources.tab + Resources.tab + Resources.dau_cong + kh.Viet + xuong_dong
+										: "- " + kh.KHo + xuong_dong;
+								}
+							}
+							if (itemdmc.DichVietKHoes.Count >= 1)
+								foreach (DichVietKHo v in DichVietKHoDao.Instance.LoadDichVietKHos(itemdmc.ID))
+									rkqBaiHoc.Text += v.KHo != null
+										? "- " + v.Viet + Resources.tab + Resources.tab + Resources.dau_cong + v.KHo + xuong_dong
+										: "- " + v.Viet + xuong_dong;
+							if (itemdmc.NguPhaps.Count >= 1)
+								foreach (NguPhap tv in NguPhapDAO.Instance.LoadNguPhaps(itemdmc.ID))
+									rkqBaiHoc.Text += tv.NoiDung + xuong_dong;
+						}
+					}
+					else
+					{
+						j = j - 1;
+						foreach (DanhMucCon itemdmc in DanhMucConDao.Instance.DanhMucConLoad(item.ID))
+						{
+							j++;
+							//mục lục
+							lbMucLuc.Text = Resources.dau_cach + itemdmc.Ten + Resources.dau_cham;
+							if (itemdmc.IDAmThanh > 0)
+							{
+								btnAudio.Enabled = true;
+								btnAudio.Tag = itemdmc;
+							}
+							if (itemdmc.BaiKhoas.Count >= 1)
+							{
+								foreach (BaiKhoa bk in BaiKhoaDao.Instance.LoadBaiKhoas(itemdmc.ID))
+								{
+									if (bk.NoiDung == null)
+									{
+										if (bk.HoiViet != null)
+										{
+											rkqBaiHoc.Text += bk.TraLoiKHo != null
+												? "- " + bk.HoiKHo + Resources.tab + Resources.tab + Resources.dau_cong + bk.TraLoiKHo + xuong_dong
+												: "- " + bk.HoiKHo + xuong_dong;
+											rkqBaiHoc.Text += bk.TraLoiViet != null
+												? "- " + bk.HoiViet + Resources.tab + Resources.tab + Resources.dau_cong + bk.TraLoiViet + xuong_dong
+												: "- " + bk.HoiViet + xuong_dong;
+										}
+										else
+											rkqBaiHoc.Text += bk.TraLoiKHo != null
+												? "- " + bk.HoiKHo + Resources.tab + Resources.tab + Resources.dau_cong + bk.TraLoiKHo + xuong_dong
+												: "- " + bk.HoiKHo + xuong_dong;
+									}
+									else
+										rkqBaiHoc.Text += bk.NoiDung + xuong_dong;
+								}
+							}
+							if (itemdmc.TuVungs.Count >= 1)
+								foreach (TuVung tv in TuVungDao.Instance.LoadTuVungs(itemdmc.ID))
+									rkqBaiHoc.Text += Resources.tab + tv.KHo + Resources.dau2chamvacach + tv.Viet + xuong_dong;
+							if (itemdmc.DamThoais.Count >= 1)
+							{
+								foreach (DamThoai dt in DamThoaiDao.Instance.LoadDamThoais(itemdmc.ID))
+								{
+									if (dt.CauHoiViet != null)
+									{
+										if (dt.TraLoiKHo != null)
+										{
+											if (dt.TraLoiViet != null)
+											{
+												rkqBaiHoc.Text += "- " + dt.CauHoiKHo + Resources.tab + Resources.tab + Resources.dau_cong + dt.TraLoiKHo +
+																  xuong_dong;
+												rkqBaiHoc.Text += "- " + dt.CauHoiViet + Resources.tab + Resources.tab + Resources.dau_cong + dt.TraLoiViet +
+																  xuong_dong;
+											}
+											else
+											{
+												rkqBaiHoc.Text += "- " + dt.CauHoiKHo + Resources.tab + Resources.tab + Resources.dau_cong + dt.TraLoiKHo +
+																  xuong_dong;
+												rkqBaiHoc.Text += "- " + dt.CauHoiViet + xuong_dong;
+											}
+										}
+										else
+										{
+											if (dt.TraLoiViet != null)
+											{
+												rkqBaiHoc.Text += "- " + dt.CauHoiKHo + xuong_dong;
+												rkqBaiHoc.Text += "- " + dt.CauHoiViet + Resources.tab + Resources.tab + Resources.dau_cong + dt.TraLoiViet +
+																  xuong_dong;
+											}
+											else
+											{
+												rkqBaiHoc.Text += "- " + dt.CauHoiKHo + xuong_dong;
+												rkqBaiHoc.Text += "- " + dt.CauHoiViet + xuong_dong;
+											}
+										}
+									}
+									else
+										rkqBaiHoc.Text += dt.TraLoiKHo != null
+											? "- " + dt.CauHoiKHo + Resources.tab + Resources.tab + Resources.dau_cong + dt.TraLoiKHo + xuong_dong
+											: "- " + dt.CauHoiKHo + xuong_dong;
 								}
 							}
 							if (itemdmc.DichKHoViets.Count >= 1)
 								foreach (DichKHoViet kh in DichKHoVietDao.Instance.LoadDichKHoViets(itemdmc.ID))
-									rkqBaiHoc.Text += kh.Viet != null ? Resources.tab_daungang + kh.KHo + Resources.tab + Resources.tab + Resources.dau_cong + kh.Viet + xuong_dong : Resources.tab_daungang + kh.KHo + xuong_dong;
+									rkqBaiHoc.Text += kh.Viet != null
+										? "- " + kh.KHo + Resources.tab + Resources.tab + Resources.dau_cong + kh.Viet + xuong_dong
+										: "- " + kh.KHo + xuong_dong;
 							if (itemdmc.DichVietKHoes.Count >= 1)
 								foreach (DichVietKHo v in DichVietKHoDao.Instance.LoadDichVietKHos(itemdmc.ID))
-									rkqBaiHoc.Text += v.KHo != null ? Resources.tab_daungang + v.Viet + Resources.tab + Resources.tab + Resources.dau_cong + v.KHo + xuong_dong : Resources.tab_daungang + v.Viet + xuong_dong;
+									rkqBaiHoc.Text += v.KHo != null
+										? "- " + v.Viet + Resources.tab + Resources.tab + Resources.dau_cong + v.KHo + xuong_dong
+										: "- " + v.Viet + xuong_dong;
 							if (itemdmc.NguPhaps.Count >= 1)
 								foreach (NguPhap tv in NguPhapDAO.Instance.LoadNguPhaps(itemdmc.ID))
-									rkqBaiHoc.Text += Resources.tab + Resources.tab + tv.NoiDung + xuong_dong;
+									rkqBaiHoc.Text += tv.NoiDung + xuong_dong;
 						}
 					}
 				}
@@ -222,7 +258,7 @@ namespace DACN_UD_Hoc_KHo_CTK37.GUI
 				foreach (DanhMucCon itemdmc in DanhMucConDao.Instance.DanhMucConLoadByName(name, id))
 				{
 					j++;
-					rkqBaiHoc.Text += j + Resources.dau_cham + Resources.dau_cach + itemdmc.Ten + Resources.dau_cham + xuong_dong;
+					lbMucLuc.Text = Resources.dau_cach + itemdmc.Ten + Resources.dau_cham;
 					if (itemdmc.IDAmThanh > 0)
 					{
 						btnAudio.Enabled = true;
@@ -236,14 +272,20 @@ namespace DACN_UD_Hoc_KHo_CTK37.GUI
 							{
 								if (bk.HoiViet != null)
 								{
-									rkqBaiHoc.Text += bk.TraLoiKHo != null ? Resources.tab_daungang + bk.HoiKHo + Resources.tab + Resources.tab + Resources.dau_cong + bk.TraLoiKHo + xuong_dong : Resources.tab_daungang + bk.HoiKHo + xuong_dong;
-									rkqBaiHoc.Text += bk.TraLoiViet != null ? Resources.tab_daungang + bk.HoiViet + Resources.tab + Resources.tab + Resources.dau_cong + bk.TraLoiViet + xuong_dong : Resources.tab_daungang + bk.HoiViet + xuong_dong;
+									rkqBaiHoc.Text += bk.TraLoiKHo != null
+										? "- " + bk.HoiKHo + Resources.tab + Resources.tab + Resources.dau_cong + bk.TraLoiKHo + xuong_dong
+										: "- " + bk.HoiKHo + xuong_dong;
+									rkqBaiHoc.Text += bk.TraLoiViet != null
+										? "- " + bk.HoiViet + Resources.tab + Resources.tab + Resources.dau_cong + bk.TraLoiViet + xuong_dong
+										: "- " + bk.HoiViet + xuong_dong;
 								}
 								else
-									rkqBaiHoc.Text += bk.TraLoiKHo != null ? Resources.tab_daungang + bk.HoiKHo + Resources.tab + Resources.tab + Resources.dau_cong + bk.TraLoiKHo + xuong_dong : Resources.tab_daungang + bk.HoiKHo + xuong_dong;
+									rkqBaiHoc.Text += bk.TraLoiKHo != null
+										? "- " + bk.HoiKHo + Resources.tab + Resources.tab + Resources.dau_cong + bk.TraLoiKHo + xuong_dong
+										: "- " + bk.HoiKHo + xuong_dong;
 							}
 							else
-								rkqBaiHoc.Text += Resources.tab + bk.NoiDung + xuong_dong;
+								rkqBaiHoc.Text += bk.NoiDung + xuong_dong;
 						}
 					}
 					if (itemdmc.TuVungs.Count >= 1)
@@ -259,51 +301,66 @@ namespace DACN_UD_Hoc_KHo_CTK37.GUI
 								{
 									if (dt.TraLoiViet != null)
 									{
-										rkqBaiHoc.Text += Resources.tab_daungang + dt.CauHoiKHo + Resources.tab + Resources.tab + Resources.dau_cong + dt.TraLoiKHo + xuong_dong;
-										rkqBaiHoc.Text += Resources.tab_daungang + dt.CauHoiViet + Resources.tab + Resources.tab + Resources.dau_cong + dt.TraLoiViet + xuong_dong;
+										rkqBaiHoc.Text += "- " + dt.CauHoiKHo + Resources.tab + Resources.tab + Resources.dau_cong + dt.TraLoiKHo +
+														  xuong_dong;
+										rkqBaiHoc.Text += "- " + dt.CauHoiViet + Resources.tab + Resources.tab + Resources.dau_cong + dt.TraLoiViet +
+														  xuong_dong;
 									}
 									else
 									{
-										rkqBaiHoc.Text += Resources.tab_daungang + dt.CauHoiKHo + Resources.tab + Resources.tab + Resources.dau_cong + dt.TraLoiKHo + xuong_dong;
-										rkqBaiHoc.Text += Resources.tab_daungang + dt.CauHoiViet + xuong_dong;
+										rkqBaiHoc.Text += "- " + dt.CauHoiKHo + Resources.tab + Resources.tab + Resources.dau_cong + dt.TraLoiKHo +
+														  xuong_dong;
+										rkqBaiHoc.Text += "- " + dt.CauHoiViet + xuong_dong;
 									}
 								}
 								else
 								{
 									if (dt.TraLoiViet != null)
 									{
-										rkqBaiHoc.Text += Resources.tab_daungang + dt.CauHoiKHo + xuong_dong;
-										rkqBaiHoc.Text += Resources.tab_daungang + dt.CauHoiViet + Resources.tab + Resources.tab + Resources.dau_cong + dt.TraLoiViet + xuong_dong;
+										rkqBaiHoc.Text += "- " + dt.CauHoiKHo + xuong_dong;
+										rkqBaiHoc.Text += "- " + dt.CauHoiViet + Resources.tab + Resources.tab + Resources.dau_cong + dt.TraLoiViet +
+														  xuong_dong;
 									}
 									else
 									{
-										rkqBaiHoc.Text += Resources.tab_daungang + dt.CauHoiKHo + xuong_dong;
-										rkqBaiHoc.Text += Resources.tab_daungang + dt.CauHoiViet + xuong_dong;
+										rkqBaiHoc.Text += "- " + dt.CauHoiKHo + xuong_dong;
+										rkqBaiHoc.Text += "- " + dt.CauHoiViet + xuong_dong;
 									}
 								}
 							}
 							else
-								rkqBaiHoc.Text += dt.TraLoiKHo != null ? Resources.tab_daungang + dt.CauHoiKHo + Resources.tab + Resources.tab + Resources.dau_cong + dt.TraLoiKHo + xuong_dong : Resources.tab_daungang + dt.CauHoiKHo + xuong_dong;
+								rkqBaiHoc.Text += dt.TraLoiKHo != null
+									? "- " + dt.CauHoiKHo + Resources.tab + Resources.tab + Resources.dau_cong + dt.TraLoiKHo + xuong_dong
+									: "- " + dt.CauHoiKHo + xuong_dong;
 						}
 					}
 					if (itemdmc.DichKHoViets.Count >= 1)
 						foreach (DichKHoViet kh in DichKHoVietDao.Instance.LoadDichKHoViets(itemdmc.ID))
-							rkqBaiHoc.Text += kh.Viet != null ? Resources.tab_daungang + kh.KHo + Resources.tab + Resources.tab + Resources.dau_cong + kh.Viet + xuong_dong : Resources.tab_daungang + kh.KHo + xuong_dong;
+							rkqBaiHoc.Text += kh.Viet != null
+								? "- " + kh.KHo + Resources.tab + Resources.tab + Resources.dau_cong + kh.Viet + xuong_dong
+								: "- " + kh.KHo + xuong_dong;
 					if (itemdmc.DichVietKHoes.Count >= 1)
 						foreach (DichVietKHo v in DichVietKHoDao.Instance.LoadDichVietKHos(itemdmc.ID))
-							rkqBaiHoc.Text += v.KHo != null ? Resources.tab_daungang + v.Viet + Resources.tab + Resources.tab + Resources.dau_cong + v.KHo + xuong_dong : Resources.tab_daungang + v.Viet + xuong_dong;
+							rkqBaiHoc.Text += v.KHo != null
+								? "- " + v.Viet + Resources.tab + Resources.tab + Resources.dau_cong + v.KHo + xuong_dong
+								: "- " + v.Viet + xuong_dong;
 					if (itemdmc.NguPhaps.Count >= 1)
 						foreach (NguPhap tv in NguPhapDAO.Instance.LoadNguPhaps(itemdmc.ID))
-							rkqBaiHoc.Text += Resources.tab + Resources.tab + tv.NoiDung + xuong_dong;
+							rkqBaiHoc.Text += tv.NoiDung + xuong_dong;
 				}
 			}
 		}
+
 		private void LoadBaiHoc(int iDBaiHoc)
 		{
+			lbMucLuc.Text = "";
+			picBox.Visible = false;
+			picBox.Image = null;
+			picChuDe.Image = null;
 			lbViet.Text = "";
 			lbKhoHay.Text = "";
 			lbLHViet.Text = "";
-			picBox.Image = null;
+
 			btnAudio.Enabled = false;
 			if (_trangthaiam)
 			{
@@ -311,15 +368,14 @@ namespace DACN_UD_Hoc_KHo_CTK37.GUI
 				_sound.controls.stop();
 				btnAudio.Text = Resources.nghe;
 			}
-			btnRefresh.Enabled = false;
-			lbcMucLuc.Items.Clear();//moi
+			lbcMucLuc.Items.Clear(); //moi
 			rkqBaiHoc.ResetText();
 			rkqBaiHoc.Font = new Font("TNKeyUni-Arial", 11F);
 			int soBai = BaiHocDao.Instance.BaiHocCounts();
-			int j = 0;
-			int i = 0;
 			btnBack.Enabled = _iDBaiHoc > 1;
 			btnNext.Enabled = _iDBaiHoc < soBai;
+			int j = 0;
+			int i = 0;
 			foreach (BaiHoc item in BaiHocDao.Instance.LoadTenBai(iDBaiHoc))
 			{
 				if (item.TenViet != null && item.TenKHo != null)
@@ -345,15 +401,19 @@ namespace DACN_UD_Hoc_KHo_CTK37.GUI
 				{
 					try
 					{
+						picChuDe.Visible = true;
+						picBox.Visible = false;
 						var hinh = HinhDao.Instance.LoadHinhs((int)item.IDHinh);
 						_pictures = hinh.DuongDan;
 						string filepath = Application.StartupPath;
 						Image image = Image.FromFile(filepath + _pictures);
 						picBox.Image = image;
+						picChuDe.Image = image;
 					}
 					catch (Exception)
 					{
 						picBox.Image = null;
+						picChuDe.Image = null;
 					}
 				}
 			}
@@ -362,7 +422,8 @@ namespace DACN_UD_Hoc_KHo_CTK37.GUI
 			{
 				if (item.TenKHo == null)
 				{
-					foreach (DanhMucCon itemdmc in DanhMucConDao.Instance.DanhMucConLoad(item.ID)){
+					foreach (DanhMucCon itemdmc in DanhMucConDao.Instance.DanhMucConLoad(item.ID))
+					{
 						i++;
 						lbcMucLuc.Items.Add(i + Resources.dau_cham + Resources.dau_cach + itemdmc.Ten);
 					}
@@ -373,6 +434,23 @@ namespace DACN_UD_Hoc_KHo_CTK37.GUI
 					lbcMucLuc.Items.Add(i + Resources.dau_cham + Resources.dau_cach + item.TenKHo);
 				}
 			}
+		}
+		private void LoadTatcaBaiHoc(int iDBaiHoc)
+		{
+			picChuDe.Visible = false;
+			picBox.Visible = true;
+			lbMucLuc.Text = "";
+			btnAudio.Enabled = false;
+			if (_trangthaiam)
+			{
+				_trangthaiam = false;
+				_sound.controls.stop();
+				btnAudio.Text = Resources.nghe;
+			}
+			rkqBaiHoc.ResetText();
+			rkqBaiHoc.Font = new Font("TNKeyUni-Arial", 11F);
+			int j = 0;
+			int i = 0;
 			foreach (DanhMuc item in DanhMucDao.Instance.DanhMucLoad(iDBaiHoc))
 			{
 				j++;
@@ -456,25 +534,21 @@ namespace DACN_UD_Hoc_KHo_CTK37.GUI
 							{
 								if (lt.HoiKHo != null && lt.HoiViet != null)
 								{
-									if (lt.TraLoiKHo != null && lt.TraLoiViet != null)
+									if (lt.TraLoiKHo != null)
 									{
+										rkqBaiHoc.Text += Resources.tab + lt.HoiViet + xuong_dong;
 										rkqBaiHoc.Text += Resources.tab_daungang + lt.HoiKHo + Resources.tab + Resources.tab + Resources.dau_cong + lt.TraLoiKHo + xuong_dong;
-										rkqBaiHoc.Text += Resources.tab_daungang + lt.HoiViet + Resources.tab + Resources.tab + Resources.dau_cong + lt.TraLoiViet + xuong_dong;
 									}
-									else if (lt.TraLoiKHo != null && lt.TraLoiViet == null)
-										rkqBaiHoc.Text += Resources.tab_daungang + lt.HoiKHo + xuong_dong;
-									else if (lt.TraLoiKHo == null && lt.TraLoiViet != null)
-										rkqBaiHoc.Text += Resources.tab_daungang + lt.HoiViet + xuong_dong;
-									else
+									else if (lt.TraLoiKHo == null)
 									{
+										rkqBaiHoc.Text += Resources.tab + lt.HoiViet + xuong_dong;
 										rkqBaiHoc.Text += Resources.tab_daungang + lt.HoiKHo + xuong_dong;
-										rkqBaiHoc.Text += Resources.tab_daungang + lt.HoiViet + xuong_dong;
 									}
 								}
 								else if (lt.HoiKHo != null && lt.HoiViet == null)
 									rkqBaiHoc.Text += lt.TraLoiKHo != null ? Resources.tab_daungang + lt.HoiKHo + Resources.tab + Resources.tab + Resources.dau_cong + lt.TraLoiKHo + xuong_dong : Resources.tab_daungang + lt.HoiKHo + xuong_dong;
 								else if (lt.HoiKHo == null && lt.HoiViet != null)
-									rkqBaiHoc.Text += lt.TraLoiViet != null ? Resources.tab_daungang + lt.HoiViet + Resources.tab + Resources.tab + Resources.dau_cong + lt.TraLoiViet + xuong_dong : Resources.tab_daungang + lt.HoiViet + xuong_dong;
+									rkqBaiHoc.Text += Resources.tab + lt.HoiViet + xuong_dong;
 							}
 						}
 						if (itemdmc.NguPhaps.Count >= 1)
@@ -558,33 +632,29 @@ namespace DACN_UD_Hoc_KHo_CTK37.GUI
 								rkqBaiHoc.Text += ch.TraLoi != null ? Resources.tab_daungang + ch.Hoi + Resources.tab + Resources.tab + Resources.dau_cong + ch.TraLoi + xuong_dong : Resources.tab_daungang + ch.Hoi + xuong_dong;
 						if (itemdmc.LuyenTaps.Count >= 1)
 						{
-							foreach (LuyenTap lt in LuyenTapDao.Instance.LoadLuyenTaps(itemdmc.ID))
+							if (itemdmc.LuyenTaps.Count >= 1)
 							{
-								if (lt.HoiKHo != null && lt.HoiViet != null)
+								foreach (LuyenTap lt in LuyenTapDao.Instance.LoadLuyenTaps(itemdmc.ID))
 								{
-									if (lt.TraLoiKHo != null && lt.TraLoiViet != null)
+									if (lt.HoiKHo != null && lt.HoiViet != null)
 									{
-										rkqBaiHoc.Text += Resources.tab_daungang + lt.HoiKHo + Resources.tab + Resources.tab + Resources.dau_cong + lt.TraLoiKHo + xuong_dong;
-										rkqBaiHoc.Text += Resources.tab_daungang + lt.HoiViet + Resources.tab + Resources.tab + Resources.dau_cong + lt.TraLoiViet + xuong_dong;
+
+										if (lt.TraLoiKHo != null)
+										{
+											rkqBaiHoc.Text += Resources.tab + lt.HoiViet + xuong_dong;
+											rkqBaiHoc.Text += Resources.tab_daungang + lt.HoiKHo + Resources.tab + Resources.tab + Resources.dau_cong + lt.TraLoiKHo + xuong_dong;
+										}
+										else if (lt.TraLoiKHo == null)
+										{
+											rkqBaiHoc.Text += Resources.tab + lt.HoiViet + xuong_dong;
+											rkqBaiHoc.Text += Resources.tab_daungang + lt.HoiKHo + xuong_dong;
+										}
 									}
-									else if (lt.TraLoiKHo != null && lt.TraLoiViet == null)
-									{
-										rkqBaiHoc.Text += Resources.tab_daungang + lt.HoiKHo + xuong_dong;
-									}
-									else if (lt.TraLoiKHo == null && lt.TraLoiViet != null)
-									{
-										rkqBaiHoc.Text += Resources.tab_daungang + lt.HoiViet + xuong_dong;
-									}
-									else
-									{
-										rkqBaiHoc.Text += Resources.tab_daungang + lt.HoiKHo + xuong_dong;
-										rkqBaiHoc.Text += Resources.tab_daungang + lt.HoiViet + xuong_dong;
-									}
+									else if (lt.HoiKHo != null && lt.HoiViet == null)
+										rkqBaiHoc.Text += lt.TraLoiKHo != null ? Resources.tab_daungang + lt.HoiKHo + Resources.tab + Resources.tab + Resources.dau_cong + lt.TraLoiKHo + xuong_dong : Resources.tab_daungang + lt.HoiKHo + xuong_dong;
+									else if (lt.HoiKHo == null && lt.HoiViet != null)
+										rkqBaiHoc.Text += Resources.tab + lt.HoiViet + xuong_dong;
 								}
-								else if (lt.HoiKHo != null && lt.HoiViet == null)
-									rkqBaiHoc.Text += lt.TraLoiKHo != null ? Resources.tab_daungang + lt.HoiKHo + Resources.tab + Resources.tab + Resources.dau_cong + lt.TraLoiKHo + xuong_dong : Resources.tab_daungang + lt.HoiKHo + xuong_dong;
-								else if (lt.HoiKHo == null && lt.HoiViet != null)
-									rkqBaiHoc.Text += lt.TraLoiViet != null ? Resources.tab_daungang + lt.HoiViet + Resources.tab + Resources.tab + Resources.dau_cong + lt.TraLoiViet + xuong_dong : Resources.tab_daungang + lt.HoiViet + xuong_dong;
 							}
 						}
 						if (itemdmc.NguPhaps.Count >= 1)
@@ -608,8 +678,9 @@ namespace DACN_UD_Hoc_KHo_CTK37.GUI
 				_trangthaiam = true;
 				_sound.controls.play();
 			}
-			
+
 		}
+
 		#endregion
 		#region event
 		private void btnClose_Click(object sender, EventArgs e)
@@ -626,6 +697,15 @@ namespace DACN_UD_Hoc_KHo_CTK37.GUI
 		{
 			if (XtraMessageBox.Show("Bạn có muốn đóng bài học không?", Resources.thong_bao, MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) != DialogResult.OK)
 				e.Cancel = true;
+			else
+			{
+				FrmDictionary frmD = Application.OpenForms.OfType<FrmDictionary>().FirstOrDefault();
+				if (frmD != null) frmD.Close();
+				FrmLuyenTap frmL = Application.OpenForms.OfType<FrmLuyenTap>().FirstOrDefault();
+				if (frmL != null) frmL.Close();
+				FrmExercise frmC = Application.OpenForms.OfType<FrmExercise>().FirstOrDefault();
+				if (frmC != null) frmC.Close();
+			}
 		}
 		private void btnBack_Click(object sender, EventArgs e)
 		{
@@ -650,7 +730,8 @@ namespace DACN_UD_Hoc_KHo_CTK37.GUI
 		}
 		private void lbcMucLuc_Click(object sender, EventArgs e)
 		{
-			btnRefresh.Enabled = true;
+			picChuDe.Visible = false;
+			picBox.Visible = true;
 			if (_trangthaiam)
 			{
 				_trangthaiam = false;
@@ -672,7 +753,7 @@ namespace DACN_UD_Hoc_KHo_CTK37.GUI
 			{
 				FrmExercise f = Application.OpenForms.OfType<FrmExercise>().FirstOrDefault();
 				if (f != null)
-					XtraMessageBox.Show("Bạn đã mở câu hỏi!", Resources.thong_bao, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+					XtraMessageBox.Show("Bạn đã mở câu hỏi! Xin hãy kiểm tra cửa sổ chương trình!", Resources.thong_bao, MessageBoxButtons.OK, MessageBoxIcon.Warning);
 				else
 				{
 					f = new FrmExercise(_iDBaiHoc);
@@ -684,7 +765,7 @@ namespace DACN_UD_Hoc_KHo_CTK37.GUI
 			{
 				FrmLuyenTap f = Application.OpenForms.OfType<FrmLuyenTap>().FirstOrDefault();
 				if (f != null)
-					XtraMessageBox.Show("Bạn đã mở luyện tập!", Resources.thong_bao, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+					XtraMessageBox.Show("Bạn đã mở luyện tập! Xin hãy kiểm tra cửa sổ chương trình!", Resources.thong_bao, MessageBoxButtons.OK, MessageBoxIcon.Warning);
 				else
 				{
 					f = new FrmLuyenTap(_iDBaiHoc);
@@ -699,8 +780,7 @@ namespace DACN_UD_Hoc_KHo_CTK37.GUI
 		{
 			FrmExercise f = Application.OpenForms.OfType<FrmExercise>().FirstOrDefault();
 			if (f != null) f.Close();
-			btnRefresh.Enabled = false;
-			LoadBaiHoc(_iDBaiHoc);
+			LoadTatcaBaiHoc(_iDBaiHoc);
 		}
 		private void btnDictionary_Click(object sender, EventArgs e)
 		{
@@ -712,7 +792,7 @@ namespace DACN_UD_Hoc_KHo_CTK37.GUI
 			}
 			FrmDictionary f = Application.OpenForms.OfType<FrmDictionary>().FirstOrDefault();
 			if (f != null)
-				XtraMessageBox.Show("Bạn đã mở tử điển!", Resources.thong_bao, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+				XtraMessageBox.Show("Bạn đã mở tử điển! Xin hãy kiểm tra cửa sổ chương trình!", Resources.thong_bao, MessageBoxButtons.OK, MessageBoxIcon.Warning);
 			else
 			{
 				f = new FrmDictionary();

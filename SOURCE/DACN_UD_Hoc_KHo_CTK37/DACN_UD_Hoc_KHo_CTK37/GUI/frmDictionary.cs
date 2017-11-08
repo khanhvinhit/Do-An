@@ -22,6 +22,7 @@ namespace DACN_UD_Hoc_KHo_CTK37.GUI
 			lbcTuVung.Items.Clear();
 			foreach (var item in TuVungDao.Instance.LoadTuVungDic())
 				lbcTuVung.Items.Add(item.KHo);
+			
 		}
 
 		#endregion
@@ -94,20 +95,41 @@ namespace DACN_UD_Hoc_KHo_CTK37.GUI
 
 		private void txtDicti_TextChanged(object sender, EventArgs e)
 		{
+			int i;
 			try
 			{
-				for (int i = 0; i <= lbcTuVung.Items.Count - 1; i++)
+				for (i = 0; i <= lbcTuVung.Items.Count - 1; i++)
 				{
-					if (txtDicti.Text.Trim().ToUpper() == lbcTuVung.Items[i].ToString().ToUpper().Substring(0, txtDicti.Text.Length))
+					string a =
+						txtDicti.Text
+							.Replace('\\', 'a')
+							.Replace('|', 'b')
+							.Replace('~', 'c')
+							.Replace('`', 'd')
+							.Replace('{', 'e')
+							.Replace('[', 'f')
+							.Replace('}', 'g')
+							.Replace(']', 'h');
+					string b = lbcTuVung.Items[i].ToString().Replace('\\', 'a')
+							.Replace('|', 'b')
+							.Replace('~', 'c')
+							.Replace('`', 'd')
+							.Replace('{', 'e')
+							.Replace('[', 'f')
+							.Replace('}', 'g')
+							.Replace(']', 'h');//.Substring(0, txtDicti.TextLength)
+						
+					if (b.Contains(a))
 					{
 						lbcTuVung.SelectedIndex = i;
 						break;
 					}
 				}
 			}
-			catch (Exception)
+			catch (Exception ex)
 			{
 			}
 		}
+
 	}
 }

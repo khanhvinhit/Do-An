@@ -9,7 +9,10 @@
 
 namespace DACN_UD_Hoc_KHo_CTK37.DTO
 {
-	public partial class Hinh
+    using System;
+    using System.Collections.Generic;
+    
+    public partial class Hinh
     {
         public int ID { get; set; }
         public string DuongDan { get; set; }

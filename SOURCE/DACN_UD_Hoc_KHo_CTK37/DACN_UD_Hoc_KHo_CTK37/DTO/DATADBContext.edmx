@@ -114,7 +114,6 @@
           <Property Name="HoiKHo" Type="nvarchar" MaxLength="250" />
           <Property Name="HoiViet" Type="nvarchar" MaxLength="250" />
           <Property Name="TraLoiKHo" Type="ntext" />
-          <Property Name="TraLoiViet" Type="ntext" />
           <Property Name="IDDanhMucCon" Type="int" />
         </EntityType>
         <EntityType Name="NguPhap">
@@ -518,7 +517,6 @@
           <Property Name="HoiKHo" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
           <Property Name="HoiViet" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
           <Property Name="TraLoiKHo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="TraLoiViet" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="IDDanhMucCon" Type="Int32" />
           <NavigationProperty Name="DanhMucCon" Relationship="HocKHoModel.FK_LuyenTap_DanhMucCon" FromRole="LuyenTap" ToRole="DanhMucCon" />
         </EntityType>
@@ -795,7 +793,6 @@
             <EntityTypeMapping TypeName="HocKHoModel.LuyenTap">
               <MappingFragment StoreEntitySet="LuyenTap">
                 <ScalarProperty Name="IDDanhMucCon" ColumnName="IDDanhMucCon" />
-                <ScalarProperty Name="TraLoiViet" ColumnName="TraLoiViet" />
                 <ScalarProperty Name="TraLoiKHo" ColumnName="TraLoiKHo" />
                 <ScalarProperty Name="HoiViet" ColumnName="HoiViet" />
                 <ScalarProperty Name="HoiKHo" ColumnName="HoiKHo" />

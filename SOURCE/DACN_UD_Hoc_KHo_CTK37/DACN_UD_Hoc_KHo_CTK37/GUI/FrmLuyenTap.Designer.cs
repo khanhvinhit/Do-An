@@ -43,7 +43,8 @@ namespace DACN_UD_Hoc_KHo_CTK37.GUI
 			this.btnRefresh = new DevExpress.XtraEditors.SimpleButton();
 			this.btnThoat = new DevExpress.XtraEditors.SimpleButton();
 			this.recTraLoi = new DevExpress.XtraRichEdit.RichEditControl();
-			this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
+			this.lbHay = new DevExpress.XtraEditors.LabelControl();
+			this.lbTL = new DevExpress.XtraEditors.LabelControl();
 			this.lbCauh = new DevExpress.XtraEditors.LabelControl();
 			((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
 			this.panelControl1.SuspendLayout();
@@ -54,9 +55,9 @@ namespace DACN_UD_Hoc_KHo_CTK37.GUI
 			this.lbCauHoi.Appearance.Font = new System.Drawing.Font("TNKeyUni-Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.lbCauHoi.Location = new System.Drawing.Point(5, 28);
 			this.lbCauHoi.Name = "lbCauHoi";
-			this.lbCauHoi.Size = new System.Drawing.Size(58, 17);
+			this.lbCauHoi.Size = new System.Drawing.Size(54, 17);
 			this.lbCauHoi.TabIndex = 0;
-			this.lbCauHoi.Text = "Câu hỏi:";
+			this.lbCauHoi.Text = "Chủ đề:";
 			// 
 			// panelControl1
 			// 
@@ -70,7 +71,8 @@ namespace DACN_UD_Hoc_KHo_CTK37.GUI
 			this.panelControl1.Controls.Add(this.btnRefresh);
 			this.panelControl1.Controls.Add(this.btnThoat);
 			this.panelControl1.Controls.Add(this.recTraLoi);
-			this.panelControl1.Controls.Add(this.labelControl1);
+			this.panelControl1.Controls.Add(this.lbHay);
+			this.panelControl1.Controls.Add(this.lbTL);
 			this.panelControl1.Controls.Add(this.lbCauh);
 			this.panelControl1.Controls.Add(this.lbCauHoi);
 			this.panelControl1.Location = new System.Drawing.Point(12, 12);
@@ -171,19 +173,28 @@ namespace DACN_UD_Hoc_KHo_CTK37.GUI
 			this.recTraLoi.Enter += new System.EventHandler(this.recTraLoi_Enter);
 			this.recTraLoi.Leave += new System.EventHandler(this.recTraLoi_Leave);
 			// 
-			// labelControl1
+			// lbHay
 			// 
-			this.labelControl1.Appearance.Font = new System.Drawing.Font("TNKeyUni-Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.labelControl1.Location = new System.Drawing.Point(5, 92);
-			this.labelControl1.Name = "labelControl1";
-			this.labelControl1.Size = new System.Drawing.Size(49, 17);
-			this.labelControl1.TabIndex = 3;
-			this.labelControl1.Text = "Trả lời:";
+			this.lbHay.Appearance.Font = new System.Drawing.Font("TNKeyUni-Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.lbHay.Location = new System.Drawing.Point(5, 5);
+			this.lbHay.Name = "lbHay";
+			this.lbHay.Size = new System.Drawing.Size(27, 17);
+			this.lbHay.TabIndex = 3;
+			this.lbHay.Text = "Hay";
+			// 
+			// lbTL
+			// 
+			this.lbTL.Appearance.Font = new System.Drawing.Font("TNKeyUni-Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.lbTL.Location = new System.Drawing.Point(5, 92);
+			this.lbTL.Name = "lbTL";
+			this.lbTL.Size = new System.Drawing.Size(49, 17);
+			this.lbTL.TabIndex = 3;
+			this.lbTL.Text = "Trả lời:";
 			// 
 			// lbCauh
 			// 
 			this.lbCauh.Appearance.Font = new System.Drawing.Font("TNKeyUni-Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.lbCauh.Location = new System.Drawing.Point(69, 28);
+			this.lbCauh.Location = new System.Drawing.Point(82, 28);
 			this.lbCauh.Name = "lbCauh";
 			this.lbCauh.Size = new System.Drawing.Size(9, 17);
 			this.lbCauh.TabIndex = 0;
@@ -215,7 +226,7 @@ namespace DACN_UD_Hoc_KHo_CTK37.GUI
 
 		private LabelControl lbCauHoi;
 		private PanelControl panelControl1;
-		private LabelControl labelControl1;
+		private LabelControl lbTL;
 		private RichEditControl recTraLoi;
 		private SimpleButton btnThoat;
 		private SimpleButton btnRefresh;
@@ -224,5 +235,6 @@ namespace DACN_UD_Hoc_KHo_CTK37.GUI
         private SimpleButton btnNext;
         private LabelControl lbSo;
         private LabelControl labelControl2;
+		private LabelControl lbHay;
     }
 }

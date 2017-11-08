@@ -114,8 +114,8 @@ namespace DACN_UD_Hoc_KHo_CTK37.GUI
 			this.recNghia.Options.Fields.UseCurrentCultureDateTimeFormat = false;
 			this.recNghia.Options.MailMerge.KeepLastParagraph = false;
 			this.recNghia.ReadOnly = true;
-			this.recNghia.Size = new System.Drawing.Size(342, 112);
-			this.recNghia.TabIndex = 1;
+			this.recNghia.Size = new System.Drawing.Size(342, 110);
+			this.recNghia.TabIndex = 0;
 			// 
 			// groupBox1
 			// 
@@ -135,7 +135,7 @@ namespace DACN_UD_Hoc_KHo_CTK37.GUI
 			this.txtDicti.Location = new System.Drawing.Point(56, 16);
 			this.txtDicti.Name = "txtDicti";
 			this.txtDicti.Size = new System.Drawing.Size(408, 22);
-			this.txtDicti.TabIndex = 3;
+			this.txtDicti.TabIndex = 1;
 			this.txtDicti.TextChanged += new System.EventHandler(this.txtDicti_TextChanged);
 			this.txtDicti.Enter += new System.EventHandler(this.txtDicti_Enter);
 			this.txtDicti.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtDicti_KeyDown);
@@ -155,7 +155,7 @@ namespace DACN_UD_Hoc_KHo_CTK37.GUI
 			this.labelControl1.Location = new System.Drawing.Point(7, 19);
 			this.labelControl1.Name = "labelControl1";
 			this.labelControl1.Size = new System.Drawing.Size(43, 13);
-			this.labelControl1.TabIndex = 1;
+			this.labelControl1.TabIndex = 0;
 			this.labelControl1.Text = "Nhập từ:";
 			// 
 			// FrmDictionary

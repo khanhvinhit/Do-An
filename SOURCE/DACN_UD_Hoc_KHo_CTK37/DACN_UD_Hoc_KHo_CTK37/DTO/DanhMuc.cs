@@ -7,15 +7,14 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-using System;
-using System.Collections.Generic;
-using System.Diagnostics.CodeAnalysis;
-
 namespace DACN_UD_Hoc_KHo_CTK37.DTO
 {
-	public partial class DanhMuc
+    using System;
+    using System.Collections.Generic;
+    
+    public partial class DanhMuc
     {
-        [SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public DanhMuc()
         {
             this.DanhMucCons = new HashSet<DanhMucCon>();
@@ -27,7 +26,7 @@ namespace DACN_UD_Hoc_KHo_CTK37.DTO
         public Nullable<int> IDBaiHoc { get; set; }
     
         public virtual BaiHoc BaiHoc { get; set; }
-        [SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<DanhMucCon> DanhMucCons { get; set; }
     }
 }

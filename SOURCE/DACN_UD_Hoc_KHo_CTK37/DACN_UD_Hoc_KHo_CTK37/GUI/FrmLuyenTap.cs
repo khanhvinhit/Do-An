@@ -29,6 +29,7 @@ namespace DACN_UD_Hoc_KHo_CTK37.GUI
 
         private void LoadLuyenTap(int idBaiHoc)
         {
+	        lbHay.Text = "";
             recTraLoi.ResetText();
             recTraLoi.Font = new Font("TNKeyUni-Arial", 11F);
             foreach (DanhMuc item in DanhMucDao.Instance.DanhMucLoad(idBaiHoc))
@@ -40,7 +41,7 @@ namespace DACN_UD_Hoc_KHo_CTK37.GUI
                         if (itemdmc.LuyenTaps.Count >= 1)
                         {
                             _soLt = LuyenTapDao.Instance.LTCounts(itemdmc.ID);
-                            lbCauHoi.Text = Resources.cau_so + _stt + Resources.dau_2_cham;
+                            lbCauHoi.Text = "Chủ đề " + _stt + Resources.dau_2_cham;
                             var lt = LuyenTapDao.Instance.LoadLTFirst(itemdmc.ID);
                             LoadCauHoiLt(lt.ID);
                             _idLt = lt.ID;
@@ -55,7 +56,7 @@ namespace DACN_UD_Hoc_KHo_CTK37.GUI
                         {
                             _soLt = LuyenTapDao.Instance.LTCounts(itemdmc.ID);
                             lbSo.Text = _stt + Resources.dau_cheo + _soLt;
-							lbCauHoi.Text = Resources.cau_so + _stt + Resources.dau_2_cham;
+							lbCauHoi.Text = "Chủ đề " + _stt + Resources.dau_2_cham;
                             var lt = LuyenTapDao.Instance.LoadLTFirst(itemdmc.ID);
                             LoadCauHoiLt(lt.ID);
                             _idLt = lt.ID;
@@ -70,20 +71,31 @@ namespace DACN_UD_Hoc_KHo_CTK37.GUI
             recTraLoi.ResetText();
             foreach (var lt in LuyenTapDao.Instance.LoadLTByID(idLt))
             {
-                lbCauh.Text = lt.HoiKHo + "\n";
+                lbCauh.Text = lt.HoiKHo;
                 if (lt.HoiViet != null)
-					lbCauh.Text = lt.HoiKHo + "\n" + lt.HoiViet + "\n";
-                if (lt.TraLoiViet != null)
-					lbCauh.Text = lt.HoiKHo + "\n" + lt.HoiViet + "\n + " + lt.TraLoiViet + "\n";
+					lbHay.Text = lt.HoiViet;
+                //if (lt.TraLoiViet != null)
+				//	lbCauh.Text = lt.HoiKHo + "\n" + lt.HoiViet + "\n + " + lt.TraLoiViet + "\n";
                 if (lt.TraLoiKHo!=null)
 					recTraLoi.Text += lt.TraLoiKHo;
-                else
-                {
+				else
+				{
 					recTraLoi.ForeColor = Color.LightGray;
 					recTraLoi.Text = Resources.nhap_cau_trl;
 					recTraLoi.Leave += recTraLoi_Leave;
 					recTraLoi.Enter += recTraLoi_Enter;
-                }
+				}
+				if (lt.HoiViet == "Tự đọc câu sau:")
+				{
+					lbTL.Visible = false;
+					recTraLoi.Visible = false;
+				}
+				else
+				{
+					lbTL.Visible = true;
+					recTraLoi.Visible = true;
+				}
+                
             }
 			btnPrev.Enabled = _stt > 1 ? true : false;
 			btnNext.Enabled = _stt < _soLt ? true : false;
@@ -171,7 +183,7 @@ namespace DACN_UD_Hoc_KHo_CTK37.GUI
 				_stt--;
 				_idLt = _idLt - 1;
 				lbSo.Text = _stt + " / " + _soLt;
-				lbCauHoi.Text = Resources.cau_so + _stt + Resources.dau_2_cham;
+				lbCauHoi.Text = "Chủ đề " + _stt + Resources.dau_2_cham;
 				LoadCauHoiLt(_idLt);
 			}
 			else if (_stt == 1)
@@ -188,7 +200,7 @@ namespace DACN_UD_Hoc_KHo_CTK37.GUI
 				_stt++;
 				_idLt = _idLt + 1;
 				lbSo.Text = _stt + " / " + _soLt;
-				lbCauHoi.Text = Resources.cau_so + _stt + Resources.dau_2_cham;
+				lbCauHoi.Text = "Chủ đề " + _stt + Resources.dau_2_cham;
 				LoadCauHoiLt(_idLt);
 			}
 			else

@@ -7,15 +7,14 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-using System;
-using System.Collections.Generic;
-using System.Diagnostics.CodeAnalysis;
-
 namespace DACN_UD_Hoc_KHo_CTK37.DTO
 {
-	public partial class BaiHoc
+    using System;
+    using System.Collections.Generic;
+    
+    public partial class BaiHoc
     {
-        [SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public BaiHoc()
         {
             this.DanhMucs = new HashSet<DanhMuc>();
@@ -27,9 +26,9 @@ namespace DACN_UD_Hoc_KHo_CTK37.DTO
         public string TenViet { get; set; }
         public Nullable<int> IDHinh { get; set; }
     
-        [SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<DanhMuc> DanhMucs { get; set; }
-        [SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<LoiHayYDep> LoiHayYDeps { get; set; }
     }
 }

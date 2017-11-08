@@ -161,7 +161,7 @@
     <value>Nhập câu trả lời!</value>
   </data>
   <data name="het_cau_hoi" xml:space="preserve">
-    <value>Đã hết câu hỏi của bài: </value>
+    <value>Đã trả lời hết câu hỏi của bài: </value>
   </data>
   <data name="goi_y" xml:space="preserve">
     <value>Gợi ý</value>

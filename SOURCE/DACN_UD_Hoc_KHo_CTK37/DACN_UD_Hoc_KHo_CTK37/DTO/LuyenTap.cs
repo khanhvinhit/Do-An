@@ -7,17 +7,17 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-using System;
-
 namespace DACN_UD_Hoc_KHo_CTK37.DTO
 {
-	public partial class LuyenTap
+    using System;
+    using System.Collections.Generic;
+    
+    public partial class LuyenTap
     {
         public int ID { get; set; }
         public string HoiKHo { get; set; }
         public string HoiViet { get; set; }
         public string TraLoiKHo { get; set; }
-        public string TraLoiViet { get; set; }
         public Nullable<int> IDDanhMucCon { get; set; }
     
         public virtual DanhMucCon DanhMucCon { get; set; }

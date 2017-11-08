@@ -42,6 +42,7 @@ namespace DACN_UD_Hoc_KHo_CTK37.GUI
 			this.lbDanhMuc = new DevExpress.XtraEditors.LabelControl();
 			this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
 			this.pnBaiHoc = new DevExpress.XtraEditors.PanelControl();
+			this.picChuDe = new System.Windows.Forms.PictureBox();
 			this.btnAudio = new DevExpress.XtraEditors.SimpleButton();
 			this.picBox = new System.Windows.Forms.PictureBox();
 			this.btnDictionary = new DevExpress.XtraEditors.SimpleButton();
@@ -50,6 +51,7 @@ namespace DACN_UD_Hoc_KHo_CTK37.GUI
 			this.btnClose = new DevExpress.XtraEditors.SimpleButton();
 			this.btnNext = new DevExpress.XtraEditors.SimpleButton();
 			this.lbLHViet = new DevExpress.XtraEditors.LabelControl();
+			this.lbMucLuc = new DevExpress.XtraEditors.LabelControl();
 			this.lbKhoHay = new DevExpress.XtraEditors.LabelControl();
 			this.rkqBaiHoc = new DevExpress.XtraRichEdit.RichEditControl();
 			this.lbViet = new DevExpress.XtraEditors.LabelControl();
@@ -63,6 +65,7 @@ namespace DACN_UD_Hoc_KHo_CTK37.GUI
 			((System.ComponentModel.ISupportInitialize)(this.lbcMucLuc)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.pnBaiHoc)).BeginInit();
 			this.pnBaiHoc.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.picChuDe)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.picBox)).BeginInit();
 			this.SuspendLayout();
 			// 
@@ -144,6 +147,7 @@ namespace DACN_UD_Hoc_KHo_CTK37.GUI
             | System.Windows.Forms.AnchorStyles.Right)));
 			this.pnBaiHoc.Appearance.BackColor = System.Drawing.Color.White;
 			this.pnBaiHoc.Appearance.Options.UseBackColor = true;
+			this.pnBaiHoc.Controls.Add(this.picChuDe);
 			this.pnBaiHoc.Controls.Add(this.btnAudio);
 			this.pnBaiHoc.Controls.Add(this.picBox);
 			this.pnBaiHoc.Controls.Add(this.btnDictionary);
@@ -152,6 +156,7 @@ namespace DACN_UD_Hoc_KHo_CTK37.GUI
 			this.pnBaiHoc.Controls.Add(this.btnClose);
 			this.pnBaiHoc.Controls.Add(this.btnNext);
 			this.pnBaiHoc.Controls.Add(this.lbLHViet);
+			this.pnBaiHoc.Controls.Add(this.lbMucLuc);
 			this.pnBaiHoc.Controls.Add(this.lbKhoHay);
 			this.pnBaiHoc.Controls.Add(this.rkqBaiHoc);
 			this.pnBaiHoc.Controls.Add(this.lbViet);
@@ -161,6 +166,18 @@ namespace DACN_UD_Hoc_KHo_CTK37.GUI
 			this.pnBaiHoc.Size = new System.Drawing.Size(884, 509);
 			this.pnBaiHoc.TabIndex = 1;
 			// 
+			// picChuDe
+			// 
+			this.picChuDe.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+			this.picChuDe.Location = new System.Drawing.Point(6, 78);
+			this.picChuDe.Name = "picChuDe";
+			this.picChuDe.Size = new System.Drawing.Size(546, 374);
+			this.picChuDe.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+			this.picChuDe.TabIndex = 7;
+			this.picChuDe.TabStop = false;
+			// 
 			// btnAudio
 			// 
 			this.btnAudio.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -168,7 +185,7 @@ namespace DACN_UD_Hoc_KHo_CTK37.GUI
 			this.btnAudio.Appearance.Options.UseFont = true;
 			this.btnAudio.Enabled = false;
 			this.btnAudio.Image = ((System.Drawing.Image)(resources.GetObject("btnAudio.Image")));
-			this.btnAudio.Location = new System.Drawing.Point(558, 116);
+			this.btnAudio.Location = new System.Drawing.Point(558, 138);
 			this.btnAudio.Name = "btnAudio";
 			this.btnAudio.Size = new System.Drawing.Size(103, 54);
 			this.btnAudio.TabIndex = 6;
@@ -182,9 +199,9 @@ namespace DACN_UD_Hoc_KHo_CTK37.GUI
             | System.Windows.Forms.AnchorStyles.Right)));
 			this.picBox.BackColor = System.Drawing.Color.Transparent;
 			this.picBox.Cursor = System.Windows.Forms.Cursors.Default;
-			this.picBox.Location = new System.Drawing.Point(558, 176);
+			this.picBox.Location = new System.Drawing.Point(558, 198);
 			this.picBox.Name = "picBox";
-			this.picBox.Size = new System.Drawing.Size(321, 242);
+			this.picBox.Size = new System.Drawing.Size(321, 254);
 			this.picBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
 			this.picBox.TabIndex = 5;
 			this.picBox.TabStop = false;
@@ -195,7 +212,7 @@ namespace DACN_UD_Hoc_KHo_CTK37.GUI
 			this.btnDictionary.Appearance.Font = new System.Drawing.Font("TNKeyUni-Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.btnDictionary.Appearance.Options.UseFont = true;
 			this.btnDictionary.Image = ((System.Drawing.Image)(resources.GetObject("btnDictionary.Image")));
-			this.btnDictionary.Location = new System.Drawing.Point(667, 116);
+			this.btnDictionary.Location = new System.Drawing.Point(667, 138);
 			this.btnDictionary.Name = "btnDictionary";
 			this.btnDictionary.Size = new System.Drawing.Size(103, 54);
 			this.btnDictionary.TabIndex = 1;
@@ -208,13 +225,12 @@ namespace DACN_UD_Hoc_KHo_CTK37.GUI
 			this.btnRefresh.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
 			this.btnRefresh.Appearance.Font = new System.Drawing.Font("TNKeyUni-Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.btnRefresh.Appearance.Options.UseFont = true;
-			this.btnRefresh.Enabled = false;
 			this.btnRefresh.Image = ((System.Drawing.Image)(resources.GetObject("btnRefresh.Image")));
-			this.btnRefresh.Location = new System.Drawing.Point(558, 56);
+			this.btnRefresh.Location = new System.Drawing.Point(558, 78);
 			this.btnRefresh.Name = "btnRefresh";
 			this.btnRefresh.Size = new System.Drawing.Size(103, 54);
 			this.btnRefresh.TabIndex = 1;
-			this.btnRefresh.Text = "Quay về";
+			this.btnRefresh.Text = "Toàn bài";
 			this.btnRefresh.ToolTip = "Nhấn để load lại bài học";
 			this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
 			// 
@@ -224,7 +240,7 @@ namespace DACN_UD_Hoc_KHo_CTK37.GUI
 			this.btnBack.Appearance.Font = new System.Drawing.Font("TNKeyUni-Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.btnBack.Appearance.Options.UseFont = true;
 			this.btnBack.Image = ((System.Drawing.Image)(resources.GetObject("btnBack.Image")));
-			this.btnBack.Location = new System.Drawing.Point(667, 56);
+			this.btnBack.Location = new System.Drawing.Point(667, 78);
 			this.btnBack.Name = "btnBack";
 			this.btnBack.Size = new System.Drawing.Size(103, 54);
 			this.btnBack.TabIndex = 1;
@@ -238,7 +254,7 @@ namespace DACN_UD_Hoc_KHo_CTK37.GUI
 			this.btnClose.Appearance.Font = new System.Drawing.Font("TNKeyUni-Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.btnClose.Appearance.Options.UseFont = true;
 			this.btnClose.Image = ((System.Drawing.Image)(resources.GetObject("btnClose.Image")));
-			this.btnClose.Location = new System.Drawing.Point(776, 116);
+			this.btnClose.Location = new System.Drawing.Point(776, 138);
 			this.btnClose.Name = "btnClose";
 			this.btnClose.Size = new System.Drawing.Size(103, 54);
 			this.btnClose.TabIndex = 1;
@@ -252,7 +268,7 @@ namespace DACN_UD_Hoc_KHo_CTK37.GUI
 			this.btnNext.Appearance.Font = new System.Drawing.Font("TNKeyUni-Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.btnNext.Appearance.Options.UseFont = true;
 			this.btnNext.Image = ((System.Drawing.Image)(resources.GetObject("btnNext.Image")));
-			this.btnNext.Location = new System.Drawing.Point(776, 56);
+			this.btnNext.Location = new System.Drawing.Point(776, 78);
 			this.btnNext.Name = "btnNext";
 			this.btnNext.Size = new System.Drawing.Size(103, 54);
 			this.btnNext.TabIndex = 1;
@@ -269,6 +285,15 @@ namespace DACN_UD_Hoc_KHo_CTK37.GUI
 			this.lbLHViet.Size = new System.Drawing.Size(30, 17);
 			this.lbLHViet.TabIndex = 4;
 			this.lbLHViet.Text = "Viet";
+			// 
+			// lbMucLuc
+			// 
+			this.lbMucLuc.Appearance.Font = new System.Drawing.Font("TNKeyUni-Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.lbMucLuc.Location = new System.Drawing.Point(6, 55);
+			this.lbMucLuc.Name = "lbMucLuc";
+			this.lbMucLuc.Size = new System.Drawing.Size(65, 17);
+			this.lbMucLuc.TabIndex = 4;
+			this.lbMucLuc.Text = "Muc Luc";
 			// 
 			// lbKhoHay
 			// 
@@ -293,13 +318,13 @@ namespace DACN_UD_Hoc_KHo_CTK37.GUI
 			this.rkqBaiHoc.Appearance.Text.Options.UseBorderColor = true;
 			this.rkqBaiHoc.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
 			this.rkqBaiHoc.EnableToolTips = true;
-			this.rkqBaiHoc.Location = new System.Drawing.Point(6, 56);
+			this.rkqBaiHoc.Location = new System.Drawing.Point(6, 78);
 			this.rkqBaiHoc.Name = "rkqBaiHoc";
 			this.rkqBaiHoc.Options.CopyPaste.MaintainDocumentSectionSettings = false;
 			this.rkqBaiHoc.Options.Fields.UseCurrentCultureDateTimeFormat = false;
 			this.rkqBaiHoc.Options.MailMerge.KeepLastParagraph = false;
 			this.rkqBaiHoc.ReadOnly = true;
-			this.rkqBaiHoc.Size = new System.Drawing.Size(546, 396);
+			this.rkqBaiHoc.Size = new System.Drawing.Size(546, 374);
 			this.rkqBaiHoc.TabIndex = 0;
 			// 
 			// lbViet
@@ -347,6 +372,7 @@ namespace DACN_UD_Hoc_KHo_CTK37.GUI
 			((System.ComponentModel.ISupportInitialize)(this.pnBaiHoc)).EndInit();
 			this.pnBaiHoc.ResumeLayout(false);
 			this.pnBaiHoc.PerformLayout();
+			((System.ComponentModel.ISupportInitialize)(this.picChuDe)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.picBox)).EndInit();
 			this.ResumeLayout(false);
 
@@ -373,5 +399,7 @@ namespace DACN_UD_Hoc_KHo_CTK37.GUI
 		private PictureBox picBox;
 		private SimpleButton btnAudio;
 		private SimpleButton btnDictionary;
+		private PictureBox picChuDe;
+		private LabelControl lbMucLuc;
     }
 }

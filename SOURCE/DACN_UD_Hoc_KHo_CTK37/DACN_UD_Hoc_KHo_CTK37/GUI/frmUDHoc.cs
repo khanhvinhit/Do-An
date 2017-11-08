@@ -129,7 +129,7 @@ namespace DACN_UD_Hoc_KHo_CTK37.GUI
 			{
 				FrmDictionary f = Application.OpenForms.OfType<FrmDictionary>().FirstOrDefault();
 				if (f != null)
-					XtraMessageBox.Show("Bạn đã mở tử điển!", Resources.thong_bao, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+					XtraMessageBox.Show("Bạn đã mở tử điển! Xin hãy kiểm tra cửa sổ chương trình!", Resources.thong_bao, MessageBoxButtons.OK, MessageBoxIcon.Warning);
 				else
 				{
 					f = new FrmDictionary();

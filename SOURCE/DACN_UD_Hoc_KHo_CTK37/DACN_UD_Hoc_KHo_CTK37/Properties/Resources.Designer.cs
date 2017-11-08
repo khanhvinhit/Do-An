@@ -179,7 +179,7 @@ namespace DACN_UD_Hoc_KHo_CTK37.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Đã hết câu hỏi của bài: .
+        ///   Looks up a localized string similar to Đã trả lời hết câu hỏi của bài: .
         /// </summary>
         public static string het_cau_hoi {
             get {
