@@ -41,8 +41,6 @@ namespace DACN_UD_Hoc_KHo_CTK37.GUI
 
 		private void LoadDanhMucTheoTen(string name, int id)
 		{
-			picBox.Visible = true;
-			btnAudio.Enabled = false;
 			rkqBaiHoc.ResetText();
 			rkqBaiHoc.Font = new Font("TNKeyUni-Arial", 11F);
 			int j = 0;
@@ -353,14 +351,12 @@ namespace DACN_UD_Hoc_KHo_CTK37.GUI
 
 		private void LoadBaiHoc(int iDBaiHoc)
 		{
-			lbMucLuc.Text = "";
-			picBox.Visible = false;
-			picBox.Image = null;
+
 			picChuDe.Image = null;
 			lbViet.Text = "";
 			lbKhoHay.Text = "";
 			lbLHViet.Text = "";
-
+			lbMucLuc.Text = "";
 			btnAudio.Enabled = false;
 			if (_trangthaiam)
 			{
@@ -402,17 +398,14 @@ namespace DACN_UD_Hoc_KHo_CTK37.GUI
 					try
 					{
 						picChuDe.Visible = true;
-						picBox.Visible = false;
 						var hinh = HinhDao.Instance.LoadHinhs((int)item.IDHinh);
 						_pictures = hinh.DuongDan;
 						string filepath = Application.StartupPath;
 						Image image = Image.FromFile(filepath + _pictures);
-						picBox.Image = image;
 						picChuDe.Image = image;
 					}
 					catch (Exception)
 					{
-						picBox.Image = null;
 						picChuDe.Image = null;
 					}
 				}
@@ -437,8 +430,6 @@ namespace DACN_UD_Hoc_KHo_CTK37.GUI
 		}
 		private void LoadTatcaBaiHoc(int iDBaiHoc)
 		{
-			picChuDe.Visible = false;
-			picBox.Visible = true;
 			lbMucLuc.Text = "";
 			btnAudio.Enabled = false;
 			if (_trangthaiam)
@@ -709,6 +700,11 @@ namespace DACN_UD_Hoc_KHo_CTK37.GUI
 		}
 		private void btnBack_Click(object sender, EventArgs e)
 		{
+			pnPic.Controls.Remove(picChuDe);
+			pnPicChude.Controls.Add(picChuDe);
+			picChuDe.BringToFront();
+			picChuDe.Dock = DockStyle.Fill;
+			picAnimator.ShowSync(picChuDe);
 			FrmExercise f = Application.OpenForms.OfType<FrmExercise>().FirstOrDefault();
 			if (f != null) f.Close();
 			_last = _iDBaiHoc - 1;
@@ -719,6 +715,11 @@ namespace DACN_UD_Hoc_KHo_CTK37.GUI
 		}
 		private void btnNext_Click(object sender, EventArgs e)
 		{
+			pnPic.Controls.Remove(picChuDe);
+			pnPicChude.Controls.Add(picChuDe);
+			picChuDe.BringToFront();
+			picChuDe.Dock = DockStyle.Fill;
+			picAnimator.ShowSync(picChuDe);
 			FrmExercise f = Application.OpenForms.OfType<FrmExercise>().FirstOrDefault();
 			if (f != null)
 				f.Close();
@@ -730,8 +731,10 @@ namespace DACN_UD_Hoc_KHo_CTK37.GUI
 		}
 		private void lbcMucLuc_Click(object sender, EventArgs e)
 		{
-			picChuDe.Visible = false;
-			picBox.Visible = true;
+			pnPic.Controls.Add(picChuDe);
+			picChuDe.BringToFront();
+			picChuDe.Dock = DockStyle.Fill;
+			picAnimator.ShowSync(picChuDe);
 			if (_trangthaiam)
 			{
 				_trangthaiam = false;
@@ -778,6 +781,10 @@ namespace DACN_UD_Hoc_KHo_CTK37.GUI
 		}
 		private void btnRefresh_Click(object sender, EventArgs e)
 		{
+			pnPic.Controls.Add(picChuDe);
+			picChuDe.BringToFront();
+			picChuDe.Dock = DockStyle.Fill;
+			picAnimator.ShowSync(picChuDe);
 			FrmExercise f = Application.OpenForms.OfType<FrmExercise>().FirstOrDefault();
 			if (f != null) f.Close();
 			LoadTatcaBaiHoc(_iDBaiHoc);
