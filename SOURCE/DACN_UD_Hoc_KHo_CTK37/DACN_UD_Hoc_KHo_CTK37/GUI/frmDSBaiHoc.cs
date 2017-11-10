@@ -52,7 +52,6 @@ namespace DACN_UD_Hoc_KHo_CTK37.GUI
             {
                 BaiHoc baiHoc = (simpleButton.Tag as BaiHoc);
                 FrmBaiHocChiTiet f = new FrmBaiHocChiTiet(baiHoc.ID);
-
                 f.Text = f.Text + " số " + baiHoc.ID;
                 //f. = this;
                 f.Text = "Bài học";
