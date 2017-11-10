@@ -17,7 +17,7 @@ namespace DACN_UD_Hoc_KHo_CTK37.GUI
 			InitializeComponent();
 			UserLookAndFeel.Default.SkinName = Settings.Default["ApplicationSkinName"].ToString();
 			InitSkinGallery();
-			LoadBaiHoc();
+			WebCome();
 		}
 
 		#region Method
@@ -25,13 +25,13 @@ namespace DACN_UD_Hoc_KHo_CTK37.GUI
 		{
 			SkinHelper.InitSkinGallery(rbSkin, true);
 		}
-		void LoadBaiHoc()
+		void WebCome()
 		{
 			FrmWecome f = new FrmWecome();
 			f.MdiParent = this;
 			f.Show();
 		}
-
+		
 		private bool CheckExistForm(string name)
 		{
 			bool check = false;
@@ -142,15 +142,5 @@ namespace DACN_UD_Hoc_KHo_CTK37.GUI
 			}
 		}
 		#endregion
-
-
-
-
-
-
-
-
-
-
 	}
 }
