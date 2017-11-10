@@ -9,8 +9,7 @@ namespace DACN_UD_Hoc_KHo_CTK37.GUI
 		public FrmWecome()
 		{
 			InitializeComponent();
-			picE.Image = null;
-			LoadBt();
+			picE.Image = null;LoadBt();
 		}
 
 		private void ShowImg()
