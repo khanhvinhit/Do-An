@@ -88,6 +88,7 @@ namespace DACN_UD_Hoc_KHo_CTK37.GUI
 				if (lt.HoiViet == "Tự đọc câu sau:")
 				{
 					lbTL.Visible = false;
+					pnChuCai.Visible = false;
 					recTraLoi.Visible = false;
 				}
 				else

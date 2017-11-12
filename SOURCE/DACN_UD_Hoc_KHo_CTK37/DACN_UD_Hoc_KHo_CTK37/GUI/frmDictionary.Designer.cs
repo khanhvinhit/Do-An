@@ -96,7 +96,7 @@ namespace DACN_UD_Hoc_KHo_CTK37.GUI
 			this.splitContainerControl1.Panel1.Text = "Panel1";
 			this.splitContainerControl1.Panel2.Controls.Add(this.recNghia);
 			this.splitContainerControl1.Panel2.Text = "Panel2";
-			this.splitContainerControl1.Size = new System.Drawing.Size(538, 122);
+			this.splitContainerControl1.Size = new System.Drawing.Size(564, 122);
 			this.splitContainerControl1.SplitterPosition = 188;
 			this.splitContainerControl1.TabIndex = 0;
 			this.splitContainerControl1.Text = "splitContainerControl1";
@@ -129,7 +129,7 @@ namespace DACN_UD_Hoc_KHo_CTK37.GUI
 			this.recNghia.Options.Fields.UseCurrentCultureDateTimeFormat = false;
 			this.recNghia.Options.MailMerge.KeepLastParagraph = false;
 			this.recNghia.ReadOnly = true;
-			this.recNghia.Size = new System.Drawing.Size(342, 109);
+			this.recNghia.Size = new System.Drawing.Size(368, 115);
 			this.recNghia.TabIndex = 0;
 			// 
 			// groupBox1
@@ -187,10 +187,10 @@ namespace DACN_UD_Hoc_KHo_CTK37.GUI
 			this.panel1.Controls.Add(this.label2);
 			this.panel1.Controls.Add(this.label7);
 			this.panel1.Controls.Add(this.label1);
-			this.panel1.Location = new System.Drawing.Point(560, 19);
+			this.panel1.Location = new System.Drawing.Point(577, 23);
 			this.panel1.Name = "panel1";
 			this.panel1.Size = new System.Drawing.Size(69, 100);
-			this.panel1.TabIndex = 9;
+			this.panel1.TabIndex = 10;
 			// 
 			// label12
 			// 
@@ -198,9 +198,9 @@ namespace DACN_UD_Hoc_KHo_CTK37.GUI
 			this.label12.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label12.Location = new System.Drawing.Point(27, 83);
 			this.label12.Name = "label12";
-			this.label12.Size = new System.Drawing.Size(12, 16);
+			this.label12.Size = new System.Drawing.Size(20, 16);
 			this.label12.TabIndex = 0;
-			this.label12.Text = "`";
+			this.label12.Text = ": `";
 			// 
 			// label6
 			// 
@@ -218,9 +218,9 @@ namespace DACN_UD_Hoc_KHo_CTK37.GUI
 			this.label11.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label11.Location = new System.Drawing.Point(27, 67);
 			this.label11.Name = "label11";
-			this.label11.Size = new System.Drawing.Size(16, 16);
+			this.label11.Size = new System.Drawing.Size(24, 16);
 			this.label11.TabIndex = 0;
-			this.label11.Text = "~";
+			this.label11.Text = ": ~";
 			// 
 			// label5
 			// 
@@ -238,9 +238,9 @@ namespace DACN_UD_Hoc_KHo_CTK37.GUI
 			this.label10.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label10.Location = new System.Drawing.Point(27, 51);
 			this.label10.Name = "label10";
-			this.label10.Size = new System.Drawing.Size(19, 16);
+			this.label10.Size = new System.Drawing.Size(27, 16);
 			this.label10.TabIndex = 0;
-			this.label10.Text = "a\\";
+			this.label10.Text = ": a\\";
 			// 
 			// label4
 			// 
@@ -258,9 +258,9 @@ namespace DACN_UD_Hoc_KHo_CTK37.GUI
 			this.label9.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label9.Location = new System.Drawing.Point(27, 35);
 			this.label9.Name = "label9";
-			this.label9.Size = new System.Drawing.Size(20, 16);
+			this.label9.Size = new System.Drawing.Size(27, 16);
 			this.label9.TabIndex = 0;
-			this.label9.Text = "A|";
+			this.label9.Text = ": A|";
 			// 
 			// label3
 			// 
@@ -278,9 +278,9 @@ namespace DACN_UD_Hoc_KHo_CTK37.GUI
 			this.label8.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label8.Location = new System.Drawing.Point(27, 19);
 			this.label8.Name = "label8";
-			this.label8.Size = new System.Drawing.Size(12, 16);
+			this.label8.Size = new System.Drawing.Size(20, 16);
 			this.label8.TabIndex = 0;
-			this.label8.Text = "[";
+			this.label8.Text = ": [";
 			// 
 			// label2
 			// 
@@ -298,9 +298,9 @@ namespace DACN_UD_Hoc_KHo_CTK37.GUI
 			this.label7.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label7.Location = new System.Drawing.Point(27, 3);
 			this.label7.Name = "label7";
-			this.label7.Size = new System.Drawing.Size(12, 16);
+			this.label7.Size = new System.Drawing.Size(20, 16);
 			this.label7.TabIndex = 0;
-			this.label7.Text = "{";
+			this.label7.Text = ": {";
 			// 
 			// label1
 			// 

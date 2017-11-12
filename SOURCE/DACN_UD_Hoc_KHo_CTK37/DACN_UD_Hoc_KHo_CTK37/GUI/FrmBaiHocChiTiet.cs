@@ -808,8 +808,30 @@ namespace DACN_UD_Hoc_KHo_CTK37.GUI
 			{
 				if (dm.TenKHo != null && dm.TenKHo == subStringItem)
 					id = dm.ID;
+				else if (subStringItem == "Bảng chữ cái")
+				{
+					try
+					{
+						picChuDe.Visible = true;
+						string filepath = Application.StartupPath;
+						Image image = Image.FromFile(filepath + "\\App_Data\\Images\\bangchucai.jpg");
+						picChuDe.Image = image;
+						pnPicChude.Controls.Add(picChuDe);
+						picChuDe.BringToFront();
+						picChuDe.Dock = DockStyle.Fill;
+						picAnimator.ShowSync(picChuDe);
+					}
+					catch (Exception)
+					{
+						picChuDe.Image = null;
+					}
+				}
 				else
-					foreach (var dmc in DanhMucConDao.Instance.DanhMucConLoad(dm.ID)) if (dmc.Ten == subStringItem) id = dmc.ID;
+				{
+					foreach (var dmc in DanhMucConDao.Instance.DanhMucConLoad(dm.ID)) 
+						if (dmc.Ten == subStringItem) id = dmc.ID;
+				}
+					
 			}
 			if (subStringItem == "Câu hỏi")
 			{
