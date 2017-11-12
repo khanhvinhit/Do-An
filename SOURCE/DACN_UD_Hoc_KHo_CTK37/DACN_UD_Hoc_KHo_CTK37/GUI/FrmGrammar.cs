@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Drawing;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 using DACN_UD_Hoc_KHo_CTK37.DAO;
 using DACN_UD_Hoc_KHo_CTK37.DTO;
@@ -30,11 +31,24 @@ namespace DACN_UD_Hoc_KHo_CTK37.GUI
 		{
 			recNguPhap.ResetText();
 			recNguPhap.Font = new Font("TNKeyUni-Arial", 12F);
+			
 			DanhMucCon dmcon = DanhMucConDao.Instance.DanhMucConByID(_iDNguPhap);
 			lbName.Text = dmcon.Ten;
 			foreach (var item in NguPhapDAO.Instance.LoadNguPhaps(_iDNguPhap))
-				recNguPhap.Text += item.NoiDung + "\n";
+			{
+				if (item.NoiDung.Substring(0, 1) == "*")
+				{
+					recNguPhap.Text += "\n";
+					recNguPhap.Text += item.NoiDung + "\n";
+				}
+				else
+				{
+					recNguPhap.Text +="\t"+ item.NoiDung + "\n";
+				}
+			}
+				
 		}
+
 
 		private void btnClose_Click(object sender, EventArgs e)
 		{

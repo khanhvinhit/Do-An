@@ -134,7 +134,7 @@ namespace DACN_UD_Hoc_KHo_CTK37.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to +.
+        ///   Looks up a localized string similar to + .
         /// </summary>
         public static string dau_cong {
             get {

@@ -35,7 +35,7 @@ namespace DACN_UD_Hoc_KHo_CTK37.GUI
 		{
 			this.components = new System.ComponentModel.Container();
 			DevExpress.XtraSplashScreen.SplashScreenManager splashScreenManager1 = new DevExpress.XtraSplashScreen.SplashScreenManager(this, typeof(global::DACN_UD_Hoc_KHo_CTK37.GUI.WaitForm), true, true);
-			AnimatorNS.Animation animation10 = new AnimatorNS.Animation();
+			AnimatorNS.Animation animation1 = new AnimatorNS.Animation();
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmBaiHocChiTiet));
 			this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
 			this.splitContainerControl1 = new DevExpress.XtraEditors.SplitContainerControl();
@@ -44,7 +44,11 @@ namespace DACN_UD_Hoc_KHo_CTK37.GUI
 			this.lbDanhMuc = new DevExpress.XtraEditors.LabelControl();
 			this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
 			this.pnBaiHoc = new DevExpress.XtraEditors.PanelControl();
+			this.pnPicChude = new System.Windows.Forms.Panel();
 			this.picChuDe = new System.Windows.Forms.PictureBox();
+			this.rkqBaiHoc = new DevExpress.XtraRichEdit.RichEditControl();
+			this.pnPic = new System.Windows.Forms.Panel();
+			this.pictureBox1 = new System.Windows.Forms.PictureBox();
 			this.btnAudio = new DevExpress.XtraEditors.SimpleButton();
 			this.btnDictionary = new DevExpress.XtraEditors.SimpleButton();
 			this.btnRefresh = new DevExpress.XtraEditors.SimpleButton();
@@ -54,13 +58,9 @@ namespace DACN_UD_Hoc_KHo_CTK37.GUI
 			this.lbLHViet = new DevExpress.XtraEditors.LabelControl();
 			this.lbMucLuc = new DevExpress.XtraEditors.LabelControl();
 			this.lbKhoHay = new DevExpress.XtraEditors.LabelControl();
-			this.rkqBaiHoc = new DevExpress.XtraRichEdit.RichEditControl();
 			this.lbViet = new DevExpress.XtraEditors.LabelControl();
 			this.lbTenBai = new DevExpress.XtraEditors.LabelControl();
 			this.picAnimator = new AnimatorNS.Animator(this.components);
-			this.pnPic = new System.Windows.Forms.Panel();
-			this.pnPicChude = new System.Windows.Forms.Panel();
-			this.pictureBox1 = new System.Windows.Forms.PictureBox();
 			((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
 			this.panelControl1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).BeginInit();
@@ -70,9 +70,9 @@ namespace DACN_UD_Hoc_KHo_CTK37.GUI
 			((System.ComponentModel.ISupportInitialize)(this.lbcMucLuc)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.pnBaiHoc)).BeginInit();
 			this.pnBaiHoc.SuspendLayout();
+			this.pnPicChude.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.picChuDe)).BeginInit();
 			this.pnPic.SuspendLayout();
-			this.pnPicChude.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
 			this.SuspendLayout();
 			// 
@@ -179,6 +179,19 @@ namespace DACN_UD_Hoc_KHo_CTK37.GUI
 			this.pnBaiHoc.Size = new System.Drawing.Size(884, 509);
 			this.pnBaiHoc.TabIndex = 1;
 			// 
+			// pnPicChude
+			// 
+			this.pnPicChude.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+			this.pnPicChude.Controls.Add(this.picChuDe);
+			this.pnPicChude.Controls.Add(this.rkqBaiHoc);
+			this.picAnimator.SetDecoration(this.pnPicChude, AnimatorNS.DecorationType.None);
+			this.pnPicChude.Location = new System.Drawing.Point(6, 78);
+			this.pnPicChude.Name = "pnPicChude";
+			this.pnPicChude.Size = new System.Drawing.Size(546, 374);
+			this.pnPicChude.TabIndex = 9;
+			// 
 			// picChuDe
 			// 
 			this.picAnimator.SetDecoration(this.picChuDe, AnimatorNS.DecorationType.None);
@@ -190,6 +203,51 @@ namespace DACN_UD_Hoc_KHo_CTK37.GUI
 			this.picChuDe.TabIndex = 7;
 			this.picChuDe.TabStop = false;
 			// 
+			// rkqBaiHoc
+			// 
+			this.rkqBaiHoc.ActiveViewType = DevExpress.XtraRichEdit.RichEditViewType.Simple;
+			this.rkqBaiHoc.Appearance.Text.BackColor = System.Drawing.Color.Transparent;
+			this.rkqBaiHoc.Appearance.Text.BackColor2 = System.Drawing.Color.Transparent;
+			this.rkqBaiHoc.Appearance.Text.BorderColor = System.Drawing.Color.Transparent;
+			this.rkqBaiHoc.Appearance.Text.Options.UseBackColor = true;
+			this.rkqBaiHoc.Appearance.Text.Options.UseBorderColor = true;
+			this.rkqBaiHoc.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+			this.picAnimator.SetDecoration(this.rkqBaiHoc, AnimatorNS.DecorationType.None);
+			this.rkqBaiHoc.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.rkqBaiHoc.EnableToolTips = true;
+			this.rkqBaiHoc.Location = new System.Drawing.Point(0, 0);
+			this.rkqBaiHoc.Name = "rkqBaiHoc";
+			this.rkqBaiHoc.Options.CopyPaste.MaintainDocumentSectionSettings = false;
+			this.rkqBaiHoc.Options.Fields.UseCurrentCultureDateTimeFormat = false;
+			this.rkqBaiHoc.Options.MailMerge.KeepLastParagraph = false;
+			this.rkqBaiHoc.ReadOnly = true;
+			this.rkqBaiHoc.Size = new System.Drawing.Size(546, 374);
+			this.rkqBaiHoc.TabIndex = 0;
+			// 
+			// pnPic
+			// 
+			this.pnPic.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+			this.pnPic.BackColor = System.Drawing.Color.Transparent;
+			this.pnPic.Controls.Add(this.pictureBox1);
+			this.picAnimator.SetDecoration(this.pnPic, AnimatorNS.DecorationType.None);
+			this.pnPic.Location = new System.Drawing.Point(558, 199);
+			this.pnPic.Name = "pnPic";
+			this.pnPic.Size = new System.Drawing.Size(321, 253);
+			this.pnPic.TabIndex = 8;
+			// 
+			// pictureBox1
+			// 
+			this.picAnimator.SetDecoration(this.pictureBox1, AnimatorNS.DecorationType.None);
+			this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+			this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+			this.pictureBox1.Name = "pictureBox1";
+			this.pictureBox1.Size = new System.Drawing.Size(321, 253);
+			this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+			this.pictureBox1.TabIndex = 0;
+			this.pictureBox1.TabStop = false;
+			// 
 			// btnAudio
 			// 
 			this.btnAudio.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -198,9 +256,9 @@ namespace DACN_UD_Hoc_KHo_CTK37.GUI
 			this.picAnimator.SetDecoration(this.btnAudio, AnimatorNS.DecorationType.None);
 			this.btnAudio.Enabled = false;
 			this.btnAudio.Image = ((System.Drawing.Image)(resources.GetObject("btnAudio.Image")));
-			this.btnAudio.Location = new System.Drawing.Point(558, 138);
+			this.btnAudio.Location = new System.Drawing.Point(558, 119);
 			this.btnAudio.Name = "btnAudio";
-			this.btnAudio.Size = new System.Drawing.Size(103, 54);
+			this.btnAudio.Size = new System.Drawing.Size(103, 35);
 			this.btnAudio.TabIndex = 6;
 			this.btnAudio.Text = "Nghe";
 			this.btnAudio.ToolTip = "Nhấn để nghe";
@@ -213,9 +271,9 @@ namespace DACN_UD_Hoc_KHo_CTK37.GUI
 			this.btnDictionary.Appearance.Options.UseFont = true;
 			this.picAnimator.SetDecoration(this.btnDictionary, AnimatorNS.DecorationType.None);
 			this.btnDictionary.Image = ((System.Drawing.Image)(resources.GetObject("btnDictionary.Image")));
-			this.btnDictionary.Location = new System.Drawing.Point(667, 138);
+			this.btnDictionary.Location = new System.Drawing.Point(667, 119);
 			this.btnDictionary.Name = "btnDictionary";
-			this.btnDictionary.Size = new System.Drawing.Size(103, 54);
+			this.btnDictionary.Size = new System.Drawing.Size(103, 35);
 			this.btnDictionary.TabIndex = 1;
 			this.btnDictionary.Text = "Từ điển";
 			this.btnDictionary.ToolTip = "Nhấn để tra từ điển";
@@ -230,7 +288,7 @@ namespace DACN_UD_Hoc_KHo_CTK37.GUI
 			this.btnRefresh.Image = ((System.Drawing.Image)(resources.GetObject("btnRefresh.Image")));
 			this.btnRefresh.Location = new System.Drawing.Point(558, 78);
 			this.btnRefresh.Name = "btnRefresh";
-			this.btnRefresh.Size = new System.Drawing.Size(103, 54);
+			this.btnRefresh.Size = new System.Drawing.Size(103, 35);
 			this.btnRefresh.TabIndex = 1;
 			this.btnRefresh.Text = "Toàn bài";
 			this.btnRefresh.ToolTip = "Nhấn để load lại bài học";
@@ -245,7 +303,7 @@ namespace DACN_UD_Hoc_KHo_CTK37.GUI
 			this.btnBack.Image = ((System.Drawing.Image)(resources.GetObject("btnBack.Image")));
 			this.btnBack.Location = new System.Drawing.Point(667, 78);
 			this.btnBack.Name = "btnBack";
-			this.btnBack.Size = new System.Drawing.Size(103, 54);
+			this.btnBack.Size = new System.Drawing.Size(103, 35);
 			this.btnBack.TabIndex = 1;
 			this.btnBack.Text = "Bài trước";
 			this.btnBack.ToolTip = "Nhấn để quay về bài trước";
@@ -258,9 +316,9 @@ namespace DACN_UD_Hoc_KHo_CTK37.GUI
 			this.btnClose.Appearance.Options.UseFont = true;
 			this.picAnimator.SetDecoration(this.btnClose, AnimatorNS.DecorationType.None);
 			this.btnClose.Image = ((System.Drawing.Image)(resources.GetObject("btnClose.Image")));
-			this.btnClose.Location = new System.Drawing.Point(776, 138);
+			this.btnClose.Location = new System.Drawing.Point(776, 119);
 			this.btnClose.Name = "btnClose";
-			this.btnClose.Size = new System.Drawing.Size(103, 54);
+			this.btnClose.Size = new System.Drawing.Size(103, 35);
 			this.btnClose.TabIndex = 1;
 			this.btnClose.Text = "Đóng";
 			this.btnClose.ToolTip = "Nhấn để đóng bài học";
@@ -275,7 +333,7 @@ namespace DACN_UD_Hoc_KHo_CTK37.GUI
 			this.btnNext.Image = ((System.Drawing.Image)(resources.GetObject("btnNext.Image")));
 			this.btnNext.Location = new System.Drawing.Point(776, 78);
 			this.btnNext.Name = "btnNext";
-			this.btnNext.Size = new System.Drawing.Size(103, 54);
+			this.btnNext.Size = new System.Drawing.Size(103, 35);
 			this.btnNext.TabIndex = 1;
 			this.btnNext.Text = "Bài tiếp";
 			this.btnNext.ToolTip = "Nhấn để sang bài tiếp theo";
@@ -313,33 +371,12 @@ namespace DACN_UD_Hoc_KHo_CTK37.GUI
 			this.lbKhoHay.TabIndex = 4;
 			this.lbKhoHay.Text = "KHo";
 			// 
-			// rkqBaiHoc
-			// 
-			this.rkqBaiHoc.ActiveViewType = DevExpress.XtraRichEdit.RichEditViewType.Simple;
-			this.rkqBaiHoc.Appearance.Text.BackColor = System.Drawing.Color.Transparent;
-			this.rkqBaiHoc.Appearance.Text.BackColor2 = System.Drawing.Color.Transparent;
-			this.rkqBaiHoc.Appearance.Text.BorderColor = System.Drawing.Color.Transparent;
-			this.rkqBaiHoc.Appearance.Text.Options.UseBackColor = true;
-			this.rkqBaiHoc.Appearance.Text.Options.UseBorderColor = true;
-			this.rkqBaiHoc.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-			this.picAnimator.SetDecoration(this.rkqBaiHoc, AnimatorNS.DecorationType.None);
-			this.rkqBaiHoc.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.rkqBaiHoc.EnableToolTips = true;
-			this.rkqBaiHoc.Location = new System.Drawing.Point(0, 0);
-			this.rkqBaiHoc.Name = "rkqBaiHoc";
-			this.rkqBaiHoc.Options.CopyPaste.MaintainDocumentSectionSettings = false;
-			this.rkqBaiHoc.Options.Fields.UseCurrentCultureDateTimeFormat = false;
-			this.rkqBaiHoc.Options.MailMerge.KeepLastParagraph = false;
-			this.rkqBaiHoc.ReadOnly = true;
-			this.rkqBaiHoc.Size = new System.Drawing.Size(546, 374);
-			this.rkqBaiHoc.TabIndex = 0;
-			// 
 			// lbViet
 			// 
 			this.lbViet.Anchor = System.Windows.Forms.AnchorStyles.Top;
 			this.lbViet.Appearance.Font = new System.Drawing.Font("TNKeyUni-Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.picAnimator.SetDecoration(this.lbViet, AnimatorNS.DecorationType.None);
-			this.lbViet.Location = new System.Drawing.Point(399, 34);
+			this.lbViet.Location = new System.Drawing.Point(350, 34);
 			this.lbViet.Name = "lbViet";
 			this.lbViet.Size = new System.Drawing.Size(7, 15);
 			this.lbViet.TabIndex = 0;
@@ -361,59 +398,22 @@ namespace DACN_UD_Hoc_KHo_CTK37.GUI
 			// 
 			this.picAnimator.AnimationType = AnimatorNS.AnimationType.HorizSlideAndRotate;
 			this.picAnimator.Cursor = null;
-			animation10.AnimateOnlyDifferences = true;
-			animation10.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation10.BlindCoeff")));
-			animation10.LeafCoeff = 0F;
-			animation10.MaxTime = 1F;
-			animation10.MinTime = 0F;
-			animation10.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation10.MosaicCoeff")));
-			animation10.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation10.MosaicShift")));
-			animation10.MosaicSize = 0;
-			animation10.Padding = new System.Windows.Forms.Padding(50);
-			animation10.RotateCoeff = 0.3F;
-			animation10.RotateLimit = 0.2F;
-			animation10.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation10.ScaleCoeff")));
-			animation10.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation10.SlideCoeff")));
-			animation10.TimeCoeff = 0F;
-			animation10.TransparencyCoeff = 0F;
-			this.picAnimator.DefaultAnimation = animation10;
-			// 
-			// pnPic
-			// 
-			this.pnPic.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-			this.pnPic.BackColor = System.Drawing.Color.Transparent;
-			this.pnPic.Controls.Add(this.pictureBox1);
-			this.picAnimator.SetDecoration(this.pnPic, AnimatorNS.DecorationType.None);
-			this.pnPic.Location = new System.Drawing.Point(558, 199);
-			this.pnPic.Name = "pnPic";
-			this.pnPic.Size = new System.Drawing.Size(321, 253);
-			this.pnPic.TabIndex = 8;
-			// 
-			// pnPicChude
-			// 
-			this.pnPicChude.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-			this.pnPicChude.Controls.Add(this.picChuDe);
-			this.pnPicChude.Controls.Add(this.rkqBaiHoc);
-			this.picAnimator.SetDecoration(this.pnPicChude, AnimatorNS.DecorationType.None);
-			this.pnPicChude.Location = new System.Drawing.Point(6, 78);
-			this.pnPicChude.Name = "pnPicChude";
-			this.pnPicChude.Size = new System.Drawing.Size(546, 374);
-			this.pnPicChude.TabIndex = 9;
-			// 
-			// pictureBox1
-			// 
-			this.picAnimator.SetDecoration(this.pictureBox1, AnimatorNS.DecorationType.None);
-			this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-			this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-			this.pictureBox1.Name = "pictureBox1";
-			this.pictureBox1.Size = new System.Drawing.Size(321, 253);
-			this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-			this.pictureBox1.TabIndex = 0;
-			this.pictureBox1.TabStop = false;
+			animation1.AnimateOnlyDifferences = true;
+			animation1.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.BlindCoeff")));
+			animation1.LeafCoeff = 0F;
+			animation1.MaxTime = 1F;
+			animation1.MinTime = 0F;
+			animation1.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicCoeff")));
+			animation1.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicShift")));
+			animation1.MosaicSize = 0;
+			animation1.Padding = new System.Windows.Forms.Padding(50);
+			animation1.RotateCoeff = 0.3F;
+			animation1.RotateLimit = 0.2F;
+			animation1.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.ScaleCoeff")));
+			animation1.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.SlideCoeff")));
+			animation1.TimeCoeff = 0F;
+			animation1.TransparencyCoeff = 0F;
+			this.picAnimator.DefaultAnimation = animation1;
 			// 
 			// FrmBaiHocChiTiet
 			// 
@@ -440,9 +440,9 @@ namespace DACN_UD_Hoc_KHo_CTK37.GUI
 			((System.ComponentModel.ISupportInitialize)(this.pnBaiHoc)).EndInit();
 			this.pnBaiHoc.ResumeLayout(false);
 			this.pnBaiHoc.PerformLayout();
+			this.pnPicChude.ResumeLayout(false);
 			((System.ComponentModel.ISupportInitialize)(this.picChuDe)).EndInit();
 			this.pnPic.ResumeLayout(false);
-			this.pnPicChude.ResumeLayout(false);
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
 			this.ResumeLayout(false);
 
