@@ -35,7 +35,7 @@ namespace DACN_UD_Hoc_KHo_CTK37.GUI
 		{
 			this.components = new System.ComponentModel.Container();
 			DevExpress.XtraSplashScreen.SplashScreenManager splashScreenManager1 = new DevExpress.XtraSplashScreen.SplashScreenManager(this, typeof(global::DACN_UD_Hoc_KHo_CTK37.GUI.WaitForm), true, true);
-			AnimatorNS.Animation animation1 = new AnimatorNS.Animation();
+			AnimatorNS.Animation animation2 = new AnimatorNS.Animation();
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmBaiHocChiTiet));
 			this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
 			this.splitContainerControl1 = new DevExpress.XtraEditors.SplitContainerControl();
@@ -61,6 +61,7 @@ namespace DACN_UD_Hoc_KHo_CTK37.GUI
 			this.lbViet = new DevExpress.XtraEditors.LabelControl();
 			this.lbTenBai = new DevExpress.XtraEditors.LabelControl();
 			this.picAnimator = new AnimatorNS.Animator(this.components);
+			this.picBai = new System.Windows.Forms.PictureBox();
 			((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
 			this.panelControl1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).BeginInit();
@@ -74,6 +75,7 @@ namespace DACN_UD_Hoc_KHo_CTK37.GUI
 			((System.ComponentModel.ISupportInitialize)(this.picChuDe)).BeginInit();
 			this.pnPic.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.picBai)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// panelControl1
@@ -184,6 +186,7 @@ namespace DACN_UD_Hoc_KHo_CTK37.GUI
 			this.pnPicChude.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+			this.pnPicChude.Controls.Add(this.picBai);
 			this.pnPicChude.Controls.Add(this.picChuDe);
 			this.pnPicChude.Controls.Add(this.rkqBaiHoc);
 			this.picAnimator.SetDecoration(this.pnPicChude, AnimatorNS.DecorationType.None);
@@ -398,22 +401,33 @@ namespace DACN_UD_Hoc_KHo_CTK37.GUI
 			// 
 			this.picAnimator.AnimationType = AnimatorNS.AnimationType.HorizSlideAndRotate;
 			this.picAnimator.Cursor = null;
-			animation1.AnimateOnlyDifferences = true;
-			animation1.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.BlindCoeff")));
-			animation1.LeafCoeff = 0F;
-			animation1.MaxTime = 1F;
-			animation1.MinTime = 0F;
-			animation1.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicCoeff")));
-			animation1.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicShift")));
-			animation1.MosaicSize = 0;
-			animation1.Padding = new System.Windows.Forms.Padding(50);
-			animation1.RotateCoeff = 0.3F;
-			animation1.RotateLimit = 0.2F;
-			animation1.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.ScaleCoeff")));
-			animation1.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.SlideCoeff")));
-			animation1.TimeCoeff = 0F;
-			animation1.TransparencyCoeff = 0F;
-			this.picAnimator.DefaultAnimation = animation1;
+			animation2.AnimateOnlyDifferences = true;
+			animation2.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.BlindCoeff")));
+			animation2.LeafCoeff = 0F;
+			animation2.MaxTime = 1F;
+			animation2.MinTime = 0F;
+			animation2.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.MosaicCoeff")));
+			animation2.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation2.MosaicShift")));
+			animation2.MosaicSize = 0;
+			animation2.Padding = new System.Windows.Forms.Padding(50);
+			animation2.RotateCoeff = 0.3F;
+			animation2.RotateLimit = 0.2F;
+			animation2.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.ScaleCoeff")));
+			animation2.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.SlideCoeff")));
+			animation2.TimeCoeff = 0F;
+			animation2.TransparencyCoeff = 0F;
+			this.picAnimator.DefaultAnimation = animation2;
+			// 
+			// picBai
+			// 
+			this.picAnimator.SetDecoration(this.picBai, AnimatorNS.DecorationType.None);
+			this.picBai.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.picBai.Location = new System.Drawing.Point(0, 0);
+			this.picBai.Name = "picBai";
+			this.picBai.Size = new System.Drawing.Size(546, 374);
+			this.picBai.TabIndex = 8;
+			this.picBai.TabStop = false;
+			this.picBai.Visible = false;
 			// 
 			// FrmBaiHocChiTiet
 			// 
@@ -444,6 +458,7 @@ namespace DACN_UD_Hoc_KHo_CTK37.GUI
 			((System.ComponentModel.ISupportInitialize)(this.picChuDe)).EndInit();
 			this.pnPic.ResumeLayout(false);
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.picBai)).EndInit();
 			this.ResumeLayout(false);
 
 		}
@@ -474,5 +489,6 @@ namespace DACN_UD_Hoc_KHo_CTK37.GUI
 		private Panel pnPic;
 		private Panel pnPicChude;
 		private PictureBox pictureBox1;
+		private PictureBox picBai;
     }
 }

@@ -156,7 +156,7 @@ namespace DACN_UD_Hoc_KHo_CTK37.GUI
 									}
 									else
 									{
-										rkqBaiHoc.Text += "\t" + tv.NoiDung + "\n";
+										rkqBaiHoc.Text += Resources.tab + tv.NoiDung + "\n";
 									}
 								}
 						}
@@ -264,7 +264,7 @@ namespace DACN_UD_Hoc_KHo_CTK37.GUI
 									}
 									else
 									{
-										rkqBaiHoc.Text += "\t" + tv.NoiDung + "\n";
+										rkqBaiHoc.Text += Resources.tab + tv.NoiDung + "\n";
 									}
 								}
 						}
@@ -372,7 +372,7 @@ namespace DACN_UD_Hoc_KHo_CTK37.GUI
 							}
 							else
 							{
-								rkqBaiHoc.Text += "\t" + tv.NoiDung + "\n";
+								rkqBaiHoc.Text += Resources.tab + tv.NoiDung + "\n";
 							}
 						}
 				}
@@ -381,7 +381,7 @@ namespace DACN_UD_Hoc_KHo_CTK37.GUI
 
 		private void LoadBaiHoc(int iDBaiHoc)
 		{
-
+			picBai.Visible = false;
 			picChuDe.Image = null;
 			lbViet.Text = "";
 			lbKhoHay.Text = "";
@@ -582,11 +582,11 @@ namespace DACN_UD_Hoc_KHo_CTK37.GUI
 								if (tv.NoiDung.Substring(0, 1) == "*")
 								{
 									rkqBaiHoc.Text += "\n";
-									rkqBaiHoc.Text += Resources.tab + Resources.tab + tv.NoiDung + "\n";
+									rkqBaiHoc.Text += Resources.tab + tv.NoiDung + "\n";
 								}
 								else
 								{
-									rkqBaiHoc.Text += Resources.tab + Resources.tab + Resources.tab + tv.NoiDung + "\n";
+									rkqBaiHoc.Text += Resources.tab + Resources.tab + tv.NoiDung + "\n";
 								}
 							}
 					}
@@ -702,11 +702,11 @@ namespace DACN_UD_Hoc_KHo_CTK37.GUI
 								if (tv.NoiDung.Substring(0, 1) == "*")
 								{
 									rkqBaiHoc.Text += "\n";
-									rkqBaiHoc.Text += Resources.tab + Resources.tab + tv.NoiDung + "\n";
+									rkqBaiHoc.Text += Resources.tab + tv.NoiDung + "\n";
 								}
 								else
 								{
-									rkqBaiHoc.Text += Resources.tab + Resources.tab + Resources.tab + tv.NoiDung + "\n";
+									rkqBaiHoc.Text += Resources.tab + Resources.tab + tv.NoiDung + "\n";
 								}
 							}
 					}
@@ -790,10 +790,7 @@ namespace DACN_UD_Hoc_KHo_CTK37.GUI
 		}
 		private void lbcMucLuc_Click(object sender, EventArgs e)
 		{
-			pnPic.Controls.Add(picChuDe);
-			picChuDe.BringToFront();
-			picChuDe.Dock = DockStyle.Fill;
-			picAnimator.ShowSync(picChuDe);
+			picBai.Visible = false;
 			if (_trangthaiam)
 			{
 				_trangthaiam = false;
@@ -804,35 +801,6 @@ namespace DACN_UD_Hoc_KHo_CTK37.GUI
 			int id = 0;
 			string str = tukhoa.Substring(0, tukhoa.LastIndexOf('.'));
 			string subStringItem = tukhoa.Substring(str.Length + 2);
-			foreach (var dm in DanhMucDao.Instance.DanhMucLoad(_iDBaiHoc))
-			{
-				if (dm.TenKHo != null && dm.TenKHo == subStringItem)
-					id = dm.ID;
-				else if (subStringItem == "Bảng chữ cái")
-				{
-					try
-					{
-						picChuDe.Visible = true;
-						string filepath = Application.StartupPath;
-						Image image = Image.FromFile(filepath + "\\App_Data\\Images\\bangchucai.jpg");
-						picChuDe.Image = image;
-						pnPicChude.Controls.Add(picChuDe);
-						picChuDe.BringToFront();
-						picChuDe.Dock = DockStyle.Fill;
-						picAnimator.ShowSync(picChuDe);
-					}
-					catch (Exception)
-					{
-						picChuDe.Image = null;
-					}
-				}
-				else
-				{
-					foreach (var dmc in DanhMucConDao.Instance.DanhMucConLoad(dm.ID)) 
-						if (dmc.Ten == subStringItem) id = dmc.ID;
-				}
-					
-			}
 			if (subStringItem == "Câu hỏi")
 			{
 				FrmExercise f = Application.OpenForms.OfType<FrmExercise>().FirstOrDefault();
@@ -849,7 +817,8 @@ namespace DACN_UD_Hoc_KHo_CTK37.GUI
 			{
 				FrmLuyenTap f = Application.OpenForms.OfType<FrmLuyenTap>().FirstOrDefault();
 				if (f != null)
-					XtraMessageBox.Show("Bạn đã mở luyện tập! Xin hãy kiểm tra cửa sổ chương trình!", Resources.thong_bao, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+					XtraMessageBox.Show("Bạn đã mở luyện tập! Xin hãy kiểm tra cửa sổ chương trình!", Resources.thong_bao,
+						MessageBoxButtons.OK, MessageBoxIcon.Warning);
 				else
 				{
 					f = new FrmLuyenTap(_iDBaiHoc);
@@ -858,7 +827,45 @@ namespace DACN_UD_Hoc_KHo_CTK37.GUI
 				}
 			}
 			else
+			{
+				foreach (var dm in DanhMucDao.Instance.DanhMucLoad(_iDBaiHoc))
+				{
+					pnPic.Controls.Add(picChuDe);
+					picChuDe.BringToFront();
+					picChuDe.Dock = DockStyle.Fill;
+					picAnimator.ShowSync(picChuDe);
+					if (dm.TenKHo != null && dm.TenKHo == subStringItem)
+					{
+						id = dm.ID;
+					}
+					else if (subStringItem == "Bảng chữ cái")
+					{
+						try
+						{
+							picBai.Visible = true;
+							string filepath = Application.StartupPath;
+							Image image = Image.FromFile(filepath + "\\App_Data\\Images\\bangchucai.jpg");
+							picBai.Image = image;
+							pnPicChude.Controls.Add(picBai);
+							picBai.BringToFront();
+							picBai.Dock = DockStyle.Fill;
+							picAnimator.ShowSync(picBai);
+						}
+						catch (Exception)
+						{
+							picChuDe.Image = null;
+						}
+					}
+					else
+					{
+						foreach (var dmc in DanhMucConDao.Instance.DanhMucConLoad(dm.ID))
+							if (dmc.Ten == subStringItem) id = dmc.ID;
+					}
+
+				}
 				LoadDanhMucTheoTen(subStringItem, id);
+			}
+			
 		}
 		private void btnRefresh_Click(object sender, EventArgs e)
 		{
