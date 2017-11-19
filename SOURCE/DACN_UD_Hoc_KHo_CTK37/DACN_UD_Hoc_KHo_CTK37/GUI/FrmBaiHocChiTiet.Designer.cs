@@ -35,7 +35,7 @@ namespace DACN_UD_Hoc_KHo_CTK37.GUI
 		{
 			this.components = new System.ComponentModel.Container();
 			DevExpress.XtraSplashScreen.SplashScreenManager splashScreenManager1 = new DevExpress.XtraSplashScreen.SplashScreenManager(this, typeof(global::DACN_UD_Hoc_KHo_CTK37.GUI.WaitForm), true, true);
-			AnimatorNS.Animation animation2 = new AnimatorNS.Animation();
+			AnimatorNS.Animation animation5 = new AnimatorNS.Animation();
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmBaiHocChiTiet));
 			this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
 			this.splitContainerControl1 = new DevExpress.XtraEditors.SplitContainerControl();
@@ -45,8 +45,9 @@ namespace DACN_UD_Hoc_KHo_CTK37.GUI
 			this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
 			this.pnBaiHoc = new DevExpress.XtraEditors.PanelControl();
 			this.pnPicChude = new System.Windows.Forms.Panel();
+			this.picBai = new System.Windows.Forms.PictureBox();
 			this.picChuDe = new System.Windows.Forms.PictureBox();
-			this.rkqBaiHoc = new DevExpress.XtraRichEdit.RichEditControl();
+			this.recBaiHoc = new DevExpress.XtraRichEdit.RichEditControl();
 			this.pnPic = new System.Windows.Forms.Panel();
 			this.pictureBox1 = new System.Windows.Forms.PictureBox();
 			this.btnAudio = new DevExpress.XtraEditors.SimpleButton();
@@ -61,7 +62,8 @@ namespace DACN_UD_Hoc_KHo_CTK37.GUI
 			this.lbViet = new DevExpress.XtraEditors.LabelControl();
 			this.lbTenBai = new DevExpress.XtraEditors.LabelControl();
 			this.picAnimator = new AnimatorNS.Animator(this.components);
-			this.picBai = new System.Windows.Forms.PictureBox();
+			this.recTiengViet = new DevExpress.XtraRichEdit.RichEditControl();
+			this.lbTiengViet = new DevExpress.XtraEditors.LabelControl();
 			((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
 			this.panelControl1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).BeginInit();
@@ -72,10 +74,10 @@ namespace DACN_UD_Hoc_KHo_CTK37.GUI
 			((System.ComponentModel.ISupportInitialize)(this.pnBaiHoc)).BeginInit();
 			this.pnBaiHoc.SuspendLayout();
 			this.pnPicChude.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.picBai)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.picChuDe)).BeginInit();
 			this.pnPic.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.picBai)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// panelControl1
@@ -186,14 +188,28 @@ namespace DACN_UD_Hoc_KHo_CTK37.GUI
 			this.pnPicChude.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+			this.pnPicChude.BackColor = System.Drawing.Color.Transparent;
 			this.pnPicChude.Controls.Add(this.picBai);
 			this.pnPicChude.Controls.Add(this.picChuDe);
-			this.pnPicChude.Controls.Add(this.rkqBaiHoc);
+			this.pnPicChude.Controls.Add(this.recBaiHoc);
+			this.pnPicChude.Controls.Add(this.recTiengViet);
+			this.pnPicChude.Controls.Add(this.lbTiengViet);
 			this.picAnimator.SetDecoration(this.pnPicChude, AnimatorNS.DecorationType.None);
 			this.pnPicChude.Location = new System.Drawing.Point(6, 78);
 			this.pnPicChude.Name = "pnPicChude";
 			this.pnPicChude.Size = new System.Drawing.Size(546, 374);
 			this.pnPicChude.TabIndex = 9;
+			// 
+			// picBai
+			// 
+			this.picAnimator.SetDecoration(this.picBai, AnimatorNS.DecorationType.None);
+			this.picBai.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.picBai.Location = new System.Drawing.Point(0, 0);
+			this.picBai.Name = "picBai";
+			this.picBai.Size = new System.Drawing.Size(546, 374);
+			this.picBai.TabIndex = 8;
+			this.picBai.TabStop = false;
+			this.picBai.Visible = false;
 			// 
 			// picChuDe
 			// 
@@ -206,26 +222,28 @@ namespace DACN_UD_Hoc_KHo_CTK37.GUI
 			this.picChuDe.TabIndex = 7;
 			this.picChuDe.TabStop = false;
 			// 
-			// rkqBaiHoc
+			// recBaiHoc
 			// 
-			this.rkqBaiHoc.ActiveViewType = DevExpress.XtraRichEdit.RichEditViewType.Simple;
-			this.rkqBaiHoc.Appearance.Text.BackColor = System.Drawing.Color.Transparent;
-			this.rkqBaiHoc.Appearance.Text.BackColor2 = System.Drawing.Color.Transparent;
-			this.rkqBaiHoc.Appearance.Text.BorderColor = System.Drawing.Color.Transparent;
-			this.rkqBaiHoc.Appearance.Text.Options.UseBackColor = true;
-			this.rkqBaiHoc.Appearance.Text.Options.UseBorderColor = true;
-			this.rkqBaiHoc.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-			this.picAnimator.SetDecoration(this.rkqBaiHoc, AnimatorNS.DecorationType.None);
-			this.rkqBaiHoc.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.rkqBaiHoc.EnableToolTips = true;
-			this.rkqBaiHoc.Location = new System.Drawing.Point(0, 0);
-			this.rkqBaiHoc.Name = "rkqBaiHoc";
-			this.rkqBaiHoc.Options.CopyPaste.MaintainDocumentSectionSettings = false;
-			this.rkqBaiHoc.Options.Fields.UseCurrentCultureDateTimeFormat = false;
-			this.rkqBaiHoc.Options.MailMerge.KeepLastParagraph = false;
-			this.rkqBaiHoc.ReadOnly = true;
-			this.rkqBaiHoc.Size = new System.Drawing.Size(546, 374);
-			this.rkqBaiHoc.TabIndex = 0;
+			this.recBaiHoc.ActiveViewType = DevExpress.XtraRichEdit.RichEditViewType.Simple;
+			this.recBaiHoc.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+			this.recBaiHoc.Appearance.Text.BackColor = System.Drawing.Color.Transparent;
+			this.recBaiHoc.Appearance.Text.BackColor2 = System.Drawing.Color.Transparent;
+			this.recBaiHoc.Appearance.Text.BorderColor = System.Drawing.Color.Transparent;
+			this.recBaiHoc.Appearance.Text.Options.UseBackColor = true;
+			this.recBaiHoc.Appearance.Text.Options.UseBorderColor = true;
+			this.recBaiHoc.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+			this.picAnimator.SetDecoration(this.recBaiHoc, AnimatorNS.DecorationType.None);
+			this.recBaiHoc.EnableToolTips = true;
+			this.recBaiHoc.Location = new System.Drawing.Point(0, 0);
+			this.recBaiHoc.Name = "recBaiHoc";
+			this.recBaiHoc.Options.CopyPaste.MaintainDocumentSectionSettings = false;
+			this.recBaiHoc.Options.Fields.UseCurrentCultureDateTimeFormat = false;
+			this.recBaiHoc.Options.MailMerge.KeepLastParagraph = false;
+			this.recBaiHoc.ReadOnly = true;
+			this.recBaiHoc.Size = new System.Drawing.Size(546, 165);
+			this.recBaiHoc.TabIndex = 0;
 			// 
 			// pnPic
 			// 
@@ -401,33 +419,55 @@ namespace DACN_UD_Hoc_KHo_CTK37.GUI
 			// 
 			this.picAnimator.AnimationType = AnimatorNS.AnimationType.HorizSlideAndRotate;
 			this.picAnimator.Cursor = null;
-			animation2.AnimateOnlyDifferences = true;
-			animation2.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.BlindCoeff")));
-			animation2.LeafCoeff = 0F;
-			animation2.MaxTime = 1F;
-			animation2.MinTime = 0F;
-			animation2.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.MosaicCoeff")));
-			animation2.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation2.MosaicShift")));
-			animation2.MosaicSize = 0;
-			animation2.Padding = new System.Windows.Forms.Padding(50);
-			animation2.RotateCoeff = 0.3F;
-			animation2.RotateLimit = 0.2F;
-			animation2.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.ScaleCoeff")));
-			animation2.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.SlideCoeff")));
-			animation2.TimeCoeff = 0F;
-			animation2.TransparencyCoeff = 0F;
-			this.picAnimator.DefaultAnimation = animation2;
+			animation5.AnimateOnlyDifferences = true;
+			animation5.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation5.BlindCoeff")));
+			animation5.LeafCoeff = 0F;
+			animation5.MaxTime = 1F;
+			animation5.MinTime = 0F;
+			animation5.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation5.MosaicCoeff")));
+			animation5.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation5.MosaicShift")));
+			animation5.MosaicSize = 0;
+			animation5.Padding = new System.Windows.Forms.Padding(50);
+			animation5.RotateCoeff = 0.3F;
+			animation5.RotateLimit = 0.2F;
+			animation5.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation5.ScaleCoeff")));
+			animation5.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation5.SlideCoeff")));
+			animation5.TimeCoeff = 0F;
+			animation5.TransparencyCoeff = 0F;
+			this.picAnimator.DefaultAnimation = animation5;
 			// 
-			// picBai
+			// recTiengViet
 			// 
-			this.picAnimator.SetDecoration(this.picBai, AnimatorNS.DecorationType.None);
-			this.picBai.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.picBai.Location = new System.Drawing.Point(0, 0);
-			this.picBai.Name = "picBai";
-			this.picBai.Size = new System.Drawing.Size(546, 374);
-			this.picBai.TabIndex = 8;
-			this.picBai.TabStop = false;
-			this.picBai.Visible = false;
+			this.recTiengViet.ActiveViewType = DevExpress.XtraRichEdit.RichEditViewType.Simple;
+			this.recTiengViet.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+			this.recTiengViet.Appearance.Text.BackColor = System.Drawing.Color.Transparent;
+			this.recTiengViet.Appearance.Text.BackColor2 = System.Drawing.Color.Transparent;
+			this.recTiengViet.Appearance.Text.BorderColor = System.Drawing.Color.Transparent;
+			this.recTiengViet.Appearance.Text.Options.UseBackColor = true;
+			this.recTiengViet.Appearance.Text.Options.UseBorderColor = true;
+			this.recTiengViet.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+			this.picAnimator.SetDecoration(this.recTiengViet, AnimatorNS.DecorationType.None);
+			this.recTiengViet.EnableToolTips = true;
+			this.recTiengViet.Location = new System.Drawing.Point(0, 194);
+			this.recTiengViet.Name = "recTiengViet";
+			this.recTiengViet.Options.CopyPaste.MaintainDocumentSectionSettings = false;
+			this.recTiengViet.Options.Fields.UseCurrentCultureDateTimeFormat = false;
+			this.recTiengViet.Options.MailMerge.KeepLastParagraph = false;
+			this.recTiengViet.ReadOnly = true;
+			this.recTiengViet.Size = new System.Drawing.Size(546, 180);
+			this.recTiengViet.TabIndex = 9;
+			// 
+			// lbTiengViet
+			// 
+			this.lbTiengViet.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+			this.lbTiengViet.Appearance.Font = new System.Drawing.Font("TNKeyUni-Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.picAnimator.SetDecoration(this.lbTiengViet, AnimatorNS.DecorationType.None);
+			this.lbTiengViet.Location = new System.Drawing.Point(3, 171);
+			this.lbTiengViet.Name = "lbTiengViet";
+			this.lbTiengViet.Size = new System.Drawing.Size(76, 17);
+			this.lbTiengViet.TabIndex = 4;
+			this.lbTiengViet.Text = "Tiếng Việt";
 			// 
 			// FrmBaiHocChiTiet
 			// 
@@ -455,10 +495,11 @@ namespace DACN_UD_Hoc_KHo_CTK37.GUI
 			this.pnBaiHoc.ResumeLayout(false);
 			this.pnBaiHoc.PerformLayout();
 			this.pnPicChude.ResumeLayout(false);
+			this.pnPicChude.PerformLayout();
+			((System.ComponentModel.ISupportInitialize)(this.picBai)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.picChuDe)).EndInit();
 			this.pnPic.ResumeLayout(false);
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.picBai)).EndInit();
 			this.ResumeLayout(false);
 
 		}
@@ -477,7 +518,7 @@ namespace DACN_UD_Hoc_KHo_CTK37.GUI
 		private SimpleButton btnNext;
 		private LabelControl lbDanhMuc;
 		private ListBoxControl lbcMucLuc;
-		public RichEditControl rkqBaiHoc;
+		public RichEditControl recBaiHoc;
 		private LabelControl lbLHViet;
 		private LabelControl lbKhoHay;
 		private SimpleButton btnRefresh;
@@ -490,5 +531,7 @@ namespace DACN_UD_Hoc_KHo_CTK37.GUI
 		private Panel pnPicChude;
 		private PictureBox pictureBox1;
 		private PictureBox picBai;
+		public RichEditControl recTiengViet;
+		private LabelControl lbTiengViet;
     }
 }
