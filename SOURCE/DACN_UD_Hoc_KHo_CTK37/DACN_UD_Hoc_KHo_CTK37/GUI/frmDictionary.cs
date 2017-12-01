@@ -67,15 +67,6 @@ namespace DACN_UD_Hoc_KHo_CTK37.GUI
 
 
 
-		private void txtDic_KeyDown(object sender, KeyEventArgs e)
-		{
-			if (e.KeyCode == Keys.Enter)
-			{
-				btnDic.PerformClick();
-			}
-		}
-
-
 		private void txtDicti_Enter(object sender, EventArgs e)
 		{
 			if (txtDicti.Text == Resources.nhap_tu_can_tra)
