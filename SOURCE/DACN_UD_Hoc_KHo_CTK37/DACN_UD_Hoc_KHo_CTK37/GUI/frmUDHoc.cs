@@ -1,6 +1,9 @@
 ﻿using System;
+using System.Configuration;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Windows.Forms;
+using DACN_UD_Hoc_KHo_CTK37.DAO;
 using DACN_UD_Hoc_KHo_CTK37.Properties;
 using DevExpress.LookAndFeel;
 using DevExpress.XtraBars;
@@ -12,12 +15,26 @@ namespace DACN_UD_Hoc_KHo_CTK37.GUI
 {
 	public partial class FrmUdHoc : RibbonForm
 	{
+		private bool ck = false;
 		public FrmUdHoc()
 		{
-			InitializeComponent();
-			UserLookAndFeel.Default.SkinName = Settings.Default["ApplicationSkinName"].ToString();
-			InitSkinGallery();
-			WebCome();
+			ck = BaiHocDao.Instance.Checkdb();
+			if (!ck)
+			{
+				FrmSetting frm = new FrmSetting();
+				frm.AddServer += frm_OK;
+				frm.FormClosed += new FormClosedEventHandler(frm_Close);
+				frm.ShowDialog();
+			}
+			else
+			{
+				InitializeComponent();
+				UserLookAndFeel.Default.SkinName = Settings.Default["ApplicationSkinName"].ToString();
+				InitSkinGallery();
+				WebCome();
+			}
+
+
 		}
 
 		#region Method
@@ -27,11 +44,14 @@ namespace DACN_UD_Hoc_KHo_CTK37.GUI
 		}
 		void WebCome()
 		{
+
 			FrmWecome f = new FrmWecome();
 			f.MdiParent = this;
 			f.Show();
 		}
+
 		
+
 		private bool CheckExistForm(string name)
 		{
 			bool check = false;
@@ -61,6 +81,14 @@ namespace DACN_UD_Hoc_KHo_CTK37.GUI
 
 
 		#region Event
+		private void frm_OK(object sender, EventArgs e)
+		{
+			Application.Restart();
+		}
+		private void frm_Close(object sender, EventArgs e)
+		{
+			Application.Exit();
+		}
 		private void btnHelper_ItemClick(object sender, ItemClickEventArgs e)
 		{
 			if (!CheckExistForm("FrmHelper"))

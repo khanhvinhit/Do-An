@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using DACN_UD_Hoc_KHo_CTK37.DTO;
 
@@ -31,6 +32,23 @@ namespace DACN_UD_Hoc_KHo_CTK37.DAO
 		{
 			List<BaiHoc> list = _db.BaiHocs.ToList();
 			return list;
+		}
+
+		public bool Checkdb()
+		{
+			try
+			{
+				if (_db.BaiHocs.ToList().Count > 0)
+				{
+					return true;
+				}
+				return false;
+			}
+			catch (Exception)
+			{
+				return false;
+			}
+
 		}
 
 		public int BaiHocCounts()

@@ -5,5 +5,8 @@
     <Setting Name="ApplicationSkinName" Type="System.String" Scope="User">
       <Value Profile="(Default)">Black</Value>
     </Setting>
+    <Setting Name="Test" Type="System.String" Scope="User">
+      <Value Profile="(Default)">.\\SQLEXPRESS</Value>
+    </Setting>
   </Settings>
 </SettingsFile>
