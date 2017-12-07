@@ -1,0 +1,147 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="HocKHoModelStoreContainer" CdmEntityContainer="HocKHoEntities">
+    <EntitySetMapping Name="AmThanhs">
+      <EntityTypeMapping TypeName="HocKHoModel.AmThanh">
+        <MappingFragment StoreEntitySet="AmThanh">
+          <ScalarProperty Name="DuongDan" ColumnName="DuongDan" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BaiHocs">
+      <EntityTypeMapping TypeName="HocKHoModel.BaiHoc">
+        <MappingFragment StoreEntitySet="BaiHoc">
+          <ScalarProperty Name="IDHinh" ColumnName="IDHinh" />
+          <ScalarProperty Name="TenViet" ColumnName="TenViet" />
+          <ScalarProperty Name="TenKHo" ColumnName="TenKHo" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BaiKhoas">
+      <EntityTypeMapping TypeName="HocKHoModel.BaiKhoa">
+        <MappingFragment StoreEntitySet="BaiKhoa">
+          <ScalarProperty Name="IDDanhMucCon" ColumnName="IDDanhMucCon" />
+          <ScalarProperty Name="NoiDung" ColumnName="NoiDung" />
+          <ScalarProperty Name="TraLoiViet" ColumnName="TraLoiViet" />
+          <ScalarProperty Name="HoiViet" ColumnName="HoiViet" />
+          <ScalarProperty Name="TraLoiKHo" ColumnName="TraLoiKHo" />
+          <ScalarProperty Name="HoiKHo" ColumnName="HoiKHo" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CauHois">
+      <EntityTypeMapping TypeName="HocKHoModel.CauHoi">
+        <MappingFragment StoreEntitySet="CauHoi">
+          <ScalarProperty Name="IDDanhMucCon" ColumnName="IDDanhMucCon" />
+          <ScalarProperty Name="TraLoi" ColumnName="TraLoi" />
+          <ScalarProperty Name="GoiY" ColumnName="GoiY" />
+          <ScalarProperty Name="Hoi" ColumnName="Hoi" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DamThoais">
+      <EntityTypeMapping TypeName="HocKHoModel.DamThoai">
+        <MappingFragment StoreEntitySet="DamThoai">
+          <ScalarProperty Name="IDDanhMucCon" ColumnName="IDDanhMucCon" />
+          <ScalarProperty Name="TraLoiViet" ColumnName="TraLoiViet" />
+          <ScalarProperty Name="CauHoiViet" ColumnName="CauHoiViet" />
+          <ScalarProperty Name="TraLoiKHo" ColumnName="TraLoiKHo" />
+          <ScalarProperty Name="CauHoiKHo" ColumnName="CauHoiKHo" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DanhMucs">
+      <EntityTypeMapping TypeName="HocKHoModel.DanhMuc">
+        <MappingFragment StoreEntitySet="DanhMuc">
+          <ScalarProperty Name="IDBaiHoc" ColumnName="IDBaiHoc" />
+          <ScalarProperty Name="TenViet" ColumnName="TenViet" />
+          <ScalarProperty Name="TenKHo" ColumnName="TenKHo" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DanhMucCons">
+      <EntityTypeMapping TypeName="HocKHoModel.DanhMucCon">
+        <MappingFragment StoreEntitySet="DanhMucCon">
+          <ScalarProperty Name="IDAmThanh" ColumnName="IDAmThanh" />
+          <ScalarProperty Name="IDDanhMuc" ColumnName="IDDanhMuc" />
+          <ScalarProperty Name="Ten" ColumnName="Ten" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DichKHoViets">
+      <EntityTypeMapping TypeName="HocKHoModel.DichKHoViet">
+        <MappingFragment StoreEntitySet="DichKHoViet">
+          <ScalarProperty Name="IDDanhMucCon" ColumnName="IDDanhMucCon" />
+          <ScalarProperty Name="Viet" ColumnName="Viet" />
+          <ScalarProperty Name="KHo" ColumnName="KHo" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DichVietKHoes">
+      <EntityTypeMapping TypeName="HocKHoModel.DichVietKHo">
+        <MappingFragment StoreEntitySet="DichVietKHo">
+          <ScalarProperty Name="IDDanhMucCon" ColumnName="IDDanhMucCon" />
+          <ScalarProperty Name="KHo" ColumnName="KHo" />
+          <ScalarProperty Name="Viet" ColumnName="Viet" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Hinhs">
+      <EntityTypeMapping TypeName="HocKHoModel.Hinh">
+        <MappingFragment StoreEntitySet="Hinh">
+          <ScalarProperty Name="DuongDan" ColumnName="DuongDan" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LoiHayYDeps">
+      <EntityTypeMapping TypeName="HocKHoModel.LoiHayYDep">
+        <MappingFragment StoreEntitySet="LoiHayYDep">
+          <ScalarProperty Name="IDBaiHoc" ColumnName="IDBaiHoc" />
+          <ScalarProperty Name="CauViet" ColumnName="CauViet" />
+          <ScalarProperty Name="CauKHo" ColumnName="CauKHo" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LuyenTaps">
+      <EntityTypeMapping TypeName="HocKHoModel.LuyenTap">
+        <MappingFragment StoreEntitySet="LuyenTap">
+          <ScalarProperty Name="IDDanhMucCon" ColumnName="IDDanhMucCon" />
+          <ScalarProperty Name="TraLoiKHo" ColumnName="TraLoiKHo" />
+          <ScalarProperty Name="HoiViet" ColumnName="HoiViet" />
+          <ScalarProperty Name="HoiKHo" ColumnName="HoiKHo" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NguPhaps">
+      <EntityTypeMapping TypeName="HocKHoModel.NguPhap">
+        <MappingFragment StoreEntitySet="NguPhap">
+          <ScalarProperty Name="IDDanhMucCon" ColumnName="IDDanhMucCon" />
+          <ScalarProperty Name="NoiDung" ColumnName="NoiDung" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TuVungs">
+      <EntityTypeMapping TypeName="HocKHoModel.TuVung">
+        <MappingFragment StoreEntitySet="TuVung">
+          <ScalarProperty Name="IDDanhMucCon" ColumnName="IDDanhMucCon" />
+          <ScalarProperty Name="Viet" ColumnName="Viet" />
+          <ScalarProperty Name="KHo" ColumnName="KHo" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

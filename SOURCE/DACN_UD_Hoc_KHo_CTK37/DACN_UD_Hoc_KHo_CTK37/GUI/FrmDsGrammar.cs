@@ -42,13 +42,13 @@ namespace DACN_UD_Hoc_KHo_CTK37.GUI
 			}
 			catch (Exception)
 			{
-				MessageBox.Show(Resources.error_connectionstring, Resources.thong_bao, MessageBoxButtons.OK, MessageBoxIcon.Error);
+				XtraMessageBox.Show(this, "Không thể kết nối dữ liệu.", "Thông báo", MessageBoxButtons.OK,
+					MessageBoxIcon.Error);
 			}
+        }
 
-		}
-
-
-		void btn_Click(object sender, EventArgs e)
+        
+        void btn_Click(object sender, EventArgs e)
 		{
 			FrmDictionary frm = Application.OpenForms.OfType<FrmDictionary>().FirstOrDefault();
 			if (frm != null)frm.Close();
