@@ -34,17 +34,5 @@ namespace DACN_UD_Hoc_KHo_CTK37.Properties {
                 this["ApplicationSkinName"] = value;
             }
         }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("0")]
-        public string CheckDB {
-            get {
-                return ((string)(this["CheckDB"]));
-            }
-            set {
-                this["CheckDB"] = value;
-            }
-        }
     }
 }

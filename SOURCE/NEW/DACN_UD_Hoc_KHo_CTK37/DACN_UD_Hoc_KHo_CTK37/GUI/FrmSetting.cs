@@ -12,6 +12,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml;
 using System.IO;
+using DACN_UD_Hoc_KHo_CTK37.DTO;
+using DevExpress.XtraSplashScreen;
 using Microsoft.SqlServer.Management.Common;
 using Microsoft.SqlServer.Management.Smo;
 
@@ -28,19 +30,69 @@ namespace DACN_UD_Hoc_KHo_CTK37
 		public FrmSetting()
 		{
 			InitializeComponent();
+			txtServerName.Focus();
 		}
 
-		private void btnOk_Click(object sender, EventArgs e)
+		void ChangeXml(string server, string user, string pass)
 		{
-			if (txtServerName.Text != "")
+			string con = user != ""
+					? "data source=" + server + ";initial catalog=HocKHo;User ID=" + user + ";Password=" + pass + ";integrated security=True;"
+					: "data source=" + server + ";initial catalog=HocKHo;integrated security=True;";
+			try
 			{
-
-				try
+				XmlDocument XmlDoc = new XmlDocument();
+				XmlDoc.Load(AppDomain.CurrentDomain.SetupInformation.ConfigurationFile);
+				foreach (XmlElement xElement in XmlDoc.DocumentElement)
 				{
-					string con = "data source=" + txtServerName.Text.Trim() + ";initial catalog=HocKHo;integrated security=True;";
-					SqlConnection conn = new SqlConnection("Data Source=" + txtServerName.Text.Trim() + ";Initial Catalog=master;integrated security=True;");
-					conn.Open();
+					if (xElement.Name == "connectionStrings")
+					{
+						xElement.FirstChild.Attributes["connectionString"].Value = con + "MultipleActiveResultSets=True;App=EntityFramework;";
+						xElement.FirstChild.Attributes["providerName"].Value = "System.Data.SqlClient";
+					}
+				}
+				XmlDoc.Save(AppDomain.CurrentDomain.SetupInformation.ConfigurationFile);
 
+			}
+			catch (Exception)
+			{
+				if (MessageBox.Show("Lỗi! Không thể kết nối dữ liệu!", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Error) == DialogResult.OK)
+				{
+					txtServerName.ResetText();
+					txtServerName.Focus();
+				}
+				else
+				{
+					this.Close();
+				}
+			}
+		}
+
+		void CreateDatabase(string server, string user, string pass)
+		{
+			string conne = user != ""
+					? "Data Source=" + server + ";Initial Catalog=master;User ID=" + user + ";Password=" + pass + ";integrated security=True;"
+					: "Data Source=" + txtServerName.Text.Trim() + ";Initial Catalog=master;integrated security=True;";
+			string con = user != ""
+					? "data source=" + server + ";initial catalog=HocKHo;User ID=" + user + ";Password=" + pass + ";integrated security=True;"
+					: "data source=" + server + ";initial catalog=HocKHo;integrated security=True;";
+
+			try
+			{
+				SqlConnectionStringBuilder builder = new SqlConnectionStringBuilder(con);
+				string database = builder.InitialCatalog;
+				using (SqlConnection conn = new SqlConnection(con))
+				{
+					conn.Open();
+					String sqlCommandText = "USE [master] GO ALTER DATABASE [" + database + "] SET SINGLE_USER WITH ROLLBACK IMMEDIATE GO" +
+						"DROP DATABASE [" + database + "] GO";
+					SqlCommand sqlCommand = new SqlCommand(sqlCommandText, conn);
+					sqlCommand.ExecuteNonQuery();
+					conn.Close();
+					conn.Dispose();
+				}
+
+				using (SqlConnection conn = new SqlConnection(conne))
+				{
 					string script = File.ReadAllText(Application.StartupPath + "/Data/data.sql");
 
 					// split script on GO command
@@ -52,36 +104,32 @@ namespace DACN_UD_Hoc_KHo_CTK37
 							new SqlCommand(commandString, conn).ExecuteNonQuery();
 						}
 					}
-
 					conn.Close();
 					conn.Dispose();
-
-					XmlDocument XmlDoc = new XmlDocument();
-					XmlDoc.Load(AppDomain.CurrentDomain.SetupInformation.ConfigurationFile);
-					foreach (XmlElement xElement in XmlDoc.DocumentElement)
-					{
-						if (xElement.Name == "connectionStrings")
-						{
-							xElement.FirstChild.Attributes["connectionString"].Value = con + "MultipleActiveResultSets=True;App=EntityFramework;";
-							xElement.FirstChild.Attributes["providerName"].Value = "System.Data.SqlClient";
-						}
-					}
-					XmlDoc.Save(AppDomain.CurrentDomain.SetupInformation.ConfigurationFile);
-					addServer(this, new EventArgs());
 				}
-				catch (Exception)
+
+			}
+			catch (Exception)
+			{
+				if (MessageBox.Show("Lỗi! Không thể kết nối dữ liệu!", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Error) == DialogResult.OK)
 				{
-					if (MessageBox.Show("Lỗi! Không thể kết nối dữ liệu hoặc dữ liệu đã tồn tại! Hãy xóa toàn bộ dữ liệu trên Sql server!", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Error) == DialogResult.OK)
-					{
-						txtServerName.ResetText();
-						txtServerName.Focus();
-					}
-					else
-					{
-						this.Close();
-					}
+					txtServerName.ResetText();
+					txtServerName.Focus();
 				}
+				else
+				{
+					this.Close();
+				}
+			}
+		}
 
+		private void btnOk_Click(object sender, EventArgs e)
+		{
+			if (txtServerName.Text != "")
+			{
+				ChangeXml(txtServerName.Text.Trim(), txtUser.Text.Trim(), txtPass.Text.Trim());
+				CreateDatabase(txtServerName.Text.Trim(), txtUser.Text.Trim(), txtPass.Text.Trim());
+				addServer(this, new EventArgs());
 			}
 			else
 			{

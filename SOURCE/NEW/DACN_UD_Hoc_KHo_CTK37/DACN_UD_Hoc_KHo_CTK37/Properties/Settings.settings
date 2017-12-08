@@ -5,8 +5,5 @@
     <Setting Name="ApplicationSkinName" Type="System.String" Scope="User">
       <Value Profile="(Default)">Black</Value>
     </Setting>
-    <Setting Name="CheckDB" Type="System.String" Scope="User">
-      <Value Profile="(Default)">0</Value>
-    </Setting>
   </Settings>
 </SettingsFile>

@@ -10,6 +10,8 @@ using DevExpress.XtraBars;
 using DevExpress.XtraBars.Helpers;
 using DevExpress.XtraBars.Ribbon;
 using DevExpress.XtraEditors;
+using System.Data.Common;
+using DACN_UD_Hoc_KHo_CTK37.DTO;
 
 namespace DACN_UD_Hoc_KHo_CTK37.GUI
 {
@@ -17,7 +19,7 @@ namespace DACN_UD_Hoc_KHo_CTK37.GUI
 	{
 		public FrmUdHoc()
 		{
-			if (Settings.Default["CheckDB"].ToString() == "0")
+			if (!TestConnection())
 			{
 				FrmSetting frm = new FrmSetting();
 				frm.AddServer += frm_OK;
@@ -31,11 +33,10 @@ namespace DACN_UD_Hoc_KHo_CTK37.GUI
 				InitSkinGallery();
 				WebCome();
 			}
-
-
 		}
 
 		#region Method
+
 		private void InitSkinGallery()
 		{
 			SkinHelper.InitSkinGallery(rbSkin, true);
@@ -48,7 +49,22 @@ namespace DACN_UD_Hoc_KHo_CTK37.GUI
 			f.Show();
 		}
 
-		
+		public bool TestConnection()
+		{
+			using (var db = new DATAContext())
+			{
+				DbConnection conn = db.Database.Connection;
+				try
+				{
+					conn.Open();   // check the database connection
+					return true;
+				}
+				catch
+				{
+					return false;
+				}
+			}
+		}
 
 		private bool CheckExistForm(string name)
 		{
@@ -81,8 +97,6 @@ namespace DACN_UD_Hoc_KHo_CTK37.GUI
 		#region Event
 		private void frm_OK(object sender, EventArgs e)
 		{
-			Settings.Default["CheckDB"] = "1";
-			Settings.Default.Save();
 			Application.Restart();
 		}
 		private void frm_Close(object sender, EventArgs e)
