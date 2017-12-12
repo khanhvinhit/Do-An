@@ -31,12 +31,12 @@ namespace DACN_UD_Hoc_KHo_CTK37.GUI
 		/// </summary>
 		private void InitializeComponent()
 		{
-			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(WaitForm));
 			this.marqueeProgressBarControl1 = new DevExpress.XtraEditors.MarqueeProgressBarControl();
 			this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
-			this.pictureEdit2 = new DevExpress.XtraEditors.PictureEdit();
+			this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
+			this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
+			this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
 			((System.ComponentModel.ISupportInitialize)(this.marqueeProgressBarControl1.Properties)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.pictureEdit2.Properties)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// marqueeProgressBarControl1
@@ -55,31 +55,46 @@ namespace DACN_UD_Hoc_KHo_CTK37.GUI
 			this.labelControl2.TabIndex = 7;
 			this.labelControl2.Text = "Đang tải dữ liệu...";
 			// 
-			// pictureEdit2
+			// labelControl1
 			// 
-			this.pictureEdit2.EditValue = ((object)(resources.GetObject("pictureEdit2.EditValue")));
-			this.pictureEdit2.Location = new System.Drawing.Point(12, 12);
-			this.pictureEdit2.Name = "pictureEdit2";
-			this.pictureEdit2.Properties.AllowFocused = false;
-			this.pictureEdit2.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
-			this.pictureEdit2.Properties.Appearance.Options.UseBackColor = true;
-			this.pictureEdit2.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-			this.pictureEdit2.Properties.ShowMenu = false;
-			this.pictureEdit2.Size = new System.Drawing.Size(426, 180);
-			this.pictureEdit2.TabIndex = 9;
+			this.labelControl1.Appearance.Font = new System.Drawing.Font("TNKeyUni-Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.labelControl1.Location = new System.Drawing.Point(84, 59);
+			this.labelControl1.Name = "labelControl1";
+			this.labelControl1.Size = new System.Drawing.Size(287, 23);
+			this.labelControl1.TabIndex = 8;
+			this.labelControl1.Text = "ỨNG DỤNG HỌC TIẾNG K\'HO";
+			// 
+			// labelControl3
+			// 
+			this.labelControl3.Appearance.Font = new System.Drawing.Font("TNKeyUni-Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.labelControl3.Location = new System.Drawing.Point(95, 134);
+			this.labelControl3.Name = "labelControl3";
+			this.labelControl3.Size = new System.Drawing.Size(242, 17);
+			this.labelControl3.TabIndex = 8;
+			this.labelControl3.Text = "KHOA CÔNG NGHỆ THÔNG TIN";
+			// 
+			// labelControl4
+			// 
+			this.labelControl4.Appearance.Font = new System.Drawing.Font("TNKeyUni-Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.labelControl4.Location = new System.Drawing.Point(110, 111);
+			this.labelControl4.Name = "labelControl4";
+			this.labelControl4.Size = new System.Drawing.Size(207, 17);
+			this.labelControl4.TabIndex = 8;
+			this.labelControl4.Text = "TRƯỜNG ĐẠI HỌC ĐÀ LẠT";
 			// 
 			// WaitForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(450, 278);
-			this.Controls.Add(this.pictureEdit2);
+			this.Controls.Add(this.labelControl4);
+			this.Controls.Add(this.labelControl3);
+			this.Controls.Add(this.labelControl1);
 			this.Controls.Add(this.labelControl2);
 			this.Controls.Add(this.marqueeProgressBarControl1);
 			this.Name = "WaitForm";
 			this.Text = "Form1";
 			((System.ComponentModel.ISupportInitialize)(this.marqueeProgressBarControl1.Properties)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.pictureEdit2.Properties)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -89,6 +104,8 @@ namespace DACN_UD_Hoc_KHo_CTK37.GUI
 
 		private MarqueeProgressBarControl marqueeProgressBarControl1;
 		private LabelControl labelControl2;
-		private PictureEdit pictureEdit2;
+		private LabelControl labelControl1;
+		private LabelControl labelControl3;
+		private LabelControl labelControl4;
 	}
 }
