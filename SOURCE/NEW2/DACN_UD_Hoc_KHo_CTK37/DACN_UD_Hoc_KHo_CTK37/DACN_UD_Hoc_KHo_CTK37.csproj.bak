@@ -1,0 +1,394 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{CAB5EDB9-9B9B-489C-B720-A0D0111E511D}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DACN_UD_Hoc_KHo_CTK37</RootNamespace>
+    <AssemblyName>DACN_UD_Hoc_KHo_CTK37</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>logo.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.BonusSkins.v15.1, Version=15.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Data.v15.1">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Office.v15.1.Core, Version=15.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Printing.v15.1.Core">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.RichEdit.v15.1.Core, Version=15.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Utils.v15.1">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraBars.v15.1">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Sparkline.v15.1.Core">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraEditors.v15.1">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraPrinting.v15.1, Version=15.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraRichEdit.v15.1, Version=15.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Core">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Deployment">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Drawing">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Windows.Forms">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DAO\BaiHocDao.cs" />
+    <Compile Include="DAO\BaiKhoaDao.cs" />
+    <Compile Include="DAO\CauHoiDao.cs" />
+    <Compile Include="DAO\DamThoaiDao.cs" />
+    <Compile Include="DAO\DanhMucConDao.cs" />
+    <Compile Include="DAO\DanhMucDao.cs" />
+    <Compile Include="DAO\DichKHoVietDao.cs" />
+    <Compile Include="DAO\DichVietKHoDao.cs" />
+    <Compile Include="DAO\HinhDao.cs" />
+    <Compile Include="DAO\LoiHayYDepDao.cs" />
+    <Compile Include="DAO\LuyenTapDao.cs" />
+    <Compile Include="DAO\TuVungDao.cs" />
+    <Compile Include="DTO\BaiHoc.cs">
+      <DependentUpon>DATADBContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DTO\BaiKhoa.cs">
+      <DependentUpon>DATADBContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DTO\CauHoi.cs">
+      <DependentUpon>DATADBContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DTO\DamThoai.cs">
+      <DependentUpon>DATADBContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DTO\DanhMuc.cs">
+      <DependentUpon>DATADBContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DTO\DanhMucCon.cs">
+      <DependentUpon>DATADBContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DTO\DATADBContext.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DATADBContext.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DTO\DATADBContext.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DATADBContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DTO\DATADBContext.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DATADBContext.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="DTO\DichKHoViet.cs">
+      <DependentUpon>DATADBContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DTO\DichVietKHo.cs">
+      <DependentUpon>DATADBContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DTO\Hinh.cs">
+      <DependentUpon>DATADBContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DTO\LoiHayYDep.cs">
+      <DependentUpon>DATADBContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DTO\LuyenTap.cs">
+      <DependentUpon>DATADBContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DTO\TuVung.cs">
+      <DependentUpon>DATADBContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FrmBaiHocChiTiet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmBaiHocChiTiet.Designer.cs">
+      <DependentUpon>FrmBaiHocChiTiet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmDictionary.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDictionary.Designer.cs">
+      <DependentUpon>frmDictionary.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmDSBaiHoc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDSBaiHoc.Designer.cs">
+      <DependentUpon>frmDSBaiHoc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmDsGrammar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmDsGrammar.Designer.cs">
+      <DependentUpon>FrmDsGrammar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmExercise.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmExercise.Designer.cs">
+      <DependentUpon>frmExercise.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmHelper.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmHelper.Designer.cs">
+      <DependentUpon>FrmHelper.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmInfo.Designer.cs">
+      <DependentUpon>FrmInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmUDHoc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmUDHoc.Designer.cs">
+      <DependentUpon>frmUDHoc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmWecome.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmWecome.Designer.cs">
+      <DependentUpon>FrmWecome.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WaitForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WaitForm.Designer.cs">
+      <DependentUpon>WaitForm.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="FrmBaiHocChiTiet.resx">
+      <DependentUpon>FrmBaiHocChiTiet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDictionary.resx">
+      <DependentUpon>frmDictionary.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDSBaiHoc.resx">
+      <DependentUpon>frmDSBaiHoc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmDsGrammar.resx">
+      <DependentUpon>FrmDsGrammar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmExercise.resx">
+      <DependentUpon>frmExercise.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmHelper.resx">
+      <DependentUpon>FrmHelper.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmInfo.resx">
+      <DependentUpon>FrmInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmUDHoc.resx">
+      <DependentUpon>frmUDHoc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmWecome.resx">
+      <DependentUpon>FrmWecome.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="WaitForm.resx">
+      <DependentUpon>WaitForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="App.Config" />
+    <EntityDeploy Include="DTO\DATADBContext.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>DATADBContext.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="DTO\DATADBContext.edmx.diagram">
+      <DependentUpon>DATADBContext.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Data\HocKHo.mdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Data\HocKHo_log.ldf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <DependentUpon>HocKHo.mdf</DependentUpon>
+    </Content>
+    <Content Include="App_Data\Images\1.jpg" />
+    <Content Include="App_Data\Images\10.jpg" />
+    <Content Include="App_Data\Images\11.jpg" />
+    <Content Include="App_Data\Images\12.jpg" />
+    <Content Include="App_Data\Images\13.jpg" />
+    <Content Include="App_Data\Images\14.jpg" />
+    <Content Include="App_Data\Images\16.jpg" />
+    <Content Include="App_Data\Images\20.jpg" />
+    <Content Include="App_Data\Images\21.jpg" />
+    <Content Include="App_Data\Images\25.jpg" />
+    <Content Include="App_Data\Images\27.jpg" />
+    <Content Include="App_Data\Images\29.jpg" />
+    <Content Include="App_Data\Images\3.jpg" />
+    <Content Include="App_Data\Images\30.jpg" />
+    <Content Include="App_Data\Images\33.jpg" />
+    <Content Include="App_Data\Images\35.jpg" />
+    <Content Include="App_Data\Images\37.jpg" />
+    <Content Include="App_Data\Images\39.jpg" />
+    <Content Include="App_Data\Images\4.jpg" />
+    <Content Include="App_Data\Images\5.jpg" />
+    <Content Include="App_Data\Images\6.jpg" />
+    <Content Include="App_Data\Images\7.jpg" />
+    <Content Include="App_Data\Images\8.jpg" />
+    <Content Include="App_Data\Images\9.jpg" />
+    <Content Include="DTO\DATADBContext.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>DATADBContext.edmx</DependentUpon>
+      <LastGenOutput>DATADBContext.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="DTO\DATADBContext.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>DATADBContext.edmx</DependentUpon>
+      <LastGenOutput>DATADBContext.cs</LastGenOutput>
+    </Content>
+    <Content Include="logo.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
